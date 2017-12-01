@@ -12,6 +12,13 @@
 		15A895761FD1945000347281 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 15A895731FD1945000347281 /* Cartfile */; };
 		15A895771FD1945000347281 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 15A895741FD1945000347281 /* Podfile */; };
 		15A895781FD1945000347281 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 15A895751FD1945000347281 /* Podfile.lock */; };
+		15A8957C1FD198FB00347281 /* Awesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A8957A1FD198EE00347281 /* Awesome.framework */; };
+		15A8957D1FD198FB00347281 /* Awesome.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15A8957A1FD198EE00347281 /* Awesome.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		15A895801FD1F48800347281 /* Lang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8957F1FD1F48800347281 /* Lang.swift */; };
+		15A895831FD1F51A00347281 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 15A895851FD1F51A00347281 /* Localizable.strings */; };
+		15A8958B1FD1F80400347281 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8958A1FD1F80400347281 /* App.swift */; };
+		15A8958D1FD1FB2E00347281 /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8958C1FD1FB2E00347281 /* AppDetailViewController.swift */; };
+		15A8958F1FD1FE8500347281 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8958E1FD1FE8500347281 /* Env.swift */; };
 		15CA94351FD0267C001AA1FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CA94341FD0267C001AA1FE /* AppDelegate.swift */; };
 		15CA94371FD0267C001AA1FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CA94361FD0267C001AA1FE /* ViewController.swift */; };
 		15CA943D1FD0267C001AA1FE /* BoostApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15CA943B1FD0267C001AA1FE /* BoostApp.xcdatamodeld */; };
@@ -43,6 +50,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		15A8957E1FD198FC00347281 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				15A8957D1FD198FB00347281 /* Awesome.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0554426AA33816B0E9D334F7 /* Pods_BoostApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoostApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11049ECA6BB56E138AA6977C /* Pods-BoostAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoostAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoostAppUITests/Pods-BoostAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -51,6 +72,15 @@
 		15A895731FD1945000347281 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		15A895741FD1945000347281 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		15A895751FD1945000347281 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
+		15A8957A1FD198EE00347281 /* Awesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Awesome.framework; path = Carthage/Build/iOS/Awesome.framework; sourceTree = "<group>"; };
+		15A8957F1FD1F48800347281 /* Lang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lang.swift; sourceTree = "<group>"; };
+		15A895841FD1F51A00347281 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		15A895861FD1F52100347281 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		15A895871FD1F53800347281 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		15A895881FD1F53800347281 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
+		15A8958A1FD1F80400347281 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		15A8958C1FD1FB2E00347281 /* AppDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
+		15A8958E1FD1FE8500347281 /* Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
 		15CA94311FD0267C001AA1FE /* BoostApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoostApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15CA94341FD0267C001AA1FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15CA94361FD0267C001AA1FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +111,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCB9B1B47060BBDAE0B2A986 /* Pods_BoostApp.framework in Frameworks */,
+				15A8957C1FD198FB00347281 /* Awesome.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +145,7 @@
 		15A8955E1FD1691700347281 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				15A8955F1FD1695D00347281 /* AppCollectionViewCell.swift */,
+				15A895791FD198C900347281 /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -127,6 +158,22 @@
 				15A895751FD1945000347281 /* Podfile.lock */,
 			);
 			name = Configurations;
+			sourceTree = "<group>";
+		};
+		15A895791FD198C900347281 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				15A8955F1FD1695D00347281 /* AppCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		15A895891FD1F7F800347281 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				15A8958A1FD1F80400347281 /* App.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		15CA94281FD0267C001AA1FE = {
@@ -155,6 +202,7 @@
 		15CA94331FD0267C001AA1FE /* BoostApp */ = {
 			isa = PBXGroup;
 			children = (
+				15A895891FD1F7F800347281 /* Model */,
 				15A8955B1FD0C39C00347281 /* Data */,
 				15CA946B1FD03C4C001AA1FE /* Libs */,
 				15A8955E1FD1691700347281 /* Views */,
@@ -191,6 +239,7 @@
 				15CA94401FD0267C001AA1FE /* LaunchScreen.storyboard */,
 				15CA94431FD0267C001AA1FE /* Info.plist */,
 				15CA943B1FD0267C001AA1FE /* BoostApp.xcdatamodeld */,
+				15A895851FD1F51A00347281 /* Localizable.strings */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
@@ -216,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				15CA94691FD0271D001AA1FE /* AppsViewController.swift */,
+				15A8958C1FD1FB2E00347281 /* AppDetailViewController.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -224,6 +274,8 @@
 			isa = PBXGroup;
 			children = (
 				15CA946C1FD03C53001AA1FE /* Enterprise */,
+				15A8957F1FD1F48800347281 /* Lang.swift */,
+				15A8958E1FD1FE8500347281 /* Env.swift */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -259,6 +311,7 @@
 		B06AD83FBC9456F55B1E0496 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				15A8957A1FD198EE00347281 /* Awesome.framework */,
 				0554426AA33816B0E9D334F7 /* Pods_BoostApp.framework */,
 				87189322A9E8183233DA079E /* Pods_BoostAppTests.framework */,
 				6E120E032A1BF689F627A3D4 /* Pods_BoostAppUITests.framework */,
@@ -279,6 +332,7 @@
 				15CA942F1FD0267C001AA1FE /* Resources */,
 				5782196CE1B376F74C5E5BA5 /* [CP] Embed Pods Frameworks */,
 				E62FC646F6559E75D7D1A1EA /* [CP] Copy Pods Resources */,
+				15A8957E1FD198FC00347281 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -364,6 +418,7 @@
 			knownRegions = (
 				en,
 				Base,
+				cs,
 			);
 			mainGroup = 15CA94281FD0267C001AA1FE;
 			productRefGroup = 15CA94321FD0267C001AA1FE /* Products */;
@@ -383,6 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15A895761FD1945000347281 /* Cartfile in Resources */,
+				15A895831FD1F51A00347281 /* Localizable.strings in Resources */,
 				15CA94421FD0267C001AA1FE /* LaunchScreen.storyboard in Resources */,
 				15A895781FD1945000347281 /* Podfile.lock in Resources */,
 				15A895771FD1945000347281 /* Podfile in Resources */,
@@ -568,6 +624,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15A8958B1FD1F80400347281 /* App.swift in Sources */,
+				15A8958D1FD1FB2E00347281 /* AppDetailViewController.swift in Sources */,
 				15CA94371FD0267C001AA1FE /* ViewController.swift in Sources */,
 				15A8955D1FD0C3AD00347281 /* AppsDataManager.swift in Sources */,
 				15CA943D1FD0267C001AA1FE /* BoostApp.xcdatamodeld in Sources */,
@@ -575,6 +633,8 @@
 				15CA946A1FD0271D001AA1FE /* AppsViewController.swift in Sources */,
 				15CA946E1FD03C63001AA1FE /* Enterprise.swift in Sources */,
 				15CA94351FD0267C001AA1FE /* AppDelegate.swift in Sources */,
+				15A895801FD1F48800347281 /* Lang.swift in Sources */,
+				15A8958F1FD1FE8500347281 /* Env.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,10 +670,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		15A895851FD1F51A00347281 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15A895841FD1F51A00347281 /* en */,
+				15A895861FD1F52100347281 /* Base */,
+				15A895881FD1F53800347281 /* cs */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		15CA94401FD0267C001AA1FE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				15CA94411FD0267C001AA1FE /* Base */,
+				15A895871FD1F53800347281 /* cs */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -625,6 +696,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -682,6 +754,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -735,6 +808,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R8ZGADY96;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "BoostApp/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.uk.mangoweb.BoostApp;
@@ -751,6 +828,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R8ZGADY96;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "BoostApp/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.uk.mangoweb.BoostApp;

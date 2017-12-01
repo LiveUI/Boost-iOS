@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Presentables
 import SnapKit
+import Awesome
 
 
 class AppsViewController: ViewController {
@@ -41,6 +42,12 @@ class AppsViewController: ViewController {
     
     // MARK: Elements
     
+    func configureNavBar() {
+        let portrait = Awesome.light.list.asImage(size: 22)
+        let advanced = UIBarButtonItem(image: portrait, style: .plain, target: self, action: #selector(didTapMenu(_:)))
+        navigationItem.rightBarButtonItem = advanced
+    }
+    
     func configureCollectionView() {
         collectionView.register(AppCollectionViewCell.self)
         
@@ -49,6 +56,7 @@ class AppsViewController: ViewController {
     }
     
     func configureElements() {
+        configureNavBar()
         configureCollectionView()
     }
     
@@ -65,6 +73,32 @@ class AppsViewController: ViewController {
         collectionView.bind(withPresentableManager: &dc)
         
         dataController.loadData()
+        
+        dataController.appActionRequested = { app in
+            self.actionTriggered(for: app)
+        }
+        dataController.appDetailRequested = { app in
+            let c = AppDetailViewController()
+            c.appActionRequested = { app in
+                self.actionTriggered(for: app)
+            }
+            c.app = app
+            let nc = UINavigationController(rootViewController: c)
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                nc.modalPresentationStyle = .formSheet
+            }
+            self.present(nc, animated: true)
+        }
+    }
+    
+    // MARK: Actions
+    
+    func actionTriggered(for app: App) {
+        print("Downloading: \(app.name)")
+    }
+    
+    @objc func didTapMenu(_ sender: UIBarButtonItem) {
+        
     }
     
 }
