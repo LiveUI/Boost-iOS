@@ -1,0 +1,13 @@
+#github "xmartlabs/Eureka" ~> 4.0.0
+#github "pkluz/PKHUD" ~> 4.2.3
+#github "Skyscanner/SkyFloatingLabelTextField" ~> 3.2
+github "manGoweb/Awesome" ~> 0.0.5
+
+#github "manGoweb/Presentables" ~> 0.4.0
+#github "dzenbot/DZNEmptyDataSet" ~> 1.8
+#github "mamaral/Onboard" ~> 2.3
+#github "dennisweissmann/DeviceKit" ~> 1.2
+#github "MortimerGoro/MGSwipeTableCell" ~> 1.5
+#github "antitypical/Result" ~> 3.2
+#github "Instagram/IGListKit" ~> 3.0
+#github "Moya/Moya" ~> 8.0
