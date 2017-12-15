@@ -70,3 +70,4 @@ fastlane/screenshots
 fastlane/test_output
 /Tools/Update
 /_orig/flags
+/Pods
