@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		155FFBF81FE4097800910DFA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FFBF71FE4097800910DFA /* HomeViewController.swift */; };
+		155FFC071FE4110800910DFA /* BoostSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 155FFBFE1FE4110800910DFA /* BoostSDK.framework */; };
+		155FFC0E1FE4110800910DFA /* BoostSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FFC0D1FE4110800910DFA /* BoostSDKTests.swift */; };
+		155FFC101FE4110800910DFA /* BoostSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 155FFC001FE4110800910DFA /* BoostSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		155FFC131FE4110800910DFA /* BoostSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 155FFBFE1FE4110800910DFA /* BoostSDK.framework */; };
+		155FFC141FE4110800910DFA /* BoostSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 155FFBFE1FE4110800910DFA /* BoostSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		155FFC1C1FE4112F00910DFA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8958A1FD1F80400347281 /* App.swift */; };
+		155FFC1F1FE4115000910DFA /* Boost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FFC1E1FE4115000910DFA /* Boost.swift */; };
+		155FFC221FE4125200910DFA /* Boost+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FFC211FE4125200910DFA /* Boost+App.swift */; };
+		155FFC251FE4129600910DFA /* Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FFC241FE4129600910DFA /* Paging.swift */; };
+		155FFC281FE4188700910DFA /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FFC271FE4188700910DFA /* Result.swift */; };
 		15A8955D1FD0C3AD00347281 /* AppsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8955C1FD0C3AD00347281 /* AppsDataManager.swift */; };
 		15A895601FD1695D00347281 /* AppCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8955F1FD1695D00347281 /* AppCollectionViewCell.swift */; };
 		15A895761FD1945000347281 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 15A895731FD1945000347281 /* Cartfile */; };
@@ -16,9 +27,11 @@
 		15A8957D1FD198FB00347281 /* Awesome.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15A8957A1FD198EE00347281 /* Awesome.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		15A895801FD1F48800347281 /* Lang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8957F1FD1F48800347281 /* Lang.swift */; };
 		15A895831FD1F51A00347281 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 15A895851FD1F51A00347281 /* Localizable.strings */; };
-		15A8958B1FD1F80400347281 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8958A1FD1F80400347281 /* App.swift */; };
 		15A8958D1FD1FB2E00347281 /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8958C1FD1FB2E00347281 /* AppDetailViewController.swift */; };
 		15A8958F1FD1FE8500347281 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8958E1FD1FE8500347281 /* Env.swift */; };
+		15C7B4CD1FE4494C0074508A /* apps-builds.json in Resources */ = {isa = PBXBuildFile; fileRef = 15C7B4CA1FE4494B0074508A /* apps-builds.json */; };
+		15C7B4CE1FE4494C0074508A /* apps-identifier.json in Resources */ = {isa = PBXBuildFile; fileRef = 15C7B4CB1FE4494B0074508A /* apps-identifier.json */; };
+		15C7B4CF1FE4494C0074508A /* apps-all.json in Resources */ = {isa = PBXBuildFile; fileRef = 15C7B4CC1FE4494C0074508A /* apps-all.json */; };
 		15CA94351FD0267C001AA1FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CA94341FD0267C001AA1FE /* AppDelegate.swift */; };
 		15CA94371FD0267C001AA1FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CA94361FD0267C001AA1FE /* ViewController.swift */; };
 		15CA943D1FD0267C001AA1FE /* BoostApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15CA943B1FD0267C001AA1FE /* BoostApp.xcdatamodeld */; };
@@ -34,6 +47,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		155FFC081FE4110800910DFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15CA94291FD0267C001AA1FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 155FFBFD1FE4110800910DFA;
+			remoteInfo = BoostSDK;
+		};
+		155FFC0A1FE4110800910DFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15CA94291FD0267C001AA1FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15CA94301FD0267C001AA1FE;
+			remoteInfo = BoostApp;
+		};
+		155FFC111FE4110800910DFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15CA94291FD0267C001AA1FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 155FFBFD1FE4110800910DFA;
+			remoteInfo = BoostSDK;
+		};
 		15CA94491FD0267C001AA1FE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 15CA94291FD0267C001AA1FE /* Project object */;
@@ -58,6 +92,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				15A8957D1FD198FB00347281 /* Awesome.framework in Embed Frameworks */,
+				155FFC141FE4110800910DFA /* BoostSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,6 +102,17 @@
 /* Begin PBXFileReference section */
 		0554426AA33816B0E9D334F7 /* Pods_BoostApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoostApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11049ECA6BB56E138AA6977C /* Pods-BoostAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoostAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoostAppUITests/Pods-BoostAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		155FFBF71FE4097800910DFA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		155FFBFE1FE4110800910DFA /* BoostSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BoostSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		155FFC001FE4110800910DFA /* BoostSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoostSDK.h; sourceTree = "<group>"; };
+		155FFC011FE4110800910DFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		155FFC061FE4110800910DFA /* BoostSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoostSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		155FFC0D1FE4110800910DFA /* BoostSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoostSDKTests.swift; sourceTree = "<group>"; };
+		155FFC0F1FE4110800910DFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		155FFC1E1FE4115000910DFA /* Boost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boost.swift; sourceTree = "<group>"; };
+		155FFC211FE4125200910DFA /* Boost+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Boost+App.swift"; sourceTree = "<group>"; };
+		155FFC241FE4129600910DFA /* Paging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paging.swift; sourceTree = "<group>"; };
+		155FFC271FE4188700910DFA /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		15A8955C1FD0C3AD00347281 /* AppsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsDataManager.swift; sourceTree = "<group>"; };
 		15A8955F1FD1695D00347281 /* AppCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCollectionViewCell.swift; sourceTree = "<group>"; };
 		15A895731FD1945000347281 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
@@ -81,6 +127,9 @@
 		15A8958A1FD1F80400347281 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		15A8958C1FD1FB2E00347281 /* AppDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
 		15A8958E1FD1FE8500347281 /* Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
+		15C7B4CA1FE4494B0074508A /* apps-builds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "apps-builds.json"; sourceTree = "<group>"; };
+		15C7B4CB1FE4494B0074508A /* apps-identifier.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "apps-identifier.json"; sourceTree = "<group>"; };
+		15C7B4CC1FE4494C0074508A /* apps-all.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "apps-all.json"; sourceTree = "<group>"; };
 		15CA94311FD0267C001AA1FE /* BoostApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoostApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15CA94341FD0267C001AA1FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15CA94361FD0267C001AA1FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,11 +155,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		155FFBFA1FE4110800910DFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		155FFC031FE4110800910DFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				155FFC071FE4110800910DFA /* BoostSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		15CA942E1FD0267C001AA1FE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DCB9B1B47060BBDAE0B2A986 /* Pods_BoostApp.framework in Frameworks */,
+				155FFC131FE4110800910DFA /* BoostSDK.framework in Frameworks */,
 				15A8957C1FD198FB00347281 /* Awesome.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +199,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		155FFBFF1FE4110800910DFA /* BoostSDK */ = {
+			isa = PBXGroup;
+			children = (
+				155FFC261FE4187B00910DFA /* Libs */,
+				155FFC231FE4128A00910DFA /* Networking */,
+				155FFC1D1FE4113A00910DFA /* Requests */,
+				155FFC1B1FE4112200910DFA /* Models */,
+				155FFC1E1FE4115000910DFA /* Boost.swift */,
+				155FFC201FE4115400910DFA /* Supporting files */,
+			);
+			path = BoostSDK;
+			sourceTree = "<group>";
+		};
+		155FFC0C1FE4110800910DFA /* BoostSDKTests */ = {
+			isa = PBXGroup;
+			children = (
+				155FFC0D1FE4110800910DFA /* BoostSDKTests.swift */,
+				155FFC0F1FE4110800910DFA /* Info.plist */,
+			);
+			path = BoostSDKTests;
+			sourceTree = "<group>";
+		};
+		155FFC1B1FE4112200910DFA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				15A8958A1FD1F80400347281 /* App.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		155FFC1D1FE4113A00910DFA /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				155FFC211FE4125200910DFA /* Boost+App.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		155FFC201FE4115400910DFA /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				155FFC001FE4110800910DFA /* BoostSDK.h */,
+				155FFC011FE4110800910DFA /* Info.plist */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		155FFC231FE4128A00910DFA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				155FFC241FE4129600910DFA /* Paging.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		155FFC261FE4187B00910DFA /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				155FFC271FE4188700910DFA /* Result.swift */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
 		15A8955B1FD0C39C00347281 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,14 +296,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		15A895891FD1F7F800347281 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				15A8958A1FD1F80400347281 /* App.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		15CA94281FD0267C001AA1FE = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +303,8 @@
 				15CA944B1FD0267C001AA1FE /* BoostAppTests */,
 				15CA94561FD0267C001AA1FE /* BoostAppUITests */,
 				15A895721FD1943C00347281 /* Configurations */,
+				155FFBFF1FE4110800910DFA /* BoostSDK */,
+				155FFC0C1FE4110800910DFA /* BoostSDKTests */,
 				15CA94321FD0267C001AA1FE /* Products */,
 				97BCD288FC2CC0684D7A4EFD /* Pods */,
 				B06AD83FBC9456F55B1E0496 /* Frameworks */,
@@ -195,6 +317,8 @@
 				15CA94311FD0267C001AA1FE /* BoostApp.app */,
 				15CA94481FD0267C001AA1FE /* BoostAppTests.xctest */,
 				15CA94531FD0267C001AA1FE /* BoostAppUITests.xctest */,
+				155FFBFE1FE4110800910DFA /* BoostSDK.framework */,
+				155FFC061FE4110800910DFA /* BoostSDKTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -202,7 +326,6 @@
 		15CA94331FD0267C001AA1FE /* BoostApp */ = {
 			isa = PBXGroup;
 			children = (
-				15A895891FD1F7F800347281 /* Model */,
 				15A8955B1FD0C39C00347281 /* Data */,
 				15CA946B1FD03C4C001AA1FE /* Libs */,
 				15A8955E1FD1691700347281 /* Views */,
@@ -235,6 +358,9 @@
 		15CA94651FD026B7001AA1FE /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				15C7B4CC1FE4494C0074508A /* apps-all.json */,
+				15C7B4CA1FE4494B0074508A /* apps-builds.json */,
+				15C7B4CB1FE4494B0074508A /* apps-identifier.json */,
 				15CA943E1FD0267C001AA1FE /* Assets.xcassets */,
 				15CA94401FD0267C001AA1FE /* LaunchScreen.storyboard */,
 				15CA94431FD0267C001AA1FE /* Info.plist */,
@@ -266,6 +392,7 @@
 			children = (
 				15CA94691FD0271D001AA1FE /* AppsViewController.swift */,
 				15A8958C1FD1FB2E00347281 /* AppDetailViewController.swift */,
+				155FFBF71FE4097800910DFA /* HomeViewController.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -321,7 +448,55 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		155FFBFB1FE4110800910DFA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				155FFC101FE4110800910DFA /* BoostSDK.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		155FFBFD1FE4110800910DFA /* BoostSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 155FFC151FE4110800910DFA /* Build configuration list for PBXNativeTarget "BoostSDK" */;
+			buildPhases = (
+				155FFBF91FE4110800910DFA /* Sources */,
+				155FFBFA1FE4110800910DFA /* Frameworks */,
+				155FFBFB1FE4110800910DFA /* Headers */,
+				155FFBFC1FE4110800910DFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BoostSDK;
+			productName = BoostSDK;
+			productReference = 155FFBFE1FE4110800910DFA /* BoostSDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		155FFC051FE4110800910DFA /* BoostSDKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 155FFC181FE4110800910DFA /* Build configuration list for PBXNativeTarget "BoostSDKTests" */;
+			buildPhases = (
+				155FFC021FE4110800910DFA /* Sources */,
+				155FFC031FE4110800910DFA /* Frameworks */,
+				155FFC041FE4110800910DFA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				155FFC091FE4110800910DFA /* PBXTargetDependency */,
+				155FFC0B1FE4110800910DFA /* PBXTargetDependency */,
+			);
+			name = BoostSDKTests;
+			productName = BoostSDKTests;
+			productReference = 155FFC061FE4110800910DFA /* BoostSDKTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		15CA94301FD0267C001AA1FE /* BoostApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 15CA945C1FD0267C001AA1FE /* Build configuration list for PBXNativeTarget "BoostApp" */;
@@ -337,6 +512,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				155FFC121FE4110800910DFA /* PBXTargetDependency */,
 			);
 			name = BoostApp;
 			productName = BoostApp;
@@ -391,10 +567,19 @@
 		15CA94291FD0267C001AA1FE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0910;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "manGoweb UK";
 				TargetAttributes = {
+					155FFBFD1FE4110800910DFA = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					155FFC051FE4110800910DFA = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 15CA94301FD0267C001AA1FE;
+					};
 					15CA94301FD0267C001AA1FE = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
@@ -428,11 +613,27 @@
 				15CA94301FD0267C001AA1FE /* BoostApp */,
 				15CA94471FD0267C001AA1FE /* BoostAppTests */,
 				15CA94521FD0267C001AA1FE /* BoostAppUITests */,
+				155FFBFD1FE4110800910DFA /* BoostSDK */,
+				155FFC051FE4110800910DFA /* BoostSDKTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		155FFBFC1FE4110800910DFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		155FFC041FE4110800910DFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		15CA942F1FD0267C001AA1FE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -440,7 +641,10 @@
 				15A895761FD1945000347281 /* Cartfile in Resources */,
 				15A895831FD1F51A00347281 /* Localizable.strings in Resources */,
 				15CA94421FD0267C001AA1FE /* LaunchScreen.storyboard in Resources */,
+				15C7B4CF1FE4494C0074508A /* apps-all.json in Resources */,
+				15C7B4CE1FE4494C0074508A /* apps-identifier.json in Resources */,
 				15A895781FD1945000347281 /* Podfile.lock in Resources */,
+				15C7B4CD1FE4494C0074508A /* apps-builds.json in Resources */,
 				15A895771FD1945000347281 /* Podfile in Resources */,
 				15CA943F1FD0267C001AA1FE /* Assets.xcassets in Resources */,
 			);
@@ -525,12 +729,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BoostApp/Pods-BoostApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Modular/Modular.framework",
 				"${BUILT_PRODUCTS_DIR}/Presentables/Presentables.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Modular.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Presentables.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
@@ -620,11 +826,30 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		155FFBF91FE4110800910DFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				155FFC1C1FE4112F00910DFA /* App.swift in Sources */,
+				155FFC281FE4188700910DFA /* Result.swift in Sources */,
+				155FFC251FE4129600910DFA /* Paging.swift in Sources */,
+				155FFC221FE4125200910DFA /* Boost+App.swift in Sources */,
+				155FFC1F1FE4115000910DFA /* Boost.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		155FFC021FE4110800910DFA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				155FFC0E1FE4110800910DFA /* BoostSDKTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		15CA942D1FD0267C001AA1FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15A8958B1FD1F80400347281 /* App.swift in Sources */,
 				15A8958D1FD1FB2E00347281 /* AppDetailViewController.swift in Sources */,
 				15CA94371FD0267C001AA1FE /* ViewController.swift in Sources */,
 				15A8955D1FD0C3AD00347281 /* AppsDataManager.swift in Sources */,
@@ -635,6 +860,7 @@
 				15CA94351FD0267C001AA1FE /* AppDelegate.swift in Sources */,
 				15A895801FD1F48800347281 /* Lang.swift in Sources */,
 				15A8958F1FD1FE8500347281 /* Env.swift in Sources */,
+				155FFBF81FE4097800910DFA /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +883,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		155FFC091FE4110800910DFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 155FFBFD1FE4110800910DFA /* BoostSDK */;
+			targetProxy = 155FFC081FE4110800910DFA /* PBXContainerItemProxy */;
+		};
+		155FFC0B1FE4110800910DFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 15CA94301FD0267C001AA1FE /* BoostApp */;
+			targetProxy = 155FFC0A1FE4110800910DFA /* PBXContainerItemProxy */;
+		};
+		155FFC121FE4110800910DFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 155FFBFD1FE4110800910DFA /* BoostSDK */;
+			targetProxy = 155FFC111FE4110800910DFA /* PBXContainerItemProxy */;
+		};
 		15CA944A1FD0267C001AA1FE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 15CA94301FD0267C001AA1FE /* BoostApp */;
@@ -692,6 +933,88 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		155FFC161FE4110800910DFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3R8ZGADY96;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "BoostSDK/Supporting files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.uk.mangoweb.BoostSDK;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		155FFC171FE4110800910DFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3R8ZGADY96;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "BoostSDK/Supporting files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.uk.mangoweb.BoostSDK;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		155FFC191FE4110800910DFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BoostSDKTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.uk.mangoweb.BoostSDKTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoostApp.app/BoostApp";
+			};
+			name = Debug;
+		};
+		155FFC1A1FE4110800910DFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BoostSDKTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.uk.mangoweb.BoostSDKTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoostApp.app/BoostApp";
+			};
+			name = Release;
+		};
 		15CA945A1FD0267C001AA1FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -805,6 +1128,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 30EA3943B6F7F3F2671D0683 /* Pods-BoostApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R8ZGADY96;
@@ -825,6 +1149,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 469B3AC079CCD70FA217342F /* Pods-BoostApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R8ZGADY96;
@@ -912,6 +1237,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		155FFC151FE4110800910DFA /* Build configuration list for PBXNativeTarget "BoostSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				155FFC161FE4110800910DFA /* Debug */,
+				155FFC171FE4110800910DFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		155FFC181FE4110800910DFA /* Build configuration list for PBXNativeTarget "BoostSDKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				155FFC191FE4110800910DFA /* Debug */,
+				155FFC1A1FE4110800910DFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		15CA942C1FD0267C001AA1FE /* Build configuration list for PBXProject "BoostApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

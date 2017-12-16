@@ -1,0 +1,62 @@
+[
+	{
+		"build": "123",
+		"basic": false,
+		"id": 8,
+		"platform": 1,
+		"team_id": 1,
+		"version": "1.2.34",
+		"identifier": "com.boost.super-app1",
+		"created": 535044877,
+		"name": "Final app name",
+		"modified": 535044877
+	},
+	{
+		"build": "123",
+		"basic": false,
+		"id": 7,
+		"platform": 1,
+		"team_id": 1,
+		"version": "1.2.12",
+		"identifier": "com.boost.super-app1",
+		"created": 535044777,
+		"name": "Test app name",
+		"modified": 535044777
+	},
+	{
+		"build": "123",
+		"basic": false,
+		"id": 6,
+		"platform": 1,
+		"team_id": 1,
+		"version": "1.2.6",
+		"identifier": "com.boost.super-app1",
+		"created": 535044677,
+		"name": "Super app 1",
+		"modified": 535044677
+	},
+	{
+		"build": "123",
+		"basic": false,
+		"id": 5,
+		"platform": 1,
+		"team_id": 1,
+		"version": "1.2.4",
+		"identifier": "com.boost.super-app1",
+		"created": 535044577,
+		"name": "Super app 1",
+		"modified": 535044577
+	},
+	{
+		"build": "123",
+		"basic": false,
+		"id": 4,
+		"platform": 1,
+		"team_id": 1,
+		"version": "1.2.3",
+		"identifier": "com.boost.super-app1",
+		"created": 535044477,
+		"name": "Super app 1",
+		"modified": 535044477
+	},
+]

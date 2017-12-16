@@ -11,6 +11,7 @@ import UIKit
 import Presentables
 import SnapKit
 import Awesome
+import BoostSDK
 
 
 class AppDetailViewController: ViewController {
@@ -103,7 +104,7 @@ class AppDetailViewController: ViewController {
         }
     }
     
-    private func configureElements() {
+    override func configureElements() {
         view.backgroundColor = .white
         
         configureNavBar()
@@ -118,7 +119,6 @@ class AppDetailViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureElements()
         layoutElements()
     }
     

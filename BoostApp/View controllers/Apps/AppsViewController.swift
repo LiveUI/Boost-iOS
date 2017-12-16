@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 import Presentables
-import SnapKit
+import Modular
 import Awesome
+import BoostSDK
 
 
 class AppsViewController: ViewController {
@@ -55,7 +56,9 @@ class AppsViewController: ViewController {
         view.addSubview(collectionView)
     }
     
-    func configureElements() {
+    override func configureElements() {
+        super.configureElements()
+        
         configureNavBar()
         configureCollectionView()
     }
@@ -65,7 +68,6 @@ class AppsViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureElements()
         layoutElements()
         
         // Do the binding
