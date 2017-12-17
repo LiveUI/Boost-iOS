@@ -1,5 +1,5 @@
 //
-//  Boost+App.swift
+//  Api.swift
 //  BoostSDK
 //
 //  Created by Ondrej Rafaj on 15/12/2017.
@@ -9,17 +9,13 @@
 import Foundation
 
 
-extension Boost {
+public struct Api {
     
-    static func getAppFileTemp(name: String = "all") -> [App] {
+    func getAppFileTemp(name: String = "all") -> [App] {
         let path = Bundle.main.path(forResource: "apps-\(name)", ofType: "json")!
         let data = try! Data(contentsOf: URL(fileURLWithPath: path), options: [])
         let apps = try! JSONDecoder().decode([App].self, from: data)
         return apps
-    }
-    
-    public static func apps(paging: Paging = Paging(), _ result: ((_ result: Result<[App]>)->())) {
-        result(Result.success(getAppFileTemp(name: "all")))
     }
     
 }

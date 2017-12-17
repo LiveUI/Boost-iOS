@@ -11,17 +11,15 @@ import Foundation
 
 public struct Config {
     
-    let baseUrl: URL = URL(string: "http://api.appstorehq.net")!
+    public let baseUrl: URL = URL(string: "http://api.appstorehq.net")!
     
 }
 
 
-public class Boost {
+public struct Boost {
     
-    let config: Config
+    static public let config = Config()
     
-    init(config: Config) {
-        self.config = config
-    }
+    static public let api = Api()
     
 }

@@ -9,34 +9,69 @@
 import Foundation
 import Presentables
 import BoostSDK
+import Presentables
 
 
-class AppsDataManager: PresentableCollectionViewDataManager {
+protocol AppsDataManagerable: CollectionViewPresentableManager {
+    var appDetailRequested: ((App)->())? { get set }
+    var appActionRequested: ((App)->())? { get set }
+    func loadData()
+    var selectedTags: [String] { get set }
+}
+
+
+class AppsDataManager: PresentableCollectionViewDataManager, AppsDataManagerable {
+    
+    let leadingApp: App
     
     var appDetailRequested: ((App)->())?
     var appActionRequested: ((App)->())?
     
-    var apps: [App] = []
+    var selectedTags: [String] = []
+    
+    
+    // MARK: Initialization
+    
+    init(leadingApp: App) {
+        self.leadingApp = leadingApp
+        
+        super.init()
+    }
+    
+    // MARK: Data handling
     
     func loadData() {
-        var presenters: [Presenter] = []
-        for app in apps {
-            let p = AppCollectionViewCellPresenter()
-            p.didSelectCell = {
-                self.appDetailRequested?(app)
-            }
-            p.configure = { presentable in
-                guard let cell = presentable as? AppCollectionViewCell else {
-                    return
+        func makePresenters(_ apps: [App]) {
+            var presenters: [Presenter] = []
+            for app in apps {
+                let p = AppCollectionViewCellPresenter()
+                p.didSelectCell = {
+                    self.appDetailRequested?(app)
                 }
-                cell.didTapActionButton = { sender in
-                    self.appActionRequested?(app)
+                p.configure = { presentable in
+                    guard let cell = presentable as? AppCollectionViewCell else {
+                        return
+                    }
+                    cell.didTapActionButton = { sender in
+                        self.appActionRequested?(app)
+                    }
+                    cell.nameLabel.text = app.name
                 }
-                cell.nameLabel.text = app.name
+                presenters.append(p)
             }
-            presenters.append(p)
+            self.data.append(presenters.section)
         }
-        data.append(presenters.section)
+        
+        Boost.api.apps(identifier: leadingApp.identifier, platform: leadingApp.platform) { (result) in
+            print(result)
+            
+            switch result {
+            case .success(let apps):
+                makePresenters(apps)
+            case .error(let error):
+                print(error?.localizedDescription ?? "API Error")
+            }
+        }
     }
     
     // MARK: Collection view delegate methods

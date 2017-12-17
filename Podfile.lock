@@ -5,6 +5,7 @@ PODS:
   - Presentables (0.4.3)
   - SnapKit (4.0.0)
   - SpecTools (1.0.2)
+  - TagListView (1.3.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5.1)
@@ -12,6 +13,7 @@ DEPENDENCIES:
   - Presentables (~> 0.4.3)
   - SnapKit (~> 4.0.0)
   - SpecTools
+  - TagListView (~> 1.3.0)
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
@@ -19,7 +21,8 @@ SPEC CHECKSUMS:
   Presentables: 0b9753d119c99729d3c14a868a8c9159c80f71a2
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SpecTools: 77474921254b23ea50bb80f8763214f41d9d63c5
+  TagListView: 669f7d4455003c877655875d34829731c4191528
 
-PODFILE CHECKSUM: df0240de700f6d77c75c48b10d80914dc5122117
+PODFILE CHECKSUM: 49904e2f5067fec6e21efe5e360707757ed33476
 
 COCOAPODS: 1.4.0.beta.2

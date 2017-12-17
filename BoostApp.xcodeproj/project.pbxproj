@@ -15,7 +15,7 @@
 		155FFC141FE4110800910DFA /* BoostSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 155FFBFE1FE4110800910DFA /* BoostSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		155FFC1C1FE4112F00910DFA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8958A1FD1F80400347281 /* App.swift */; };
 		155FFC1F1FE4115000910DFA /* Boost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FFC1E1FE4115000910DFA /* Boost.swift */; };
-		155FFC221FE4125200910DFA /* Boost+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FFC211FE4125200910DFA /* Boost+App.swift */; };
+		155FFC221FE4125200910DFA /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FFC211FE4125200910DFA /* Api.swift */; };
 		155FFC251FE4129600910DFA /* Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FFC241FE4129600910DFA /* Paging.swift */; };
 		155FFC281FE4188700910DFA /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FFC271FE4188700910DFA /* Result.swift */; };
 		15A8955D1FD0C3AD00347281 /* AppsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8955C1FD0C3AD00347281 /* AppsDataManager.swift */; };
@@ -32,6 +32,14 @@
 		15C7B4CD1FE4494C0074508A /* apps-builds.json in Resources */ = {isa = PBXBuildFile; fileRef = 15C7B4CA1FE4494B0074508A /* apps-builds.json */; };
 		15C7B4CE1FE4494C0074508A /* apps-identifier.json in Resources */ = {isa = PBXBuildFile; fileRef = 15C7B4CB1FE4494B0074508A /* apps-identifier.json */; };
 		15C7B4CF1FE4494C0074508A /* apps-all.json in Resources */ = {isa = PBXBuildFile; fileRef = 15C7B4CC1FE4494C0074508A /* apps-all.json */; };
+		15C7B4D11FE6E0790074508A /* Api+Apps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7B4D01FE6E0790074508A /* Api+Apps.swift */; };
+		15C7B4D31FE6E0F80074508A /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7B4D21FE6E0F80074508A /* RootViewController.swift */; };
+		15C7B4D51FE6FAED0074508A /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7B4D41FE6FAED0074508A /* FiltersViewController.swift */; };
+		15C7B4D71FE6FB2C0074508A /* FiltersDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7B4D61FE6FB2C0074508A /* FiltersDataManager.swift */; };
+		15C7B4D91FE6FB930074508A /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7B4D81FE6FB930074508A /* FilterTableViewCell.swift */; };
+		15C7B4DB1FE6FC1C0074508A /* SortTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7B4DA1FE6FC1C0074508A /* SortTableViewCell.swift */; };
+		15C7B4DD1FE712BC0074508A /* HomeDataManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7B4DC1FE712BB0074508A /* HomeDataManagement.swift */; };
+		15C7B4E01FE717420074508A /* AppHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7B4DF1FE717420074508A /* AppHeader.swift */; };
 		15CA94351FD0267C001AA1FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CA94341FD0267C001AA1FE /* AppDelegate.swift */; };
 		15CA94371FD0267C001AA1FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CA94361FD0267C001AA1FE /* ViewController.swift */; };
 		15CA943D1FD0267C001AA1FE /* BoostApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15CA943B1FD0267C001AA1FE /* BoostApp.xcdatamodeld */; };
@@ -110,7 +118,7 @@
 		155FFC0D1FE4110800910DFA /* BoostSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoostSDKTests.swift; sourceTree = "<group>"; };
 		155FFC0F1FE4110800910DFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		155FFC1E1FE4115000910DFA /* Boost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boost.swift; sourceTree = "<group>"; };
-		155FFC211FE4125200910DFA /* Boost+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Boost+App.swift"; sourceTree = "<group>"; };
+		155FFC211FE4125200910DFA /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		155FFC241FE4129600910DFA /* Paging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paging.swift; sourceTree = "<group>"; };
 		155FFC271FE4188700910DFA /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		15A8955C1FD0C3AD00347281 /* AppsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsDataManager.swift; sourceTree = "<group>"; };
@@ -130,6 +138,14 @@
 		15C7B4CA1FE4494B0074508A /* apps-builds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "apps-builds.json"; sourceTree = "<group>"; };
 		15C7B4CB1FE4494B0074508A /* apps-identifier.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "apps-identifier.json"; sourceTree = "<group>"; };
 		15C7B4CC1FE4494C0074508A /* apps-all.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "apps-all.json"; sourceTree = "<group>"; };
+		15C7B4D01FE6E0790074508A /* Api+Apps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+Apps.swift"; sourceTree = "<group>"; };
+		15C7B4D21FE6E0F80074508A /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		15C7B4D41FE6FAED0074508A /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
+		15C7B4D61FE6FB2C0074508A /* FiltersDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersDataManager.swift; sourceTree = "<group>"; };
+		15C7B4D81FE6FB930074508A /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
+		15C7B4DA1FE6FC1C0074508A /* SortTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortTableViewCell.swift; sourceTree = "<group>"; };
+		15C7B4DC1FE712BB0074508A /* HomeDataManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManagement.swift; sourceTree = "<group>"; };
+		15C7B4DF1FE717420074508A /* AppHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHeader.swift; sourceTree = "<group>"; };
 		15CA94311FD0267C001AA1FE /* BoostApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoostApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15CA94341FD0267C001AA1FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15CA94361FD0267C001AA1FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -232,7 +248,8 @@
 		155FFC1D1FE4113A00910DFA /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				155FFC211FE4125200910DFA /* Boost+App.swift */,
+				155FFC211FE4125200910DFA /* Api.swift */,
+				15C7B4D01FE6E0790074508A /* Api+Apps.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -266,6 +283,8 @@
 			isa = PBXGroup;
 			children = (
 				15A8955C1FD0C3AD00347281 /* AppsDataManager.swift */,
+				15C7B4D61FE6FB2C0074508A /* FiltersDataManager.swift */,
+				15C7B4DC1FE712BB0074508A /* HomeDataManagement.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -273,6 +292,7 @@
 		15A8955E1FD1691700347281 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				15C7B4DE1FE717340074508A /* Headers */,
 				15A895791FD198C900347281 /* Cells */,
 			);
 			path = Views;
@@ -292,8 +312,18 @@
 			isa = PBXGroup;
 			children = (
 				15A8955F1FD1695D00347281 /* AppCollectionViewCell.swift */,
+				15C7B4D81FE6FB930074508A /* FilterTableViewCell.swift */,
+				15C7B4DA1FE6FC1C0074508A /* SortTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		15C7B4DE1FE717340074508A /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				15C7B4DF1FE717420074508A /* AppHeader.swift */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		15CA94281FD0267C001AA1FE = {
@@ -390,9 +420,11 @@
 		15CA94681FD02710001AA1FE /* Apps */ = {
 			isa = PBXGroup;
 			children = (
-				15CA94691FD0271D001AA1FE /* AppsViewController.swift */,
-				15A8958C1FD1FB2E00347281 /* AppDetailViewController.swift */,
 				155FFBF71FE4097800910DFA /* HomeViewController.swift */,
+				15CA94691FD0271D001AA1FE /* AppsViewController.swift */,
+				15C7B4D21FE6E0F80074508A /* RootViewController.swift */,
+				15A8958C1FD1FB2E00347281 /* AppDetailViewController.swift */,
+				15C7B4D41FE6FAED0074508A /* FiltersViewController.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -732,6 +764,7 @@
 				"${BUILT_PRODUCTS_DIR}/Modular/Modular.framework",
 				"${BUILT_PRODUCTS_DIR}/Presentables/Presentables.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/TagListView/TagListView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -739,6 +772,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Modular.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Presentables.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TagListView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -830,10 +864,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15C7B4D11FE6E0790074508A /* Api+Apps.swift in Sources */,
 				155FFC1C1FE4112F00910DFA /* App.swift in Sources */,
 				155FFC281FE4188700910DFA /* Result.swift in Sources */,
 				155FFC251FE4129600910DFA /* Paging.swift in Sources */,
-				155FFC221FE4125200910DFA /* Boost+App.swift in Sources */,
+				155FFC221FE4125200910DFA /* Api.swift in Sources */,
 				155FFC1F1FE4115000910DFA /* Boost.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -851,14 +886,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				15A8958D1FD1FB2E00347281 /* AppDetailViewController.swift in Sources */,
+				15C7B4D71FE6FB2C0074508A /* FiltersDataManager.swift in Sources */,
 				15CA94371FD0267C001AA1FE /* ViewController.swift in Sources */,
+				15C7B4D31FE6E0F80074508A /* RootViewController.swift in Sources */,
 				15A8955D1FD0C3AD00347281 /* AppsDataManager.swift in Sources */,
 				15CA943D1FD0267C001AA1FE /* BoostApp.xcdatamodeld in Sources */,
+				15C7B4D51FE6FAED0074508A /* FiltersViewController.swift in Sources */,
 				15A895601FD1695D00347281 /* AppCollectionViewCell.swift in Sources */,
+				15C7B4DD1FE712BC0074508A /* HomeDataManagement.swift in Sources */,
 				15CA946A1FD0271D001AA1FE /* AppsViewController.swift in Sources */,
+				15C7B4E01FE717420074508A /* AppHeader.swift in Sources */,
+				15C7B4D91FE6FB930074508A /* FilterTableViewCell.swift in Sources */,
 				15CA946E1FD03C63001AA1FE /* Enterprise.swift in Sources */,
 				15CA94351FD0267C001AA1FE /* AppDelegate.swift in Sources */,
 				15A895801FD1F48800347281 /* Lang.swift in Sources */,
+				15C7B4DB1FE6FC1C0074508A /* SortTableViewCell.swift in Sources */,
 				15A8958F1FD1FE8500347281 /* Env.swift in Sources */,
 				155FFBF81FE4097800910DFA /* HomeViewController.swift in Sources */,
 			);
@@ -1128,7 +1170,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 30EA3943B6F7F3F2671D0683 /* Pods-BoostApp.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R8ZGADY96;
@@ -1149,7 +1190,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 469B3AC079CCD70FA217342F /* Pods-BoostApp.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R8ZGADY96;

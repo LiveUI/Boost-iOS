@@ -9,6 +9,7 @@ target 'BoostApp' do
     pod 'Alamofire', '~>4.5.1'
     pod 'SnapKit', '~>4.0.0'
     pod 'Modular', '~>0.0.8'
+    pod 'TagListView', '~> 1.3.0'
 
     target 'BoostAppTests' do
         inherit! :search_paths
