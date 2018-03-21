@@ -40,6 +40,7 @@
 		15C7B4DB1FE6FC1C0074508A /* SortTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7B4DA1FE6FC1C0074508A /* SortTableViewCell.swift */; };
 		15C7B4DD1FE712BC0074508A /* HomeDataManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7B4DC1FE712BB0074508A /* HomeDataManagement.swift */; };
 		15C7B4E01FE717420074508A /* AppHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7B4DF1FE717420074508A /* AppHeader.swift */; };
+		15C7B4E41FE7B6510074508A /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7B4E31FE7B6510074508A /* CommentsViewController.swift */; };
 		15CA94351FD0267C001AA1FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CA94341FD0267C001AA1FE /* AppDelegate.swift */; };
 		15CA94371FD0267C001AA1FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CA94361FD0267C001AA1FE /* ViewController.swift */; };
 		15CA943D1FD0267C001AA1FE /* BoostApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15CA943B1FD0267C001AA1FE /* BoostApp.xcdatamodeld */; };
@@ -146,6 +147,7 @@
 		15C7B4DA1FE6FC1C0074508A /* SortTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortTableViewCell.swift; sourceTree = "<group>"; };
 		15C7B4DC1FE712BB0074508A /* HomeDataManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManagement.swift; sourceTree = "<group>"; };
 		15C7B4DF1FE717420074508A /* AppHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHeader.swift; sourceTree = "<group>"; };
+		15C7B4E31FE7B6510074508A /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		15CA94311FD0267C001AA1FE /* BoostApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoostApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15CA94341FD0267C001AA1FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15CA94361FD0267C001AA1FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -326,6 +328,14 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
+		15C7B4E21FE7B6390074508A /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				15C7B4E31FE7B6510074508A /* CommentsViewController.swift */,
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
 		15CA94281FD0267C001AA1FE = {
 			isa = PBXGroup;
 			children = (
@@ -403,6 +413,7 @@
 		15CA94661FD026D0001AA1FE /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
+				15C7B4E21FE7B6390074508A /* Comments */,
 				15CA94681FD02710001AA1FE /* Apps */,
 				15CA94671FD026F2001AA1FE /* Base */,
 			);
@@ -892,6 +903,7 @@
 				15A8955D1FD0C3AD00347281 /* AppsDataManager.swift in Sources */,
 				15CA943D1FD0267C001AA1FE /* BoostApp.xcdatamodeld in Sources */,
 				15C7B4D51FE6FAED0074508A /* FiltersViewController.swift in Sources */,
+				15C7B4E41FE7B6510074508A /* CommentsViewController.swift in Sources */,
 				15A895601FD1695D00347281 /* AppCollectionViewCell.swift in Sources */,
 				15C7B4DD1FE712BC0074508A /* HomeDataManagement.swift in Sources */,
 				15CA946A1FD0271D001AA1FE /* AppsViewController.swift in Sources */,
