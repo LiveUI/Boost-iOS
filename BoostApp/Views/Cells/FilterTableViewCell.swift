@@ -3,16 +3,14 @@
 //  BoostApp
 //
 //  Created by Ondrej Rafaj on 17/12/2017.
-//  Copyright © 2017 manGoweb UK. All rights reserved.
+//  Copyright © 2017 LiveUI. All rights reserved.
 //
 
 import Foundation
 import UIKit
-import Presentables
 
 
-class FilterTableViewCell: UITableViewCell, Presentable {
-    
+class FilterTableViewCell: UITableViewCell {
     
     // MARK: Layout
     
@@ -36,13 +34,3 @@ class FilterTableViewCell: UITableViewCell, Presentable {
     
 }
 
-
-class FilterTableViewCellPresenter: SelectablePresenter {
-    
-    var didSelectCell: (() -> ())?
-    
-    var presentable: Presentable.Type = FilterTableViewCell.self
-    
-    var configure: ((Presentable) -> ())?
-    
-}

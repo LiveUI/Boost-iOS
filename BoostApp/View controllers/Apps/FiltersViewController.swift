@@ -3,7 +3,7 @@
 //  BoostApp
 //
 //  Created by Ondrej Rafaj on 17/12/2017.
-//  Copyright © 2017 manGoweb UK. All rights reserved.
+//  Copyright © 2017 LiveUI. All rights reserved.
 //
 
 import Foundation
@@ -25,7 +25,7 @@ class FiltersViewController: UITableViewController {
         dataController.tagsChanged = {
             self.tagsChanged?(self.dataController.selectedTags)
         }
-        var dc: TableViewPresentableManager = dataController
+        var dc: PresentableManager = dataController
         tableView.bind(withPresentableManager: &dc)
         
     }

@@ -3,11 +3,12 @@
 //  BoostApp
 //
 //  Created by Ondrej Rafaj on 30/11/2017.
-//  Copyright © 2017 manGoweb UK. All rights reserved.
+//  Copyright © 2017 LiveUI. All rights reserved.
 //
 
 import UIKit
 import CoreData
+import SideMenu
 
 
 @UIApplicationMain
@@ -15,16 +16,30 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    var coordinator: BaseCoordinator!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         if let window = window {
             window.backgroundColor = UIColor.white
-            let nc = UINavigationController(rootViewController: HomeViewController())
-            window.rootViewController = nc
+            
+            coordinator = BaseCoordinator()
+            window.rootViewController = coordinator.centerBaseScreen
+            
+//            let l = LeftMenuViewController()
+//            let left = LeftBaseViewController(rootViewController: l)
+//            SideMenuManager.default.menuLeftNavigationController = left
+//
+//
+//            let nc = CenterViewController(rootViewController: HomeViewController())
+//            SideMenuManager.default.menuAddPanGestureToPresent(toView: nc.navigationBar)
+//            SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: nc.view)
+//            window.rootViewController = nc
+            
             window.makeKeyAndVisible()
         }
+        
         return true
     }
 

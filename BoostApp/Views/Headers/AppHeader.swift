@@ -3,15 +3,14 @@
 //  BoostApp
 //
 //  Created by Ondrej Rafaj on 17/12/2017.
-//  Copyright © 2017 manGoweb UK. All rights reserved.
+//  Copyright © 2017 LiveUI. All rights reserved.
 //
 
 import Foundation
-import Presentables
 import Modular
 
 
-class AppHeader: UICollectionReusableView, Presentable {
+class AppHeader: UICollectionReusableView {
     
     var didPressDeleteAll: (()->())?
     var didPressShowAll: (()->())?
@@ -61,11 +60,3 @@ class AppHeader: UICollectionReusableView, Presentable {
     
 }
 
-
-class AppHeaderPresenter: PresenterHeader {
-    
-    var presentable: Presentable.Type = AppHeader.self
-    
-    var configure: ((Presentable) -> ())?
-    
-}

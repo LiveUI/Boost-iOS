@@ -3,17 +3,16 @@
 //  BoostApp
 //
 //  Created by Ondrej Rafaj on 01/12/2017.
-//  Copyright © 2017 manGoweb UK. All rights reserved.
+//  Copyright © 2017 LiveUI. All rights reserved.
 //
 
 import Foundation
 import UIKit
-import Presentables
 import SnapKit
 import Awesome
 
 
-class AppCollectionViewCell: UICollectionViewCell, Presentable {
+class AppCollectionViewCell: UICollectionViewCell {
     
     let iconView = UIImageView()
     let nameLabel = UILabel()
@@ -106,16 +105,5 @@ class AppCollectionViewCell: UICollectionViewCell, Presentable {
     @objc func didTapInstallButton(_ sender: UIButton) {
         didTapActionButton?(sender)
     }
-    
-}
-
-
-class AppCollectionViewCellPresenter: SelectablePresenter {
-    
-    var presentable: Presentable.Type = AppCollectionViewCell.self
-    
-    var configure: ((Presentable) -> ())?
-    
-    var didSelectCell: (()->())?
     
 }

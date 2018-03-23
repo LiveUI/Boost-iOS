@@ -3,7 +3,7 @@
 //  BoostApp
 //
 //  Created by Ondrej Rafaj on 15/12/2017.
-//  Copyright © 2017 manGoweb UK. All rights reserved.
+//  Copyright © 2017 LiveUI. All rights reserved.
 //
 
 import Foundation
@@ -19,8 +19,8 @@ class HomeViewController: RootViewController {
     
     // MARK: Initialization
     
-    override init() {
-        super.init()
+    init() {
+        super.init(app: <#T##App#>)
         
         let dataController = HomeDataManager()
         dataController.allBuildsRequested = { app in
@@ -38,7 +38,7 @@ class HomeViewController: RootViewController {
         let layout = UICollectionViewFlowLayout()
         collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         
-        collectionView.register(header: AppHeader.self)
+//        collectionView.register(header: AppHeader.self)
     }
     
     required init?(coder aDecoder: NSCoder) {

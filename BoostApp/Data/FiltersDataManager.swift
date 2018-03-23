@@ -3,7 +3,7 @@
 //  BoostApp
 //
 //  Created by Ondrej Rafaj on 17/12/2017.
-//  Copyright © 2017 manGoweb UK. All rights reserved.
+//  Copyright © 2017 LiveUI. All rights reserved.
 //
 
 import Foundation
@@ -14,31 +14,26 @@ class FiltersDataManager: PresentableTableViewDataManager {
     
     var selectedTags: [String] = [] {
         didSet {
-            tableView?.reloadData()
+//            tableView?.reloadData()
         }
     }
     var tagsChanged: (()->())?
     
     func loadData() {
-        var presenters: [Presenter] = []
+        var section = PresentableSection()
         
-        let sort = SortTableViewCellPresenter()
-        sort.configure = { presentable in
-            guard let cell = presentable as? SortTableViewCell else { return }
+        let sort = Presentable<SortTableViewCell>.create({ (cell) in
             cell.textLabel?.text = "Sorting"
-        }
-        presenters.append(sort)
+        })
+        section.presentables.append(sort)
         
         let tags: [String] = ["Version_1.2.0", "Another tag", "this is dope!", "Lorem", "ipsum", "dolor", "sit", "amet", "rectum", "dolae", "woe"]
         
         for tag in tags {
-            let filter = FilterTableViewCellPresenter()
-            filter.configure = { presentable in
-                guard let cell = presentable as? FilterTableViewCell else { return }
+            let filter = Presentable<FilterTableViewCell>.create({ (cell) in
                 cell.textLabel?.text = tag
                 cell.detailTextLabel?.text = "1981"
-            }
-            filter.didSelectCell = {
+            }).cellSelected {
                 if self.selectedTags.contains(tag) {
                     guard let index = self.selectedTags.index(of: tag) else { return }
                     self.selectedTags.remove(at: index)
@@ -48,10 +43,10 @@ class FiltersDataManager: PresentableTableViewDataManager {
                 }
                 self.tagsChanged?()
             }
-            presenters.append(filter)
+            section.presentables.append(filter)
         }
         
-        data = [presenters.section]
+        data.append(section)
     }
     
     // MARK: Table view delegate methods

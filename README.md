@@ -9,7 +9,7 @@ iOS client for Boost enterprise AppStore
 
 ## Backend
 
-Backend can be found [here](https://github.com/manGoweb/Boost-iOS). Written using server-side Swift and framework Vapor 3
+Backend can be found [here](https://github.com/LiveUI/Boost). Written using server-side Swift and framework Vapor 3
 
 ## Slack
 

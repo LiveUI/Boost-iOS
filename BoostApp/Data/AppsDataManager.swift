@@ -3,7 +3,7 @@
 //  BoostApp
 //
 //  Created by Ondrej Rafaj on 30/11/2017.
-//  Copyright © 2017 manGoweb UK. All rights reserved.
+//  Copyright © 2017 LiveUI. All rights reserved.
 //
 
 import Foundation
@@ -12,15 +12,7 @@ import BoostSDK
 import Presentables
 
 
-protocol AppsDataManagerable: CollectionViewPresentableManager {
-    var appDetailRequested: ((App)->())? { get set }
-    var appActionRequested: ((App)->())? { get set }
-    func loadData()
-    var selectedTags: [String] { get set }
-}
-
-
-class AppsDataManager: PresentableCollectionViewDataManager, AppsDataManagerable {
+class AppsDataManager: PresentableCollectionViewDataManager {
     
     let leadingApp: App
     
@@ -42,24 +34,19 @@ class AppsDataManager: PresentableCollectionViewDataManager, AppsDataManagerable
     
     func loadData() {
         func makePresenters(_ apps: [App]) {
-            var presenters: [Presenter] = []
+            let section = PresentableSection()
             for app in apps {
-                let p = AppCollectionViewCellPresenter()
-                p.didSelectCell = {
-                    self.appDetailRequested?(app)
-                }
-                p.configure = { presentable in
-                    guard let cell = presentable as? AppCollectionViewCell else {
-                        return
-                    }
+                let presentable = Presentable<AppCollectionViewCell>.create { (cell) in
                     cell.didTapActionButton = { sender in
                         self.appActionRequested?(app)
                     }
                     cell.nameLabel.text = app.name
+                }.cellSelected {
+                    self.appDetailRequested?(app)
                 }
-                presenters.append(p)
+                section.presentables.append(presentable)
             }
-            self.data.append(presenters.section)
+            data.append(section)
         }
         
         Boost.api.apps(identifier: leadingApp.identifier, platform: leadingApp.platform) { (result) in

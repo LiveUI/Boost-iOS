@@ -3,7 +3,7 @@
 //  BoostApp
 //
 //  Created by Ondrej Rafaj on 17/12/2017.
-//  Copyright © 2017 manGoweb UK. All rights reserved.
+//  Copyright © 2017 LiveUI. All rights reserved.
 //
 
 import Foundation
@@ -12,7 +12,7 @@ import BoostSDK
 import Presentables
 
 
-class HomeDataManager: PresentableCollectionViewDataManager, AppsDataManagerable {
+class HomeDataManager: PresentableCollectionViewDataManager {
     
     var appDetailRequested: ((App)->())?
     var appActionRequested: ((App)->())?
@@ -52,9 +52,7 @@ class HomeDataManager: PresentableCollectionViewDataManager, AppsDataManagerable
                 let section = PresentableSection()
                 
                 // Create a section header
-                let header = AppHeaderPresenter()
-                header.configure = { presentable in
-                    guard let header = presentable as? AppHeader else {  return }
+                let header = Presentable<AppHeader>.create { (header) in
                     header.titleLabel.text = "\(apps.first!.name) (\(apps.first!.identifier))"
                     header.didPressShowAll = {
                         self.allBuildsRequested?(apps.first!)
@@ -64,24 +62,22 @@ class HomeDataManager: PresentableCollectionViewDataManager, AppsDataManagerable
                         self.deleteAllRequested?(apps.first!)
                     }
                 }
+
                 section.header = header
                 
                 // And all the presenters
                 for app in apps.sorted(by: { (app1, app2) -> Bool in
                     app1.created! < app2.created!
                 }) {
-                    let p = AppCollectionViewCellPresenter()
-                    p.didSelectCell = {
-                        self.appDetailRequested?(app)
-                    }
-                    p.configure = { presentable in
-                        guard let cell = presentable as? AppCollectionViewCell else {  return }
+                    let presentable = Presentable<AppCollectionViewCell>.create { (cell) in
                         cell.didTapActionButton = { sender in
                             self.appActionRequested?(app)
                         }
                         cell.nameLabel.text = app.name
+                    }.cellSelected {
+                        self.appDetailRequested?(app)
                     }
-                    section.presenters.append(p)
+                    section.presentables.append(presentable)
                 }
                 self.data.append(section)
             }

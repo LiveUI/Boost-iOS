@@ -18,6 +18,8 @@
 		155FFC221FE4125200910DFA /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FFC211FE4125200910DFA /* Api.swift */; };
 		155FFC251FE4129600910DFA /* Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FFC241FE4129600910DFA /* Paging.swift */; };
 		155FFC281FE4188700910DFA /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FFC271FE4188700910DFA /* Result.swift */; };
+		156AFEAC2063315100FB91B3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AFEAB2063315100FB91B3 /* SettingsViewController.swift */; };
+		156AFEAF206335E600FB91B3 /* InfixOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AFEAE206335E600FB91B3 /* InfixOperators.swift */; };
 		15A8955D1FD0C3AD00347281 /* AppsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8955C1FD0C3AD00347281 /* AppsDataManager.swift */; };
 		15A895601FD1695D00347281 /* AppCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8955F1FD1695D00347281 /* AppCollectionViewCell.swift */; };
 		15A895761FD1945000347281 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 15A895731FD1945000347281 /* Cartfile */; };
@@ -50,6 +52,12 @@
 		15CA94581FD0267C001AA1FE /* BoostAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CA94571FD0267C001AA1FE /* BoostAppUITests.swift */; };
 		15CA946A1FD0271D001AA1FE /* AppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CA94691FD0271D001AA1FE /* AppsViewController.swift */; };
 		15CA946E1FD03C63001AA1FE /* Enterprise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CA946D1FD03C63001AA1FE /* Enterprise.swift */; };
+		15D73C92206306470011D5C9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D73C91206306470011D5C9 /* LoginViewController.swift */; };
+		15D73C9520630EC00011D5C9 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D73C9420630EC00011D5C9 /* AccountsViewController.swift */; };
+		15D73C99206320190011D5C9 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D73C98206320190011D5C9 /* LeftMenuViewController.swift */; };
+		15F1344D2063225600D7890E /* NSObject+AppDelegateTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1344C2063225600D7890E /* NSObject+AppDelegateTools.swift */; };
+		15F134502063236100D7890E /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1344F2063236100D7890E /* BaseCoordinator.swift */; };
+		15F134522063243400D7890E /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F134512063243400D7890E /* CenterViewController.swift */; };
 		9F490C6D552C60ABC49298C9 /* Pods_BoostAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E120E032A1BF689F627A3D4 /* Pods_BoostAppUITests.framework */; };
 		CE19F7B72F6076A2EBF61F5C /* Pods_BoostAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87189322A9E8183233DA079E /* Pods_BoostAppTests.framework */; };
 		DCB9B1B47060BBDAE0B2A986 /* Pods_BoostApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0554426AA33816B0E9D334F7 /* Pods_BoostApp.framework */; };
@@ -122,6 +130,8 @@
 		155FFC211FE4125200910DFA /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		155FFC241FE4129600910DFA /* Paging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paging.swift; sourceTree = "<group>"; };
 		155FFC271FE4188700910DFA /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		156AFEAB2063315100FB91B3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		156AFEAE206335E600FB91B3 /* InfixOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfixOperators.swift; sourceTree = "<group>"; };
 		15A8955C1FD0C3AD00347281 /* AppsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsDataManager.swift; sourceTree = "<group>"; };
 		15A8955F1FD1695D00347281 /* AppCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCollectionViewCell.swift; sourceTree = "<group>"; };
 		15A895731FD1945000347281 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
@@ -163,6 +173,16 @@
 		15CA94591FD0267C001AA1FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15CA94691FD0271D001AA1FE /* AppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewController.swift; sourceTree = "<group>"; };
 		15CA946D1FD03C63001AA1FE /* Enterprise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enterprise.swift; sourceTree = "<group>"; };
+		15D73C8D206305E90011D5C9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		15D73C8E206305E90011D5C9 /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
+		15D73C8F206305E90011D5C9 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		15D73C91206306470011D5C9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		15D73C93206307E10011D5C9 /* install.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = install.sh; sourceTree = "<group>"; };
+		15D73C9420630EC00011D5C9 /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
+		15D73C98206320190011D5C9 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
+		15F1344C2063225600D7890E /* NSObject+AppDelegateTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+AppDelegateTools.swift"; sourceTree = "<group>"; };
+		15F1344F2063236100D7890E /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		15F134512063243400D7890E /* CenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
 		30EA3943B6F7F3F2671D0683 /* Pods-BoostApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoostApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoostApp/Pods-BoostApp.debug.xcconfig"; sourceTree = "<group>"; };
 		469B3AC079CCD70FA217342F /* Pods-BoostApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoostApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoostApp/Pods-BoostApp.release.xcconfig"; sourceTree = "<group>"; };
 		6E120E032A1BF689F627A3D4 /* Pods_BoostAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoostAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -281,6 +301,14 @@
 			path = Libs;
 			sourceTree = "<group>";
 		};
+		156AFEAA2063314000FB91B3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				156AFEAB2063315100FB91B3 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		15A8955B1FD0C39C00347281 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,9 +331,13 @@
 		15A895721FD1943C00347281 /* Configurations */ = {
 			isa = PBXGroup;
 			children = (
+				15D73C93206307E10011D5C9 /* install.sh */,
 				15A895731FD1945000347281 /* Cartfile */,
+				15D73C8E206305E90011D5C9 /* Cartfile.resolved */,
 				15A895741FD1945000347281 /* Podfile */,
 				15A895751FD1945000347281 /* Podfile.lock */,
+				15D73C8D206305E90011D5C9 /* README.md */,
+				15D73C8F206305E90011D5C9 /* LICENSE */,
 			);
 			name = Configurations;
 			sourceTree = "<group>";
@@ -366,6 +398,8 @@
 		15CA94331FD0267C001AA1FE /* BoostApp */ = {
 			isa = PBXGroup;
 			children = (
+				15F1344E2063234D00D7890E /* Interactors */,
+				15D73C9A206320470011D5C9 /* Extensions */,
 				15A8955B1FD0C39C00347281 /* Data */,
 				15CA946B1FD03C4C001AA1FE /* Libs */,
 				15A8955E1FD1691700347281 /* Views */,
@@ -413,6 +447,9 @@
 		15CA94661FD026D0001AA1FE /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
+				156AFEAA2063314000FB91B3 /* Settings */,
+				15D73C97206320040011D5C9 /* Layout */,
+				15D73C902063061F0011D5C9 /* Account */,
 				15C7B4E21FE7B6390074508A /* Comments */,
 				15CA94681FD02710001AA1FE /* Apps */,
 				15CA94671FD026F2001AA1FE /* Base */,
@@ -446,6 +483,7 @@
 				15CA946C1FD03C53001AA1FE /* Enterprise */,
 				15A8957F1FD1F48800347281 /* Lang.swift */,
 				15A8958E1FD1FE8500347281 /* Env.swift */,
+				156AFEAE206335E600FB91B3 /* InfixOperators.swift */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -464,6 +502,40 @@
 			);
 			path = Enterprise;
 			sourceTree = SOURCE_ROOT;
+		};
+		15D73C902063061F0011D5C9 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				15D73C91206306470011D5C9 /* LoginViewController.swift */,
+				15D73C9420630EC00011D5C9 /* AccountsViewController.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		15D73C97206320040011D5C9 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				15D73C98206320190011D5C9 /* LeftMenuViewController.swift */,
+				15F134512063243400D7890E /* CenterViewController.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		15D73C9A206320470011D5C9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				15F1344C2063225600D7890E /* NSObject+AppDelegateTools.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		15F1344E2063234D00D7890E /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				15F1344F2063236100D7890E /* BaseCoordinator.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
 		};
 		97BCD288FC2CC0684D7A4EFD /* Pods */ = {
 			isa = PBXGroup;
@@ -612,7 +684,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0910;
-				ORGANIZATIONNAME = "manGoweb UK";
+				ORGANIZATIONNAME = LiveUI;
 				TargetAttributes = {
 					155FFBFD1FE4110800910DFA = {
 						CreatedOnToolsVersion = 9.2;
@@ -774,6 +846,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Modular/Modular.framework",
 				"${BUILT_PRODUCTS_DIR}/Presentables/Presentables.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/TagListView/TagListView.framework",
 			);
@@ -782,6 +855,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Modular.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Presentables.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TagListView.framework",
 			);
@@ -897,13 +971,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				15A8958D1FD1FB2E00347281 /* AppDetailViewController.swift in Sources */,
+				156AFEAF206335E600FB91B3 /* InfixOperators.swift in Sources */,
+				15F1344D2063225600D7890E /* NSObject+AppDelegateTools.swift in Sources */,
 				15C7B4D71FE6FB2C0074508A /* FiltersDataManager.swift in Sources */,
 				15CA94371FD0267C001AA1FE /* ViewController.swift in Sources */,
 				15C7B4D31FE6E0F80074508A /* RootViewController.swift in Sources */,
+				15F134502063236100D7890E /* BaseCoordinator.swift in Sources */,
 				15A8955D1FD0C3AD00347281 /* AppsDataManager.swift in Sources */,
 				15CA943D1FD0267C001AA1FE /* BoostApp.xcdatamodeld in Sources */,
 				15C7B4D51FE6FAED0074508A /* FiltersViewController.swift in Sources */,
 				15C7B4E41FE7B6510074508A /* CommentsViewController.swift in Sources */,
+				15D73C92206306470011D5C9 /* LoginViewController.swift in Sources */,
 				15A895601FD1695D00347281 /* AppCollectionViewCell.swift in Sources */,
 				15C7B4DD1FE712BC0074508A /* HomeDataManagement.swift in Sources */,
 				15CA946A1FD0271D001AA1FE /* AppsViewController.swift in Sources */,
@@ -913,8 +991,12 @@
 				15CA94351FD0267C001AA1FE /* AppDelegate.swift in Sources */,
 				15A895801FD1F48800347281 /* Lang.swift in Sources */,
 				15C7B4DB1FE6FC1C0074508A /* SortTableViewCell.swift in Sources */,
+				15D73C99206320190011D5C9 /* LeftMenuViewController.swift in Sources */,
 				15A8958F1FD1FE8500347281 /* Env.swift in Sources */,
+				15D73C9520630EC00011D5C9 /* AccountsViewController.swift in Sources */,
+				156AFEAC2063315100FB91B3 /* SettingsViewController.swift in Sources */,
 				155FFBF81FE4097800910DFA /* HomeViewController.swift in Sources */,
+				15F134522063243400D7890E /* CenterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

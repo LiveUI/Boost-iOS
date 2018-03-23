@@ -3,7 +3,7 @@
 //  BoostApp
 //
 //  Created by Ondrej Rafaj on 17/12/2017.
-//  Copyright © 2017 manGoweb UK. All rights reserved.
+//  Copyright © 2017 LiveUI. All rights reserved.
 //
 
 import Foundation
@@ -18,7 +18,12 @@ import TagListView
 
 class RootViewController: ViewController, TagListViewDelegate {
     
-    var dataController: AppsDataManagerable!
+    var app: App
+    
+    lazy var dataController: AppsDataManager = {
+        return AppsDataManager(leadingApp: app)
+    }()
+    
     var tagListView = TagListView()
     var collectionView: UICollectionView!
     
@@ -38,7 +43,9 @@ class RootViewController: ViewController, TagListViewDelegate {
     
     // MARK: Initialization
     
-    init() {
+    init(app: App) {
+        self.app = app
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -127,7 +134,7 @@ class RootViewController: ViewController, TagListViewDelegate {
         layoutElements()
         
         // Do the binding
-        var dc: CollectionViewPresentableManager = dataController
+        var dc: PresentableManager = dataController
         collectionView.bind(withPresentableManager: &dc)
         
         dataController.loadData()

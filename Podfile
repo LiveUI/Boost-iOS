@@ -5,11 +5,12 @@ target 'BoostApp' do
     
     use_frameworks!
     
-    pod 'Presentables', '~>0.4.3'
+    pod 'Presentables', '~>0.6.1'
     pod 'Alamofire', '~>4.5.1'
     pod 'SnapKit', '~>4.0.0'
     pod 'Modular', '~>0.0.8'
     pod 'TagListView', '~> 1.3.0'
+    pod 'SideMenu', '~> 3.1.5'
 
     target 'BoostAppTests' do
         inherit! :search_paths

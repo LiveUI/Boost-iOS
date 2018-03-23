@@ -3,7 +3,7 @@
 //  BoostSDK
 //
 //  Created by Ondrej Rafaj on 15/12/2017.
-//  Copyright © 2017 manGoweb UK. All rights reserved.
+//  Copyright © 2017 LiveUI. All rights reserved.
 //
 
 import Foundation
@@ -11,7 +11,7 @@ import Foundation
 
 public struct Config {
     
-    public let baseUrl: URL = URL(string: "http://api.appstorehq.net")!
+    public let baseUrl: URL = URL(string: "https://appstore.mgw.cz")!
     
 }
 
