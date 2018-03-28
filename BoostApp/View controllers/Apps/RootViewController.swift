@@ -18,7 +18,11 @@ import TagListView
 
 class RootViewController: ViewController, TagListViewDelegate {
     
-    var app: App
+    var app: App? {
+        didSet {
+            dataController.leadingApp = app
+        }
+    }
     
     lazy var dataController: AppsDataManager = {
         return AppsDataManager(leadingApp: app)
@@ -43,7 +47,7 @@ class RootViewController: ViewController, TagListViewDelegate {
     
     // MARK: Initialization
     
-    init(app: App) {
+    init(app: App? = nil) {
         self.app = app
         
         super.init(nibName: nil, bundle: nil)
@@ -136,8 +140,6 @@ class RootViewController: ViewController, TagListViewDelegate {
         // Do the binding
         var dc: PresentableManager = dataController
         collectionView.bind(withPresentableManager: &dc)
-        
-        dataController.loadData()
         
         dataController.appActionRequested = { app in
             self.actionTriggered(for: app)

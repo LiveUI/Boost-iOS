@@ -14,7 +14,13 @@ import Presentables
 
 class AppsDataManager: PresentableCollectionViewDataManager {
     
-    let leadingApp: App
+    var leadingApp: App? {
+        didSet {
+            if leadingApp != nil {
+                loadData()
+            }
+        }
+    }
     
     var appDetailRequested: ((App)->())?
     var appActionRequested: ((App)->())?
@@ -24,7 +30,7 @@ class AppsDataManager: PresentableCollectionViewDataManager {
     
     // MARK: Initialization
     
-    init(leadingApp: App) {
+    init(leadingApp: App? = nil) {
         self.leadingApp = leadingApp
         
         super.init()
@@ -32,7 +38,7 @@ class AppsDataManager: PresentableCollectionViewDataManager {
     
     // MARK: Data handling
     
-    func loadData() {
+    private func loadData() {
         func makePresenters(_ apps: [App]) {
             let section = PresentableSection()
             for app in apps {
@@ -49,14 +55,16 @@ class AppsDataManager: PresentableCollectionViewDataManager {
             data.append(section)
         }
         
-        Boost.api.apps(identifier: leadingApp.identifier, platform: leadingApp.platform) { (result) in
-            print(result)
-            
-            switch result {
-            case .success(let apps):
-                makePresenters(apps)
-            case .error(let error):
-                print(error?.localizedDescription ?? "API Error")
+        if let leadingApp = leadingApp {
+            Boost.api.apps(identifier: leadingApp.identifier, platform: leadingApp.platform) { (result) in
+                print(result)
+                
+                switch result {
+                case .success(let apps):
+                    makePresenters(apps)
+                case .error(let error):
+                    print(error?.localizedDescription ?? "API Error")
+                }
             }
         }
     }

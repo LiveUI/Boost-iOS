@@ -20,7 +20,7 @@ class HomeViewController: RootViewController {
     // MARK: Initialization
     
     init() {
-        super.init(app: <#T##App#>)
+        super.init()
         
         let dataController = HomeDataManager()
         dataController.allBuildsRequested = { app in
@@ -33,7 +33,7 @@ class HomeViewController: RootViewController {
             alert.addAction(UIAlertAction(title: "Cool", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
-        self.dataController = dataController
+//        self.dataController = dataController
         
         let layout = UICollectionViewFlowLayout()
         collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
