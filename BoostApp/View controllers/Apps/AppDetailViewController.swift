@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Presentables
 import SnapKit
-import Awesome
+import AwesomeEnum
 import BoostSDK
 
 
@@ -89,7 +89,7 @@ class AppDetailViewController: ViewController {
     }
     
     private func configureButtons() {
-        installButton.setImage(Awesome.light.cloudDownload.asImage(size: 34, color: installButton.tintColor), for: .normal)
+        installButton.setImage(Awesome.solid.download.asImage(size: 34, color: installButton.tintColor), for: .normal)
         installButton.addTarget(self, action: #selector(didTapActionButton(_:)), for: .touchUpInside)
         view.addSubview(installButton)
     }

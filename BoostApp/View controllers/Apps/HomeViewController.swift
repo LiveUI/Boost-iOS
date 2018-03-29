@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Presentables
 import Modular
-import Awesome
+import AwesomeEnum
 import BoostSDK
 
 

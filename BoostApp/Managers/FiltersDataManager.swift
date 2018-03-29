@@ -20,7 +20,7 @@ class FiltersDataManager: PresentableTableViewDataManager {
     var tagsChanged: (()->())?
     
     func loadData() {
-        var section = PresentableSection()
+        let section = PresentableSection()
         
         let sort = Presentable<SortTableViewCell>.create({ (cell) in
             cell.textLabel?.text = "Sorting"

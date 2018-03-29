@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		154C1330206C422B00011F54 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C132F206C422B00011F54 /* LoginCoordinator.swift */; };
+		154C1349206C570B00011F54 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C1348206C570B00011F54 /* CoreData.swift */; };
+		154C134B206C5A6F00011F54 /* Account+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C134A206C5A6F00011F54 /* Account+CoreData.swift */; };
+		154C134E206CD68000011F54 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C134D206CD68000011F54 /* Entity.swift */; };
+		154C1351206CDABD00011F54 /* Array+NSPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C1350206CDABD00011F54 /* Array+NSPredicate.swift */; };
+		154C1353206CDC2400011F54 /* QueryConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C1352206CDC2400011F54 /* QueryConvertible.swift */; };
+		154C1356206CDC4000011F54 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C1355206CDC4000011F54 /* Query.swift */; };
+		154C1358206CDCE100011F54 /* Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C1357206CDCE100011F54 /* Sorting.swift */; };
+		154C135A206CE1A800011F54 /* QueryField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C1359206CE1A800011F54 /* QueryField.swift */; };
 		155FFBF81FE4097800910DFA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FFBF71FE4097800910DFA /* HomeViewController.swift */; };
 		155FFC071FE4110800910DFA /* BoostSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 155FFBFE1FE4110800910DFA /* BoostSDK.framework */; };
 		155FFC0E1FE4110800910DFA /* BoostSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FFC0D1FE4110800910DFA /* BoostSDKTests.swift */; };
@@ -25,8 +34,6 @@
 		15A895761FD1945000347281 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 15A895731FD1945000347281 /* Cartfile */; };
 		15A895771FD1945000347281 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 15A895741FD1945000347281 /* Podfile */; };
 		15A895781FD1945000347281 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 15A895751FD1945000347281 /* Podfile.lock */; };
-		15A8957C1FD198FB00347281 /* Awesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A8957A1FD198EE00347281 /* Awesome.framework */; };
-		15A8957D1FD198FB00347281 /* Awesome.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15A8957A1FD198EE00347281 /* Awesome.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		15A895801FD1F48800347281 /* Lang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8957F1FD1F48800347281 /* Lang.swift */; };
 		15A895831FD1F51A00347281 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 15A895851FD1F51A00347281 /* Localizable.strings */; };
 		15A8958D1FD1FB2E00347281 /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8958C1FD1FB2E00347281 /* AppDetailViewController.swift */; };
@@ -108,7 +115,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				15A8957D1FD198FB00347281 /* Awesome.framework in Embed Frameworks */,
 				155FFC141FE4110800910DFA /* BoostSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -119,6 +125,16 @@
 /* Begin PBXFileReference section */
 		0554426AA33816B0E9D334F7 /* Pods_BoostApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoostApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11049ECA6BB56E138AA6977C /* Pods-BoostAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoostAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoostAppUITests/Pods-BoostAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		154C132F206C422B00011F54 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		154C1348206C570B00011F54 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		154C134A206C5A6F00011F54 /* Account+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+CoreData.swift"; sourceTree = "<group>"; };
+		154C134D206CD68000011F54 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		154C1350206CDABD00011F54 /* Array+NSPredicate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+NSPredicate.swift"; sourceTree = "<group>"; };
+		154C1352206CDC2400011F54 /* QueryConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryConvertible.swift; sourceTree = "<group>"; };
+		154C1355206CDC4000011F54 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
+		154C1357206CDCE100011F54 /* Sorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sorting.swift; sourceTree = "<group>"; };
+		154C1359206CE1A800011F54 /* QueryField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryField.swift; sourceTree = "<group>"; };
+		154C135B206CE2F000011F54 /* Reflectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reflectable.swift; sourceTree = "<group>"; };
 		155FFBF71FE4097800910DFA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		155FFBFE1FE4110800910DFA /* BoostSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BoostSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		155FFC001FE4110800910DFA /* BoostSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoostSDK.h; sourceTree = "<group>"; };
@@ -214,7 +230,6 @@
 			files = (
 				DCB9B1B47060BBDAE0B2A986 /* Pods_BoostApp.framework in Frameworks */,
 				155FFC131FE4110800910DFA /* BoostSDK.framework in Frameworks */,
-				15A8957C1FD198FB00347281 /* Awesome.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +252,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		154C1331206C486900011F54 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		154C1332206C489E00011F54 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				154C134A206C5A6F00011F54 /* Account+CoreData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		154C1347206C56FD00011F54 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				154C1354206CDC3100011F54 /* Libs */,
+				154C134F206CDAAA00011F54 /* Extensions */,
+				154C134C206CD67200011F54 /* Protocols */,
+				154C1348206C570B00011F54 /* CoreData.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		154C134C206CD67200011F54 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				154C134D206CD68000011F54 /* Entity.swift */,
+				154C1352206CDC2400011F54 /* QueryConvertible.swift */,
+				154C135B206CE2F000011F54 /* Reflectable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		154C134F206CDAAA00011F54 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				154C1350206CDABD00011F54 /* Array+NSPredicate.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		154C1354206CDC3100011F54 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				154C1355206CDC4000011F54 /* Query.swift */,
+				154C1357206CDCE100011F54 /* Sorting.swift */,
+				154C1359206CE1A800011F54 /* QueryField.swift */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
 		155FFBFF1FE4110800910DFA /* BoostSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,14 +378,14 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		15A8955B1FD0C39C00347281 /* Data */ = {
+		15A8955B1FD0C39C00347281 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				15A8955C1FD0C3AD00347281 /* AppsDataManager.swift */,
 				15C7B4D61FE6FB2C0074508A /* FiltersDataManager.swift */,
 				15C7B4DC1FE712BB0074508A /* HomeDataManagement.swift */,
 			);
-			path = Data;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		15A8955E1FD1691700347281 /* Views */ = {
@@ -398,9 +467,11 @@
 		15CA94331FD0267C001AA1FE /* BoostApp */ = {
 			isa = PBXGroup;
 			children = (
-				15F1344E2063234D00D7890E /* Interactors */,
+				154C1332206C489E00011F54 /* Model */,
+				154C1331206C486900011F54 /* Data */,
+				15F1344E2063234D00D7890E /* Coordinators */,
 				15D73C9A206320470011D5C9 /* Extensions */,
-				15A8955B1FD0C39C00347281 /* Data */,
+				15A8955B1FD0C39C00347281 /* Managers */,
 				15CA946B1FD03C4C001AA1FE /* Libs */,
 				15A8955E1FD1691700347281 /* Views */,
 				15CA94661FD026D0001AA1FE /* View controllers */,
@@ -480,6 +551,7 @@
 		15CA946B1FD03C4C001AA1FE /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				154C1347206C56FD00011F54 /* CoreData */,
 				15CA946C1FD03C53001AA1FE /* Enterprise */,
 				15A8957F1FD1F48800347281 /* Lang.swift */,
 				15A8958E1FD1FE8500347281 /* Env.swift */,
@@ -529,12 +601,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		15F1344E2063234D00D7890E /* Interactors */ = {
+		15F1344E2063234D00D7890E /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
 				15F1344F2063236100D7890E /* BaseCoordinator.swift */,
+				154C132F206C422B00011F54 /* LoginCoordinator.swift */,
 			);
-			path = Interactors;
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		97BCD288FC2CC0684D7A4EFD /* Pods */ = {
@@ -844,6 +917,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BoostApp/Pods-BoostApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AwesomeEnum/AwesomeEnum.framework",
 				"${BUILT_PRODUCTS_DIR}/Modular/Modular.framework",
 				"${BUILT_PRODUCTS_DIR}/Presentables/Presentables.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
@@ -853,6 +927,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AwesomeEnum.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Modular.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Presentables.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
@@ -971,7 +1046,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				15A8958D1FD1FB2E00347281 /* AppDetailViewController.swift in Sources */,
+				154C1349206C570B00011F54 /* CoreData.swift in Sources */,
 				156AFEAF206335E600FB91B3 /* InfixOperators.swift in Sources */,
+				154C1330206C422B00011F54 /* LoginCoordinator.swift in Sources */,
 				15F1344D2063225600D7890E /* NSObject+AppDelegateTools.swift in Sources */,
 				15C7B4D71FE6FB2C0074508A /* FiltersDataManager.swift in Sources */,
 				15CA94371FD0267C001AA1FE /* ViewController.swift in Sources */,
@@ -982,20 +1059,27 @@
 				15C7B4D51FE6FAED0074508A /* FiltersViewController.swift in Sources */,
 				15C7B4E41FE7B6510074508A /* CommentsViewController.swift in Sources */,
 				15D73C92206306470011D5C9 /* LoginViewController.swift in Sources */,
+				154C1351206CDABD00011F54 /* Array+NSPredicate.swift in Sources */,
 				15A895601FD1695D00347281 /* AppCollectionViewCell.swift in Sources */,
 				15C7B4DD1FE712BC0074508A /* HomeDataManagement.swift in Sources */,
 				15CA946A1FD0271D001AA1FE /* AppsViewController.swift in Sources */,
+				154C1358206CDCE100011F54 /* Sorting.swift in Sources */,
 				15C7B4E01FE717420074508A /* AppHeader.swift in Sources */,
 				15C7B4D91FE6FB930074508A /* FilterTableViewCell.swift in Sources */,
 				15CA946E1FD03C63001AA1FE /* Enterprise.swift in Sources */,
 				15CA94351FD0267C001AA1FE /* AppDelegate.swift in Sources */,
 				15A895801FD1F48800347281 /* Lang.swift in Sources */,
 				15C7B4DB1FE6FC1C0074508A /* SortTableViewCell.swift in Sources */,
+				154C135A206CE1A800011F54 /* QueryField.swift in Sources */,
 				15D73C99206320190011D5C9 /* LeftMenuViewController.swift in Sources */,
+				154C134B206C5A6F00011F54 /* Account+CoreData.swift in Sources */,
+				154C134E206CD68000011F54 /* Entity.swift in Sources */,
 				15A8958F1FD1FE8500347281 /* Env.swift in Sources */,
 				15D73C9520630EC00011D5C9 /* AccountsViewController.swift in Sources */,
 				156AFEAC2063315100FB91B3 /* SettingsViewController.swift in Sources */,
+				154C1353206CDC2400011F54 /* QueryConvertible.swift in Sources */,
 				155FFBF81FE4097800910DFA /* HomeViewController.swift in Sources */,
+				154C1356206CDC4000011F54 /* Query.swift in Sources */,
 				15F134522063243400D7890E /* CenterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1267,10 +1351,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R8ZGADY96;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = "BoostApp/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.uk.mangoweb.BoostApp;
@@ -1287,10 +1367,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R8ZGADY96;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = "BoostApp/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.uk.mangoweb.BoostApp;

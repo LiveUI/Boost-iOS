@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.5.1)
+  - AwesomeEnum (1.0.0)
   - Modular (0.0.8):
     - SnapKit
   - Presentables (0.6.1)
@@ -10,6 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.5.1)
+  - AwesomeEnum (~> 1.0.0)
   - Modular (~> 0.0.8)
   - Presentables (~> 0.6.1)
   - SideMenu (~> 3.1.5)
@@ -19,6 +21,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AwesomeEnum: 316f8b9014fb3d8f761130afdb5c577b36f73333
   Modular: c37de4e839b509449fa9f8b8a26656ec32105201
   Presentables: a2918fbcea3bc3d76e76eadf54d70e1ae146c883
   SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
@@ -26,6 +29,6 @@ SPEC CHECKSUMS:
   SpecTools: 77474921254b23ea50bb80f8763214f41d9d63c5
   TagListView: 669f7d4455003c877655875d34829731c4191528
 
-PODFILE CHECKSUM: cd551d989e57c4b9c8570925f2f9c4e5aec1a37c
+PODFILE CHECKSUM: d71238eaa0935017d231230a73a2c23335f3f196
 
 COCOAPODS: 1.4.0

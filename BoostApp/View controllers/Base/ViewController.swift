@@ -11,6 +11,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var reportViewDidLoad: (() -> Void)?
+    
     func configureElements() {
         
     }
@@ -21,6 +23,8 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         
         configureElements()
+        
+        reportViewDidLoad?()
     }
 
     override func didReceiveMemoryWarning() {

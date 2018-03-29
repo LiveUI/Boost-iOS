@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import SnapKit
-import Awesome
+import AwesomeEnum
 
 
 class AppCollectionViewCell: UICollectionViewCell {
@@ -65,7 +65,7 @@ class AppCollectionViewCell: UICollectionViewCell {
     }
     
     private func configureButtons() {
-        installButton.setImage(Awesome.light.cloudDownload.asImage(size: 34, color: installButton.tintColor), for: .normal)
+        installButton.setImage(Awesome.solid.download.asImage(size: 34, color: installButton.tintColor), for: .normal)
         installButton.addTarget(self, action: #selector(didTapInstallButton(_:)), for: .touchUpInside)
         contentView.addSubview(installButton)
     }

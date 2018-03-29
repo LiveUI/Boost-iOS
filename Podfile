@@ -11,6 +11,7 @@ target 'BoostApp' do
     pod 'Modular', '~>0.0.8'
     pod 'TagListView', '~> 1.3.0'
     pod 'SideMenu', '~> 3.1.5'
+    pod 'AwesomeEnum', '~> 1.0.0'
 
     target 'BoostAppTests' do
         inherit! :search_paths

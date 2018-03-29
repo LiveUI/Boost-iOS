@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import BoostSDK
-import Awesome
+import AwesomeEnum
 import Presentables
 import Modular
 import SnapKit
@@ -72,7 +72,7 @@ class RootViewController: ViewController, TagListViewDelegate {
     // MARK: Elements
     
     func configureNavBar() {
-        let portrait = Awesome.light.list.asImage(size: 22)
+        let portrait = Awesome.solid.list.asImage(size: 22)
         let advanced = UIBarButtonItem(image: portrait, style: .plain, target: self, action: #selector(RootViewController.didTapFilters(_:)))
         navigationItem.rightBarButtonItem = advanced
     }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import SideMenu
-import Awesome
+import AwesomeEnum
 
 
 class BaseCoordinator {
@@ -33,6 +33,9 @@ class BaseCoordinator {
         SideMenuManager.default.menuLeftNavigationController = leftBaseScreen
 
         centerBaseScreen = CenterViewController()
+        centerBaseScreen.reportViewDidLoad = {
+            
+        }
         SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: centerBaseScreen.view, forMenu: .left)
         
         present(viewController: currentScreen)
@@ -66,7 +69,7 @@ class BaseCoordinator {
         
         let nc = UINavigationController(rootViewController: viewController)
         
-        let menu = UIBarButtonItem(image: Awesome.light.list.asImage(size: 22), style: UIBarButtonItemStyle.done, target: self, action: #selector(didTapMenu(_:)))
+        let menu = UIBarButtonItem(image: Awesome.solid.list.asImage(size: 22), style: UIBarButtonItemStyle.done, target: self, action: #selector(didTapMenu(_:)))
         viewController.navigationItem.leftBarButtonItem = menu
         
         SideMenuManager.default.menuAddPanGestureToPresent(toView: nc.navigationBar)
