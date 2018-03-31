@@ -9,30 +9,36 @@
 import Foundation
 import UIKit
 import SideMenu
-import Modular
+import Presentables
 
 
-class LeftMenuViewController: ViewController {
+class LeftMenuViewController: UITableViewController {
+    
+    let manager: LeftMenuDataManager = LeftMenuDataManager()
+    
+    // MARK: View lifecycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.isEditing = false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let home = UIButton()
-        home.setTitle(Lang.get("Home"), for: .normal)
-        home.setTitleColor(.white, for: .normal)
-        home.addTarget(self, action: #selector(didTapHome(_:)), for: .touchUpInside)
-        home.backgroundColor = .gray
-        home.place.onTopLeft(of: view, height: 44, top: 94, left: 20).with.rightMargin(-20)
+        let edit = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(toggleEdit(_:)))
+        navigationItem.rightBarButtonItem = edit
         
-        let settings = UIButton()
-        settings.setTitle(Lang.get("Settings"), for: .normal)
-        settings.setTitleColor(.white, for: .normal)
-        settings.addTarget(self, action: #selector(didTapSettings(_:)), for: .touchUpInside)
-        settings.backgroundColor = .gray
-        settings.place.below(home, top: 12).match(left: home).match(right: home).match(height: home)
+        var m = manager as PresentableManager
+        tableView.bind(withPresentableManager: &m)
     }
     
     // MARK: Actions
+    
+    @objc func toggleEdit(_ sender: UIBarButtonItem) {
+        tableView.isEditing = !tableView.isEditing
+    }
     
     @objc func didTapHome(_ sender: UIButton) {
         appDelegate.coordinator.navigate(to: .home)

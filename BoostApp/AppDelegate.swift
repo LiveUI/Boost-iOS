@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import CoreData
-import SideMenu
+import Reloaded
 
 
 @UIApplicationMain

@@ -10,12 +10,13 @@ target 'BoostApp' do
     pod 'SnapKit', '~>4.0.0'
     pod 'Modular', '~>0.0.8'
     pod 'TagListView', '~> 1.3.0'
+    pod 'MaterialComponents', '~>51.0.0'
     pod 'SideMenu', '~> 3.1.5'
     pod 'AwesomeEnum', '~> 1.0.0'
+    pod 'Reloaded', :path => '../Reloaded'
 
     target 'BoostAppTests' do
         inherit! :search_paths
-        
         pod 'SpecTools'
     end
     

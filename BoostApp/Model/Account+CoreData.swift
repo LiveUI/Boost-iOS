@@ -7,8 +7,7 @@
 //
 
 import Foundation
+import Reloaded
 
 
-extension Account: Entity {
-    
-}
+extension Account: Entity { }

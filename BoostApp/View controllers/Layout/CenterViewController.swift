@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import CoreData
+import Reloaded
 
 
 class CenterViewController: ViewController {
@@ -22,26 +22,41 @@ class CenterViewController: ViewController {
         view.backgroundColor = .blue
     }
     
-    var q: Query? = nil
+    var q: Query<Account>! = nil
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         appDelegate.coordinator.refresh(menuWidth: view.frame.size.width)
         
-        do {
-            let account = try CoreData.new(Account.self)
-            account.name = ":)"
-            try account.save()
-            
-            
-            q = Account.query.sort(by: \Account.name)
-            
-            
-            
-        } catch {
-            print(error)
-        }
+//        do {
+//            var account = try CoreData.new(Account.self)
+//            account.name = "aaaaaa"
+//            account = try CoreData.new(Account.self)
+//            account.name = "cccccc"
+//            account.server = "zzzzz"
+//            account = try CoreData.new(Account.self)
+//            account.name = "cccccc"
+//            account.server = "aaaaaa"
+//            account = try CoreData.new(Account.self)
+//            account.name = "cccccc"
+//            account.server = "ggggg"
+//            account = try CoreData.new(Account.self)
+//            account.name = "hhhhh"
+//            account = try CoreData.new(Account.self)
+//            account.name = "zzzzz"
+//            account = try CoreData.new(Account.self)
+//            account.name = "dddddd"
+//            try account.save()
+//
+//
+//            let data = try! Account.query.filter("name" == "cccccc", "name" == "zzzzz").sort(by: "server", direction: .orderedAscending).all()
+//            print(data)
+//
+//
+//        } catch {
+//            print(error)
+//        }
         
         
         
@@ -65,14 +80,6 @@ class CenterViewController: ViewController {
 //        } catch {
 //            print(error)
 //        }
-        
-        let fetch = Account.fetchRequest
-        do {
-            let data = try CoreData.managedContext.fetch(fetch) as! [Account]
-            print(data.count)
-        } catch {
-            print(error)
-        }
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

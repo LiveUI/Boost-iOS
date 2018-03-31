@@ -16,6 +16,7 @@ class BaseCoordinator {
     
     enum Location {
         case home
+        case newAccount(success: ((Account) -> Void))
         case settings
     }
     
@@ -38,7 +39,7 @@ class BaseCoordinator {
         }
         SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: centerBaseScreen.view, forMenu: .left)
         
-        present(viewController: currentScreen)
+        show(viewController: currentScreen)
     }
     
     // MARK: Settings
@@ -54,14 +55,26 @@ class BaseCoordinator {
     
     func navigate(to: Location) {
         switch to {
+        case .newAccount(let success):
+            let c = LoginViewController()
+            c.didLoginSuccessfully = { account in
+                success(account)
+                print("Load new server data!!!!")
+            }
+            let nc = UINavigationController(rootViewController: c)
+            present(viewController: nc)
         case .settings:
-            present(viewController: SettingsViewController())
+            show(viewController: SettingsViewController())
         default:
-            present(viewController: HomeViewController())
+            show(viewController: HomeViewController())
         }
     }
     
     private func present(viewController: UIViewController) {
+        leftBaseScreen.present(viewController, animated: true)
+    }
+    
+    private func show(viewController: UIViewController) {
         if let nc = currentScreen as? UINavigationController, let v = nc.viewControllers.first, v >!< viewController {
             centerBaseScreen.dismiss(animated: true, completion: nil)
             return
