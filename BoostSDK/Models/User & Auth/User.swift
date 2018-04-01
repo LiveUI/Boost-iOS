@@ -32,3 +32,12 @@ public struct User: Codable {
     }
     
 }
+
+
+extension User {
+    
+    public var avatarUrl: String {
+        return "https://www.gravatar.com/avatar/\(email)"
+    }
+    
+}

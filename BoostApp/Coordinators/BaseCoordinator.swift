@@ -15,13 +15,13 @@ import AwesomeEnum
 class BaseCoordinator {
     
     enum Location {
-        case home
+        case home(Account)
         case newAccount(success: ((Account) -> Void))
         case settings
     }
     
     let leftScreen: LeftMenuViewController
-    var currentScreen: UIViewController = HomeViewController()
+    var currentScreen: UIViewController = UIViewController()
     
     let leftBaseScreen: LeftBaseViewController
     let centerBaseScreen: CenterViewController
@@ -53,8 +53,12 @@ class BaseCoordinator {
     
     // MARK: Navigation
     
+    var currentLocation: Location = .settings
+    
     func navigate(to: Location) {
         switch to {
+        case .home(let account):
+            show(viewController: HomeViewController(account: account))
         case .newAccount(let success):
             let c = LoginViewController()
             c.didLoginSuccessfully = { account in
@@ -65,8 +69,6 @@ class BaseCoordinator {
             present(viewController: nc)
         case .settings:
             show(viewController: SettingsViewController())
-        default:
-            show(viewController: HomeViewController())
         }
     }
     
@@ -75,11 +77,6 @@ class BaseCoordinator {
     }
     
     private func show(viewController: UIViewController) {
-        if let nc = currentScreen as? UINavigationController, let v = nc.viewControllers.first, v >!< viewController {
-            centerBaseScreen.dismiss(animated: true, completion: nil)
-            return
-        }
-        
         let nc = UINavigationController(rootViewController: viewController)
         
         let menu = UIBarButtonItem(image: Awesome.solid.list.asImage(size: 22), style: UIBarButtonItemStyle.done, target: self, action: #selector(didTapMenu(_:)))

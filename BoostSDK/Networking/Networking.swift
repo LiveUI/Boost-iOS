@@ -22,6 +22,8 @@ public class Networking {
         case invalidPath
     }
     
+    var reauthenticate: (() throws -> Promise<Token>)?
+    
     // MARK: Initialization
     
     init(baseUrl: URL) {
@@ -30,11 +32,11 @@ public class Networking {
     
     // MARK: Request methods
     
-    func get(path: String, _ result: @escaping ((_ result: Result<DataResponseTuple>) -> ())) {
+    func get(path: String, _ result: @escaping ((_ result: Result<DataResponseTuple>) -> ())) throws {
         return makeRequest(path: path, method: "GET", result)
     }
     
-    func post(path: String, data: Data, _ result: @escaping ((_ result: Result<DataResponseTuple>) -> ())) {
+    func post(path: String, data: Data, _ result: @escaping ((_ result: Result<DataResponseTuple>) -> ())) throws {
         return makeRequest(path: path, data: data, method: "POST", result)
     }
     
@@ -43,15 +45,15 @@ public class Networking {
         return makeRequest(path: path, data: data, method: "POST", headers: ["Content-Type": "application/json; charset=utf8"], result)
     }
     
-    func put(path: String, data: Data, _ result: @escaping ((_ result: Result<DataResponseTuple>) -> ())) {
+    func put(path: String, data: Data, _ result: @escaping ((_ result: Result<DataResponseTuple>) -> ())) throws {
         return makeRequest(path: path, data: data, method: "PUT", result)
     }
     
-    func delete(path: String, _ result: @escaping ((_ result: Result<DataResponseTuple>) -> ())) {
+    func delete(path: String, _ result: @escaping ((_ result: Result<DataResponseTuple>) -> ())) throws {
         return makeRequest(path: path, method: "DELETE", result)
     }
     
-    func makeRequest(path: String, data: Data? = nil, method: String, headers: [String: String] = [:], reauth: Bool = false, _ result: @escaping ((_ result: Result<DataResponseTuple>) -> ())) {
+    private func makeRequest(path: String, data: Data? = nil, method: String, headers: [String: String] = [:], reauth: Bool = false, _ result: @escaping ((_ result: Result<DataResponseTuple>) -> ())) {
         let defaultSessionConfiguration = URLSessionConfiguration.default
         let defaultSession = URLSession(configuration: defaultSessionConfiguration)
         
@@ -70,12 +72,22 @@ public class Networking {
         
         Debug.post(request: request)
         
-        // Create dataTask
-        let dataTask = defaultSession.dataTask(with: request) { (data, response, error) in
+        let task = defaultSession.dataTask(with: request) { (data, response, error) in
             if let data = data, let response = response as? HTTPURLResponse {
                 Debug.post(response: response)
                 if response.statusCode == 401 {
                     Debug.print("Unauthorised")
+                    if reauth == false {
+                        do {
+                            try self.reauthenticate?().then({ token in
+                                self.makeRequest(path: path, data: data, method: method, headers: headers, reauth: true, result)
+                            })
+                            return
+                        } catch {
+                            result(Result.error(error))
+                            return
+                        }
+                    }
                 }
                 if let auth = (response.allHeaderFields["authorization"] ?? response.allHeaderFields["Authorization"]) as? String {
                     self.jwtToken = auth
@@ -89,8 +101,7 @@ public class Networking {
             result(Result.error(error))
         }
         
-        // Fire the request
-        dataTask.resume()
+        task.resume()
     }
     
 }

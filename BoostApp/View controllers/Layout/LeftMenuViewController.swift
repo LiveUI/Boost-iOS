@@ -27,25 +27,23 @@ class LeftMenuViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let edit = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(toggleEdit(_:)))
-        navigationItem.rightBarButtonItem = edit
+        setupEditButton()
         
         var m = manager as PresentableManager
         tableView.bind(withPresentableManager: &m)
     }
     
+    func setupEditButton() {
+        let edit = UIBarButtonItem(barButtonSystemItem: tableView.isEditing ? .done : .edit, target: self, action: #selector(toggleEdit(_:)))
+        navigationItem.setRightBarButton(edit, animated: true)
+    }
+    
     // MARK: Actions
     
     @objc func toggleEdit(_ sender: UIBarButtonItem) {
-        tableView.isEditing = !tableView.isEditing
-    }
-    
-    @objc func didTapHome(_ sender: UIButton) {
-        appDelegate.coordinator.navigate(to: .home)
-    }
-    
-    @objc func didTapSettings(_ sender: UIButton) {
-        appDelegate.coordinator.navigate(to: .settings)
+        tableView.setEditing(!tableView.isEditing, animated: true)
+        
+        setupEditButton()
     }
     
 }

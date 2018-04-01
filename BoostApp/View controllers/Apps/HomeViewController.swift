@@ -16,11 +16,21 @@ import BoostSDK
 
 class HomeViewController: RootViewController {
     
+    var account: Account {
+        didSet {
+            title = account.name
+        }
+    }
+    
     
     // MARK: Initialization
     
-    init() {
+    init(account: Account) {
+        self.account = account
+        
         super.init()
+        
+        title = account.name
         
         let dataController = HomeDataManager()
         dataController.allBuildsRequested = { app in

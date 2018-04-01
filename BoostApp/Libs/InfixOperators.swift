@@ -11,7 +11,6 @@ import Foundation
 
 infix operator >!<
 
-
 func >!< (item1: AnyObject, item2: AnyObject) -> Bool {
     return type(of: item1) === type(of: item2)
 }

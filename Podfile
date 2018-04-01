@@ -5,7 +5,7 @@ target 'BoostApp' do
     
     use_frameworks!
     
-    pod 'Presentables', '~>0.6.1'
+    pod 'Presentables', :path => '../Presentables'
     pod 'Alamofire', '~>4.5.1'
     pod 'SnapKit', '~>4.0.0'
     pod 'Modular', '~>0.0.8'

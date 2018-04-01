@@ -63,15 +63,17 @@ class LoginViewController: ViewController {
         do {
             let api = try Api(config: Api.Config(serverUrl: server))
             try api.auth(email: email, password: password).then { (login) in
-                let acc = try Account.new()
-                acc.server = self.serverField.text
-                acc.name = "Account name fetched from the server"
-                acc.token = login.token
-                try acc.save()
-                
-                self.didLoginSuccessfully?(acc)
-                
-                self.dismiss(animated: true)
+                try api.info().then({ info in
+                    let acc = try Account.new()
+                    acc.name = info.name
+                    acc.server = info.url
+                    acc.token = login.token
+                    try acc.save()
+                    
+                    self.didLoginSuccessfully?(acc)
+                    
+                    self.dismiss(animated: true)
+                })
             }
         } catch {
             // TODO: handle error

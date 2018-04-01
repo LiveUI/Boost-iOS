@@ -18,6 +18,11 @@
 		15116C732070C95D00BC08D3 /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C722070C95D00BC08D3 /* Problem.swift */; };
 		15116C752070CBE800BC08D3 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C742070CBE800BC08D3 /* Promise.swift */; };
 		15116C772070D42700BC08D3 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C762070D42700BC08D3 /* Debug.swift */; };
+		15116C7D2071131600BC08D3 /* Api+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C7C2071131600BC08D3 /* Api+Auth.swift */; };
+		15116C7F2071137300BC08D3 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C7E2071137300BC08D3 /* Info.swift */; };
+		15116C82207113BF00BC08D3 /* Api+Boost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C81207113BE00BC08D3 /* Api+Boost.swift */; };
+		15116C842071168C00BC08D3 /* String+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C832071168C00BC08D3 /* String+Tools.swift */; };
+		15116C872071219600BC08D3 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C862071219600BC08D3 /* Token.swift */; };
 		154C1330206C422B00011F54 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C132F206C422B00011F54 /* LoginCoordinator.swift */; };
 		154C134B206C5A6F00011F54 /* Account+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C134A206C5A6F00011F54 /* Account+CoreData.swift */; };
 		155FFBF81FE4097800910DFA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FFBF71FE4097800910DFA /* HomeViewController.swift */; };
@@ -42,9 +47,6 @@
 		15A895831FD1F51A00347281 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 15A895851FD1F51A00347281 /* Localizable.strings */; };
 		15A8958D1FD1FB2E00347281 /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8958C1FD1FB2E00347281 /* AppDetailViewController.swift */; };
 		15A8958F1FD1FE8500347281 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8958E1FD1FE8500347281 /* Env.swift */; };
-		15C7B4CD1FE4494C0074508A /* apps-builds.json in Resources */ = {isa = PBXBuildFile; fileRef = 15C7B4CA1FE4494B0074508A /* apps-builds.json */; };
-		15C7B4CE1FE4494C0074508A /* apps-identifier.json in Resources */ = {isa = PBXBuildFile; fileRef = 15C7B4CB1FE4494B0074508A /* apps-identifier.json */; };
-		15C7B4CF1FE4494C0074508A /* apps-all.json in Resources */ = {isa = PBXBuildFile; fileRef = 15C7B4CC1FE4494C0074508A /* apps-all.json */; };
 		15C7B4D11FE6E0790074508A /* Api+Apps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7B4D01FE6E0790074508A /* Api+Apps.swift */; };
 		15C7B4D31FE6E0F80074508A /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7B4D21FE6E0F80074508A /* RootViewController.swift */; };
 		15C7B4D51FE6FAED0074508A /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C7B4D41FE6FAED0074508A /* FiltersViewController.swift */; };
@@ -140,6 +142,11 @@
 		15116C722070C95D00BC08D3 /* Problem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
 		15116C742070CBE800BC08D3 /* Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
 		15116C762070D42700BC08D3 /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
+		15116C7C2071131600BC08D3 /* Api+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+Auth.swift"; sourceTree = "<group>"; };
+		15116C7E2071137300BC08D3 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		15116C81207113BE00BC08D3 /* Api+Boost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+Boost.swift"; sourceTree = "<group>"; };
+		15116C832071168C00BC08D3 /* String+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Tools.swift"; sourceTree = "<group>"; };
+		15116C862071219600BC08D3 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		154C132F206C422B00011F54 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		154C134A206C5A6F00011F54 /* Account+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+CoreData.swift"; sourceTree = "<group>"; };
 		155FFBF71FE4097800910DFA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -169,9 +176,6 @@
 		15A8958A1FD1F80400347281 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		15A8958C1FD1FB2E00347281 /* AppDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
 		15A8958E1FD1FE8500347281 /* Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
-		15C7B4CA1FE4494B0074508A /* apps-builds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "apps-builds.json"; sourceTree = "<group>"; };
-		15C7B4CB1FE4494B0074508A /* apps-identifier.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "apps-identifier.json"; sourceTree = "<group>"; };
-		15C7B4CC1FE4494C0074508A /* apps-all.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "apps-all.json"; sourceTree = "<group>"; };
 		15C7B4D01FE6E0790074508A /* Api+Apps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+Apps.swift"; sourceTree = "<group>"; };
 		15C7B4D21FE6E0F80074508A /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		15C7B4D41FE6FAED0074508A /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
@@ -263,8 +267,44 @@
 			isa = PBXGroup;
 			children = (
 				15116C702070C6E700BC08D3 /* Codable+Tools.swift */,
+				15116C832071168C00BC08D3 /* String+Tools.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		15116C7B2071130500BC08D3 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				15116C7C2071131600BC08D3 /* Api+Auth.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		15116C80207113A900BC08D3 /* Boost */ = {
+			isa = PBXGroup;
+			children = (
+				15116C81207113BE00BC08D3 /* Api+Boost.swift */,
+			);
+			path = Boost;
+			sourceTree = "<group>";
+		};
+		15116C88207121AF00BC08D3 /* User & Auth */ = {
+			isa = PBXGroup;
+			children = (
+				15116A6F2070B6CF00BC08D3 /* Login.swift */,
+				15116C6B2070B8E900BC08D3 /* User.swift */,
+				15116C862071219600BC08D3 /* Token.swift */,
+			);
+			path = "User & Auth";
+			sourceTree = "<group>";
+		};
+		15116C89207121C900BC08D3 /* Boost */ = {
+			isa = PBXGroup;
+			children = (
+				15A8958A1FD1F80400347281 /* App.swift */,
+				15116C7E2071137300BC08D3 /* Info.swift */,
+			);
+			path = Boost;
 			sourceTree = "<group>";
 		};
 		154C1331206C486900011F54 /* Data */ = {
@@ -308,9 +348,8 @@
 		155FFC1B1FE4112200910DFA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				15A8958A1FD1F80400347281 /* App.swift */,
-				15116A6F2070B6CF00BC08D3 /* Login.swift */,
-				15116C6B2070B8E900BC08D3 /* User.swift */,
+				15116C89207121C900BC08D3 /* Boost */,
+				15116C88207121AF00BC08D3 /* User & Auth */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -318,6 +357,8 @@
 		155FFC1D1FE4113A00910DFA /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				15116C80207113A900BC08D3 /* Boost */,
+				15116C7B2071130500BC08D3 /* Auth */,
 				155FFC211FE4125200910DFA /* Api.swift */,
 				15C7B4D01FE6E0790074508A /* Api+Apps.swift */,
 			);
@@ -490,9 +531,6 @@
 		15CA94651FD026B7001AA1FE /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
-				15C7B4CC1FE4494C0074508A /* apps-all.json */,
-				15C7B4CA1FE4494B0074508A /* apps-builds.json */,
-				15C7B4CB1FE4494B0074508A /* apps-identifier.json */,
 				15CA943E1FD0267C001AA1FE /* Assets.xcassets */,
 				15CA94401FD0267C001AA1FE /* LaunchScreen.storyboard */,
 				15CA94431FD0267C001AA1FE /* Info.plist */,
@@ -815,10 +853,7 @@
 				15A895761FD1945000347281 /* Cartfile in Resources */,
 				15A895831FD1F51A00347281 /* Localizable.strings in Resources */,
 				15CA94421FD0267C001AA1FE /* LaunchScreen.storyboard in Resources */,
-				15C7B4CF1FE4494C0074508A /* apps-all.json in Resources */,
-				15C7B4CE1FE4494C0074508A /* apps-identifier.json in Resources */,
 				15A895781FD1945000347281 /* Podfile.lock in Resources */,
-				15C7B4CD1FE4494C0074508A /* apps-builds.json in Resources */,
 				15A895771FD1945000347281 /* Podfile in Resources */,
 				15CA943F1FD0267C001AA1FE /* Assets.xcassets in Resources */,
 			);
@@ -1024,11 +1059,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15116C7D2071131600BC08D3 /* Api+Auth.swift in Sources */,
 				15116A702070B6CF00BC08D3 /* Login.swift in Sources */,
 				15C7B4D11FE6E0790074508A /* Api+Apps.swift in Sources */,
+				15116C7F2071137300BC08D3 /* Info.swift in Sources */,
 				15116C732070C95D00BC08D3 /* Problem.swift in Sources */,
+				15116C842071168C00BC08D3 /* String+Tools.swift in Sources */,
 				155FFC1C1FE4112F00910DFA /* App.swift in Sources */,
+				15116C82207113BF00BC08D3 /* Api+Boost.swift in Sources */,
 				15116C6E2070BBCE00BC08D3 /* Networking.swift in Sources */,
+				15116C872071219600BC08D3 /* Token.swift in Sources */,
 				155FFC281FE4188700910DFA /* Result.swift in Sources */,
 				15116C772070D42700BC08D3 /* Debug.swift in Sources */,
 				15116C6C2070B8E900BC08D3 /* User.swift in Sources */,

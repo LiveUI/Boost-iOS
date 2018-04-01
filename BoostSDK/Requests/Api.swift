@@ -9,12 +9,13 @@
 import Foundation
 
 
-public struct Api {
+public class Api {
     
     /// Api errors
     public enum Problem: Error {
         case badServerUrl
         case notAuthorized
+        case missingAuthToken
     }
     
     /// Configuration object
@@ -23,15 +24,19 @@ public struct Api {
         /// Server URL
         public let serverUrl: String
         
+        /// Persistent authentication token
+        public var token: String?
+        
         /// Initializer
-        public init(serverUrl: String) {
+        public init(serverUrl: String, token: String? = nil) {
             self.serverUrl = serverUrl
+            self.token = token
         }
         
     }
     
     /// Configuration
-    public let config: Config
+    public var config: Config
     
     /// Networking
     let networking: Networking
@@ -43,31 +48,14 @@ public struct Api {
         guard let url = URL(string: config.serverUrl) else {
             throw Problem.badServerUrl
         }
-        self.networking = Networking(baseUrl: url)
-    }
-    
-    // MARK: Getters
-    
-    /// Authentication with username and password
-    public func auth(email: String, password: String) throws -> Promise<Login> {
-        let promise = Promise<Login>()
-        let data = Login.Request(email: email, password: password)
-        try networking.post(path: "auth", object: data) { (login) in
-            do {
-                let object = try login.unwrap(to: Login.self)
-                promise.complete(object)
-            } catch {
-                promise.fail(error)
+        
+        networking = Networking(baseUrl: url)
+        networking.reauthenticate = {
+            guard let token = config.token else {
+                throw Problem.missingAuthToken
             }
+            return try self.auth(token: token)
         }
-        return promise
     }
-    
-//    func getAppFileTemp(name: String = "all") -> [App] {
-//        let path = Bundle.main.path(forResource: "apps-\(name)", ofType: "json")!
-//        let data = try! Data(contentsOf: URL(fileURLWithPath: path), options: [])
-//        let apps = try! JSONDecoder().decode([App].self, from: data)
-//        return apps
-//    }
     
 }

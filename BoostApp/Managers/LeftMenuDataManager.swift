@@ -23,15 +23,6 @@ class LeftMenuDataManager: PresentableTableViewDataManager {
         
         reloadAccounts()
         
-        let newAccount = Presentable<NewAccountTableViewCell>.create({ (cell) in
-            
-        }).cellSelected {
-            self.appDelegate.coordinator.navigate(to: .newAccount(success: { account in
-                self.reloadAccounts()
-            }))
-        }
-        accountsSection.presentables.append(newAccount)
-        
         data.append(accountsSection)
         
         let settingsSection = PresentableSection()
@@ -60,13 +51,22 @@ class LeftMenuDataManager: PresentableTableViewDataManager {
                     cell.textLabel?.text = account.name
                     cell.detailTextLabel?.text = account.server
                 }).cellSelected {
-                    
+                    self.appDelegate.coordinator.navigate(to: .home(account))
                 }
                 accountsSection.presentables.append(acc)
             }
         } catch {
             // TODO: Handle
         }
+        
+        // New account cell
+        let newAccount = Presentable<NewAccountTableViewCell>.create({ (cell) in
+        }).cellSelected {
+            self.appDelegate.coordinator.navigate(to: .newAccount(success: { account in
+                self.reloadAccounts()
+            }))
+        }
+        accountsSection.presentables.append(newAccount)
     }
     
     // MARK: Table view delegate overrides
