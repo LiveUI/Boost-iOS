@@ -56,16 +56,16 @@ class AppsDataManager: PresentableCollectionViewDataManager {
         }
         
         if let leadingApp = leadingApp {
-            Boost.api.apps(identifier: leadingApp.identifier, platform: leadingApp.platform) { (result) in
-                print(result)
-                
-                switch result {
-                case .success(let apps):
-                    makePresenters(apps)
-                case .error(let error):
-                    print(error?.localizedDescription ?? "API Error")
-                }
-            }
+//            Boost.api.apps(identifier: leadingApp.identifier, platform: leadingApp.platform) { (result) in
+//                print(result)
+//                
+//                switch result {
+//                case .success(let apps):
+//                    makePresenters(apps)
+//                case .error(let error):
+//                    print(error?.localizedDescription ?? "API Error")
+//                }
+//            }
         }
     }
     

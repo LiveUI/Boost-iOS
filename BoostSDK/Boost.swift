@@ -9,17 +9,17 @@
 import Foundation
 
 
-public struct Config {
-    
-    public let baseUrl: URL = URL(string: "https://appstore.mgw.cz")!
-    
-}
-
-
-public struct Boost {
-    
-    static public let config = Config()
-    
-    static public let api = Api()
-    
-}
+//public struct Config {
+//    
+//    public let baseUrl: URL = URL(string: "https://appstore.mgw.cz")!
+//    
+//}
+//
+//
+//public struct Boost {
+//    
+//    static public let config = Config()
+//    
+//    static public let api = Api()
+//    
+//}

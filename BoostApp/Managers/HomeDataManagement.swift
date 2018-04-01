@@ -83,14 +83,14 @@ class HomeDataManager: PresentableCollectionViewDataManager {
             }
         }
         
-        Boost.api.apps { (result) in
-            switch result {
-            case .success(let apps):
-                makePresenters(apps)
-            case .error(let error):
-                print(error?.localizedDescription ?? "API Error")
-            }
-        }
+//        Boost.api.apps { (result) in
+//            switch result {
+//            case .success(let apps):
+//                makePresenters(apps)
+//            case .error(let error):
+//                print(error?.localizedDescription ?? "API Error")
+//            }
+//        }
     }
     
     // MARK: Collection view delegate methods

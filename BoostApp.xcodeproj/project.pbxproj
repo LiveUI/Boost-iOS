@@ -11,6 +11,13 @@
 		15116A6A2070422200BC08D3 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116A692070422200BC08D3 /* SettingsTableViewCell.swift */; };
 		15116A6C2070423400BC08D3 /* NewAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116A6B2070423400BC08D3 /* NewAccountTableViewCell.swift */; };
 		15116A6E2070431000BC08D3 /* LeftMenuDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116A6D2070431000BC08D3 /* LeftMenuDataManager.swift */; };
+		15116A702070B6CF00BC08D3 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116A6F2070B6CF00BC08D3 /* Login.swift */; };
+		15116C6C2070B8E900BC08D3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C6B2070B8E900BC08D3 /* User.swift */; };
+		15116C6E2070BBCE00BC08D3 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C6D2070BBCE00BC08D3 /* Networking.swift */; };
+		15116C712070C6E700BC08D3 /* Codable+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C702070C6E700BC08D3 /* Codable+Tools.swift */; };
+		15116C732070C95D00BC08D3 /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C722070C95D00BC08D3 /* Problem.swift */; };
+		15116C752070CBE800BC08D3 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C742070CBE800BC08D3 /* Promise.swift */; };
+		15116C772070D42700BC08D3 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C762070D42700BC08D3 /* Debug.swift */; };
 		154C1330206C422B00011F54 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C132F206C422B00011F54 /* LoginCoordinator.swift */; };
 		154C134B206C5A6F00011F54 /* Account+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C134A206C5A6F00011F54 /* Account+CoreData.swift */; };
 		155FFBF81FE4097800910DFA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FFBF71FE4097800910DFA /* HomeViewController.swift */; };
@@ -126,6 +133,13 @@
 		15116A692070422200BC08D3 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		15116A6B2070423400BC08D3 /* NewAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccountTableViewCell.swift; sourceTree = "<group>"; };
 		15116A6D2070431000BC08D3 /* LeftMenuDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuDataManager.swift; sourceTree = "<group>"; };
+		15116A6F2070B6CF00BC08D3 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		15116C6B2070B8E900BC08D3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		15116C6D2070BBCE00BC08D3 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		15116C702070C6E700BC08D3 /* Codable+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Tools.swift"; sourceTree = "<group>"; };
+		15116C722070C95D00BC08D3 /* Problem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
+		15116C742070CBE800BC08D3 /* Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
+		15116C762070D42700BC08D3 /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 		154C132F206C422B00011F54 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		154C134A206C5A6F00011F54 /* Account+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+CoreData.swift"; sourceTree = "<group>"; };
 		155FFBF71FE4097800910DFA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -245,6 +259,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15116C6F2070C6CD00BC08D3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				15116C702070C6E700BC08D3 /* Codable+Tools.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		154C1331206C486900011F54 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +285,7 @@
 		155FFBFF1FE4110800910DFA /* BoostSDK */ = {
 			isa = PBXGroup;
 			children = (
+				15116C6F2070C6CD00BC08D3 /* Extensions */,
 				155FFC261FE4187B00910DFA /* Libs */,
 				155FFC231FE4128A00910DFA /* Networking */,
 				155FFC1D1FE4113A00910DFA /* Requests */,
@@ -286,6 +309,8 @@
 			isa = PBXGroup;
 			children = (
 				15A8958A1FD1F80400347281 /* App.swift */,
+				15116A6F2070B6CF00BC08D3 /* Login.swift */,
+				15116C6B2070B8E900BC08D3 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -312,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				155FFC241FE4129600910DFA /* Paging.swift */,
+				15116C6D2070BBCE00BC08D3 /* Networking.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -320,6 +346,9 @@
 			isa = PBXGroup;
 			children = (
 				155FFC271FE4188700910DFA /* Result.swift */,
+				15116C722070C95D00BC08D3 /* Problem.swift */,
+				15116C742070CBE800BC08D3 /* Promise.swift */,
+				15116C762070D42700BC08D3 /* Debug.swift */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -995,12 +1024,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15116A702070B6CF00BC08D3 /* Login.swift in Sources */,
 				15C7B4D11FE6E0790074508A /* Api+Apps.swift in Sources */,
+				15116C732070C95D00BC08D3 /* Problem.swift in Sources */,
 				155FFC1C1FE4112F00910DFA /* App.swift in Sources */,
+				15116C6E2070BBCE00BC08D3 /* Networking.swift in Sources */,
 				155FFC281FE4188700910DFA /* Result.swift in Sources */,
+				15116C772070D42700BC08D3 /* Debug.swift in Sources */,
+				15116C6C2070B8E900BC08D3 /* User.swift in Sources */,
+				15116C712070C6E700BC08D3 /* Codable+Tools.swift in Sources */,
 				155FFC251FE4129600910DFA /* Paging.swift in Sources */,
 				155FFC221FE4125200910DFA /* Api.swift in Sources */,
 				155FFC1F1FE4115000910DFA /* Boost.swift in Sources */,
+				15116C752070CBE800BC08D3 /* Promise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
