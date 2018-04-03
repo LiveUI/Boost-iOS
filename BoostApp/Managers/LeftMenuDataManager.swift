@@ -48,8 +48,8 @@ class LeftMenuDataManager: PresentableTableViewDataManager {
             accounts = try Account.all()
             for account in accounts {
                 let acc = Presentable<AccountTableViewCell>.create({ (cell) in
-                    cell.textLabel?.text = account.name
-                    cell.detailTextLabel?.text = account.server
+                    cell.nameLabel.text = account.name
+                    cell.hostLabel.text = account.server
                 }).cellSelected {
                     self.appDelegate.coordinator.navigate(to: .home(account))
                 }
