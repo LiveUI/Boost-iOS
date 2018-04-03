@@ -23,6 +23,7 @@
 		15116C82207113BF00BC08D3 /* Api+Boost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C81207113BE00BC08D3 /* Api+Boost.swift */; };
 		15116C842071168C00BC08D3 /* String+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C832071168C00BC08D3 /* String+Tools.swift */; };
 		15116C872071219600BC08D3 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C862071219600BC08D3 /* Token.swift */; };
+		15116C8D2073605900BC08D3 /* SelectedTagsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C8C2073605900BC08D3 /* SelectedTagsDataManager.swift */; };
 		154C1330206C422B00011F54 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C132F206C422B00011F54 /* LoginCoordinator.swift */; };
 		154C134B206C5A6F00011F54 /* Account+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C134A206C5A6F00011F54 /* Account+CoreData.swift */; };
 		155FFBF81FE4097800910DFA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FFBF71FE4097800910DFA /* HomeViewController.swift */; };
@@ -147,6 +148,7 @@
 		15116C81207113BE00BC08D3 /* Api+Boost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+Boost.swift"; sourceTree = "<group>"; };
 		15116C832071168C00BC08D3 /* String+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Tools.swift"; sourceTree = "<group>"; };
 		15116C862071219600BC08D3 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		15116C8C2073605900BC08D3 /* SelectedTagsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedTagsDataManager.swift; sourceTree = "<group>"; };
 		154C132F206C422B00011F54 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		154C134A206C5A6F00011F54 /* Account+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+CoreData.swift"; sourceTree = "<group>"; };
 		155FFBF71FE4097800910DFA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 				15C7B4D61FE6FB2C0074508A /* FiltersDataManager.swift */,
 				15C7B4DC1FE712BB0074508A /* HomeDataManagement.swift */,
 				15116A6D2070431000BC08D3 /* LeftMenuDataManager.swift */,
+				15116C8C2073605900BC08D3 /* SelectedTagsDataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1115,6 +1118,7 @@
 				15C7B4E01FE717420074508A /* AppHeader.swift in Sources */,
 				15C7B4D91FE6FB930074508A /* FilterTableViewCell.swift in Sources */,
 				15CA946E1FD03C63001AA1FE /* Enterprise.swift in Sources */,
+				15116C8D2073605900BC08D3 /* SelectedTagsDataManager.swift in Sources */,
 				15CA94351FD0267C001AA1FE /* AppDelegate.swift in Sources */,
 				15A895801FD1F48800347281 /* Lang.swift in Sources */,
 				15C7B4DB1FE6FC1C0074508A /* SortTableViewCell.swift in Sources */,

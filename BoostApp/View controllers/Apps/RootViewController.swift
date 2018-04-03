@@ -13,22 +13,32 @@ import AwesomeEnum
 import Presentables
 import Modular
 import SnapKit
-import TagListView
+import MaterialComponents
 
 
-class RootViewController: ViewController, TagListViewDelegate {
+class RootViewController: ViewController {
     
     var app: App? {
         didSet {
-            dataController.leadingApp = app
+            manager.leadingApp = app
         }
     }
     
-    lazy var dataController: AppsDataManager = {
+    lazy var manager: AppsDataManager = {
         return AppsDataManager(leadingApp: app)
     }()
     
-    var tagListView = TagListView()
+    lazy var selectedTagsManager: SelectedTagsDataManager = {
+        return SelectedTagsDataManager()
+    }()
+    
+    lazy var tagListView: UICollectionView = {
+        let layout = MDCChipCollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 150, height: 44)
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        return collectionView
+    }()
+    
     var collectionView: UICollectionView!
     
     var screenBlocker = UIView()
@@ -36,11 +46,12 @@ class RootViewController: ViewController, TagListViewDelegate {
     
     var tags: [String] = [] {
         didSet {
-            tagListView.removeAllTags()
-            tagListView.addTags(tags)
+            selectedTagsManager.tags = tags
             
-            dataController.selectedTags = tags
+            manager.selectedTags = tags
             filtersMenu.dataController.selectedTags = tags
+            
+            tagListView.reloadData()
         }
     }
     
@@ -78,19 +89,13 @@ class RootViewController: ViewController, TagListViewDelegate {
     }
     
     func configureTagListView() {
-        tagListView.cornerRadius = 3
-        tagListView.tagBackgroundColor = UIColor(red: 0.91, green: 0.49, blue: 0.21, alpha: 1.0)
-        tagListView.borderColor = UIColor(red: 0.90, green: 0.24, blue: 0.22, alpha: 1.0)
-        tagListView.borderWidth = 1
-        tagListView.textColor = .white
-        tagListView.textFont = UIFont.systemFont(ofSize: 12)
-        tagListView.paddingX = 8
-        tagListView.paddingY = 3
-        tagListView.alignment = .center
-        tagListView.enableRemoveButton = true
-        tagListView.delegate = self
+        tagListView.register(MDCChipCollectionViewCell.self)
         
+        tagListView.backgroundColor = .red
         tagListView.place.on(view, top: 12).sideToSide().with.height(0)
+        
+        var m: PresentableManager = selectedTagsManager
+        tagListView.bind(withPresentableManager: &m)
     }
     
     func configureCollectionView() {
@@ -138,13 +143,13 @@ class RootViewController: ViewController, TagListViewDelegate {
         layoutElements()
         
         // Do the binding
-        var dc: PresentableManager = dataController
+        var dc: PresentableManager = manager
         collectionView.bind(withPresentableManager: &dc)
         
-        dataController.appActionRequested = { app in
+        manager.appActionRequested = { app in
             self.actionTriggered(for: app)
         }
-        dataController.appDetailRequested = { app in
+        manager.appDetailRequested = { app in
             let c = AppDetailViewController()
             c.appActionRequested = { app in
                 self.actionTriggered(for: app)
@@ -169,7 +174,8 @@ class RootViewController: ViewController, TagListViewDelegate {
     func updateTagListViewHeight(animated: Bool = false) {
         view.layoutIfNeeded()
         
-        let height = tagListView.intrinsicContentSize.height
+        //let height = tagListView.intrinsicContentSize.height
+        let height = 150
         tagListView.snp.updateConstraints { (make) in
             make.top.equalTo((height > 0 ? 12 : 0))
             make.height.equalTo(height)
@@ -205,20 +211,6 @@ class RootViewController: ViewController, TagListViewDelegate {
     
     @objc func didTapFilters(_ sender: AnyObject) {
         toggleFilters()
-    }
-    
-    // MARK: TagListView delegate methods
-    
-    func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
-        
-    }
-    
-    func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
-        guard let index = tags.index(of: title) else { return }
-        tags.remove(at: index)
-        
-        filtersMenu.dataController.selectedTags = tags
-        updateTagListViewHeight(animated: true)
     }
     
 }

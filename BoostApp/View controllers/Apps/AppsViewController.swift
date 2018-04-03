@@ -23,7 +23,7 @@ class AppsViewController: RootViewController {
         
         title = leadingApp.name
         
-        dataController = AppsDataManager(leadingApp: leadingApp)
+        manager = AppsDataManager(leadingApp: leadingApp)
         
         let layout = UICollectionViewFlowLayout()
         self.collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
