@@ -24,6 +24,7 @@
 		15116C842071168C00BC08D3 /* String+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C832071168C00BC08D3 /* String+Tools.swift */; };
 		15116C872071219600BC08D3 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C862071219600BC08D3 /* Token.swift */; };
 		15116C8D2073605900BC08D3 /* SelectedTagsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C8C2073605900BC08D3 /* SelectedTagsDataManager.swift */; };
+		15116C8F2073C80200BC08D3 /* LeftMenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C8E2073C80200BC08D3 /* LeftMenuHeader.swift */; };
 		154C1330206C422B00011F54 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C132F206C422B00011F54 /* LoginCoordinator.swift */; };
 		154C134B206C5A6F00011F54 /* Account+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C134A206C5A6F00011F54 /* Account+CoreData.swift */; };
 		155FFBF81FE4097800910DFA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FFBF71FE4097800910DFA /* HomeViewController.swift */; };
@@ -149,6 +150,7 @@
 		15116C832071168C00BC08D3 /* String+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Tools.swift"; sourceTree = "<group>"; };
 		15116C862071219600BC08D3 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		15116C8C2073605900BC08D3 /* SelectedTagsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedTagsDataManager.swift; sourceTree = "<group>"; };
+		15116C8E2073C80200BC08D3 /* LeftMenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuHeader.swift; sourceTree = "<group>"; };
 		154C132F206C422B00011F54 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		154C134A206C5A6F00011F54 /* Account+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+CoreData.swift"; sourceTree = "<group>"; };
 		155FFBF71FE4097800910DFA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 			isa = PBXGroup;
 			children = (
 				15C7B4DF1FE717420074508A /* AppHeader.swift */,
+				15116C8E2073C80200BC08D3 /* LeftMenuHeader.swift */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -1129,6 +1132,7 @@
 				156AFEAC2063315100FB91B3 /* SettingsViewController.swift in Sources */,
 				155FFBF81FE4097800910DFA /* HomeViewController.swift in Sources */,
 				15F134522063243400D7890E /* CenterViewController.swift in Sources */,
+				15116C8F2073C80200BC08D3 /* LeftMenuHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

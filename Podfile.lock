@@ -388,7 +388,7 @@ PODS:
   - MotionInterchange (1.6.0)
   - MotionTransitioning (5.0.0)
   - Presentables (0.6.1)
-  - Reloaded (0.0.1)
+  - Reloaded (1.0.1)
   - SideMenu (3.1.5)
   - SnapKit (4.0.0)
   - SpecTools (1.0.2)
@@ -423,7 +423,7 @@ SPEC CHECKSUMS:
   MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
   MotionTransitioning: 23d25edc2f4606efb922403cbac6d81af37aa33a
   Presentables: 6199755c353b5f4920659c08daf921910e142b58
-  Reloaded: 7991b10f1196d088888aebc3cf4a048b9c04b516
+  Reloaded: ae9fdea8818df3d9cd7dc52d2e3525bc20e6b4b3
   SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SpecTools: 77474921254b23ea50bb80f8763214f41d9d63c5
