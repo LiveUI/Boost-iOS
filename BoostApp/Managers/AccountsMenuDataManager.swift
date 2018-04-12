@@ -1,5 +1,5 @@
 //
-//  LeftMenuDataManager.swift
+//  AccountsMenuDataManager.swift
 //  BoostApp
 //
 //  Created by Ondrej Rafaj on 31/03/2018.
@@ -10,7 +10,9 @@ import Foundation
 import Presentables
 
 
-class LeftMenuDataManager: PresentableTableViewDataManager {
+class AccountsMenuDataManager: PresentableTableViewDataManager {
+    
+    var accountHasBeenDeleted: (() -> Void)?
     
     var accounts: [Account] = []
     
@@ -26,9 +28,7 @@ class LeftMenuDataManager: PresentableTableViewDataManager {
         data.append(accountsSection)
         
         let settingsSection = PresentableSection()
-        let setting = Presentable<SettingsTableViewCell>.create({ (cell) in
-            cell.textLabel?.text = "Settings"
-        }).cellSelected {
+        let setting = Presentable<SettingsTableViewCell>.create().cellSelected {
             self.appDelegate.coordinator.navigate(to: .settings)
         }
         settingsSection.presentables.append(setting)
@@ -42,7 +42,7 @@ class LeftMenuDataManager: PresentableTableViewDataManager {
     
     // MARK: Reload accounts
     
-    private func reloadAccounts() {
+    func reloadAccounts() {
         accountsSection.presentables.removeAll()
         do {
             accounts = try Account.all()
@@ -89,6 +89,8 @@ class LeftMenuDataManager: PresentableTableViewDataManager {
         }
         
         accounts.remove(at: indexPath.row)
+        
+        accountHasBeenDeleted?()
     }
     
 }

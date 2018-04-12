@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  OverviewViewController.swift
 //  BoostApp
 //
 //  Created by Ondrej Rafaj on 15/12/2017.
@@ -14,7 +14,7 @@ import AwesomeEnum
 import BoostSDK
 
 
-class HomeViewController: RootViewController {
+class OverviewViewController: RootViewController {
     
     var account: Account {
         didSet {
@@ -32,7 +32,7 @@ class HomeViewController: RootViewController {
         
         title = account.name
         
-        let dataController = HomeDataManager()
+        let dataController = OverviewDataManager(account: account)
         dataController.allBuildsRequested = { app in
             let c = AppsViewController(leadingApp: app)
             c.tags = super.filtersMenu.dataController.selectedTags

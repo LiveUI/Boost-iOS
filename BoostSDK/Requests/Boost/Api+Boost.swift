@@ -13,16 +13,7 @@ extension Api {
     
     /// Information about the API
     public func info() throws -> Promise<Info> {
-        let promise = Promise<Info>()
-        try networking.get(path: "info") { (login) in
-            do {
-                let object = try login.unwrap(to: Info.self)
-                promise.complete(object)
-            } catch {
-                promise.fail(error)
-            }
-        }
-        return promise
+        return try networking.get(path: "info")
     }
     
 }

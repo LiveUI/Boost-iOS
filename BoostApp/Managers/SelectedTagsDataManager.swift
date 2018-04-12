@@ -30,7 +30,7 @@ class SelectedTagsDataManager: PresentableCollectionViewDataManager, UICollectio
         
         section.presentables.append(Presentable<MDCChipCollectionViewCell>.create { cell in
             cell.chipView.titleLabel.text = "tag_huhuhu_1.2.3"
-            cell.chipView.imageView.image = UIImage(named: "Defaults/icon-40")
+            cell.chipView.imageView.image = UIImage.defaultIcon
             cell.chipView.imageView.clipsToBounds = true
             cell.chipView.sizeToFit()
         })
@@ -45,7 +45,7 @@ class SelectedTagsDataManager: PresentableCollectionViewDataManager, UICollectio
         for tag in tags {
             section.presentables.append(Presentable<MDCChipCollectionViewCell>.create { cell in
                 cell.chipView.titleLabel.text = tag
-                cell.chipView.imageView.image = UIImage(named: "Defaults/icon-40")
+                cell.chipView.imageView.image = UIImage.defaultIcon
                 cell.chipView.sizeToFit()
             })
         }

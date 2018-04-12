@@ -1,5 +1,5 @@
 //
-//  Token.swift
+//  Login.swift
 //  BoostSDK
 //
 //  Created by Ondrej Rafaj on 01/04/2018.
@@ -9,19 +9,22 @@
 import Foundation
 
 
-public struct Token: Codable {
+public struct Login: Codable {
     
     struct Request: Codable {
-        let token: String
+        let email: String
+        let password: String
     }
     
-    public let id: String
+    public let id: UUID
     public let expires: String
+    public let token: String
     public let user: User
     
     enum CodingKeys: String, CodingKey {
         case expires
         case id
+        case token
         case user
     }
 }

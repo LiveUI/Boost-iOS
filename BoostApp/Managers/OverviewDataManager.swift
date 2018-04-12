@@ -1,5 +1,5 @@
 //
-//  HomeDataManagement.swift
+//  OverviewDataManager.swift
 //  BoostApp
 //
 //  Created by Ondrej Rafaj on 17/12/2017.
@@ -9,10 +9,12 @@
 import Foundation
 import Presentables
 import BoostSDK
-import Presentables
 
 
-class HomeDataManager: PresentableCollectionViewDataManager {
+class OverviewDataManager: PresentableCollectionViewDataManager {
+    
+    var account: Account
+    var api: Api
     
     var appDetailRequested: ((App)->())?
     var appActionRequested: ((App)->())?
@@ -22,7 +24,33 @@ class HomeDataManager: PresentableCollectionViewDataManager {
     var selectedTags: [String] = []
     
     
+    // MARK: Initialization
+    
+    init(account: Account) {
+        self.account = account
+        self.api = account.api()
+        
+        super.init()
+        
+        setFakeOverview()
+        loadOverview()
+    }
+    
     // MARK: Data
+    
+    func setFakeOverview() {
+        // TODO: Load fake app with fake fields
+    }
+    
+    func loadOverview() {
+        do {
+            try api.overview().then({ apps in
+                print(apps)
+            })
+        } catch {
+            print(error)
+        }
+    }
     
     func loadData() {
         func makePresenters(_ apps: [App]) {

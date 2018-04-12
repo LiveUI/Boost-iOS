@@ -54,19 +54,6 @@ class AppsDataManager: PresentableCollectionViewDataManager {
             }
             data.append(section)
         }
-        
-        if let leadingApp = leadingApp {
-//            Boost.api.apps(identifier: leadingApp.identifier, platform: leadingApp.platform) { (result) in
-//                print(result)
-//                
-//                switch result {
-//                case .success(let apps):
-//                    makePresenters(apps)
-//                case .error(let error):
-//                    print(error?.localizedDescription ?? "API Error")
-//                }
-//            }
-        }
     }
     
     // MARK: Collection view delegate methods

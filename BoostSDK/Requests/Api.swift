@@ -16,6 +16,7 @@ public class Api {
         case badServerUrl
         case notAuthorized
         case missingAuthToken
+        case objectHasntBeenCreatedYet
     }
     
     /// Configuration object
@@ -24,6 +25,7 @@ public class Api {
         /// Server URL
         public let serverUrl: String
         
+        // TODO: Make token UUID!!
         /// Persistent authentication token
         public var token: String?
         
@@ -51,10 +53,10 @@ public class Api {
         
         networking = Networking(baseUrl: url)
         networking.reauthenticate = {
-            guard let token = config.token else {
+            guard let token = config.token, let uuid = UUID(uuidString: token) else {
                 throw Problem.missingAuthToken
             }
-            return try self.auth(token: token)
+            return try self.auth(token: uuid)
         }
     }
     

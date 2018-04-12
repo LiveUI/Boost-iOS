@@ -8,6 +8,19 @@
 
 import Foundation
 import Reloaded
+import BoostSDK
 
 
 extension Account: Entity { }
+
+
+extension Account {
+    
+    func api() -> Api {
+        guard let server = self.server, let api = try? Api(config: Api.Config(serverUrl: server, token: token)) else {
+            fatalError("Account has to have a server url")
+        }
+        return api
+    }
+    
+}

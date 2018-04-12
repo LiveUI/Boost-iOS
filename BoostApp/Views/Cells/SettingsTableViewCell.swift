@@ -8,12 +8,16 @@
 
 import Foundation
 import UIKit
+import AwesomeEnum
 
 
 class SettingsTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
+        
+        textLabel?.text = Lang.get("left.accounts.settings")
+        imageView?.image = Awesome.solid.cogs.cellIcon()
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -11,15 +11,27 @@ import Foundation
 
 public struct App: Codable {
     
-    public enum Platform: Int, Codable {
-        case file = 0
-        case ios = 1
-        case tvos = 2
-        case android = 3
+    public enum Platform: String, Codable, Queryable {
+        case any
+        case ios
+        case android
+        
+        var key: String {
+            return "platform"
+        }
+        
+        var value: String? {
+            switch self {
+            case .any:
+                return nil
+            default:
+                return rawValue
+            }
+        }
     }
     
-    public let id: Int?
-    public let teamId: Int?
+    public let id: UUID?
+    public let teamId: UUID?
     public let name: String
     public let identifier: String
     public let version: String

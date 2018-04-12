@@ -11,7 +11,7 @@ import Foundation
 
 public struct User: Codable {
     
-    public let id: String
+    public let id: UUID
     public let lastname: String
     public let registered: String
     public let firstname: String

@@ -10,40 +10,34 @@ import Foundation
 import UIKit
 import SideMenu
 import Presentables
+import AwesomeEnum
+import Modular
 
 
-class LeftMenuViewController: UITableViewController {
+class LeftMenuViewController: ViewController {
     
-    let manager: LeftMenuDataManager = LeftMenuDataManager()
+    let accounts = AccountsViewController()
     
-    // MARK: View lifecycle
+    let scrollView = UIScrollView()
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        tableView.isEditing = false
+    // MARK: Settings
+    
+    func reloadData() {
+        accounts.manager.reloadAccounts()
+        accounts.setupEditButton()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setupEditButton()
-        
-        var m = manager as PresentableManager
-        tableView.bind(withPresentableManager: &m)
-    }
+    // MARK: Elements
     
-    func setupEditButton() {
-        let edit = UIBarButtonItem(barButtonSystemItem: tableView.isEditing ? .done : .edit, target: self, action: #selector(toggleEdit(_:)))
-        navigationItem.setRightBarButton(edit, animated: true)
-    }
-    
-    // MARK: Actions
-    
-    @objc func toggleEdit(_ sender: UIBarButtonItem) {
-        tableView.setEditing(!tableView.isEditing, animated: true)
+    override func configureElements() {
+        super.configureElements()
         
-        setupEditButton()
+        scrollView.place.on(andFill: view)
+        
+        // Accounts
+        addChildViewController(accounts)
+        accounts.view.place.on(view, top: 0, bottom: 0).leftMargin(0).match(width: scrollView)
+        accounts.didMove(toParentViewController: self)
     }
     
 }

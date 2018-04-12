@@ -49,11 +49,16 @@ public class Networking {
         return makeRequest(path: path, data: data, method: "PUT", result)
     }
     
+    func put(path: String, object: Encodable, _ result: @escaping ((_ result: Result<DataResponseTuple>) -> ())) throws {
+        let data = try object.asData()
+        return makeRequest(path: path, data: data, method: "PUT", headers: ["Content-Type": "application/json; charset=utf8"], result)
+    }
+    
     func delete(path: String, _ result: @escaping ((_ result: Result<DataResponseTuple>) -> ())) throws {
         return makeRequest(path: path, method: "DELETE", result)
     }
     
-    private func makeRequest(path: String, data: Data? = nil, method: String, headers: [String: String] = [:], reauth: Bool = false, _ result: @escaping ((_ result: Result<DataResponseTuple>) -> ())) {
+    func makeRequest(path: String, data: Data? = nil, method: String, headers: [String: String] = [:], reauth: Bool = false, _ result: @escaping ((_ result: Result<DataResponseTuple>) -> ())) {
         let defaultSessionConfiguration = URLSessionConfiguration.default
         let defaultSession = URLSession(configuration: defaultSessionConfiguration)
         

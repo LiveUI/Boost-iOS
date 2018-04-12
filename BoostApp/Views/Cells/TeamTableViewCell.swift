@@ -1,8 +1,8 @@
 //
-//  NewAccountTableViewCell.swift
+//  TeamTableViewCell.swift
 //  BoostApp
 //
-//  Created by Ondrej Rafaj on 31/03/2018.
+//  Created by Ondrej Rafaj on 12/04/2018.
 //  Copyright © 2018 LiveUI. All rights reserved.
 //
 
@@ -11,13 +11,10 @@ import UIKit
 import AwesomeEnum
 
 
-class NewAccountTableViewCell: UITableViewCell {
+class TeamTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
-        
-        textLabel?.text = Lang.get("left.accounts.new_account")
-        imageView?.image = Awesome.solid.plus.cellIcon()
     }
     
     required init?(coder aDecoder: NSCoder) {

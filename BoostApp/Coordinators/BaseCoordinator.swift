@@ -10,21 +10,28 @@ import Foundation
 import UIKit
 import SideMenu
 import AwesomeEnum
+import Reloaded
 
 
 class BaseCoordinator {
     
     enum Location {
+        case welcome
         case home(Account)
-        case newAccount(success: ((Account) -> Void))
+        case newAccount(success: LoginCoordinator.AccountClosure?)
         case settings
     }
     
     let leftScreen: LeftMenuViewController
-    var currentScreen: UIViewController = UIViewController()
+    var currentScreen: UIViewController? = UIViewController()
     
     let leftBaseScreen: LeftBaseViewController
     let centerBaseScreen: CenterViewController
+    
+    var loginCoordinator = LoginCoordinator { account in
+        // QUESTION: Maybe we want to improve this little access hack? :)
+        account.appDelegate.coordinator.leftScreen.reloadData()
+    }
     
     // MARK: Initialization
     
@@ -39,7 +46,12 @@ class BaseCoordinator {
         }
         SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: centerBaseScreen.view, forMenu: .left)
         
-        show(viewController: currentScreen)
+        guard let account = try! Account.query.sort(by: "lastUsed", direction: .orderedDescending).first() else {
+            navigate(to: .welcome)
+            return
+        }
+        print(account)
+        navigate(to: .home(account))
     }
     
     // MARK: Settings
@@ -51,32 +63,43 @@ class BaseCoordinator {
         SideMenuManager.default.menuWidth = menuWidth
     }
     
+    // MARK: Informators
+    
+    func noMoreAccountsAvailable() {
+        navigate(to: .welcome)
+    }
+    
     // MARK: Navigation
     
     var currentLocation: Location = .settings
     
     func navigate(to: Location) {
         switch to {
+        case .welcome:
+            show(viewController: WelcomeViewController())
         case .home(let account):
-            show(viewController: HomeViewController(account: account))
+            account.lastUsed = Date()
+            try? account.save()
+            show(viewController: OverviewViewController(account: account))
         case .newAccount(let success):
-            let c = LoginViewController()
-            c.didLoginSuccessfully = { account in
-                success(account)
-                print("Load new server data!!!!")
-            }
-            let nc = UINavigationController(rootViewController: c)
-            present(viewController: nc)
+            loginCoordinator.presentLogin(success: success)
         case .settings:
             show(viewController: SettingsViewController())
         }
     }
     
-    private func present(viewController: UIViewController) {
-        leftBaseScreen.present(viewController, animated: true)
+    func present(viewController: UIViewController) {
+        let vc: UIViewController = leftBaseScreen.isHidden ? centerBaseScreen : leftBaseScreen
+        vc.present(viewController, animated: true)
     }
     
-    private func show(viewController: UIViewController) {
+    @objc private func didTapMenu(_ sender: UIBarButtonItem) {
+        centerBaseScreen.present(leftBaseScreen, animated: true, completion: nil)
+    }
+    
+    // MARK: Private interface
+    
+    func show(viewController: UIViewController) {
         let nc = UINavigationController(rootViewController: viewController)
         
         let menu = UIBarButtonItem(image: Awesome.solid.list.asImage(size: 22), style: UIBarButtonItemStyle.done, target: self, action: #selector(didTapMenu(_:)))
@@ -85,26 +108,19 @@ class BaseCoordinator {
         SideMenuManager.default.menuAddPanGestureToPresent(toView: nc.navigationBar)
         SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: nc.view, forMenu: .left)
         
-        if currentScreen.view.superview != nil {
+        if let currentScreen = currentScreen, currentScreen.view.superview != nil {
             currentScreen.view.removeFromSuperview()
             currentScreen.removeFromParentViewController()
-        }
-        if currentScreen.parent != nil {
-            
         }
         
         centerBaseScreen.addChildViewController(nc)
         nc.view.frame = centerBaseScreen.view.bounds
         centerBaseScreen.view.addSubview(nc.view)
         nc.didMove(toParentViewController: centerBaseScreen)
-
+        
         currentScreen = nc
         
         centerBaseScreen.dismiss(animated: true, completion: nil)
-    }
-    
-    @objc private func didTapMenu(_ sender: UIBarButtonItem) {
-        centerBaseScreen.present(leftBaseScreen, animated: true, completion: nil)
     }
     
 }

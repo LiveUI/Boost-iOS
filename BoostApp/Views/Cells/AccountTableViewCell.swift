@@ -22,10 +22,10 @@ class AccountTableViewCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         
-        accessoryType = .detailDisclosureButton
+        accessoryType = .disclosureIndicator
         
         icon.place.on(contentView).square(side: 44).leftMargin(6).centerY()
-        icon.image = UIImage(named: "Defaults/icon-40")
+        icon.image = UIImage.defaultIcon
         
         nameLabel.place.next(to: icon, left: 16).topMargin(6).rightMargin(-6)
         nameLabel.font = UIFont.systemFont(ofSize: 14)
