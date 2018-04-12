@@ -97,6 +97,7 @@
 		15D73C99206320190011D5C9 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D73C98206320190011D5C9 /* LeftMenuViewController.swift */; };
 		15E29BE1207F8DBA00D3224D /* Account+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E29BE0207F8DBA00D3224D /* Account+Helpers.swift */; };
 		15E29BE3207F8E3E00D3224D /* UIImage+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E29BE2207F8E3E00D3224D /* UIImage+Defaults.swift */; };
+		15E29BE5207F93CB00D3224D /* UITableView+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E29BE4207F93CB00D3224D /* UITableView+Tools.swift */; };
 		15F1344D2063225600D7890E /* NSObject+AppDelegateTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1344C2063225600D7890E /* NSObject+AppDelegateTools.swift */; };
 		15F134502063236100D7890E /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1344F2063236100D7890E /* BaseCoordinator.swift */; };
 		15F134522063243400D7890E /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F134512063243400D7890E /* CenterViewController.swift */; };
@@ -265,6 +266,7 @@
 		15D73C98206320190011D5C9 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		15E29BE0207F8DBA00D3224D /* Account+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+Helpers.swift"; sourceTree = "<group>"; };
 		15E29BE2207F8E3E00D3224D /* UIImage+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Defaults.swift"; sourceTree = "<group>"; };
+		15E29BE4207F93CB00D3224D /* UITableView+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Tools.swift"; sourceTree = "<group>"; };
 		15F1344C2063225600D7890E /* NSObject+AppDelegateTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+AppDelegateTools.swift"; sourceTree = "<group>"; };
 		15F1344F2063236100D7890E /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		15F134512063243400D7890E /* CenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
@@ -740,6 +742,7 @@
 				1596E442207F29160068B243 /* Amazing+BoostApp.swift */,
 				1596E446207F780F0068B243 /* ViewController+Validation.swift */,
 				15E29BE2207F8E3E00D3224D /* UIImage+Defaults.swift */,
+				15E29BE4207F93CB00D3224D /* UITableView+Tools.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1270,6 +1273,7 @@
 				155FFBF81FE4097800910DFA /* OverviewViewController.swift in Sources */,
 				15F134522063243400D7890E /* CenterViewController.swift in Sources */,
 				15116C8F2073C80200BC08D3 /* LeftMenuHeader.swift in Sources */,
+				15E29BE5207F93CB00D3224D /* UITableView+Tools.swift in Sources */,
 				1596E42C207F00DB0068B243 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -70,6 +70,8 @@ class LoginViewController: ViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        actionButton.isEnabled = true
+        
         if account != nil {
             actionButton.setTitle(Lang.get("login.step1.change_name"), for: .normal)
         } else {
@@ -112,6 +114,8 @@ class LoginViewController: ViewController {
                 return
             }
             
+            actionButton.isEnabled = false
+            
             do {
                 let api = try Api(config: Api.Config(serverUrl: server))
                 try api.auth(email: email, password: password).then { (login) in
@@ -132,9 +136,13 @@ class LoginViewController: ViewController {
                         DispatchQueue.main.async {
                             self.requestedChangeAccountName?(account)
                         }
+                    }).error({ error in
+                        self.actionButton.isEnabled = true
+                        Dialog.show(error: error, on: self)
                     })
                 }
             } catch {
+                actionButton.isEnabled = true
                 Dialog.show(error: error, on: self)
             }
         }

@@ -13,19 +13,35 @@ import BoostSDK
 
 class TeamsDataManager: PresentableTableViewDataManager {
     
+    var account: Account? {
+        didSet {
+            loadData()
+        }
+    }
+    
     var teams: [Team] = []
     
     var teamsChanged: (()->())?
     
     func loadData() {
-        let section = PresentableSection()
+        data.removeAll()
         
-        let sort = Presentable<TeamTableViewCell>.create({ (cell) in
-            cell.textLabel?.text = "Team Yo!"
-        })
-        section.presentables.append(sort)
-        
-        data.append(section)
+        do {
+            try account?.api().teams().then({ teams in
+                let section = PresentableSection()
+                
+                for team in teams {
+                    let sort = Presentable<TeamTableViewCell>.create({ (cell) in
+                        cell.textLabel?.text = team.name
+                    })
+                    section.presentables.append(sort)
+                }
+                
+                self.data.append(section)
+            })
+        } catch {
+//            Dialog.show(error: error, on: self)
+        }
     }
     
 }

@@ -59,14 +59,13 @@ public class Networking {
     }
     
     func makeRequest(path: String, data: Data? = nil, method: String, headers: [String: String] = [:], reauth: Bool = false, _ result: @escaping ((_ result: Result<DataResponseTuple>) -> ())) {
-        let defaultSessionConfiguration = URLSessionConfiguration.default
-        let defaultSession = URLSession(configuration: defaultSessionConfiguration)
+        let sessionConfig = URLSessionConfiguration.default
+        let session = URLSession(configuration: sessionConfig)
         
         var request = URLRequest(url: baseUrl.appendingPathComponent(path))
         
-        if let data = data {
+        if let data = d ata {
             request.httpBody = data
-            Debug.post(data: data)
         }
         request.httpMethod = method
         var headers = headers
@@ -75,17 +74,26 @@ public class Networking {
         }
         request.allHTTPHeaderFields = headers
         
-        Debug.post(request: request)
-        
-        let task = defaultSession.dataTask(with: request) { (data, response, error) in
-            if let data = data, let response = response as? HTTPURLResponse {
-                Debug.post(response: response)
+        let task = session.dataTask(with: request) { (responseData, response, error) in
+            if let error = error as NSError? {
+                if error.code == NSURLErrorCancelled {
+                    print("Cancelled :(")
+                } else {
+                    // some other error
+                }
+                result(Result.error(error))
+                return
+            }
+            if let responseData = responseData, let response = response as? HTTPURLResponse {
+                Debug.request(request, response: response, data: responseData)
                 if response.statusCode == 401 {
-                    Debug.print("Unauthorised")
+                    Debug.print("Unauthorised, trying to refresh token")
                     if reauth == false {
                         do {
                             try self.reauthenticate?().then({ token in
-                                self.makeRequest(path: path, data: data, method: method, headers: headers, reauth: true, result)
+                                DispatchQueue.main.async {
+                                    self.makeRequest(path: path, data: data, method: method, headers: headers, reauth: true, result)
+                                }
                             })
                             return
                         } catch {
@@ -97,16 +105,15 @@ public class Networking {
                 if let auth = (response.allHeaderFields["authorization"] ?? response.allHeaderFields["Authorization"]) as? String {
                     self.jwtToken = auth
                 }
-                result(Result.success((data: data, response: response)))
-            }
-            guard let error = error else {
+                result(Result.success((data: responseData, response: response)))
+            } else {
                 result(Result.error(Problem.unknownError))
-                return
             }
-            result(Result.error(error))
         }
         
         task.resume()
+        
+        session.finishTasksAndInvalidate()
     }
     
 }

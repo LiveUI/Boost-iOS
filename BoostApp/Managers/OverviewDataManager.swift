@@ -33,7 +33,7 @@ class OverviewDataManager: PresentableCollectionViewDataManager {
         super.init()
         
         setFakeOverview()
-        loadOverview()
+        //loadOverview()
     }
     
     // MARK: Data

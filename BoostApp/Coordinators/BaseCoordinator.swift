@@ -28,10 +28,7 @@ class BaseCoordinator {
     let leftBaseScreen: LeftBaseViewController
     let centerBaseScreen: CenterViewController
     
-    var loginCoordinator = LoginCoordinator { account in
-        // QUESTION: Maybe we want to improve this little access hack? :)
-        account.appDelegate.coordinator.leftScreen.reloadData()
-    }
+    var loginCoordinator: LoginCoordinator
     
     // MARK: Initialization
     
@@ -44,13 +41,22 @@ class BaseCoordinator {
         centerBaseScreen.reportViewDidLoad = {
             
         }
+        
+        loginCoordinator = LoginCoordinator()
+        loginCoordinator.accountHasBeenCreated = { account in
+            self.leftScreen.reloadData()
+        }
+        loginCoordinator.accountHasBeenModified = { account in
+            self.leftScreen.reloadData()
+        }
+        
         SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: centerBaseScreen.view, forMenu: .left)
         
+        // Navigate to the last account used
         guard let account = try! Account.query.sort(by: "lastUsed", direction: .orderedDescending).first() else {
             navigate(to: .welcome)
             return
         }
-        print(account)
         navigate(to: .home(account))
     }
     
@@ -79,8 +85,9 @@ class BaseCoordinator {
             show(viewController: WelcomeViewController())
         case .home(let account):
             account.lastUsed = Date()
-            try? account.save()
-            show(viewController: OverviewViewController(account: account))
+            try? account.save() // Save the account that has been opened last
+            leftScreen.didLogin(to: account) // Load teams in the lest menu
+            show(viewController: OverviewViewController(account: account)) // Show overview
         case .newAccount(let success):
             loginCoordinator.presentLogin(success: success)
         case .settings:

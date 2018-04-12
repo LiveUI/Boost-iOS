@@ -83,9 +83,13 @@ class RootViewController: ViewController {
     // MARK: Elements
     
     func configureNavBar() {
-        let portrait = Awesome.solid.list.asImage(size: 22)
-        let advanced = UIBarButtonItem(image: portrait, style: .plain, target: self, action: #selector(RootViewController.didTapFilters(_:)))
-        navigationItem.rightBarButtonItem = advanced
+        let settings = Awesome.solid.ellipsisH.navBarIcon()
+        let settingsButton = UIBarButtonItem(image: settings, style: .plain, target: self, action: #selector(RootViewController.didTapFilters(_:)))
+        navigationItem.setLeftBarButtonItems([navigationItem.leftBarButtonItem!, settingsButton], animated: false)
+        
+        let filter = Awesome.solid.filter.navBarIcon()
+        let filterButton = UIBarButtonItem(image: filter, style: .plain, target: self, action: #selector(RootViewController.didTapFilters(_:)))
+        navigationItem.rightBarButtonItem = filterButton
     }
     
     func configureTagListView() {

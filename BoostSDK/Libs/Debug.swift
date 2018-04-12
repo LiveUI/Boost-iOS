@@ -15,16 +15,10 @@ class Debug {
         Swift.print("Debug: \(message)")
     }
     
-    static func post(data: Data) {
-        print("POST data: \(String(data: data, encoding: .utf8) ?? "unknown")")
-    }
-    
-    static func post(request: URLRequest) {
+    static func request(_ request: URLRequest, response: URLResponse, data: Data) {
         print("\(request.httpMethod ?? "???") request: \(request)")
-    }
-    
-    static func post(response: URLResponse) {
-        print("\(response.mimeType ?? "???") request: \(response)")
+        print("\(response.mimeType ?? "???") response: \(response)")
+        print("Data: \(String(data: data, encoding: .utf8) ?? "unknown")")
     }
     
 }

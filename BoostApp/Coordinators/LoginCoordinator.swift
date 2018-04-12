@@ -14,29 +14,24 @@ class LoginCoordinator {
     
     typealias AccountClosure = ((_ account: Account) -> Void)
     
-    let accountHasBeenModified: AccountClosure
+    var accountHasBeenCreated: AccountClosure?
+    var accountHasBeenModified: AccountClosure?
     
     var baseCoordinator: BaseCoordinator {
         return (UIApplication.shared.delegate as! AppDelegate).coordinator
     }
     
     
-    // MARK: Initialization
-    
-    init(_ accountHasBeenModified: @escaping AccountClosure) {
-        self.accountHasBeenModified = accountHasBeenModified
-    }
-    
     // MARK: Navigation
     
     func presentLogin(success: AccountClosure?) {
         let c = LoginViewController()
         c.requestedChangeAccountName = { account in
-            self.accountHasBeenModified(account)
+            self.accountHasBeenCreated?(account)
             let nameControntroller = ServerNameViewController(account)
             nameControntroller.didChangeNameSuccessfully = { account in
                 c.dismiss(animated: true, completion: {
-                    self.accountHasBeenModified(account)
+                    self.accountHasBeenModified?(account)
                     self.baseCoordinator.navigate(to: .home(account))
                 })
             }

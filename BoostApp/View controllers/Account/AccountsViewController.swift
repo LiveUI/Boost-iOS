@@ -41,6 +41,8 @@ class AccountsViewController: UITableViewController {
                 self.appDelegate.coordinator.noMoreAccountsAvailable()
             }
         }
+        
+        tableView.removeEmptyRows()
     }
     
     func setupEditButton() {
