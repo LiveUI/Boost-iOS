@@ -25,9 +25,13 @@ extension Api {
     public func check(teamIdentifier identifier: String) throws -> Promise<Bool> {
         let check = Team.Check(identifier: identifier)
         let success: Promise<Success> = try networking.post(path: "teams/check", object: check)
-        return try success.error({ error in
-            throw error
-        }).map({ _ in true })
+        let promise = Promise<Bool>()
+        try success.then({ success in
+            promise.complete(true)
+        }).error({ error in
+            promise.complete(false)
+        })
+        return promise
     }
     
     /// Create a team

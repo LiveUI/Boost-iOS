@@ -52,8 +52,11 @@ class BaseCoordinator {
         
         SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: centerBaseScreen.view, forMenu: .left)
         
+        // Register API bad token notification observer
+        NotificationCenter.default.addObserver(self, selector: #selector(accountInvalid(_:)), name: Account.InvalidToken, object: nil)
+        
         // Navigate to the last account used
-        guard let account = try! Account.query.sort(by: "lastUsed", direction: .orderedDescending).first() else {
+        guard let account = try! Account.query.filter("token" != nil).sort(by: "lastUsed", direction: .orderedDescending).first() else {
             navigate(to: .welcome)
             return
         }
@@ -84,10 +87,16 @@ class BaseCoordinator {
         case .welcome:
             show(viewController: WelcomeViewController())
         case .home(let account):
-            account.lastUsed = Date()
-            try? account.save() // Save the account that has been opened last
-            leftScreen.didLogin(to: account) // Load teams in the lest menu
-            show(viewController: OverviewViewController(account: account)) // Show overview
+            if account.token == nil {
+                loginCoordinator.presentLogin(for: account) { account in
+                    self.navigate(to: .home(account))
+                }
+            } else {
+                account.lastUsed = Date()
+                try? account.save() // Save the account that has been opened last
+                leftScreen.didLogin(to: account) // Load teams in the lest menu
+                show(viewController: OverviewViewController(account: account)) // Show overview
+            }
         case .newAccount(let success):
             loginCoordinator.presentLogin(success: success)
         case .settings:
@@ -102,6 +111,15 @@ class BaseCoordinator {
     
     @objc private func didTapMenu(_ sender: UIBarButtonItem) {
         centerBaseScreen.present(leftBaseScreen, animated: true, completion: nil)
+    }
+    
+    // MARK: Notifications
+    
+    @objc func accountInvalid(_ sender: NSNotification) {
+        leftScreen.reloadData()
+        leftScreen.didLogOut()
+        
+        currentScreen?.present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
     }
     
     // MARK: Private interface

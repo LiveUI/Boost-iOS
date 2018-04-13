@@ -17,9 +17,10 @@ public class Networking {
     
     var jwtToken: String?
     
-    enum Problem: Error {
+    public enum Problem: Error {
         case unknownError
         case invalidPath
+        case badToken
     }
     
     var reauthenticate: (() throws -> Promise<Token>)?
@@ -58,13 +59,13 @@ public class Networking {
         return makeRequest(path: path, method: "DELETE", result)
     }
     
-    func makeRequest(path: String, data: Data? = nil, method: String, headers: [String: String] = [:], reauth: Bool = false, _ result: @escaping ((_ result: Result<DataResponseTuple>) -> ())) {
+    func makeRequest(path: String, data: Data? = nil, method: String, headers: [String: String] = [:], _ result: @escaping ((_ result: Result<DataResponseTuple>) -> ())) {
         let sessionConfig = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfig)
         
         var request = URLRequest(url: baseUrl.appendingPathComponent(path))
         
-        if let data = d ata {
+        if let data = data {
             request.httpBody = data
         }
         request.httpMethod = method
@@ -75,31 +76,31 @@ public class Networking {
         request.allHTTPHeaderFields = headers
         
         let task = session.dataTask(with: request) { (responseData, response, error) in
-            if let error = error as NSError? {
-                if error.code == NSURLErrorCancelled {
-                    print("Cancelled :(")
-                } else {
-                    // some other error
-                }
+            if let error = error {
                 result(Result.error(error))
                 return
             }
             if let responseData = responseData, let response = response as? HTTPURLResponse {
                 Debug.request(request, response: response, data: responseData)
                 if response.statusCode == 401 {
-                    Debug.print("Unauthorised, trying to refresh token")
-                    if reauth == false {
+                    if path != "token", path != "auth" {
+                        Debug.print("Unauthorised, trying to refresh token")
                         do {
                             try self.reauthenticate?().then({ token in
                                 DispatchQueue.main.async {
-                                    self.makeRequest(path: path, data: data, method: method, headers: headers, reauth: true, result)
+                                    self.makeRequest(path: path, data: data, method: method, headers: headers, result)
                                 }
+                            }).error({ error in
+                                result(Result.error(Problem.badToken))
                             })
                             return
                         } catch {
                             result(Result.error(error))
                             return
                         }
+                    } else {
+                        Debug.print("Unauthorised, unable to refresh token on auth endpoints")
+                        result(Result.error(Problem.unknownError))
                     }
                 }
                 if let auth = (response.allHeaderFields["authorization"] ?? response.allHeaderFields["Authorization"]) as? String {

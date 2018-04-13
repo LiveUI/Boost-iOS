@@ -16,7 +16,12 @@ import AwesomeEnum
 
 class LoginViewController: ViewController {
     
-    var requestedChangeAccountName: ((_ account: Account) -> Void)?
+    enum Mode {
+        case newAccount
+        case login
+    }
+    
+    var requestedNextStep: ((_ account: Account) -> Void)?
     
     let serverField = TextField()
     let loginField = TextField()
@@ -26,13 +31,35 @@ class LoginViewController: ViewController {
     var account: Account? {
         didSet {
             DispatchQueue.main.async {
-                self.serverField.isEnabled = false
-                self.loginField.isEnabled = false
-                self.passwordField.isEnabled = false
+                if self.mode == .newAccount {
+                    self.serverField.isEnabled = false
+                    self.loginField.isEnabled = false
+                    self.passwordField.isEnabled = false
+                }
             }
         }
     }
     
+    var mode: Mode
+    
+    
+    // MARK: Initialization
+    
+    init(mode: Mode) {
+        self.mode = mode
+        
+        super.init(nibName: nil, bundle: nil)
+        
+        if self.mode == .newAccount {
+            title = Lang.get("login.new_acc_title")
+        } else {
+            title = Lang.get("login.login_title")
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: Elements
     
@@ -42,25 +69,30 @@ class LoginViewController: ViewController {
         let close = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(didTapClose(_:)))
         navigationItem.leftBarButtonItem = close
         
-        serverField.placeholder = Lang.get("login.step1.server.placeholder")
-        serverField.validate.url()
-        serverField.nextField = loginField
-        serverField.place.on(view, top: 84).sideMargins()
+        if self.mode == .newAccount {
+            serverField.placeholder = Lang.get("login.server.placeholder")
+            serverField.validate.url()
+            serverField.nextField = loginField
+            serverField.place.on(view, top: 84).sideMargins()
+            
+            loginField.place.below(serverField, top: 12).match(height: serverField).match(left: serverField).match(right: serverField)
+        } else {
+            loginField.place.on(view, top: 84).sideMargins()
+        }
         
         loginField.icon = Awesome.solid.envelope
-        loginField.placeholder = Lang.get("login.step1.username.placeholder")
+        loginField.placeholder = Lang.get("login.username.placeholder")
         loginField.validate.email()
         loginField.nextField = passwordField
-        loginField.place.below(serverField, top: 12).match(height: serverField).match(left: serverField).match(right: serverField)
         
         passwordField.icon = Awesome.solid.key
-        passwordField.placeholder = Lang.get("login.step1.password.placeholder")
+        passwordField.placeholder = Lang.get("login.password.placeholder")
         passwordField.validate.notEmpty()
         passwordField.isSecureTextEntry = true
         passwordField.goButton = actionButton
-        passwordField.place.below(loginField, top: 12).match(height: serverField).match(left: serverField).match(right: serverField)
+        passwordField.place.below(loginField, top: 12).match(height: loginField).match(left: loginField).match(right: loginField)
         
-        actionButton.setTitle(Lang.get("login.step1.login"), for: .normal)
+        actionButton.setTitle(Lang.get("login.login"), for: .normal)
         actionButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         actionButton.place.below(passwordField, top: 22).centerX()
     }
@@ -72,10 +104,14 @@ class LoginViewController: ViewController {
         
         actionButton.isEnabled = true
         
-        if account != nil {
-            actionButton.setTitle(Lang.get("login.step1.change_name"), for: .normal)
+        if account != nil && mode != .login {
+            actionButton.setTitle(Lang.get("login.change_name"), for: .normal)
         } else {
-            serverField.becomeFirstResponder()
+            if mode == .login {
+                serverField.becomeFirstResponder()
+            } else {
+                loginField.becomeFirstResponder()
+            }
         }
     }
     
@@ -107,44 +143,64 @@ class LoginViewController: ViewController {
     }
     
     @objc func didTapButton(_ sender: UIButton) {
-        if let account = account {
-            requestedChangeAccountName?(account)
-        } else {
-            guard validate(), let server = serverField.text, let email = loginField.text, let password = passwordField.text else {
-                return
+        guard validate(), let email = loginField.text, let password = passwordField.text else {
+            return
+        }
+        do {
+            if let account = account {
+                try runLogin(account: account, email: email, password: password)
+            } else {
+                try runNewAccount(email: email, password: password)
             }
+        } catch {
+            actionButton.isEnabled = true
+            Dialog.show(error: error, on: self)
+        }
+    }
+    
+    private func runLogin(account: Account, email: String, password: String) throws {
+        actionButton.isEnabled = false
+        
+        let api = try Api(config: Api.Config(serverUrl: account.server!))
+        try api.auth(email: email, password: password).then { (login) in
+            account.token = login.token
+            try account.save()
             
-            actionButton.isEnabled = false
-            
-            do {
-                let api = try Api(config: Api.Config(serverUrl: server))
-                try api.auth(email: email, password: password).then { (login) in
-                    try api.info().then({ info in
-                        guard !info.url.isEmpty else {
-                            // TODO: Handle as an error!!!!
-                            print("Empty server URL :(")
-                            return
-                        }
-                        let account = try Account.new()
-                        account.name = info.name
-                        account.server = info.url
-                        account.token = login.token
-                        try account.save()
-                        
-                        self.account = account
-                        
-                        DispatchQueue.main.async {
-                            self.requestedChangeAccountName?(account)
-                        }
-                    }).error({ error in
-                        self.actionButton.isEnabled = true
-                        Dialog.show(error: error, on: self)
-                    })
+            DispatchQueue.main.async {
+                self.requestedNextStep?(account)
+            }
+        }
+    }
+    
+    private func runNewAccount(email: String, password: String) throws {
+        guard let server = serverField.text else {
+            return
+        }
+        
+        actionButton.isEnabled = false
+        let api = try Api(config: Api.Config(serverUrl: server))
+        try api.auth(email: email, password: password).then { (login) in
+            try api.info().then({ info in
+                guard !info.url.isEmpty else {
+                    self.actionButton.isEnabled = true
+                    Dialog.show(error: Lang.get("login.info_server_url_empty_error_message"), on: self)
+                    return
                 }
-            } catch {
-                actionButton.isEnabled = true
+                let account = try Account.new()
+                account.name = info.name
+                account.server = info.url
+                account.token = login.token
+                try account.save()
+                
+                self.account = account
+                
+                DispatchQueue.main.async {
+                    self.requestedNextStep?(account)
+                }
+            }).error({ error in
+                self.actionButton.isEnabled = true
                 Dialog.show(error: error, on: self)
-            }
+            })
         }
     }
     

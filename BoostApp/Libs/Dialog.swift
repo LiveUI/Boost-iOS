@@ -24,6 +24,10 @@ class Dialog {
         show(warning: Lang.get("general.error"), message: error.localizedDescription, on: viewController)
     }
     
+    static func show(error: String, on viewController: UIViewController) {
+        show(warning: Lang.get("general.error"), message: error, on: viewController)
+    }
+    
     static func show(confirmation title: String? = nil, message: String, on viewController: UIViewController, _ result: @escaping ((_ confirmed: Bool) -> Void)) {
         let alert = MDCAlertController(title: title, message: message)
         let actionYes = MDCAlertAction(title: Lang.get("general.yes")) { (action) in

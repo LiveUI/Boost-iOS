@@ -18,6 +18,7 @@ class AccountTableViewCell: UITableViewCell {
     let hostLabel = UILabel()
     let icon = UIImageView()
     let lockIcon = UIImageView()
+    let onlineIcon = UIView()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)

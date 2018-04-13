@@ -25,8 +25,8 @@ class LoginCoordinator {
     // MARK: Navigation
     
     func presentLogin(success: AccountClosure?) {
-        let c = LoginViewController()
-        c.requestedChangeAccountName = { account in
+        let c = LoginViewController(mode: .newAccount)
+        c.requestedNextStep = { account in
             self.accountHasBeenCreated?(account)
             let nameControntroller = ServerNameViewController(account)
             nameControntroller.didChangeNameSuccessfully = { account in
@@ -37,6 +37,14 @@ class LoginCoordinator {
             }
             c.navigationController?.pushViewController(nameControntroller, animated: true)
         }
+        let nc = UINavigationController(rootViewController: c)
+        baseCoordinator.present(viewController: nc)
+    }
+    
+    func presentLogin(for account: Account, success: @escaping AccountClosure) {
+        let c = LoginViewController(mode: .login)
+        c.account = account
+        c.requestedNextStep = success
         let nc = UINavigationController(rootViewController: c)
         baseCoordinator.present(viewController: nc)
     }

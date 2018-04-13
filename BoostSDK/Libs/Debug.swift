@@ -16,9 +16,9 @@ class Debug {
     }
     
     static func request(_ request: URLRequest, response: URLResponse, data: Data) {
-        print("\(request.httpMethod ?? "???") request: \(request)")
-        print("\(response.mimeType ?? "???") response: \(response)")
-        print("Data: \(String(data: data, encoding: .utf8) ?? "unknown")")
+        print("\n\n\n[\(request.httpMethod ?? "???")] request:\n\(request)")
+        print("\(response.mimeType ?? "???") response:\n\(response)")
+        print("Data:\n\(String(data: data, encoding: .utf8) ?? "unknown")\n\n")
     }
     
 }

@@ -26,9 +26,14 @@ class TeamsDataManager: PresentableTableViewDataManager {
     func loadData() {
         data.removeAll()
         
+        let section = PresentableSection()
+        
         do {
             try account?.api().teams().then({ teams in
-                let section = PresentableSection()
+                let sort = Presentable<TeamTableViewCell>.create({ (cell) in
+                    cell.textLabel?.text = Lang.get("teams.all")
+                })
+                section.presentables.append(sort)
                 
                 for team in teams {
                     let sort = Presentable<TeamTableViewCell>.create({ (cell) in
@@ -36,12 +41,22 @@ class TeamsDataManager: PresentableTableViewDataManager {
                     })
                     section.presentables.append(sort)
                 }
-                
-                self.data.append(section)
+            }).error({ error in
+                if let error = error as? Networking.Problem, error == .badToken {
+                    try? self.account?.reportInvalidAuthToken()
+                } else {
+                    // TODO: Replace with generic loading problem cell!!!
+                    let sort = Presentable<UITableViewCell>.create({ (cell) in
+                        cell.textLabel?.text = Lang.get("teams.error.loading_problem")
+                    })
+                    section.presentables.append(sort)
+                }
             })
         } catch {
-//            Dialog.show(error: error, on: self)
+            print(error)
         }
+        
+        data.append(section)
     }
     
 }

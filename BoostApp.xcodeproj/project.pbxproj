@@ -98,6 +98,7 @@
 		15E29BE1207F8DBA00D3224D /* Account+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E29BE0207F8DBA00D3224D /* Account+Helpers.swift */; };
 		15E29BE3207F8E3E00D3224D /* UIImage+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E29BE2207F8E3E00D3224D /* UIImage+Defaults.swift */; };
 		15E29BE5207F93CB00D3224D /* UITableView+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E29BE4207F93CB00D3224D /* UITableView+Tools.swift */; };
+		15E2A9C22080A40900D3224D /* OnlineIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2A9C12080A40900D3224D /* OnlineIcon.swift */; };
 		15F1344D2063225600D7890E /* NSObject+AppDelegateTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1344C2063225600D7890E /* NSObject+AppDelegateTools.swift */; };
 		15F134502063236100D7890E /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F1344F2063236100D7890E /* BaseCoordinator.swift */; };
 		15F134522063243400D7890E /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F134512063243400D7890E /* CenterViewController.swift */; };
@@ -267,6 +268,7 @@
 		15E29BE0207F8DBA00D3224D /* Account+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+Helpers.swift"; sourceTree = "<group>"; };
 		15E29BE2207F8E3E00D3224D /* UIImage+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Defaults.swift"; sourceTree = "<group>"; };
 		15E29BE4207F93CB00D3224D /* UITableView+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Tools.swift"; sourceTree = "<group>"; };
+		15E2A9C12080A40900D3224D /* OnlineIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineIcon.swift; sourceTree = "<group>"; };
 		15F1344C2063225600D7890E /* NSObject+AppDelegateTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+AppDelegateTools.swift"; sourceTree = "<group>"; };
 		15F1344F2063236100D7890E /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		15F134512063243400D7890E /* CenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
@@ -492,6 +494,7 @@
 			children = (
 				1596E42E207F05020068B243 /* PrimaryButton.swift */,
 				1596E430207F06750068B243 /* TextField.swift */,
+				15E2A9C12080A40900D3224D /* OnlineIcon.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -1221,6 +1224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1596E434207F0C2F0068B243 /* Validator.swift in Sources */,
+				15E2A9C22080A40900D3224D /* OnlineIcon.swift in Sources */,
 				15E29BE1207F8DBA00D3224D /* Account+Helpers.swift in Sources */,
 				15A8958D1FD1FB2E00347281 /* AppDetailViewController.swift in Sources */,
 				156AFEAF206335E600FB91B3 /* InfixOperators.swift in Sources */,
