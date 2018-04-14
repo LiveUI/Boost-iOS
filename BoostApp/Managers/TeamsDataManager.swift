@@ -31,13 +31,14 @@ class TeamsDataManager: PresentableTableViewDataManager {
         do {
             try account?.api().teams().then({ teams in
                 let sort = Presentable<TeamTableViewCell>.create({ (cell) in
-                    cell.textLabel?.text = Lang.get("teams.all")
+                    cell.textLabel?.text = Lang.get("menu.teams.all")
                 })
                 section.presentables.append(sort)
                 
                 for team in teams {
                     let sort = Presentable<TeamTableViewCell>.create({ (cell) in
-                        cell.textLabel?.text = team.name
+                        cell.icon.set(initials: team.initials)
+                        cell.nameLabel.text = team.name
                     })
                     section.presentables.append(sort)
                 }
@@ -47,7 +48,7 @@ class TeamsDataManager: PresentableTableViewDataManager {
                 } else {
                     // TODO: Replace with generic loading problem cell!!!
                     let sort = Presentable<UITableViewCell>.create({ (cell) in
-                        cell.textLabel?.text = Lang.get("teams.error.loading_problem")
+                        cell.textLabel?.text = Lang.get("menu.teams.error.loading_problem")
                     })
                     section.presentables.append(sort)
                 }

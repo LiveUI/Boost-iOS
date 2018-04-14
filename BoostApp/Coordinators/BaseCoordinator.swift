@@ -35,7 +35,10 @@ class BaseCoordinator {
     init() {
         leftScreen = LeftMenuViewController()
         leftBaseScreen = LeftBaseViewController(rootViewController: leftScreen)
+        
         SideMenuManager.default.menuLeftNavigationController = leftBaseScreen
+        SideMenuManager.default.menuFadeStatusBar = false
+        SideMenuManager.default.menuAnimationBackgroundColor = .red
 
         centerBaseScreen = CenterViewController()
         centerBaseScreen.reportViewDidLoad = {

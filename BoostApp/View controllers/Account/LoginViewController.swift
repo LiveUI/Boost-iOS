@@ -106,19 +106,15 @@ class LoginViewController: ViewController {
         
         if account != nil && mode != .login {
             actionButton.setTitle(Lang.get("login.change_name"), for: .normal)
-        } else {
-            if mode == .login {
-                serverField.becomeFirstResponder()
-            } else {
-                loginField.becomeFirstResponder()
-            }
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if account == nil {
+        if mode == .login {
+            loginField.becomeFirstResponder()
+        } else {
             serverField.becomeFirstResponder()
         }
         
@@ -164,12 +160,14 @@ class LoginViewController: ViewController {
         let api = try Api(config: Api.Config(serverUrl: account.server!))
         try api.auth(email: email, password: password).then { (login) in
             account.token = login.token
-            try account.save()
             
             DispatchQueue.main.async {
+                try? account.save()
                 self.requestedNextStep?(account)
             }
-        }
+            }.error({ error in
+                self.fail(error: error)
+            })
     }
     
     private func runNewAccount(email: String, password: String) throws {
@@ -190,17 +188,22 @@ class LoginViewController: ViewController {
                 account.name = info.name
                 account.server = info.url
                 account.token = login.token
-                try account.save()
-                
-                self.account = account
                 
                 DispatchQueue.main.async {
+                    try? account.save()
+                    self.account = account
                     self.requestedNextStep?(account)
                 }
             }).error({ error in
-                self.actionButton.isEnabled = true
-                Dialog.show(error: error, on: self)
+                self.fail(error: error)
             })
+        }
+    }
+    
+    private func fail(error: Error) {
+        DispatchQueue.main.async {
+            self.actionButton.isEnabled = true
+            Dialog.show(error: error, on: self)
         }
     }
     

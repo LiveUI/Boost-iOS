@@ -11,7 +11,7 @@ import UIKit
 import Presentables
 
 
-class TeamsViewController: UITableViewController {
+class TeamsViewController: MenuViewController {
     
     let manager = TeamsDataManager()
     
@@ -23,8 +23,6 @@ class TeamsViewController: UITableViewController {
         
         var m = manager as PresentableManager
         tableView.bind(withPresentableManager: &m)
-        
-        tableView.removeEmptyRows()
     }
     
 }

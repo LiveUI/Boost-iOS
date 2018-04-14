@@ -71,10 +71,10 @@ class TextField: MDCTextField, UITextFieldDelegate, Validatable {
     
     private func setup() {
         floatingController = MDCTextInputControllerLegacyDefault(textInput: self)
-        floatingController?.isFloatingEnabled = true
+//        floatingController?.isFloatingEnabled = true
         
         underlineController = MDCTextInputControllerUnderline(textInput: self)
-        underlineController?.isFloatingEnabled = false
+//        underlineController?.isFloatingEnabled = false
         
         sizeToFit()
     }

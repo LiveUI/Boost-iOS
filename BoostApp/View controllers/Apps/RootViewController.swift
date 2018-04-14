@@ -83,7 +83,7 @@ class RootViewController: ViewController {
     // MARK: Elements
     
     func configureNavBar() {
-        let settings = Awesome.solid.ellipsisH.navBarIcon()
+        let settings = Awesome.solid.ellipsisV.navBarIcon()
         let settingsButton = UIBarButtonItem(image: settings, style: .plain, target: self, action: #selector(RootViewController.didTapFilters(_:)))
         navigationItem.setLeftBarButtonItems([navigationItem.leftBarButtonItem!, settingsButton], animated: false)
         

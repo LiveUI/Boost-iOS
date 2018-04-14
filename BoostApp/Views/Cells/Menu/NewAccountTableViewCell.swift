@@ -11,12 +11,12 @@ import UIKit
 import AwesomeEnum
 
 
-class NewAccountTableViewCell: UITableViewCell {
+class NewAccountTableViewCell: MenuTableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
         
-        textLabel?.text = Lang.get("left.accounts.new_account")
+        textLabel?.text = Lang.get("menu.accounts.new_account")
         imageView?.image = Awesome.solid.plus.cellIcon()
     }
     

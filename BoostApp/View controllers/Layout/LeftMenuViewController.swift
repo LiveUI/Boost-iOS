@@ -42,7 +42,6 @@ class LeftMenuViewController: ViewController, UIScrollViewDelegate {
     
     func reloadData() {
         accounts.manager.reloadAccounts()
-        accounts.setupEditButton()
     }
     
     func didLogin(to account: Account) {
@@ -94,7 +93,7 @@ class LeftMenuViewController: ViewController, UIScrollViewDelegate {
         
         // Teams
         addChildViewController(teams)
-        teams.view.place.next(to: accounts.view).match(bottom: scrollView).match(width: scrollView).rightMargin(0)
+        teams.view.place.next(to: accounts.view, left: 0).match(bottom: scrollView).match(width: scrollView).rightMargin(0)
         teams.didMove(toParentViewController: self)
         
         // Pagination
@@ -104,6 +103,14 @@ class LeftMenuViewController: ViewController, UIScrollViewDelegate {
         pageControl.currentPageIndicatorTintColor = .darkGray
         pageControl.addTarget(self, action: #selector(pageControlChanged(_:)), for: .valueChanged)
         pageControl.place.on(view, height: 20, bottom: -20).sideMargins()
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     // MARK: Actions
@@ -120,7 +127,10 @@ class LeftMenuViewController: ViewController, UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let width = scrollView.frame.size.width
-        let page = round(((scrollView.contentOffset.x + width) / width) - 1)
+        var page = round(((scrollView.contentOffset.x + width) / width) - 1)
+        if page.isNaN {
+            page = 0
+        }
         if page > 0 {
             if navigationItem.leftBarButtonItem == nil {
                 makeAccountIcon()

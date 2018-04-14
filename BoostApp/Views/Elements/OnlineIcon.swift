@@ -33,6 +33,14 @@ class OnlineIcon: UIView {
         }
     }
     
+    // MARK: Layour
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        layer.cornerRadius = (bounds.size.width / 2)
+    }
+    
     // MARK: Initialization
     
     init(_ state: State = .unknown) {

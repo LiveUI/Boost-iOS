@@ -19,12 +19,16 @@ public struct Team: Codable {
     public let admin: Bool
     public let name: String
     public let identifier: String
+    public let initials: String
+    public let color: String?
     
     enum CodingKeys: String, CodingKey {
         case id
         case admin
         case name
         case identifier
+        case initials
+        case color
     }
 }
 

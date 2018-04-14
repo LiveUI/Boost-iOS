@@ -40,7 +40,28 @@ class AccountsMenuDataManager: PresentableTableViewDataManager {
         }
     }
     
-    // MARK: Reload accounts
+    // MARK: Data
+    
+    func loadOnlineStatus() throws {
+        var i = 0
+        for account in accounts {
+            let indexPath = IndexPath(row: i, section: 0)
+            try account.api().ping().then { pong in
+                DispatchQueue.main.async {
+                    account.online = true
+                    account.lastSeen = Date()
+                    try? account.save()
+                    self.reload(indexPath: indexPath)
+                }}.error { error in
+                    DispatchQueue.main.async {
+                        account.online = false
+                        try? account.save()
+                        self.reload(indexPath: indexPath)
+                    }
+            }
+            i += 1
+        }
+    }
     
     func reloadAccounts() {
         accountsSection.presentables.removeAll()
@@ -50,7 +71,8 @@ class AccountsMenuDataManager: PresentableTableViewDataManager {
                 let acc = Presentable<AccountTableViewCell>.create({ (cell) in
                     cell.nameLabel.text = account.name
                     cell.hostLabel.text = account.server
-                    cell.lockIcon.isHidden = !(account.token?.isEmpty ?? false)
+                    cell.lockIcon.isHidden = !(account.token?.isEmpty ?? true)
+                    cell.onlineIcon.state = account.onlineIsValid ? .online : .offline
                 }).cellSelected {
                     self.appDelegate.coordinator.navigate(to: .home(account))
                 }

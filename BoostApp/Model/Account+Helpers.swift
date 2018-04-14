@@ -29,4 +29,11 @@ extension Account {
         }
     }
     
+    var onlineIsValid: Bool {
+        if online == true && lastSeen?.timeIntervalSince1970 ?? 0 > Date().addingTimeInterval(-(10 * 60)).timeIntervalSince1970 {
+            return true
+        }
+        return false
+    }
+    
 }

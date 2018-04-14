@@ -12,12 +12,12 @@ import AwesomeEnum
 
 extension Amazing {
     
-    func cellIcon() -> UIImage {
-        return asImage(size: 24)
+    func cellIcon(_ color: UIColor = .black) -> UIImage {
+        return asImage(size: 24, color: color)
     }
     
-    func navBarIcon() -> UIImage {
-        return asImage(size: 24)
+    func navBarIcon(_ color: UIColor = .black) -> UIImage {
+        return asImage(size: 24, color: color)
     }
     
 }

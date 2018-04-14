@@ -29,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.makeKeyAndVisible()
         }
         
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         return true
     }
 
