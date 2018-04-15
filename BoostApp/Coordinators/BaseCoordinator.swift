@@ -36,6 +36,15 @@ class BaseCoordinator {
                 return nil
             }
         }
+        
+        var isAll: Bool {
+            switch self {
+            case .all:
+                return true
+            default:
+                return false
+            }
+        }
     }
     
     let leftScreen: LeftMenuViewController
@@ -56,7 +65,11 @@ class BaseCoordinator {
             }
         }
     }
-    var activeTeam: ActiveTeam = .all
+    var activeTeam: ActiveTeam = .all {
+        didSet {
+            
+        }
+    }
     
     // MARK: Initialization
     

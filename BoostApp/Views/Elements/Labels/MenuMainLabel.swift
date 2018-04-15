@@ -20,7 +20,7 @@ class MenuMainLabel: UILabel {
         
         text = title
         textColor = .white
-        font = UIFont.boldSystemFont(ofSize: 18)
+        font = UIFont.boldSystemFont(ofSize: 15)
         textAlignment = .left
     }
     

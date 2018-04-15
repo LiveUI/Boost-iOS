@@ -44,6 +44,7 @@ class TeamsDataManager: PresentableTableViewDataManager {
                 let all = Presentable<GenericMenuTableViewCell>.create({ (cell) in
                     cell.icon.set(image: UIImage.defaultIcon)
                     cell.titleLabel.text = Lang.get("menu.teams.all")
+                    cell.selectedIndicator.isHidden = !self.appDelegate.coordinator.activeTeam.isAll
                 }).cellSelected {
                     self.appDelegate.coordinator.activeTeam = .all
                 }
@@ -78,6 +79,15 @@ class TeamsDataManager: PresentableTableViewDataManager {
         }
         
         data.append(section)
+    }
+    
+    override init() {
+        super.init()
+        
+        selectedCell = { info in
+            info.tableView.deselectRow(at: info.indexPath, animated: true)
+            info.tableView.reloadData()
+        }
     }
     
 }

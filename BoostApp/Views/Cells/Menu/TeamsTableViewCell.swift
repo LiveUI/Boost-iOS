@@ -30,15 +30,12 @@ class TeamsTableViewCell: MenuTableViewCell {
         let margin: CGFloat = 6
         selectedIndicator.place.on(contentView, top: margin, bottom: -margin).sideMargins(left: margin, right: -margin)
         
-        icon.layer.cornerRadius = 4
-        icon.clipsToBounds = true
-        icon.imageContentMode = .center
+        icon.imageContentMode = .scaleAspectFill
         icon.place.on(contentView, top: 16).square(side: 38).leftMargin(16).minBottomMargin(-16)
         
         badge.style = .none
         badge.place.on(contentView).centerY().rightMargin(-16).width(44)
         
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 15)
         titleLabel.place.between(icon, and: badge).centerY()
     }
     

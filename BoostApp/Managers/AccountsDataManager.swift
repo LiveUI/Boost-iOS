@@ -29,7 +29,7 @@ class AccountsDataManager: PresentableTableViewDataManager {
         data.append(accountsSection)
         
         let settingsSection = PresentableSection()
-        let setting = Presentable<TeamsTableViewCell>.create({ cell in
+        let setting = Presentable<GenericMenuTableViewCell>.create({ cell in
             cell.titleLabel.text = Lang.get("menu.accounts.settings")
             cell.icon.set(image: Awesome.solid.cogs.cellIcon())
         }).cellSelected {
@@ -90,7 +90,7 @@ class AccountsDataManager: PresentableTableViewDataManager {
         }
         
         // New account cell
-        let newAccount = Presentable<TeamsTableViewCell>.create({ (cell) in
+        let newAccount = Presentable<GenericMenuTableViewCell>.create({ (cell) in
             cell.titleLabel.text = Lang.get("menu.accounts.new_account")
             cell.icon.set(image: Awesome.solid.plus.cellIcon())
         }).cellSelected {
