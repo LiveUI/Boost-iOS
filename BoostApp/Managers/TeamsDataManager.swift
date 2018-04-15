@@ -29,18 +29,21 @@ class TeamsDataManager: PresentableTableViewDataManager {
         let section = PresentableSection()
         
         do {
-            try account?.api().teams().then({ teams in
-                let sort = Presentable<TeamTableViewCell>.create({ (cell) in
-                    cell.textLabel?.text = Lang.get("menu.teams.all")
+            try api?.teams().then({ teams in
+                // Add all teams selector
+                let all = Presentable<GenericMenuTableViewCell>.create({ (cell) in
+                    cell.icon.set(image: UIImage.defaultIcon)
+                    cell.titleLabel.text = Lang.get("menu.teams.all")
                 })
-                section.presentables.append(sort)
+                section.presentables.append(all)
                 
+                // Show all teams
                 for team in teams {
-                    let sort = Presentable<TeamTableViewCell>.create({ (cell) in
-                        cell.icon.set(initials: team.initials)
-                        cell.nameLabel.text = team.name
+                    let presentable = Presentable<GenericMenuTableViewCell>.create({ (cell) in
+                        cell.icon.set(initials: team.initials, bgColor: team.color.hexColor!)
+                        cell.titleLabel.text = team.name
                     })
-                    section.presentables.append(sort)
+                    section.presentables.append(presentable)
                 }
             }).error({ error in
                 if let error = error as? Networking.Problem, error == .badToken {

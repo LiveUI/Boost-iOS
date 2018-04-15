@@ -8,6 +8,7 @@
 
 import Foundation
 import Presentables
+import AwesomeEnum
 
 
 class AccountsMenuDataManager: PresentableTableViewDataManager {
@@ -28,7 +29,10 @@ class AccountsMenuDataManager: PresentableTableViewDataManager {
         data.append(accountsSection)
         
         let settingsSection = PresentableSection()
-        let setting = Presentable<SettingsTableViewCell>.create().cellSelected {
+        let setting = Presentable<TeamsTableViewCell>.create({ cell in
+            cell.titleLabel.text = Lang.get("menu.accounts.settings")
+            cell.icon.set(image: Awesome.solid.cogs.cellIcon())
+        }).cellSelected {
             self.appDelegate.coordinator.navigate(to: .settings)
         }
         settingsSection.presentables.append(setting)
@@ -83,7 +87,9 @@ class AccountsMenuDataManager: PresentableTableViewDataManager {
         }
         
         // New account cell
-        let newAccount = Presentable<NewAccountTableViewCell>.create({ (cell) in
+        let newAccount = Presentable<TeamsTableViewCell>.create({ (cell) in
+            cell.titleLabel.text = Lang.get("menu.accounts.new_account")
+            cell.icon.set(image: Awesome.solid.plus.cellIcon())
         }).cellSelected {
             self.appDelegate.coordinator.navigate(to: .newAccount(success: { account in
                 self.reloadAccounts()

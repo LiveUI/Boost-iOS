@@ -17,8 +17,7 @@
 		150CC87B207B4DA6003B335F /* Api+Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150CC87A207B4DA6003B335F /* Api+Users.swift */; };
 		150CC87D207B4E9B003B335F /* Success.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150CC87C207B4E9B003B335F /* Success.swift */; };
 		15116A682070421000BC08D3 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116A672070421000BC08D3 /* AccountTableViewCell.swift */; };
-		15116A6A2070422200BC08D3 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116A692070422200BC08D3 /* SettingsTableViewCell.swift */; };
-		15116A6C2070423400BC08D3 /* NewAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116A6B2070423400BC08D3 /* NewAccountTableViewCell.swift */; };
+		15116A6C2070423400BC08D3 /* GenericMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116A6B2070423400BC08D3 /* GenericMenuTableViewCell.swift */; };
 		15116A702070B6CF00BC08D3 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116A6F2070B6CF00BC08D3 /* Login.swift */; };
 		15116C6C2070B8E900BC08D3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C6B2070B8E900BC08D3 /* User.swift */; };
 		15116C6E2070BBCE00BC08D3 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C6D2070BBCE00BC08D3 /* Networking.swift */; };
@@ -35,7 +34,6 @@
 		15116C8F2073C80200BC08D3 /* LeftMenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15116C8E2073C80200BC08D3 /* LeftMenuHeader.swift */; };
 		1539A9E5208155200096E9A1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539A9E4208155200096E9A1 /* MenuViewController.swift */; };
 		1539A9E7208157F20096E9A1 /* MenuTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539A9E6208157F20096E9A1 /* MenuTitleLabel.swift */; };
-		1539A9E920815F4C0096E9A1 /* TeamIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539A9E820815F4C0096E9A1 /* TeamIconView.swift */; };
 		1539A9EE208160E50096E9A1 /* CellTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539A9ED208160E50096E9A1 /* CellTitleLabel.swift */; };
 		154C1330206C422B00011F54 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C132F206C422B00011F54 /* LoginCoordinator.swift */; };
 		154C134B206C5A6F00011F54 /* Account+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C134A206C5A6F00011F54 /* Account+CoreData.swift */; };
@@ -52,6 +50,9 @@
 		15622606207BA79C0037CECA /* FakeAppCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15622605207BA79C0037CECA /* FakeAppCollectionViewCell.swift */; };
 		156AFEAC2063315100FB91B3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AFEAB2063315100FB91B3 /* SettingsViewController.swift */; };
 		156AFEAF206335E600FB91B3 /* InfixOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AFEAE206335E600FB91B3 /* InfixOperators.swift */; };
+		157858E1208378F600B592BB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157858E0208378F600B592BB /* Theme.swift */; };
+		157858E3208389FA00B592BB /* TeamsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157858E2208389FA00B592BB /* TeamsTableViewCell.swift */; };
+		157858E520838AC100B592BB /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157858E420838AC100B592BB /* IconView.swift */; };
 		1594F9682081D8590049E450 /* String+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1594F9672081D8590049E450 /* String+Color.swift */; };
 		1594F96A2081D9410049E450 /* UIColor+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1594F9692081D9410049E450 /* UIColor+Tools.swift */; };
 		1594F96C2081DB440049E450 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1594F96B2081DB440049E450 /* MenuTableViewCell.swift */; };
@@ -73,7 +74,6 @@
 		1596E447207F780F0068B243 /* ViewController+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1596E446207F780F0068B243 /* ViewController+Validation.swift */; };
 		1596E449207F8B8D0068B243 /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1596E448207F8B8D0068B243 /* TeamsViewController.swift */; };
 		1596E44B207F8BBA0068B243 /* TeamsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1596E44A207F8BBA0068B243 /* TeamsDataManager.swift */; };
-		1596E44D207F8C350068B243 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1596E44C207F8C350068B243 /* TeamTableViewCell.swift */; };
 		15A8955D1FD0C3AD00347281 /* AppsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8955C1FD0C3AD00347281 /* AppsDataManager.swift */; };
 		15A895601FD1695D00347281 /* AppCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A8955F1FD1695D00347281 /* AppCollectionViewCell.swift */; };
 		15A895761FD1945000347281 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 15A895731FD1945000347281 /* Cartfile */; };
@@ -182,8 +182,7 @@
 		150CC87A207B4DA6003B335F /* Api+Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+Users.swift"; sourceTree = "<group>"; };
 		150CC87C207B4E9B003B335F /* Success.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Success.swift; sourceTree = "<group>"; };
 		15116A672070421000BC08D3 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
-		15116A692070422200BC08D3 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
-		15116A6B2070423400BC08D3 /* NewAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccountTableViewCell.swift; sourceTree = "<group>"; };
+		15116A6B2070423400BC08D3 /* GenericMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericMenuTableViewCell.swift; sourceTree = "<group>"; };
 		15116A6F2070B6CF00BC08D3 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		15116C6B2070B8E900BC08D3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		15116C6D2070BBCE00BC08D3 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
@@ -200,7 +199,6 @@
 		15116C8E2073C80200BC08D3 /* LeftMenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuHeader.swift; sourceTree = "<group>"; };
 		1539A9E4208155200096E9A1 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		1539A9E6208157F20096E9A1 /* MenuTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTitleLabel.swift; sourceTree = "<group>"; };
-		1539A9E820815F4C0096E9A1 /* TeamIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamIconView.swift; sourceTree = "<group>"; };
 		1539A9ED208160E50096E9A1 /* CellTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTitleLabel.swift; sourceTree = "<group>"; };
 		154C132F206C422B00011F54 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		154C134A206C5A6F00011F54 /* Account+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+CoreData.swift"; sourceTree = "<group>"; };
@@ -217,6 +215,9 @@
 		15622605207BA79C0037CECA /* FakeAppCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeAppCollectionViewCell.swift; sourceTree = "<group>"; };
 		156AFEAB2063315100FB91B3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		156AFEAE206335E600FB91B3 /* InfixOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfixOperators.swift; sourceTree = "<group>"; };
+		157858E0208378F600B592BB /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		157858E2208389FA00B592BB /* TeamsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTableViewCell.swift; sourceTree = "<group>"; };
+		157858E420838AC100B592BB /* IconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		1594F9672081D8590049E450 /* String+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Color.swift"; sourceTree = "<group>"; };
 		1594F9692081D9410049E450 /* UIColor+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Tools.swift"; sourceTree = "<group>"; };
 		1594F96B2081DB440049E450 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -238,7 +239,6 @@
 		1596E446207F780F0068B243 /* ViewController+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Validation.swift"; sourceTree = "<group>"; };
 		1596E448207F8B8D0068B243 /* TeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
 		1596E44A207F8BBA0068B243 /* TeamsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsDataManager.swift; sourceTree = "<group>"; };
-		1596E44C207F8C350068B243 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		15A8955C1FD0C3AD00347281 /* AppsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsDataManager.swift; sourceTree = "<group>"; };
 		15A8955F1FD1695D00347281 /* AppCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCollectionViewCell.swift; sourceTree = "<group>"; };
 		15A895731FD1945000347281 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
@@ -408,8 +408,8 @@
 		1539A9EA208160AA0096E9A1 /* Labels */ = {
 			isa = PBXGroup;
 			children = (
-				1539A9E6208157F20096E9A1 /* MenuTitleLabel.swift */,
 				1539A9ED208160E50096E9A1 /* CellTitleLabel.swift */,
+				1539A9E6208157F20096E9A1 /* MenuTitleLabel.swift */,
 				1594F97120820D3E0049E450 /* MenuMainLabel.swift */,
 				1594F97320820D4E0049E450 /* MenuSecondaryLabel.swift */,
 			);
@@ -540,9 +540,8 @@
 			isa = PBXGroup;
 			children = (
 				15116A672070421000BC08D3 /* AccountTableViewCell.swift */,
-				15116A692070422200BC08D3 /* SettingsTableViewCell.swift */,
-				15116A6B2070423400BC08D3 /* NewAccountTableViewCell.swift */,
-				1596E44C207F8C350068B243 /* TeamTableViewCell.swift */,
+				15116A6B2070423400BC08D3 /* GenericMenuTableViewCell.swift */,
+				157858E2208389FA00B592BB /* TeamsTableViewCell.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -580,8 +579,8 @@
 				1539A9EB208160B10096E9A1 /* Buttons */,
 				1539A9EA208160AA0096E9A1 /* Labels */,
 				15E2A9C12080A40900D3224D /* OnlineIcon.swift */,
+				157858E420838AC100B592BB /* IconView.swift */,
 				15C9BF392081514B0097F340 /* MenuTopBarView.swift */,
-				1539A9E820815F4C0096E9A1 /* TeamIconView.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -793,6 +792,7 @@
 				15A8958E1FD1FE8500347281 /* Env.swift */,
 				156AFEAE206335E600FB91B3 /* InfixOperators.swift */,
 				1596E444207F66920068B243 /* Dialog.swift */,
+				157858E0208378F600B592BB /* Theme.swift */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -1329,12 +1329,12 @@
 				1596E431207F06750068B243 /* TextField.swift in Sources */,
 				1539A9E5208155200096E9A1 /* MenuViewController.swift in Sources */,
 				1594F96C2081DB440049E450 /* MenuTableViewCell.swift in Sources */,
-				15116A6A2070422200BC08D3 /* SettingsTableViewCell.swift in Sources */,
 				15116A682070421000BC08D3 /* AccountTableViewCell.swift in Sources */,
 				15F1344D2063225600D7890E /* NSObject+AppDelegateTools.swift in Sources */,
 				1539A9EE208160E50096E9A1 /* CellTitleLabel.swift in Sources */,
 				15C7B4D71FE6FB2C0074508A /* FiltersDataManager.swift in Sources */,
 				15CA94371FD0267C001AA1FE /* ViewController.swift in Sources */,
+				157858E1208378F600B592BB /* Theme.swift in Sources */,
 				15E29BE3207F8E3E00D3224D /* UIImage+Defaults.swift in Sources */,
 				15C7B4D31FE6E0F80074508A /* RootViewController.swift in Sources */,
 				15F134502063236100D7890E /* BaseCoordinator.swift in Sources */,
@@ -1349,17 +1349,16 @@
 				1596E42F207F05020068B243 /* PrimaryButton.swift in Sources */,
 				15C7B4DD1FE712BC0074508A /* OverviewDataManager.swift in Sources */,
 				15CA946A1FD0271D001AA1FE /* AppsViewController.swift in Sources */,
-				15116A6C2070423400BC08D3 /* NewAccountTableViewCell.swift in Sources */,
+				157858E3208389FA00B592BB /* TeamsTableViewCell.swift in Sources */,
+				15116A6C2070423400BC08D3 /* GenericMenuTableViewCell.swift in Sources */,
 				1596E447207F780F0068B243 /* ViewController+Validation.swift in Sources */,
 				15C7B4E01FE717420074508A /* AppHeader.swift in Sources */,
 				1596E43B207F138F0068B243 /* IntValidator.swift in Sources */,
 				15C7B4D91FE6FB930074508A /* FilterTableViewCell.swift in Sources */,
 				15C9BF3A2081514B0097F340 /* MenuTopBarView.swift in Sources */,
 				15CA946E1FD03C63001AA1FE /* Enterprise.swift in Sources */,
-				1539A9E920815F4C0096E9A1 /* TeamIconView.swift in Sources */,
 				1596E43D207F1A4A0068B243 /* ServerNameValidator.swift in Sources */,
 				1594F97220820D3E0049E450 /* MenuMainLabel.swift in Sources */,
-				1596E44D207F8C350068B243 /* TeamTableViewCell.swift in Sources */,
 				1596E443207F29160068B243 /* Amazing+BoostApp.swift in Sources */,
 				15116C8D2073605900BC08D3 /* SelectedTagsDataManager.swift in Sources */,
 				15CA94351FD0267C001AA1FE /* AppDelegate.swift in Sources */,
@@ -1367,6 +1366,7 @@
 				15C7B4DB1FE6FC1C0074508A /* SortTableViewCell.swift in Sources */,
 				1596E44B207F8BBA0068B243 /* TeamsDataManager.swift in Sources */,
 				1539A9E7208157F20096E9A1 /* MenuTitleLabel.swift in Sources */,
+				157858E520838AC100B592BB /* IconView.swift in Sources */,
 				15D73C99206320190011D5C9 /* LeftMenuViewController.swift in Sources */,
 				154C134B206C5A6F00011F54 /* Account+CoreData.swift in Sources */,
 				15A8958F1FD1FE8500347281 /* Env.swift in Sources */,

@@ -14,7 +14,6 @@ import BoostSDK
 class OverviewDataManager: PresentableCollectionViewDataManager {
     
     var account: Account
-    var api: Api
     
     var appDetailRequested: ((App)->())?
     var appActionRequested: ((App)->())?
@@ -28,7 +27,6 @@ class OverviewDataManager: PresentableCollectionViewDataManager {
     
     init(account: Account) {
         self.account = account
-        self.api = account.api()
         
         super.init()
         
@@ -44,7 +42,7 @@ class OverviewDataManager: PresentableCollectionViewDataManager {
     
     func loadOverview() {
         do {
-            try api.overview().then({ apps in
+            try api?.overview().then({ apps in
                 print(apps)
             })
         } catch {
@@ -110,15 +108,6 @@ class OverviewDataManager: PresentableCollectionViewDataManager {
                 self.data.append(section)
             }
         }
-        
-//        Boost.api.apps { (result) in
-//            switch result {
-//            case .success(let apps):
-//                makePresenters(apps)
-//            case .error(let error):
-//                print(error?.localizedDescription ?? "API Error")
-//            }
-//        }
     }
     
     // MARK: Collection view delegate methods

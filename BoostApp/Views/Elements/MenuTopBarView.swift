@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import MaterialComponents.MaterialColorScheme
 
 
 class MenuTopBarView: UIView {
@@ -19,7 +18,7 @@ class MenuTopBarView: UIView {
     init() {
         super.init(frame: CGRect.zero)
         
-        backgroundColor = MDCPalette.lightBlue.tint800
+        backgroundColor = Theme.default.menuNavigationColor.hexColor
     }
     
     required init?(coder aDecoder: NSCoder) {

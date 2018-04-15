@@ -25,22 +25,23 @@ class AccountTableViewCell: MenuTableViewCell {
         
         accessoryType = .disclosureIndicator
         
+        icon.image = UIImage.defaultIcon
         icon.layer.cornerRadius = 4
         icon.clipsToBounds = true
-        icon.place.on(contentView, top: 6).square(side: 38).leftMargin(6).minBottomMargin(-6)
+        icon.place.on(contentView, top: 16).square(side: 38).leftMargin(16).minBottomMargin(-16)
         
-        icon.image = UIImage.defaultIcon
+        nameLabel.place.next(to: icon, left: 22).match(top: icon, offset: 3).rightMargin(-12)
+        hostLabel.place.below(nameLabel, top:2).match(left: nameLabel).match(right: nameLabel)
         
-        nameLabel.place.next(to: icon, left: 16).topMargin(0).rightMargin(-6)
-        hostLabel.place.below(nameLabel, top:2).rightMargin(-6).match(width: nameLabel)
+        let iconOffset: CGFloat = 4
         
         // Lock icon
-        let size: CGFloat = 14
+        let size: CGFloat = 12
         lockIcon.image = Awesome.solid.lock.asImage(size: size, color: .white)
-        lockIcon.place.on(icon).with.topMargin(-6).rightMargin(6).make.square(side: size)
+        lockIcon.place.on(contentView).with.match(top: icon, offset: -iconOffset).match(right: icon, offset: iconOffset).make.square(side: size)
         
         // Online icon
-        onlineIcon.place.on(icon).bottomMargin(4).rightMargin(4).square(side: 12)
+        onlineIcon.place.on(contentView).with.match(bottom: icon, offset: iconOffset).match(right: icon, offset: iconOffset).make.square(side: 10)
     }
     
     required init?(coder aDecoder: NSCoder) {

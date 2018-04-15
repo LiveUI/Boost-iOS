@@ -11,6 +11,7 @@ import UIKit
 import SideMenu
 import AwesomeEnum
 import Reloaded
+import BoostSDK
 
 
 class BaseCoordinator {
@@ -30,6 +31,8 @@ class BaseCoordinator {
     
     var loginCoordinator: LoginCoordinator
     
+    var currentApi: Api?
+    
     // MARK: Initialization
     
     init() {
@@ -37,8 +40,7 @@ class BaseCoordinator {
         leftBaseScreen = LeftBaseViewController(rootViewController: leftScreen)
         
         SideMenuManager.default.menuLeftNavigationController = leftBaseScreen
-        SideMenuManager.default.menuFadeStatusBar = false
-        SideMenuManager.default.menuAnimationBackgroundColor = .red
+        SideMenuManager.default.menuAnimationBackgroundColor = Theme.default.menuNavigationColor.hexColor
 
         centerBaseScreen = CenterViewController()
         centerBaseScreen.reportViewDidLoad = {
@@ -69,9 +71,11 @@ class BaseCoordinator {
     // MARK: Settings
     
     func refresh(menuWidth width: CGFloat) {
+        let screenWidth = min(UIScreen.main.bounds.size.width, UIScreen.main.bounds.size.height)
+        let maxWidth = screenWidth - 34
         let w = (width - 44)
         let cw = ((w < 278) ? 278 : w)
-        let menuWidth: CGFloat = (cw > 320) ? 320 : cw
+        let menuWidth: CGFloat = (cw > maxWidth) ? maxWidth : cw
         SideMenuManager.default.menuWidth = menuWidth
     }
     
@@ -91,14 +95,24 @@ class BaseCoordinator {
             show(viewController: WelcomeViewController())
         case .home(let account):
             if account.token == nil {
+                currentApi = nil
+                
                 loginCoordinator.presentLogin(for: account) { account in
                     self.navigate(to: .home(account))
                 }
             } else {
+                // Prepare current API
+                currentApi = account.api()
+                
+                // Get last used info saved
                 account.lastUsed = Date()
-                try? account.save() // Save the account that has been opened last
-                leftScreen.didLogin(to: account) // Load teams in the lest menu
-                show(viewController: OverviewViewController(account: account)) // Show overview
+                try? account.save()
+                
+                // Load teams in the lest menu
+                leftScreen.didLogin(to: account)
+                
+                // Show overview
+                show(viewController: OverviewViewController(account: account))
             }
         case .newAccount(let success):
             loginCoordinator.presentLogin(success: success)

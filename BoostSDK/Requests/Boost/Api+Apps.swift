@@ -15,9 +15,9 @@ extension Api {
     public func overview(team teamId: UUID? = nil, platform: App.Platform = .any, identifier: String? = nil, page: Int = 0, limit: Int = 30) throws -> Promise<[Overview]> {
         let query: Query
         if let teamId = teamId {
-            query = Query("teams/\(teamId)/apps/overview")
+            query = Query("teams/\(teamId)/overview")
         } else {
-            query = Query("apps/overview")
+            query = Query("overview")
         }
         query.append(platform)
         query.append(key: "identifier", value: identifier)

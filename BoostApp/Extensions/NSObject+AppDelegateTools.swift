@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import BoostSDK
 
 
 extension NSObject {
@@ -17,6 +18,13 @@ extension NSObject {
             fatalError()
         }
         return delegate
+    }
+    
+    var api: Api? {
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
+            return nil
+        }
+        return delegate.coordinator.currentApi
     }
     
 }

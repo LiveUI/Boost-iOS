@@ -52,6 +52,7 @@ class LeftMenuViewController: ViewController, UIScrollViewDelegate {
         show(page: .teams)
         
         teams.manager.account = account
+        teams.accountButton.setImage(account.iconImage, for: .normal)
     }
     
     func didLogOut() {
@@ -88,24 +89,28 @@ class LeftMenuViewController: ViewController, UIScrollViewDelegate {
         
         // Accounts
         addChildViewController(accounts)
-        accounts.view.place.on(scrollView, top: 0, bottom: 0).leftMargin(0).match(width: scrollView).match(height: scrollView)
+        accounts.view.place.on(scrollView, top: 0, bottom: 0).leftMargin(0).match(width: view).match(height: view)
         accounts.didMove(toParentViewController: self)
         
         // Teams
         addChildViewController(teams)
-        teams.view.place.next(to: accounts.view, left: 0).match(bottom: scrollView).match(width: scrollView).rightMargin(0)
+        teams.view.place.next(to: accounts.view, left: 0).match(bottom: view).match(width: view).rightMargin(0)
         teams.didMove(toParentViewController: self)
         
         // Pagination
         pageControl.numberOfPages = 1
         pageControl.currentPage = 0
-        pageControl.pageIndicatorTintColor = .lightGray
-        pageControl.currentPageIndicatorTintColor = .darkGray
+        pageControl.currentPageIndicatorTintColor = .lightGray
+        pageControl.pageIndicatorTintColor = .darkGray
         pageControl.addTarget(self, action: #selector(pageControlChanged(_:)), for: .valueChanged)
         pageControl.place.on(view, height: 20, bottom: -20).sideMargins()
     }
     
     // MARK: View lifecycle
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -151,6 +156,8 @@ class LeftBaseViewController: UISideMenuNavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
     
 }

@@ -63,7 +63,17 @@ public class Networking {
         let sessionConfig = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfig)
         
-        var request = URLRequest(url: baseUrl.appendingPathComponent(path))
+        let parts = path.split(separator: "?").map { String($0) }
+        
+        var request: URLRequest
+        let url = baseUrl.appendingPathComponent(parts[0])
+        if parts.count == 2, let query = parts.last, var components = URLComponents(string: url.path) {
+            components.query = query
+            request = URLRequest(url: components.url ?? url)
+        } else {
+            request = URLRequest(url: url)
+        }
+        
         
         if let data = data {
             request.httpBody = data

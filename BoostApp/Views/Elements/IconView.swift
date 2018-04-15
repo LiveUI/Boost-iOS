@@ -1,5 +1,5 @@
 //
-//  TeamIconView.swift
+//  IconView.swift
 //  BoostApp
 //
 //  Created by Ondrej Rafaj on 13/04/2018.
@@ -11,7 +11,7 @@ import UIKit
 import Modular
 
 
-class TeamIconView: UIView {
+class IconView: UIView {
     
     
     private let initials = UILabel()
@@ -20,12 +20,24 @@ class TeamIconView: UIView {
     
     // MARK: Settings
     
-    public func set(initials: String) {
+    public func set(initials: String, bgColor: UIColor) {
         self.initials.text = initials.uppercased()
+        self.initials.textColor = bgColor.isDark ? .white : .black
+        
+        backgroundColor = bgColor
     }
     
     public func set(image: UIImage) {
-        self.icon.image = image
+        icon.image = image
+    }
+    
+    public var imageContentMode: UIViewContentMode {
+        get {
+            return icon.contentMode
+        }
+        set {
+            icon.contentMode = newValue
+        }
     }
     
     // MARK: Initialization
@@ -33,13 +45,10 @@ class TeamIconView: UIView {
     init() {
         super.init(frame: CGRect.zero)
         
-        backgroundColor = .lightGray
-        
         layer.cornerRadius = 4
         clipsToBounds = true
         
-        initials.font = UIFont.boldSystemFont(ofSize: 24)
-        initials.textColor = .white
+        initials.font = UIFont.boldSystemFont(ofSize: 18)
         initials.textAlignment = .center
         initials.place.on(andFill: self)
         

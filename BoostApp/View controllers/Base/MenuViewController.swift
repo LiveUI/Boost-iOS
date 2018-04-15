@@ -24,15 +24,23 @@ class MenuViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = "4A3849".hexColor
+        view.backgroundColor = Theme.default.menuBackgroundColor.hexColor
         
         topBar.place.on(view, top: 0).sideToSide().with.height(54)
         
-        tableView.place.below(topBar, top: 0).sideToSide().bottomMargin(0)
-        tableView.topMenuSpacing()
+        tableView.place.below(topBar, top: 0).sideToSide().bottomMargin(-20)
         tableView.removeEmptyRows()
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
+    }
+    
+}
+
+
+extension MenuViewController {
+    
+    var leftScreen: LeftMenuViewController {
+        return appDelegate.coordinator.leftScreen
     }
     
 }

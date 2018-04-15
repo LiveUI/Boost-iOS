@@ -15,6 +15,8 @@ class TeamsViewController: MenuViewController {
     
     let manager = TeamsDataManager()
     
+    let accountButton = UIButton()
+    
     
     // MARK: View lifecycle
     
@@ -23,6 +25,21 @@ class TeamsViewController: MenuViewController {
         
         var m = manager as PresentableManager
         tableView.bind(withPresentableManager: &m)
+        
+        // Top bar elements
+        let title = MenuTitleLabel(Lang.get("menu.teams.title"))
+        title.place.on(topBar).center().sideToSide()
+        
+        accountButton.layer.cornerRadius = 3
+        accountButton.clipsToBounds = true
+        accountButton.addTarget(self, action: #selector(didTapAccountButton(_:)), for: .touchUpInside)
+        accountButton.place.on(topBar).leftMargin(16).centerY().make.square(side: 34)
+    }
+    
+    // MARK: Actions
+    
+    @objc func didTapAccountButton(_ sender: UIButton) {
+        leftScreen.show(page: .accounts)
     }
     
 }

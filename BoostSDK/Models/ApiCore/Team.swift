@@ -20,7 +20,7 @@ public struct Team: Codable {
     public let name: String
     public let identifier: String
     public let initials: String
-    public let color: String?
+    public let color: String
     
     enum CodingKeys: String, CodingKey {
         case id
