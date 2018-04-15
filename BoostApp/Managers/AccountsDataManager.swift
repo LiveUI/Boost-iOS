@@ -1,5 +1,5 @@
 //
-//  AccountsMenuDataManager.swift
+//  AccountsDataManager.swift
 //  BoostApp
 //
 //  Created by Ondrej Rafaj on 31/03/2018.
@@ -11,7 +11,7 @@ import Presentables
 import AwesomeEnum
 
 
-class AccountsMenuDataManager: PresentableTableViewDataManager {
+class AccountsDataManager: PresentableTableViewDataManager {
     
     var accountHasBeenDeleted: (() -> Void)?
     
@@ -77,6 +77,9 @@ class AccountsMenuDataManager: PresentableTableViewDataManager {
                     cell.hostLabel.text = account.server
                     cell.lockIcon.isHidden = !(account.token?.isEmpty ?? true)
                     cell.onlineIcon.state = account.onlineIsValid ? .online : .offline
+                    
+                    let hidden = !(account == self.appDelegate.coordinator.currentAccount)
+                    cell.selectedIndicator.isHidden = hidden
                 }).cellSelected {
                     self.appDelegate.coordinator.navigate(to: .home(account))
                 }

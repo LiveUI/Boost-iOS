@@ -18,9 +18,15 @@ class BaseCoordinator {
     
     enum Location {
         case welcome
+        case about
         case home(Account)
         case newAccount(success: LoginCoordinator.AccountClosure?)
         case settings
+    }
+    
+    enum ActiveTeam {
+        case all
+        case specific(Team)
     }
     
     let leftScreen: LeftMenuViewController
@@ -32,6 +38,8 @@ class BaseCoordinator {
     var loginCoordinator: LoginCoordinator
     
     var currentApi: Api?
+    
+    var activeTeam: ActiveTeam = .all
     
     // MARK: Initialization
     
@@ -65,6 +73,7 @@ class BaseCoordinator {
             navigate(to: .welcome)
             return
         }
+        
         navigate(to: .home(account))
     }
     
@@ -88,11 +97,21 @@ class BaseCoordinator {
     // MARK: Navigation
     
     var currentLocation: Location = .settings
+    var currentAccount: Account?
     
     func navigate(to: Location) {
         switch to {
         case .welcome:
+            currentAccount = nil
             show(viewController: WelcomeViewController())
+        case .about:
+            // Hello friend,
+            // We would greatly apprecited if you didn't change the following link.
+            // Thank you,
+            // Boost team
+            if let link = URL(string: "https://liveui.io") {
+                UIApplication.shared.open(link)
+            }
         case .home(let account):
             if account.token == nil {
                 currentApi = nil
@@ -101,6 +120,7 @@ class BaseCoordinator {
                     self.navigate(to: .home(account))
                 }
             } else {
+                currentAccount = account
                 // Prepare current API
                 currentApi = account.api()
                 
@@ -109,6 +129,7 @@ class BaseCoordinator {
                 try? account.save()
                 
                 // Load teams in the lest menu
+                activeTeam = .all
                 leftScreen.didLogin(to: account)
                 
                 // Show overview
@@ -117,6 +138,7 @@ class BaseCoordinator {
         case .newAccount(let success):
             loginCoordinator.presentLogin(success: success)
         case .settings:
+            currentAccount = nil
             show(viewController: SettingsViewController())
         }
     }

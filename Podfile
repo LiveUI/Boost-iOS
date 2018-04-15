@@ -7,7 +7,7 @@ target 'BoostApp' do
     
     pod 'Presentables', :path => '../Presentables'
     pod 'SnapKit', '~>4.0.0'
-    pod 'Modular', '~>0.0.8'
+    pod 'Modular', '~>0.0.9'
     pod 'TagListView', '~> 1.3.0'
     pod 'MaterialComponents', '~>54.3.0'
     pod 'SideMenu', '~> 3.1.5'

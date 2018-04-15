@@ -68,7 +68,7 @@
 		1596E43B207F138F0068B243 /* IntValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1596E43A207F138F0068B243 /* IntValidator.swift */; };
 		1596E43D207F1A4A0068B243 /* ServerNameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1596E43C207F1A4A0068B243 /* ServerNameValidator.swift */; };
 		1596E43F207F1B6C0068B243 /* UrlValudator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1596E43E207F1B6C0068B243 /* UrlValudator.swift */; };
-		1596E441207F28B40068B243 /* AccountsMenuDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1596E440207F28B40068B243 /* AccountsMenuDataManager.swift */; };
+		1596E441207F28B40068B243 /* AccountsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1596E440207F28B40068B243 /* AccountsDataManager.swift */; };
 		1596E443207F29160068B243 /* Amazing+BoostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1596E442207F29160068B243 /* Amazing+BoostApp.swift */; };
 		1596E445207F66920068B243 /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1596E444207F66920068B243 /* Dialog.swift */; };
 		1596E447207F780F0068B243 /* ViewController+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1596E446207F780F0068B243 /* ViewController+Validation.swift */; };
@@ -233,7 +233,7 @@
 		1596E43A207F138F0068B243 /* IntValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntValidator.swift; sourceTree = "<group>"; };
 		1596E43C207F1A4A0068B243 /* ServerNameValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerNameValidator.swift; sourceTree = "<group>"; };
 		1596E43E207F1B6C0068B243 /* UrlValudator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlValudator.swift; sourceTree = "<group>"; };
-		1596E440207F28B40068B243 /* AccountsMenuDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsMenuDataManager.swift; sourceTree = "<group>"; };
+		1596E440207F28B40068B243 /* AccountsDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsDataManager.swift; sourceTree = "<group>"; };
 		1596E442207F29160068B243 /* Amazing+BoostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Amazing+BoostApp.swift"; sourceTree = "<group>"; };
 		1596E444207F66920068B243 /* Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
 		1596E446207F780F0068B243 /* ViewController+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Validation.swift"; sourceTree = "<group>"; };
@@ -296,9 +296,12 @@
 		469B3AC079CCD70FA217342F /* Pods-BoostApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoostApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoostApp/Pods-BoostApp.release.xcconfig"; sourceTree = "<group>"; };
 		6E120E032A1BF689F627A3D4 /* Pods_BoostAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoostAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87189322A9E8183233DA079E /* Pods_BoostAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoostAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AA63A89D9E5BA5DB30AD159 /* Pods-BoostAppUITests.enterprise.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoostAppUITests.enterprise.xcconfig"; path = "Pods/Target Support Files/Pods-BoostAppUITests/Pods-BoostAppUITests.enterprise.xcconfig"; sourceTree = "<group>"; };
 		A71527675E83C103D40D6733 /* Pods-BoostAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoostAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoostAppTests/Pods-BoostAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C8D2381E8BD50EF25CAD5E57 /* Pods-BoostAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoostAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoostAppUITests/Pods-BoostAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E42759B3C1D0F63B8CECECD0 /* Pods-BoostAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoostAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoostAppTests/Pods-BoostAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		F7CEBB0475C5B9F746EEE3F0 /* Pods-BoostAppTests.enterprise.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoostAppTests.enterprise.xcconfig"; path = "Pods/Target Support Files/Pods-BoostAppTests/Pods-BoostAppTests.enterprise.xcconfig"; sourceTree = "<group>"; };
+		FBADC87AD3B5DDE46B033583 /* Pods-BoostApp.enterprise.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoostApp.enterprise.xcconfig"; path = "Pods/Target Support Files/Pods-BoostApp/Pods-BoostApp.enterprise.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -601,7 +604,7 @@
 		15A8955B1FD0C39C00347281 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				1596E440207F28B40068B243 /* AccountsMenuDataManager.swift */,
+				1596E440207F28B40068B243 /* AccountsDataManager.swift */,
 				1596E44A207F8BBA0068B243 /* TeamsDataManager.swift */,
 				15A8955C1FD0C3AD00347281 /* AppsDataManager.swift */,
 				15C7B4D61FE6FB2C0074508A /* FiltersDataManager.swift */,
@@ -862,6 +865,9 @@
 				E42759B3C1D0F63B8CECECD0 /* Pods-BoostAppTests.release.xcconfig */,
 				11049ECA6BB56E138AA6977C /* Pods-BoostAppUITests.debug.xcconfig */,
 				C8D2381E8BD50EF25CAD5E57 /* Pods-BoostAppUITests.release.xcconfig */,
+				FBADC87AD3B5DDE46B033583 /* Pods-BoostApp.enterprise.xcconfig */,
+				F7CEBB0475C5B9F746EEE3F0 /* Pods-BoostAppTests.enterprise.xcconfig */,
+				9AA63A89D9E5BA5DB30AD159 /* Pods-BoostAppUITests.enterprise.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1373,7 +1379,7 @@
 				15D73C9520630EC00011D5C9 /* AccountsViewController.swift in Sources */,
 				1596E445207F66920068B243 /* Dialog.swift in Sources */,
 				1596E439207F137E0068B243 /* EmailValidator.swift in Sources */,
-				1596E441207F28B40068B243 /* AccountsMenuDataManager.swift in Sources */,
+				1596E441207F28B40068B243 /* AccountsDataManager.swift in Sources */,
 				1594F9682081D8590049E450 /* String+Color.swift in Sources */,
 				156AFEAC2063315100FB91B3 /* SettingsViewController.swift in Sources */,
 				1596E429207EFEBB0068B243 /* ServerNameViewController.swift in Sources */,
@@ -1590,7 +1596,7 @@
 		};
 		159933DC2081183200FEB882 /* Enterprise */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 469B3AC079CCD70FA217342F /* Pods-BoostApp.release.xcconfig */;
+			baseConfigurationReference = FBADC87AD3B5DDE46B033583 /* Pods-BoostApp.enterprise.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -1609,7 +1615,7 @@
 		};
 		159933DD2081183200FEB882 /* Enterprise */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E42759B3C1D0F63B8CECECD0 /* Pods-BoostAppTests.release.xcconfig */;
+			baseConfigurationReference = F7CEBB0475C5B9F746EEE3F0 /* Pods-BoostAppTests.enterprise.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1626,7 +1632,7 @@
 		};
 		159933DE2081183200FEB882 /* Enterprise */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C8D2381E8BD50EF25CAD5E57 /* Pods-BoostAppUITests.release.xcconfig */;
+			baseConfigurationReference = 9AA63A89D9E5BA5DB30AD159 /* Pods-BoostAppUITests.enterprise.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

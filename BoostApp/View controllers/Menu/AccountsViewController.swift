@@ -14,7 +14,7 @@ import AwesomeEnum
 
 class AccountsViewController: MenuViewController {
     
-    let manager: AccountsMenuDataManager = AccountsMenuDataManager()
+    let manager: AccountsDataManager = AccountsDataManager()
     
     
     // MARK: View lifecycle
@@ -40,6 +40,7 @@ class AccountsViewController: MenuViewController {
         let aboutButton = UIButton()
         aboutButton.setImage(Awesome.solid.question.navBarIcon(.white), for: .normal)
         aboutButton.sizeToFit()
+        aboutButton.addTarget(self, action: #selector(didTapInfoButton(_:)), for: .touchUpInside)
         aboutButton.place.on(topBar).leftMargin(10).centerY()
         
         // Table view handling
@@ -52,6 +53,12 @@ class AccountsViewController: MenuViewController {
                 self.appDelegate.coordinator.noMoreAccountsAvailable()
             }
         }
+    }
+    
+    // MARK: Actions
+    
+    @objc func didTapInfoButton(_: UIButton) {
+        appDelegate.coordinator.navigate(to: .about)
     }
     
 }

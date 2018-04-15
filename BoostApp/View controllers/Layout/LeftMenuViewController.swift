@@ -22,6 +22,8 @@ class LeftMenuViewController: ViewController, UIScrollViewDelegate {
     let scrollView = UIScrollView()
     let pageControl = UIPageControl()
     
+    let fakeNavBar = MenuTopBarView()
+    
     enum Page {
         case accounts
         case teams
@@ -29,13 +31,13 @@ class LeftMenuViewController: ViewController, UIScrollViewDelegate {
     
     // MARK: Settings
     
-    func show(page: Page) {
+    func show(page: Page, animated: Bool = true) {
         switch page {
         case .accounts:
-            scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-            navigationItem.setLeftBarButton(nil, animated: true)
+            scrollView.setContentOffset(CGPoint(x: 0, y: -20), animated: true)
+            navigationItem.setLeftBarButton(nil, animated: animated)
         case .teams:
-            scrollView.setContentOffset(CGPoint(x: scrollView.frame.size.width, y: 0), animated: true)
+            scrollView.setContentOffset(CGPoint(x: scrollView.frame.size.width, y: -20), animated: animated)
             makeAccountIcon()
         }
     }
@@ -81,20 +83,32 @@ class LeftMenuViewController: ViewController, UIScrollViewDelegate {
         
         navigationController?.navigationBar.isTranslucent = false
         
+        // Fake nav bar & bcg
+        fakeNavBar.place.on(view, top: 20).sideToSide().with.height(54)
+        view.backgroundColor = Theme.default.menuBackgroundColor.hexColor
+        
         scrollView.isScrollEnabled = false
         scrollView.isPagingEnabled = true
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.delegate = self
-        scrollView.place.on(andFill: view)
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints { make in
+            make.top.left.equalTo(0)
+            make.width.equalToSuperview()
+            make.height.equalTo(view.snp.height)
+        }
         
         // Accounts
         addChildViewController(accounts)
-        accounts.view.place.on(scrollView, top: 0, bottom: 0).leftMargin(0).match(width: view).match(height: view)
+        accounts.view.place.on(scrollView, top: 0, bottom: 0).leftMargin(0).match(width: scrollView).match(height: scrollView, offset: -20)
         accounts.didMove(toParentViewController: self)
         
         // Teams
         addChildViewController(teams)
-        teams.view.place.next(to: accounts.view, left: 0).match(bottom: view).match(width: view).rightMargin(0)
+        teams.view.place.next(to: accounts.view, left: 0).rightMargin(0)
+        teams.view.snp.makeConstraints { make in
+            make.width.height.top.equalTo(accounts.view)
+        }
         teams.didMove(toParentViewController: self)
         
         // Pagination
@@ -116,6 +130,15 @@ class LeftMenuViewController: ViewController, UIScrollViewDelegate {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // TODO: Can we find a cleaner way to identify which page should be open?
+        if pageControl.numberOfPages > 1 {
+            show(page: .teams, animated: true)
+        }
     }
     
     // MARK: Actions
@@ -146,6 +169,9 @@ class LeftMenuViewController: ViewController, UIScrollViewDelegate {
             }
         }
         pageControl.currentPage = Int(page)
+        
+        // TODO: Fix the layout issue so we can get rid of this hack!!!!
+        scrollView.contentOffset = CGPoint(x: scrollView.contentOffset.x, y: -20)
     }
     
 }

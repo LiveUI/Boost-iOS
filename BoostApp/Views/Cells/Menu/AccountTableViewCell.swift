@@ -19,6 +19,7 @@ class AccountTableViewCell: MenuTableViewCell {
     let icon = UIImageView()
     let lockIcon = UIImageView()
     let onlineIcon = OnlineIcon()
+    let selectedIndicator = UIView()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
@@ -42,6 +43,11 @@ class AccountTableViewCell: MenuTableViewCell {
         
         // Online icon
         onlineIcon.place.on(contentView).with.match(bottom: icon, offset: iconOffset).match(right: icon, offset: iconOffset).make.square(side: 10)
+        
+        selectedIndicator.backgroundColor = .white
+        selectedIndicator.layer.cornerRadius = 3
+        selectedIndicator.isHidden = true
+        selectedIndicator.place.on(contentView, width: 10).match(top: icon).match(bottom: icon).leftMargin(-6)
     }
     
     required init?(coder aDecoder: NSCoder) {

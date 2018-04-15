@@ -423,7 +423,7 @@ PODS:
     - MaterialComponents/private/Application
   - MDFInternationalization (1.0.4)
   - MDFTextAccessibility (1.2.0)
-  - Modular (0.0.8):
+  - Modular (0.0.9):
     - SnapKit
   - MotionAnimator (2.8.1):
     - MotionInterchange (~> 1.6)
@@ -439,7 +439,7 @@ PODS:
 DEPENDENCIES:
   - AwesomeEnum (~> 1.2.0)
   - MaterialComponents (~> 54.3.0)
-  - Modular (~> 0.0.8)
+  - Modular (~> 0.0.9)
   - Presentables (from `../Presentables`)
   - Reloaded (from `../Reloaded`)
   - SideMenu (~> 3.1.5)
@@ -458,7 +458,7 @@ SPEC CHECKSUMS:
   MaterialComponents: 66336934e36ae6a5604f45386785a66e7f0b7f5a
   MDFInternationalization: e355b0cebecf53d60233bd267084e49366c82513
   MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
-  Modular: c37de4e839b509449fa9f8b8a26656ec32105201
+  Modular: 2d1dbb823f725fe4a3d36ec24ba81cf997beb51b
   MotionAnimator: ee16aa30567c5bae0fb2750c132915829cfaaf8a
   MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
   MotionTransitioning: 23d25edc2f4606efb922403cbac6d81af37aa33a
@@ -469,6 +469,6 @@ SPEC CHECKSUMS:
   SpecTools: 77474921254b23ea50bb80f8763214f41d9d63c5
   TagListView: 669f7d4455003c877655875d34829731c4191528
 
-PODFILE CHECKSUM: 534883cbb6eb4815ef450b39daebe6de3f249b96
+PODFILE CHECKSUM: 6cf2ed47ff82277f1e95c8bc6fc7214db84dfbaf
 
 COCOAPODS: 1.4.0
