@@ -9,7 +9,7 @@
 import Foundation
 
 
-public struct Team: Codable {
+public struct Team: Entry {
     
     struct Check: Codable {
         let identifier: String

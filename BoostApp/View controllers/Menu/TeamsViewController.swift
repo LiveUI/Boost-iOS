@@ -36,6 +36,12 @@ class TeamsViewController: MenuViewController {
         accountButton.place.on(topBar).leftMargin(16).centerY().make.square(side: 34)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        manager.loadData()
+    }
+    
     // MARK: Actions
     
     @objc func didTapAccountButton(_ sender: UIButton) {

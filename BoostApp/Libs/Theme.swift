@@ -15,5 +15,6 @@ struct Theme {
     
     let menuNavigationColor: String = "362439"
     let menuBackgroundColor: String = "4A3849"
+    let menuSelectionIndicatorColor: String = "5D9489"
     
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 
-public struct Info: Codable {
+public struct Info: Model {
     
     public let name: String
     public let url: String

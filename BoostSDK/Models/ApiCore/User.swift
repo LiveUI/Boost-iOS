@@ -9,9 +9,9 @@
 import Foundation
 
 
-public struct User: Codable {
+public struct User: Entry {
     
-    public let id: UUID
+    public let id: UUID?
     public let lastname: String
     public let registered: String
     public let firstname: String

@@ -27,6 +27,15 @@ class BaseCoordinator {
     enum ActiveTeam {
         case all
         case specific(Team)
+        
+        var team: Team? {
+            switch self {
+            case .specific(let team):
+                return team
+            default:
+                return nil
+            }
+        }
     }
     
     let leftScreen: LeftMenuViewController
@@ -39,6 +48,14 @@ class BaseCoordinator {
     
     var currentApi: Api?
     
+    var currentLocation: Location = .settings
+    var currentAccount: Account? {
+        didSet {
+            if currentAccount == nil {
+                activeTeam = .all
+            }
+        }
+    }
     var activeTeam: ActiveTeam = .all
     
     // MARK: Initialization
@@ -96,9 +113,6 @@ class BaseCoordinator {
     
     // MARK: Navigation
     
-    var currentLocation: Location = .settings
-    var currentAccount: Account?
-    
     func navigate(to: Location) {
         switch to {
         case .welcome:
@@ -106,35 +120,14 @@ class BaseCoordinator {
             show(viewController: WelcomeViewController())
         case .about:
             // Hello friend,
-            // We would greatly apprecited if you didn't change the following link.
+            // We would greatly apprecited if you didn't change the following link. We have spent countless hours developing this for you and this is a way for us to get noticed. :)
             // Thank you,
             // Boost team
-            if let link = URL(string: "https://liveui.io") {
+            if let link = URL(string: "https://boostappstore.com") {
                 UIApplication.shared.open(link)
             }
         case .home(let account):
-            if account.token == nil {
-                currentApi = nil
-                
-                loginCoordinator.presentLogin(for: account) { account in
-                    self.navigate(to: .home(account))
-                }
-            } else {
-                currentAccount = account
-                // Prepare current API
-                currentApi = account.api()
-                
-                // Get last used info saved
-                account.lastUsed = Date()
-                try? account.save()
-                
-                // Load teams in the lest menu
-                activeTeam = .all
-                leftScreen.didLogin(to: account)
-                
-                // Show overview
-                show(viewController: OverviewViewController(account: account))
-            }
+            navigate(home: account)
         case .newAccount(let success):
             loginCoordinator.presentLogin(success: success)
         case .settings:
@@ -162,6 +155,32 @@ class BaseCoordinator {
     }
     
     // MARK: Private interface
+    
+    private func navigate(home account: Account) {
+        if account.token == nil {
+            currentApi = nil
+            
+            loginCoordinator.presentLogin(for: account) { account in
+                self.navigate(to: .home(account))
+            }
+        } else {
+            currentAccount = account
+            
+            // Prepare current API
+            currentApi = account.api()
+            
+            // Get last used info saved
+            account.lastUsed = Date()
+            try? account.save()
+            
+            // Load teams in the lest menu
+            activeTeam = .all
+            leftScreen.didLogin(to: account)
+            
+            // Show overview
+            show(viewController: OverviewViewController(account: account))
+        }
+    }
     
     func show(viewController: UIViewController) {
         let nc = UINavigationController(rootViewController: viewController)

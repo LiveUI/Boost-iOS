@@ -9,7 +9,7 @@
 import Foundation
 
 
-public struct App: Codable {
+public struct App: Entry {
     
     public enum Platform: String, Codable, Queryable {
         case any

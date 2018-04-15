@@ -20,29 +20,45 @@ class TeamsDataManager: PresentableTableViewDataManager {
     }
     
     var teams: [Team] = []
+    var teamCounts: [UUID: Int] = [:]
     
     var teamsChanged: (()->())?
     
     func loadData() {
+        // Reset
         data.removeAll()
+        teamCounts = [:]
         
         let section = PresentableSection()
         
+        // Display loading cell
+        let loading = Presentable<MenuLoadingTableViewCell>.create()
+        section.presentables.append(loading)
+        
+        // Fetch teams
         do {
             try api?.teams().then({ teams in
+                section.presentables.removeAll() // Remove loading
+                
                 // Add all teams selector
                 let all = Presentable<GenericMenuTableViewCell>.create({ (cell) in
                     cell.icon.set(image: UIImage.defaultIcon)
                     cell.titleLabel.text = Lang.get("menu.teams.all")
-                })
+                }).cellSelected {
+                    self.appDelegate.coordinator.activeTeam = .all
+                }
                 section.presentables.append(all)
                 
                 // Show all teams
                 for team in teams {
-                    let presentable = Presentable<GenericMenuTableViewCell>.create({ (cell) in
+                    let presentable = Presentable<TeamsTableViewCell>.create({ (cell) in
                         cell.icon.set(initials: team.initials, bgColor: team.color.hexColor!)
                         cell.titleLabel.text = team.name
-                    })
+                        cell.badge.value = "271"
+                        cell.selectedIndicator.isHidden = !(team == self.appDelegate.coordinator.activeTeam.team)
+                    }).cellSelected {
+                        self.appDelegate.coordinator.activeTeam = .specific(team)
+                    }
                     section.presentables.append(presentable)
                 }
             }).error({ error in
@@ -50,13 +66,14 @@ class TeamsDataManager: PresentableTableViewDataManager {
                     try? self.account?.reportInvalidAuthToken()
                 } else {
                     // TODO: Replace with generic loading problem cell!!!
-                    let sort = Presentable<UITableViewCell>.create({ (cell) in
+                    let presentable = Presentable<UITableViewCell>.create({ (cell) in
                         cell.textLabel?.text = Lang.get("menu.teams.error.loading_problem")
                     })
-                    section.presentables.append(sort)
+                    section.presentables.append(presentable)
                 }
             })
         } catch {
+            // TODO: Handle! How? :/
             print(error)
         }
         

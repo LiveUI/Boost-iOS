@@ -9,7 +9,7 @@
 import Foundation
 
 
-public struct Pong: Codable {
+public struct Pong: Model {
     
     public let code: String
     

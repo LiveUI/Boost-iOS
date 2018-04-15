@@ -9,14 +9,14 @@
 import Foundation
 
 
-public struct Login: Codable {
+public struct Login: Entry {
     
     struct Request: Codable {
         let email: String
         let password: String
     }
     
-    public let id: UUID
+    public let id: UUID?
     public let expires: String
     public let token: String
     public let user: User
