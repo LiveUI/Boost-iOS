@@ -67,7 +67,7 @@ public class Networking {
         
         var request: URLRequest
         let url = baseUrl.appendingPathComponent(parts[0])
-        if parts.count == 2, let query = parts.last, var components = URLComponents(string: url.path) {
+        if parts.count == 2, let query = parts.last, var components = URLComponents(string: url.absoluteString) {
             components.query = query
             request = URLRequest(url: components.url ?? url)
         } else {

@@ -40,7 +40,7 @@ class MenuViewController: ViewController {
 extension MenuViewController {
     
     var leftScreen: LeftMenuViewController {
-        return appDelegate.coordinator.leftScreen
+        return baseCoordinator.leftScreen
     }
     
 }

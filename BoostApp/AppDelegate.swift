@@ -16,14 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    var coordinator = BaseCoordinator()
+    var coordinator: BaseCoordinator!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
+        
+        coordinator = BaseCoordinator()
+        
         if let window = window {
             window.backgroundColor = .white
             window.rootViewController = coordinator.centerBaseScreen
             window.makeKeyAndVisible()
+            
+            coordinator.showInitialScreen()
         }
         
         UIApplication.shared.statusBarStyle = .lightContent

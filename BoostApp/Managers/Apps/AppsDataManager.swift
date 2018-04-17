@@ -12,7 +12,7 @@ import BoostSDK
 import Presentables
 
 
-class AppsDataManager: PresentableCollectionViewDataManager {
+class AppsDataManager: PresentableCollectionViewDataManager, AppManager {
     
     var leadingApp: App? {
         didSet {

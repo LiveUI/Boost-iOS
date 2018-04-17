@@ -33,7 +33,7 @@ class WelcomeViewController: ViewController {
     // MARK: Actions
     
     @objc func didTapLoginButton(_ sender: UIButton) {
-        appDelegate.coordinator.navigate(to: .newAccount(success: nil))
+        baseCoordinator.navigate(to: .newAccount(success: nil))
     }
     
 }

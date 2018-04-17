@@ -32,7 +32,7 @@ class LoginCoordinator {
             nameControntroller.didChangeNameSuccessfully = { account in
                 c.dismiss(animated: true, completion: {
                     self.accountHasBeenModified?(account)
-                    self.baseCoordinator.navigate(to: .home(account))
+                    self.baseCoordinator.navigate(to: .home(account, .all))
                 })
             }
             c.navigationController?.pushViewController(nameControntroller, animated: true)

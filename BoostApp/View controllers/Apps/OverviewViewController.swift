@@ -28,27 +28,19 @@ class OverviewViewController: RootViewController {
     init(account: Account) {
         self.account = account
         
-        super.init()
+        let manager = OverviewDataManager()
+        super.init(manager: manager)
         
-        title = account.name
-        
-        let dataController = OverviewDataManager(account: account)
-        dataController.allBuildsRequested = { app in
+        manager.allBuildsRequested = { app in
             let c = AppsViewController(leadingApp: app)
             c.tags = super.filtersMenu.dataController.selectedTags
             self.navigationController?.pushViewController(c, animated: true)
         }
-        dataController.deleteAllRequested = { app in
+        manager.deleteAllRequested = { app in
             let alert = UIAlertController(title: "Really?!", message: "This may fuck shit up dude!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Cool", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
-//        self.dataController = dataController
-        
-        let layout = UICollectionViewFlowLayout()
-        collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        
-//        collectionView.register(header: AppHeader.self)
     }
     
     required init?(coder aDecoder: NSCoder) {

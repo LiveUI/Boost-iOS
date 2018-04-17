@@ -13,27 +13,34 @@ import Modular
 class AppHeader: UICollectionReusableView {
     
     var didPressDeleteAll: (()->())?
-    var didPressShowAll: (()->())?
     
-    private let deleteAll = UIButton()
-    let titleLabel = UILabel()
-    private let showAll = UIButton()
+    let deleteAll = UIButton()
+    
+    let titleLabel = MainContentLabel()
+    let subtitleLabel = SmallTextLabel()
+    
+    let versionLabel = SmallTextLabel()
     
     
     // MARK: Configure elements
     
     func configureElements() {
-        backgroundColor = .lightGray
+        backgroundColor = .white
         
-        deleteAll.setTitle("Delete", for: .normal)
+        deleteAll.setTitle(Lang.get("apps.header.delete_all"), for: .normal)
         deleteAll.addTarget(self, action: #selector(didPressDeleteAll(_:)), for: .touchUpInside)
-        deleteAll.place.on(self).with.leftMargin().topMargin(0).bottomMargin(4).and.height(24)
+        deleteAll.place.on(self).with.leftMargin().topMargin().width(60).and.height(24)
         
-        showAll.setTitle("All ->", for: .normal)
-        showAll.addTarget(self, action: #selector(didPressShowAll(_:)), for: .touchUpInside)
-        showAll.place.on(self).with.rightMargin().topMargin(0).bottomMargin(4).and.height(24)
+        versionLabel.text = "1.2.3 (1234)"
+        versionLabel.place.next(to: deleteAll).with.rightMargin().topMargin().and.bottomMargin()
         
-        titleLabel.place.between(deleteAll, and: showAll, height: 24).topMargin(8)
+        titleLabel.text = "Boost"
+        titleLabel.textAlignment = .center
+        titleLabel.place.between(deleteAll, and: versionLabel, height: 24).topMargin(8)
+        
+        subtitleLabel.text = "(io.liveui.boost)"
+        subtitleLabel.textAlignment = .center
+        subtitleLabel.place.below(titleLabel, top: 10).match(left: titleLabel).match(right: titleLabel)
     }
     
     // MARK: Initialization
@@ -52,10 +59,6 @@ class AppHeader: UICollectionReusableView {
     
     @objc func didPressDeleteAll(_ sender: UIButton) {
         didPressDeleteAll?()
-    }
-    
-    @objc func didPressShowAll(_ sender: UIButton) {
-        didPressShowAll?()
     }
     
 }

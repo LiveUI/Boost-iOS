@@ -1,8 +1,8 @@
 //
-//  MenuTitleLabel.swift
+//  MainContentLabel.swift
 //  BoostApp
 //
-//  Created by Ondrej Rafaj on 13/04/2018.
+//  Created by Ondrej Rafaj on 16/04/2018.
 //  Copyright © 2018 LiveUI. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class MenuTitleLabel: UILabel {
+class MainContentLabel: UILabel {
     
     
     // MARK: Initialization
@@ -19,9 +19,9 @@ class MenuTitleLabel: UILabel {
         super.init(frame: CGRect.zero)
         
         text = title
-        textColor = .white
-        font = UIFont.boldSystemFont(ofSize: 18)
-        textAlignment = .center
+        textColor = .black
+        font = UIFont.systemFont(ofSize: 15)
+        textAlignment = .left
     }
     
     required init?(coder aDecoder: NSCoder) {

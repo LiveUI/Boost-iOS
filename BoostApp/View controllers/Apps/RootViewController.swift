@@ -18,28 +18,25 @@ import MaterialComponents
 
 class RootViewController: ViewController {
     
-    var app: App? {
-        didSet {
-            manager.leadingApp = app
-        }
-    }
-    
-    lazy var manager: AppsDataManager = {
-        return AppsDataManager(leadingApp: app)
-    }()
+    var manager: PresentableCollectionViewDataManager & AppManager
     
     lazy var selectedTagsManager: SelectedTagsDataManager = {
         return SelectedTagsDataManager()
     }()
     
-    lazy var tagListView: UICollectionView = {
-        let layout = MDCChipCollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 150, height: 44)
+//    lazy var tagListView: UICollectionView = {
+//        let layout = MDCChipCollectionViewFlowLayout()
+//        layout.itemSize = CGSize(width: 150, height: 44)
+//        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+//        return collectionView
+//    }()
+    
+    var layout = StoreFrontCollectionViewLayout()
+    
+    lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         return collectionView
     }()
-    
-    var collectionView: UICollectionView!
     
     var screenBlocker = UIView()
     var filtersMenu = FiltersViewController()
@@ -48,18 +45,18 @@ class RootViewController: ViewController {
         didSet {
             selectedTagsManager.tags = tags
             
-            manager.selectedTags = tags
+//            manager.selectedTags = tags
             filtersMenu.dataController.selectedTags = tags
             
-            tagListView.reloadData()
+//            tagListView.reloadData()
         }
     }
     
     
     // MARK: Initialization
     
-    init(app: App? = nil) {
-        self.app = app
+    init(manager: PresentableCollectionViewDataManager & AppManager) {
+        self.manager = manager
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -92,20 +89,13 @@ class RootViewController: ViewController {
         navigationItem.rightBarButtonItem = filterButton
     }
     
-    func configureTagListView() {
-        tagListView.register(MDCChipCollectionViewCell.self)
-        
-        tagListView.backgroundColor = .red
-        tagListView.place.on(view, top: 12).sideToSide().with.height(0)
-        
-        var m: PresentableManager = selectedTagsManager
-        tagListView.bind(withPresentableManager: &m)
-    }
-    
     func configureCollectionView() {
+        collectionView.register(header: AppHeader.self)
+        collectionView.register(header: FakeAppHeader.self)
         collectionView.register(AppCollectionViewCell.self)
+        collectionView.register(FakeAppCollectionViewCell.self)
         collectionView.backgroundColor = .white
-        collectionView.place.below(tagListView, top: 12).sideToSide().and.bottomMargin(0)
+        collectionView.place.on(view, top: 0).sideToSide().and.bottomMargin(0)
     }
     
     func configureBlocker() {
@@ -120,7 +110,7 @@ class RootViewController: ViewController {
     func configureFilters() {
         filtersMenu.tagsChanged = { tags in
             self.tags = tags
-            self.updateTagListViewHeight(animated: true)
+//            self.updateTagListViewHeight(animated: true)
         }
         addChildViewController(filtersMenu)
         view.addSubview(filtersMenu.view)
@@ -133,7 +123,6 @@ class RootViewController: ViewController {
         navigationController?.navigationBar.isTranslucent = false
         
         configureNavBar()
-        configureTagListView()
         configureCollectionView()
         configureBlocker()
         configureFilters()
@@ -170,33 +159,40 @@ class RootViewController: ViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        updateTagListViewHeight()
+//        updateTagListViewHeight()
+        
+        self.layout.screenSize = view.bounds.size
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate(alongsideTransition: { ctx in
+            self.layout.screenSize = size
+        })
     }
     
     // MARK: Animations
     
-    func updateTagListViewHeight(animated: Bool = false) {
-        view.layoutIfNeeded()
-        
-        //let height = tagListView.intrinsicContentSize.height
-        let height = 150
-        tagListView.snp.updateConstraints { (make) in
-            make.top.equalTo((height > 0 ? 12 : 0))
-            make.height.equalTo(height)
-        }
-        collectionView.snp.updateConstraints { (make) in
-            make.top.equalTo(tagListView.snp.bottom).offset((height > 0 ? 12 : 0))
-        }
-        
-        if animated {
-            UIView.animate(withDuration: 0.3, animations: {
-                self.view.layoutIfNeeded()
-            })
-        }
-        else {
-            view.layoutIfNeeded()
-        }
-    }
+//    func updateTagListViewHeight(animated: Bool = false) {
+//        view.layoutIfNeeded()
+//
+//        let height = tagListView.intrinsicContentSize.height
+//        tagListView.snp.updateConstraints { (make) in
+//            make.top.equalTo((height > 0 ? 12 : 0))
+//            make.height.equalTo(height)
+//        }
+//        collectionView.snp.updateConstraints { (make) in
+//            make.top.equalTo(tagListView.snp.bottom).offset((height > 0 ? 12 : 0))
+//        }
+//
+//        if animated {
+//            UIView.animate(withDuration: 0.3, animations: {
+//                self.view.layoutIfNeeded()
+//            })
+//        }
+//        else {
+//            view.layoutIfNeeded()
+//        }
+//    }
     
     func toggleFilters() {
         let hidden: Bool = (filtersMenu.view.frame.origin.x == view.frame.size.width)

@@ -180,10 +180,15 @@ class LeftMenuViewController: ViewController, UIScrollViewDelegate {
 
 class LeftBaseViewController: UISideMenuNavigationController {
     
+    
+    // MARK: View lifecycle
+    
+    override func shouldAutomaticallyForwardRotationMethods() -> Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
 }

@@ -50,7 +50,7 @@ class AccountsViewController: MenuViewController {
         manager.accountHasBeenDeleted = {
             if self.manager.accounts.count == 0 {
                 self.tableView.isEditing = false
-                self.appDelegate.coordinator.noMoreAccountsAvailable()
+                self.baseCoordinator.noMoreAccountsAvailable()
             }
         }
     }
@@ -58,7 +58,7 @@ class AccountsViewController: MenuViewController {
     // MARK: Actions
     
     @objc func didTapInfoButton(_: UIButton) {
-        appDelegate.coordinator.navigate(to: .about)
+        baseCoordinator.navigate(to: .about)
     }
     
 }

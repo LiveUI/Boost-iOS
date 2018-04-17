@@ -19,7 +19,7 @@ class BaseCoordinator {
     enum Location {
         case welcome
         case about
-        case home(Account)
+        case home(Account, ActiveTeam)
         case newAccount(success: LoginCoordinator.AccountClosure?)
         case settings
     }
@@ -54,22 +54,17 @@ class BaseCoordinator {
     let centerBaseScreen: CenterViewController
     
     var loginCoordinator: LoginCoordinator
+    var appFlowCoordinator: AppFlowCoordinator
     
-    var currentApi: Api?
     
     var currentLocation: Location = .settings
     var currentAccount: Account? {
         didSet {
-            if currentAccount == nil {
-                activeTeam = .all
-            }
+            currentApi = currentAccount?.api()
         }
     }
-    var activeTeam: ActiveTeam = .all {
-        didSet {
-            
-        }
-    }
+    var currentApi: Api?
+    
     
     // MARK: Initialization
     
@@ -77,15 +72,20 @@ class BaseCoordinator {
         leftScreen = LeftMenuViewController()
         leftBaseScreen = LeftBaseViewController(rootViewController: leftScreen)
         
+        centerBaseScreen = CenterViewController()
+        
+        loginCoordinator = LoginCoordinator()
+        appFlowCoordinator = AppFlowCoordinator()
+    }
+    
+    private func setup() {
         SideMenuManager.default.menuLeftNavigationController = leftBaseScreen
         SideMenuManager.default.menuAnimationBackgroundColor = Theme.default.menuNavigationColor.hexColor
-
-        centerBaseScreen = CenterViewController()
+        
         centerBaseScreen.reportViewDidLoad = {
             
         }
         
-        loginCoordinator = LoginCoordinator()
         loginCoordinator.accountHasBeenCreated = { account in
             self.leftScreen.reloadData()
         }
@@ -98,20 +98,14 @@ class BaseCoordinator {
         // Register API bad token notification observer
         NotificationCenter.default.addObserver(self, selector: #selector(accountInvalid(_:)), name: Account.InvalidToken, object: nil)
         
-        // Navigate to the last account used
-        guard let account = try! Account.query.filter("token" != nil).sort(by: "lastUsed", direction: .orderedDescending).first() else {
-            navigate(to: .welcome)
-            return
-        }
-        
-        navigate(to: .home(account))
+        showInitialScreen()
     }
     
     // MARK: Settings
     
     func refresh(menuWidth width: CGFloat) {
         let screenWidth = min(UIScreen.main.bounds.size.width, UIScreen.main.bounds.size.height)
-        let maxWidth = screenWidth - 34
+        let maxWidth = min((screenWidth - 34), 400)
         let w = (width - 44)
         let cw = ((w < 278) ? 278 : w)
         let menuWidth: CGFloat = (cw > maxWidth) ? maxWidth : cw
@@ -126,6 +120,16 @@ class BaseCoordinator {
     
     // MARK: Navigation
     
+    /// Navigate to the last account used if any
+    func showInitialScreen() {
+        guard let account = try! Account.query.filter("token" != nil).sort(by: "lastUsed", direction: .orderedDescending).first() else {
+            navigate(to: .welcome)
+            return
+        }
+        
+        navigate(to: .home(account, .all))
+    }
+    
     func navigate(to: Location) {
         switch to {
         case .welcome:
@@ -139,8 +143,8 @@ class BaseCoordinator {
             if let link = URL(string: "https://boostappstore.com") {
                 UIApplication.shared.open(link)
             }
-        case .home(let account):
-            navigate(home: account)
+        case .home(let account, let team):
+            navigate(home: account, team)
         case .newAccount(let success):
             loginCoordinator.presentLogin(success: success)
         case .settings:
@@ -169,29 +173,25 @@ class BaseCoordinator {
     
     // MARK: Private interface
     
-    private func navigate(home account: Account) {
+    private func navigate(home account: Account, _ team: ActiveTeam) {
         if account.token == nil {
             currentApi = nil
             
             loginCoordinator.presentLogin(for: account) { account in
-                self.navigate(to: .home(account))
+                self.navigate(to: .home(account, .all))
             }
         } else {
             currentAccount = account
-            
-            // Prepare current API
-            currentApi = account.api()
             
             // Get last used info saved
             account.lastUsed = Date()
             try? account.save()
             
-            // Load teams in the lest menu
-            activeTeam = .all
+            // Load teams in the left menu
             leftScreen.didLogin(to: account)
             
             // Show overview
-            show(viewController: OverviewViewController(account: account))
+            show(viewController: appFlowCoordinator.entrypoint(account: account, team: team))
         }
     }
     

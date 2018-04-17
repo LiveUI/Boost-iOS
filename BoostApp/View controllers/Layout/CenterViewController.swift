@@ -15,6 +15,10 @@ class CenterViewController: ViewController {
     
     // MARK: View lifecycle
     
+    override func shouldAutomaticallyForwardRotationMethods() -> Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,11 +28,13 @@ class CenterViewController: ViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        appDelegate.coordinator.refresh(menuWidth: view.frame.size.width)
+        baseCoordinator.refresh(menuWidth: view.frame.size.width)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        appDelegate.coordinator.refresh(menuWidth: size.width)
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        baseCoordinator.refresh(menuWidth: size.width)
     }
     
 }

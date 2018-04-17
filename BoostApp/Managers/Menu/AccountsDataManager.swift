@@ -33,7 +33,7 @@ class AccountsDataManager: PresentableTableViewDataManager {
             cell.titleLabel.text = Lang.get("menu.accounts.settings")
             cell.icon.set(image: Awesome.solid.cogs.cellIcon())
         }).cellSelected {
-            self.appDelegate.coordinator.navigate(to: .settings)
+            self.baseCoordinator.navigate(to: .settings)
         }
         settingsSection.presentables.append(setting)
         data.append(settingsSection)
@@ -78,10 +78,10 @@ class AccountsDataManager: PresentableTableViewDataManager {
                     cell.lockIcon.isHidden = !(account.token?.isEmpty ?? true)
                     cell.onlineIcon.state = account.onlineIsValid ? .online : .offline
                     
-                    let hidden = !(account == self.appDelegate.coordinator.currentAccount)
+                    let hidden = !(account == self.baseCoordinator.currentAccount)
                     cell.selectedIndicator.isHidden = hidden
                 }).cellSelected {
-                    self.appDelegate.coordinator.navigate(to: .home(account))
+                    self.baseCoordinator.navigate(to: .home(account, .all))
                 }
                 accountsSection.presentables.append(acc)
             }
@@ -94,7 +94,7 @@ class AccountsDataManager: PresentableTableViewDataManager {
             cell.titleLabel.text = Lang.get("menu.accounts.new_account")
             cell.icon.set(image: Awesome.solid.plus.cellIcon())
         }).cellSelected {
-            self.appDelegate.coordinator.navigate(to: .newAccount(success: { account in
+            self.baseCoordinator.navigate(to: .newAccount(success: { account in
                 self.reloadAccounts()
             }))
         }

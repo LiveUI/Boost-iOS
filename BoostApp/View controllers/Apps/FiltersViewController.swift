@@ -11,7 +11,7 @@ import UIKit
 import Presentables
 
 
-class FiltersViewController: UITableViewController {
+class FiltersViewController: MenuViewController {
     
     let dataController = FiltersDataManager()
     var tagsChanged: (([String])->())?
@@ -20,6 +20,8 @@ class FiltersViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = "2C3540".hexColor
         
         dataController.loadData()
         dataController.tagsChanged = {

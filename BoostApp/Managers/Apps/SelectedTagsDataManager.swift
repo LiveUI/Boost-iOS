@@ -11,7 +11,7 @@ import Presentables
 import MaterialComponents
 
 
-class SelectedTagsDataManager: PresentableCollectionViewDataManager, UICollectionViewDelegateFlowLayout {
+class SelectedTagsDataManager: PresentableCollectionViewDataManager {
     
     let section: PresentableSection
 

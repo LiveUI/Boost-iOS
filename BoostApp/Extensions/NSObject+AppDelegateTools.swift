@@ -27,4 +27,29 @@ extension NSObject {
         return delegate.coordinator.currentApi
     }
     
+    var baseCoordinator: BaseCoordinator {
+        return appDelegate.coordinator
+    }
+    
+    var loginCoordinator: LoginCoordinator {
+        return appDelegate.coordinator.loginCoordinator
+    }
+    
+    var appFlowCoordinator: AppFlowCoordinator {
+        return appDelegate.coordinator.appFlowCoordinator
+    }
+    
+    var device: Device {
+        switch UIDevice.current.userInterfaceIdiom {
+        case .phone:
+            return .phone
+        case .pad:
+            return .tablet
+        case .tv:
+            return .tv
+        default:
+            return .phone
+        }
+    }
+    
 }

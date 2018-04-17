@@ -12,12 +12,19 @@ import Foundation
 extension Api {
     
     /// Return promise for a list of available app identifiers per each platform
-    public func overview(team teamId: UUID? = nil, platform: App.Platform = .any, identifier: String? = nil, page: Int = 0, limit: Int = 30) throws -> Promise<[Overview]> {
+    public func info(team teamId: UUID) throws -> Promise<TeamAppInfo> {
+        let query: Query
+        query = Query("teams/\(teamId)/apps/info")
+        return try networking.get(path: query.value)
+    }
+    
+    /// Return promise for a list of available app identifiers per each platform
+    public func overview(team teamId: UUID? = nil, platform: App.Platform = .any, identifier: String? = nil, page: Int = 0, limit: Int = 1000) throws -> Promise<[Overview]> {
         let query: Query
         if let teamId = teamId {
-            query = Query("teams/\(teamId)/overview")
+            query = Query("teams/\(teamId)/apps/overview")
         } else {
-            query = Query("overview")
+            query = Query("apps/overview")
         }
         query.append(platform)
         query.append(key: "identifier", value: identifier)

@@ -18,7 +18,7 @@ class FilterTableViewCell: UITableViewCell {
         super.layoutSubviews()
         
         detailTextLabel?.layer.borderWidth = 1
-        detailTextLabel?.layer.borderColor = UIColor.lightGray.cgColor
+        detailTextLabel?.layer.borderColor = UIColor.white.cgColor
         detailTextLabel?.layer.cornerRadius = 6
     }
     

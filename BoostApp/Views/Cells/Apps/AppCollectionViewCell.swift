@@ -15,9 +15,9 @@ import AwesomeEnum
 class AppCollectionViewCell: UICollectionViewCell {
     
     let iconView = UIImageView()
-    let nameLabel = UILabel()
-    let uploadedLabel = UILabel()
-    let infoLabel = UILabel()
+    let nameLabel = MainContentLabel()
+    let uploadedLabel = SmallTextLabel()
+    let infoLabel = SmallTextLabel()
     
     let installButton = UIButton()
     
@@ -38,7 +38,9 @@ class AppCollectionViewCell: UICollectionViewCell {
             make.centerY.equalToSuperview()
             make.right.equalTo(-Env.cellSpacing)
             make.height.equalTo(Env.actionButtonHeight)
-            make.width.equalTo(installButton.imageView!.image!.size.width)
+            
+            let width = installButton.imageView?.image?.size.width ?? 44
+            make.width.equalTo(width)
         }
         
         nameLabel.snp.makeConstraints { (make) in
@@ -58,8 +60,6 @@ class AppCollectionViewCell: UICollectionViewCell {
     }
     
     private func configureLabels() {
-        nameLabel.textColor = .black
-        nameLabel.font = UIFont.boldSystemFont(ofSize: 15)
         nameLabel.numberOfLines = 2
         contentView.addSubview(nameLabel)
     }
@@ -80,7 +80,7 @@ class AppCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    private func configureElements() {
+    func configureElements() {
         configureIconView()
         configureLabels()
         configureButtons()

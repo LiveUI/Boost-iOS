@@ -19,14 +19,10 @@ class AppsViewController: RootViewController {
     // MARK: Initialization
     
     init(leadingApp: App) {
-        super.init()
+        let manager = AppsDataManager(leadingApp: leadingApp)
+        super.init(manager: manager)
         
         title = leadingApp.name
-        
-        manager = AppsDataManager(leadingApp: leadingApp)
-        
-        let layout = UICollectionViewFlowLayout()
-        self.collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
     }
     
     required init?(coder aDecoder: NSCoder) {

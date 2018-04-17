@@ -16,6 +16,13 @@ class ViewController: UIViewController {
     func configureElements() {
         
     }
+    
+    
+    // MARK: View lifecycle
+    
+    override func shouldAutomaticallyForwardRotationMethods() -> Bool {
+        return true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

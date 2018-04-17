@@ -20,7 +20,7 @@ class TeamsDataManager: PresentableTableViewDataManager {
     }
     
     var teams: [Team] = []
-    var teamCounts: [UUID: Int] = [:]
+    var teamCounts: [UUID: String] = [:]
     
     var teamsChanged: (()->())?
     
@@ -44,9 +44,9 @@ class TeamsDataManager: PresentableTableViewDataManager {
                 let all = Presentable<GenericMenuTableViewCell>.create({ (cell) in
                     cell.icon.set(image: UIImage.defaultIcon)
                     cell.titleLabel.text = Lang.get("menu.teams.all")
-                    cell.selectedIndicator.isHidden = !self.appDelegate.coordinator.activeTeam.isAll
+                    cell.selectedIndicator.isHidden = !self.appFlowCoordinator.currentTeam.isAll
                 }).cellSelected {
-                    self.appDelegate.coordinator.activeTeam = .all
+                    self.appFlowCoordinator.currentTeam = .all
                 }
                 section.presentables.append(all)
                 
@@ -55,10 +55,16 @@ class TeamsDataManager: PresentableTableViewDataManager {
                     let presentable = Presentable<TeamsTableViewCell>.create({ (cell) in
                         cell.icon.set(initials: team.initials, bgColor: team.color.hexColor!)
                         cell.titleLabel.text = team.name
-                        cell.badge.value = "271"
-                        cell.selectedIndicator.isHidden = !(team == self.appDelegate.coordinator.activeTeam.team)
+                        cell.badge.value = self.teamCounts[team.id!] ?? "..."
+                        cell.selectedIndicator.isHidden = !(team == self.appFlowCoordinator.currentTeam.team)
+                        
+                        // Load info
+                        // TODO: Enable later when API works! :)
+//                        _ = try? self.api?.info(team: team.id!).then({ info in
+//                            cell.badge.value = String(info.apps)
+//                        })
                     }).cellSelected {
-                        self.appDelegate.coordinator.activeTeam = .specific(team)
+                        self.appFlowCoordinator.currentTeam = .specific(team)
                     }
                     section.presentables.append(presentable)
                 }
