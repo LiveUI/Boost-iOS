@@ -37,9 +37,9 @@ public struct App: Entry {
     public let version: String
     public let build: String
     public let platform: Platform
+    public let iconExists: Bool = false
     public let created: Date?
     public let modified: Date?
-    public let availableToAll: Bool = false
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -49,9 +49,9 @@ public struct App: Entry {
         case version
         case build
         case platform
+        case iconExists = "icon"
         case created
         case modified
-        case availableToAll = "basic"
     }
     
 }

@@ -13,6 +13,10 @@ struct Theme {
     
     static let `default` = Theme()
     
+    let primeColor: String = "FF0000"
+    let primeButtonColor: String = "FF0000"
+    let primeButtonBackgroundColor: String = "FFFFFF"
+    
     let menuNavigationColor: String = "362439"
     let menuBackgroundColor: String = "4A3849"
     let menuSelectionIndicatorColor: String = "5D9489"

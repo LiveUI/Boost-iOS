@@ -266,7 +266,7 @@
 		15A8955C1FD0C3AD00347281 /* AppsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsDataManager.swift; sourceTree = "<group>"; };
 		15A8955F1FD1695D00347281 /* AppCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCollectionViewCell.swift; sourceTree = "<group>"; };
 		15A895731FD1945000347281 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
-		15A895741FD1945000347281 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		15A895741FD1945000347281 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		15A895751FD1945000347281 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
 		15A8957A1FD198EE00347281 /* Awesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Awesome.framework; path = Carthage/Build/iOS/Awesome.framework; sourceTree = "<group>"; };
 		15A8957F1FD1F48800347281 /* Lang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lang.swift; sourceTree = "<group>"; };
@@ -927,8 +927,8 @@
 		15EA568C2084FCAD00A4C3B2 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
-				15A8955C1FD0C3AD00347281 /* AppsDataManager.swift */,
 				15C7B4DC1FE712BB0074508A /* OverviewDataManager.swift */,
+				15A8955C1FD0C3AD00347281 /* AppsDataManager.swift */,
 				15116C8C2073605900BC08D3 /* SelectedTagsDataManager.swift */,
 			);
 			path = Apps;

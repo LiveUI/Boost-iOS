@@ -14,16 +14,16 @@ class FakeAppHeader: AppHeader {
     override func configureElements() {
         super.configureElements()
         
-//        deleteAll.setTitle(nil, for: .normal)
+        deleteAll.setTitle(nil, for: .normal)
         deleteAll.backgroundColor = .lightGray
         
-//        versionLabel.text = " "
+        versionLabel.text = " "
         versionLabel.backgroundColor = .lightGray
         
-//        titleLabel.text = " "
+        titleLabel.text = " "
         titleLabel.backgroundColor = .lightGray
         
-//        subtitleLabel.text = " "
+        subtitleLabel.text = " "
         subtitleLabel.backgroundColor = .lightGray
     }
     

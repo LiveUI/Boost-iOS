@@ -27,18 +27,18 @@ class AppHeader: UICollectionReusableView {
     func configureElements() {
         backgroundColor = .white
         
+        deleteAll.setTitleColor(Theme.default.primeButtonColor.hexColor, for: .normal)
+        deleteAll.backgroundColor = Theme.default.primeButtonBackgroundColor.hexColor
         deleteAll.setTitle(Lang.get("apps.header.delete_all"), for: .normal)
         deleteAll.addTarget(self, action: #selector(didPressDeleteAll(_:)), for: .touchUpInside)
         deleteAll.place.on(self).with.leftMargin().topMargin().width(60).and.height(24)
         
-        versionLabel.text = "1.2.3 (1234)"
-        versionLabel.place.next(to: deleteAll).with.rightMargin().topMargin().and.bottomMargin()
+        versionLabel.textAlignment = .right
+        versionLabel.place.on(self).with.rightMargin().topMargin()
         
-        titleLabel.text = "Boost"
         titleLabel.textAlignment = .center
         titleLabel.place.between(deleteAll, and: versionLabel, height: 24).topMargin(8)
         
-        subtitleLabel.text = "(io.liveui.boost)"
         subtitleLabel.textAlignment = .center
         subtitleLabel.place.below(titleLabel, top: 10).match(left: titleLabel).match(right: titleLabel)
     }
