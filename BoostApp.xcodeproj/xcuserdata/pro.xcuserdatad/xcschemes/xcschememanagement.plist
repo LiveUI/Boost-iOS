@@ -4,20 +4,30 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>BoostApp.xcscheme</key>
+		<key>Boost.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
-		</dict>
-		<key>BoostSDK.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>26</integer>
+			<integer>11</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>155FFC051FE4110800910DFA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1574F46F20BB390200203B05</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1574F48220BB390500203B05</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1574F48D20BB390500203B05</key>
 		<dict>
 			<key>primary</key>
 			<true/>

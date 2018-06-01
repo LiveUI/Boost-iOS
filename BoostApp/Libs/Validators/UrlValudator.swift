@@ -1,7 +1,7 @@
 
 //
 //  UrlValudator.swift
-//  BoostApp
+//  Boost
 //
 //  Created by Ondrej Rafaj on 12/04/2018.
 //  Copyright © 2018 LiveUI. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  BoostApp
+//  Boost
 //
 //  Created by Ondrej Rafaj on 30/11/2017.
 //  Copyright © 2017 LiveUI. All rights reserved.
@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let window = window {
             window.backgroundColor = .white
-            window.rootViewController = coordinator.centerBaseScreen
+            window.rootViewController = coordinator.layout
             window.makeKeyAndVisible()
             
             coordinator.showInitialScreen()

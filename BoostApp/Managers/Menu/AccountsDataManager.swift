@@ -1,6 +1,6 @@
 //
 //  AccountsDataManager.swift
-//  BoostApp
+//  Boost
 //
 //  Created by Ondrej Rafaj on 31/03/2018.
 //  Copyright © 2018 LiveUI. All rights reserved.
@@ -35,7 +35,7 @@ class AccountsDataManager: PresentableTableViewDataManager {
         }).cellSelected {
             self.baseCoordinator.navigate(to: .settings)
         }
-        settingsSection.presentables.append(setting)
+        settingsSection.append(setting)
         data.append(settingsSection)
         
         
@@ -68,7 +68,7 @@ class AccountsDataManager: PresentableTableViewDataManager {
     }
     
     func reloadAccounts() {
-        accountsSection.presentables.removeAll()
+        accountsSection.removeAll()
         do {
             accounts = try Account.all()
             for account in accounts {
@@ -83,7 +83,7 @@ class AccountsDataManager: PresentableTableViewDataManager {
                 }).cellSelected {
                     self.baseCoordinator.navigate(to: .home(account, .all))
                 }
-                accountsSection.presentables.append(acc)
+                accountsSection.append(acc)
             }
         } catch {
             // TODO: Handle
@@ -98,7 +98,7 @@ class AccountsDataManager: PresentableTableViewDataManager {
                 self.reloadAccounts()
             }))
         }
-        accountsSection.presentables.append(newAccount)
+        accountsSection.append(newAccount)
     }
     
     // MARK: Table view delegate overrides
@@ -109,7 +109,7 @@ class AccountsDataManager: PresentableTableViewDataManager {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         tableView.beginUpdates()
-        accountsSection.presentables.remove(at: indexPath.row)
+        accountsSection.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
         tableView.endUpdates()
         

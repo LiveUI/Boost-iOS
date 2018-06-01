@@ -1,6 +1,6 @@
 //
 //  BaseCoordinator.swift
-//  BoostApp
+//  Boost
 //
 //  Created by Ondrej Rafaj on 21/03/2018.
 //  Copyright © 2018 LiveUI. All rights reserved.
@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import SideMenu
 import AwesomeEnum
 import Reloaded
 import BoostSDK
@@ -47,11 +46,7 @@ class BaseCoordinator {
         }
     }
     
-    let leftScreen: LeftMenuViewController
-    var currentScreen: UIViewController? = UIViewController()
-    
-    let leftBaseScreen: LeftBaseViewController
-    let centerBaseScreen: CenterViewController
+    let layout = LayoutViewController()
     
     var loginCoordinator: LoginCoordinator
     var appFlowCoordinator: AppFlowCoordinator
@@ -69,47 +64,26 @@ class BaseCoordinator {
     // MARK: Initialization
     
     init() {
-        leftScreen = LeftMenuViewController()
-        leftBaseScreen = LeftBaseViewController(rootViewController: leftScreen)
-        
-        centerBaseScreen = CenterViewController()
-        
         loginCoordinator = LoginCoordinator()
         appFlowCoordinator = AppFlowCoordinator()
     }
     
     private func setup() {
-        SideMenuManager.default.menuLeftNavigationController = leftBaseScreen
-        SideMenuManager.default.menuAnimationBackgroundColor = Theme.default.menuNavigationColor.hexColor
-        
-        centerBaseScreen.reportViewDidLoad = {
-            
-        }
+//        centerBaseScreen.reportViewDidLoad = {
+//
+//        }
         
         loginCoordinator.accountHasBeenCreated = { account in
-            self.leftScreen.reloadData()
+            self.layout.leftScreen.reloadData()
         }
         loginCoordinator.accountHasBeenModified = { account in
-            self.leftScreen.reloadData()
+            self.layout.leftScreen.reloadData()
         }
-        
-        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: centerBaseScreen.view, forMenu: .left)
         
         // Register API bad token notification observer
         NotificationCenter.default.addObserver(self, selector: #selector(accountInvalid(_:)), name: Account.InvalidToken, object: nil)
         
         showInitialScreen()
-    }
-    
-    // MARK: Settings
-    
-    func refresh(menuWidth width: CGFloat) {
-        let screenWidth = min(UIScreen.main.bounds.size.width, UIScreen.main.bounds.size.height)
-        let maxWidth = min((screenWidth - 34), 400)
-        let w = (width - 44)
-        let cw = ((w < 278) ? 278 : w)
-        let menuWidth: CGFloat = (cw > maxWidth) ? maxWidth : cw
-        SideMenuManager.default.menuWidth = menuWidth
     }
     
     // MARK: Informators
@@ -154,21 +128,21 @@ class BaseCoordinator {
     }
     
     func present(viewController: UIViewController) {
-        let vc: UIViewController = leftBaseScreen.isHidden ? centerBaseScreen : leftBaseScreen
-        vc.present(viewController, animated: true)
+        layout.present(viewController, animated: true)
     }
     
     @objc private func didTapMenu(_ sender: UIBarButtonItem) {
-        centerBaseScreen.present(leftBaseScreen, animated: true, completion: nil)
+        layout.showMenu(animated: true)
     }
     
     // MARK: Notifications
     
     @objc func accountInvalid(_ sender: NSNotification) {
-        leftScreen.reloadData()
-        leftScreen.didLogOut()
+        layout.leftScreen.reloadData()
+        layout.leftScreen.didLogOut()
         
-        currentScreen?.present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+        fatalError("Re-implement following!")
+        //currentScreen?.present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
     }
     
     // MARK: Private interface
@@ -188,7 +162,7 @@ class BaseCoordinator {
             try? account.save()
             
             // Load teams in the left menu
-            leftScreen.didLogin(to: account)
+            layout.leftScreen.didLogin(to: account)
             
             // Show overview
             show(viewController: appFlowCoordinator.entrypoint(account: account, team: team))
@@ -196,27 +170,10 @@ class BaseCoordinator {
     }
     
     func show(viewController: UIViewController) {
-        let nc = UINavigationController(rootViewController: viewController)
-        
         let menu = UIBarButtonItem(image: Awesome.solid.list.asImage(size: 22), style: UIBarButtonItemStyle.done, target: self, action: #selector(didTapMenu(_:)))
         viewController.navigationItem.leftBarButtonItem = menu
         
-        SideMenuManager.default.menuAddPanGestureToPresent(toView: nc.navigationBar)
-        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: nc.view, forMenu: .left)
-        
-        if let currentScreen = currentScreen, currentScreen.view.superview != nil {
-            currentScreen.view.removeFromSuperview()
-            currentScreen.removeFromParentViewController()
-        }
-        
-        centerBaseScreen.addChildViewController(nc)
-        nc.view.frame = centerBaseScreen.view.bounds
-        centerBaseScreen.view.addSubview(nc.view)
-        nc.didMove(toParentViewController: centerBaseScreen)
-        
-        currentScreen = nc
-        
-        centerBaseScreen.dismiss(animated: true, completion: nil)
+        layout.show(content: viewController)
     }
     
 }

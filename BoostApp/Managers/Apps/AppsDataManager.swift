@@ -1,6 +1,6 @@
 //
 //  AppsDataManager.swift
-//  BoostApp
+//  Boost
 //
 //  Created by Ondrej Rafaj on 30/11/2017.
 //  Copyright © 2017 LiveUI. All rights reserved.
@@ -50,7 +50,7 @@ class AppsDataManager: PresentableCollectionViewDataManager, AppManager {
                 }.cellSelected {
                     self.appDetailRequested?(app)
                 }
-                section.presentables.append(presentable)
+                section.append(presentable)
             }
             data.append(section)
         }

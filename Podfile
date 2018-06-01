@@ -1,25 +1,23 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '10.3'
 
-target 'BoostApp' do
+target 'Boost' do
     
     use_frameworks!
     
     pod 'Presentables', :path => '../Presentables'
     pod 'SnapKit', '~>4.0.0'
     pod 'Modular', '~>0.0.9'
-    pod 'TagListView', '~> 1.3.0'
-    pod 'MaterialComponents', '~>54.3.0'
-    pod 'SideMenu', '~> 3.1.5'
     pod 'AwesomeEnum', '~> 1.2.0'
     pod 'Reloaded', :path => '../Reloaded'
+    pod 'BoostSDK', :path => '../BoostSDK'
 
-    target 'BoostAppTests' do
+    target 'BoostTests' do
         inherit! :search_paths
         pod 'SpecTools'
     end
     
-    target 'BoostAppUITests' do
+    target 'BoostUITests' do
         inherit! :search_paths
     end
     

@@ -1,6 +1,6 @@
 //
 //  RootViewController.swift
-//  BoostApp
+//  Boost
 //
 //  Created by Ondrej Rafaj on 17/12/2017.
 //  Copyright © 2017 LiveUI. All rights reserved.
@@ -13,7 +13,6 @@ import AwesomeEnum
 import Presentables
 import Modular
 import SnapKit
-import MaterialComponents
 
 
 class RootViewController: ViewController {

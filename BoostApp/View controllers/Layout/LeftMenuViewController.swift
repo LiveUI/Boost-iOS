@@ -1,6 +1,6 @@
 //
 //  LeftMenuViewController.swift
-//  BoostApp
+//  Boost
 //
 //  Created by Ondrej Rafaj on 21/03/2018.
 //  Copyright © 2018 LiveUI. All rights reserved.
@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import SideMenu
 import Presentables
 import AwesomeEnum
 import Modular
@@ -172,23 +171,6 @@ class LeftMenuViewController: ViewController, UIScrollViewDelegate {
         
         // TODO: Fix the layout issue so we can get rid of this hack!!!!
         scrollView.contentOffset = CGPoint(x: scrollView.contentOffset.x, y: -20)
-    }
-    
-}
-
-// MARK: - Left menu Base view controller
-
-class LeftBaseViewController: UISideMenuNavigationController {
-    
-    
-    // MARK: View lifecycle
-    
-    override func shouldAutomaticallyForwardRotationMethods() -> Bool {
-        return true
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
     
 }

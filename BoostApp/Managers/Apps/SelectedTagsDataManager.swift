@@ -1,6 +1,6 @@
 //
 //  SelectedTagsDataManager.swift
-//  BoostApp
+//  Boost
 //
 //  Created by Ondrej Rafaj on 03/04/2018.
 //  Copyright © 2018 LiveUI. All rights reserved.
@@ -8,7 +8,6 @@
 
 import Foundation
 import Presentables
-import MaterialComponents
 
 
 class SelectedTagsDataManager: PresentableCollectionViewDataManager {
@@ -28,11 +27,11 @@ class SelectedTagsDataManager: PresentableCollectionViewDataManager {
         
         self.tags = []
         
-        section.presentables.append(Presentable<MDCChipCollectionViewCell>.create { cell in
-            cell.chipView.titleLabel.text = "tag_huhuhu_1.2.3"
-            cell.chipView.imageView.image = UIImage.defaultIcon
-            cell.chipView.imageView.clipsToBounds = true
-            cell.chipView.sizeToFit()
+        section.append(Presentable<UICollectionViewCell>.create { cell in
+//            cell.chipView.titleLabel.text = "tag_huhuhu_1.2.3"
+//            cell.chipView.imageView.image = UIImage.defaultIcon
+//            cell.chipView.imageView.clipsToBounds = true
+//            cell.chipView.sizeToFit()
         })
         
         reloadTags()
@@ -41,12 +40,12 @@ class SelectedTagsDataManager: PresentableCollectionViewDataManager {
     }
     
     private func reloadTags() {
-        section.presentables.removeAll()
+        section.removeAll()
         for tag in tags {
-            section.presentables.append(Presentable<MDCChipCollectionViewCell>.create { cell in
-                cell.chipView.titleLabel.text = tag
-                cell.chipView.imageView.image = UIImage.defaultIcon
-                cell.chipView.sizeToFit()
+            section.append(Presentable<UICollectionViewCell>.create { cell in
+//                cell.chipView.titleLabel.text = tag
+//                cell.chipView.imageView.image = UIImage.defaultIcon
+//                cell.chipView.sizeToFit()
             })
         }
     }

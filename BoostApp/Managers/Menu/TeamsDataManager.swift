@@ -1,6 +1,6 @@
 //
 //  TeamsDataManager.swift
-//  BoostApp
+//  Boost
 //
 //  Created by Ondrej Rafaj on 12/04/2018.
 //  Copyright © 2018 LiveUI. All rights reserved.
@@ -33,12 +33,12 @@ class TeamsDataManager: PresentableTableViewDataManager {
         
         // Display loading cell
         let loading = Presentable<MenuLoadingTableViewCell>.create()
-        section.presentables.append(loading)
+        section.append(loading)
         
         // Fetch teams
         do {
             try api?.teams().then({ teams in
-                section.presentables.removeAll() // Remove loading
+                section.removeAll() // Remove loading
                 
                 // Add all teams selector
                 let all = Presentable<GenericMenuTableViewCell>.create({ (cell) in
@@ -48,7 +48,7 @@ class TeamsDataManager: PresentableTableViewDataManager {
                 }).cellSelected {
                     self.appFlowCoordinator.currentTeam = .all
                 }
-                section.presentables.append(all)
+                section.append(all)
                 
                 // Show all teams
                 for team in teams {
@@ -66,7 +66,7 @@ class TeamsDataManager: PresentableTableViewDataManager {
                     }).cellSelected {
                         self.appFlowCoordinator.currentTeam = .specific(team)
                     }
-                    section.presentables.append(presentable)
+                    section.append(presentable)
                 }
             }).error({ error in
                 if let error = error as? Networking.Problem, error == .badToken {
@@ -76,7 +76,7 @@ class TeamsDataManager: PresentableTableViewDataManager {
                     let presentable = Presentable<UITableViewCell>.create({ (cell) in
                         cell.textLabel?.text = Lang.get("menu.teams.error.loading_problem")
                     })
-                    section.presentables.append(presentable)
+                    section.append(presentable)
                 }
             })
         } catch {

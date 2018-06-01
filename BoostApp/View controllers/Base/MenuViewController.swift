@@ -1,6 +1,6 @@
 //
 //  MenuViewController.swift
-//  BoostApp
+//  Boost
 //
 //  Created by Ondrej Rafaj on 13/04/2018.
 //  Copyright © 2018 LiveUI. All rights reserved.
@@ -40,7 +40,7 @@ class MenuViewController: ViewController {
 extension MenuViewController {
     
     var leftScreen: LeftMenuViewController {
-        return baseCoordinator.leftScreen
+        return baseCoordinator.layout.leftScreen
     }
     
 }

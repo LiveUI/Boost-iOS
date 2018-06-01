@@ -1,6 +1,6 @@
 //
 //  OverviewDataManager.swift
-//  BoostApp
+//  Boost
 //
 //  Created by Ondrej Rafaj on 17/12/2017.
 //  Copyright © 2017 LiveUI. All rights reserved.
@@ -38,20 +38,20 @@ class OverviewDataManager: PresentableCollectionViewDataManager, AppManager {
         
         section.header = Presentable<FakeAppHeader>.create()
         
-        section.presentables.append(Presentable<FakeAppCollectionViewCell>.create())
-        section.presentables.append(Presentable<FakeAppCollectionViewCell>.create())
+        section.append(Presentable<FakeAppCollectionViewCell>.create())
+        section.append(Presentable<FakeAppCollectionViewCell>.create())
         if device != .phone {
-            section.presentables.append(Presentable<FakeAppCollectionViewCell>.create())
-            section.presentables.append(Presentable<FakeAppCollectionViewCell>.create())
-            section.presentables.append(Presentable<FakeAppCollectionViewCell>.create())
-            section.presentables.append(Presentable<FakeAppCollectionViewCell>.create())
+            section.append(Presentable<FakeAppCollectionViewCell>.create())
+            section.append(Presentable<FakeAppCollectionViewCell>.create())
+            section.append(Presentable<FakeAppCollectionViewCell>.create())
+            section.append(Presentable<FakeAppCollectionViewCell>.create())
         }
         
         data.append(section)
     }
     
     private func present(apps: [App], on section: inout PresentableSection) {
-        section.presentables.removeAll()
+        section.removeAll()
         for app in apps {
             let presentable = Presentable<AppCollectionViewCell>.create({ cell in
                 cell.nameLabel.backgroundColor = .red
@@ -59,11 +59,11 @@ class OverviewDataManager: PresentableCollectionViewDataManager, AppManager {
                 cell.uploadedLabel.text = "\(app.created!)"
                 cell.iconView.image = UIImage.defaultIcon
             })
-            section.presentables.append(presentable)
+            section.append(presentable)
         }
-        section.presentables.append(Presentable<FakeAppCollectionViewCell>.create())
-        section.presentables.append(Presentable<FakeAppCollectionViewCell>.create())
-        section.presentables.append(Presentable<FakeAppCollectionViewCell>.create())
+        section.append(Presentable<FakeAppCollectionViewCell>.create())
+        section.append(Presentable<FakeAppCollectionViewCell>.create())
+        section.append(Presentable<FakeAppCollectionViewCell>.create())
     }
     
     private func present(overviews: [Overview]) {
@@ -87,6 +87,10 @@ class OverviewDataManager: PresentableCollectionViewDataManager, AppManager {
                         try self.api?.apps(platform: overview.platform, identifier: overview.identifier, limit: 5).then({ apps in
                             self.sectionCache[sectionIndex] = apps
                             DispatchQueue.main.async {
+                                section.append(Presentable<FakeAppCollectionViewCell>.create())
+                                section.append(Presentable<FakeAppCollectionViewCell>.create())
+                                section.append(Presentable<FakeAppCollectionViewCell>.create())
+                                
                                 self.present(apps: apps, on: &section)
                                 self.reload(section: sectionIndex)
                             }
@@ -101,12 +105,12 @@ class OverviewDataManager: PresentableCollectionViewDataManager, AppManager {
                 present(apps: apps, on: &section)
                 reload(section: sectionIndex)
             } else {
-                section.presentables.append(Presentable<FakeAppCollectionViewCell>.create())
-                section.presentables.append(Presentable<FakeAppCollectionViewCell>.create())
+                section.append(Presentable<FakeAppCollectionViewCell>.create())
+                section.append(Presentable<FakeAppCollectionViewCell>.create())
                 if device != .phone {
-                    section.presentables.append(Presentable<FakeAppCollectionViewCell>.create())
-                    section.presentables.append(Presentable<FakeAppCollectionViewCell>.create())
-                    section.presentables.append(Presentable<FakeAppCollectionViewCell>.create())
+                    section.append(Presentable<FakeAppCollectionViewCell>.create())
+                    section.append(Presentable<FakeAppCollectionViewCell>.create())
+                    section.append(Presentable<FakeAppCollectionViewCell>.create())
                 }
                 
             }

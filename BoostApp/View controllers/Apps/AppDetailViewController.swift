@@ -1,6 +1,6 @@
 //
 //  AppDetailViewController.swift
-//  BoostApp
+//  Boost
 //
 //  Created by Ondrej Rafaj on 01/12/2017.
 //  Copyright © 2017 LiveUI. All rights reserved.

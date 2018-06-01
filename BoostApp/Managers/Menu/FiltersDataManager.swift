@@ -1,6 +1,6 @@
 //
 //  FiltersDataManager.swift
-//  BoostApp
+//  Boost
 //
 //  Created by Ondrej Rafaj on 17/12/2017.
 //  Copyright © 2017 LiveUI. All rights reserved.
@@ -25,7 +25,7 @@ class FiltersDataManager: PresentableTableViewDataManager {
         let sort = Presentable<SortTableViewCell>.create({ (cell) in
             cell.textLabel?.text = "Sorting"
         })
-        section.presentables.append(sort)
+        section.append(sort)
         
         let tags: [String] = ["Version_1.2.0", "Another tag", "this is dope!", "Lorem", "ipsum", "dolor", "sit", "amet", "rectum", "dolae", "woe"]
         
@@ -43,7 +43,7 @@ class FiltersDataManager: PresentableTableViewDataManager {
                 }
                 self.tagsChanged?()
             }
-            section.presentables.append(filter)
+            section.append(filter)
         }
         
         data.append(section)
