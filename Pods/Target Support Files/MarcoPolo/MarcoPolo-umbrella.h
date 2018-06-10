@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "NavigationViewController.h"
 
 FOUNDATION_EXPORT double MarcoPoloVersionNumber;
 FOUNDATION_EXPORT const unsigned char MarcoPoloVersionString[];

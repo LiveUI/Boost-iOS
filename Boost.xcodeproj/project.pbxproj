@@ -11,12 +11,14 @@
 		15020BD420C199BA00BBADBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15020BD320C199BA00BBADBD /* Assets.xcassets */; };
 		15020BD620C1D71B00BBADBD /* LoginCoordinator+Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15020BD520C1D71B00BBADBD /* LoginCoordinator+Registration.swift */; };
 		1545C38C20BC682C000449D3 /* LoginCoordinator+Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1545C38B20BC682C000449D3 /* LoginCoordinator+Onboarding.swift */; };
+		1546772620CDC5BE00E593B8 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546772520CDC5BE00E593B8 /* UIViewController+Navigation.swift */; };
 		1561D7B220C4393700BCA532 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1561D7B120C4393700BCA532 /* RegisterViewController.swift */; };
 		1561D7B520C43A3900BCA532 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1561D7B420C43A3900BCA532 /* GridViewController.swift */; };
 		1561D7BD20C4855200BCA532 /* NavBarTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1561D7BC20C4855200BCA532 /* NavBarTitle.swift */; };
 		1561D7C320C4894B00BCA532 /* ConfigurableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1561D7C220C4894B00BCA532 /* ConfigurableController.swift */; };
 		1561D7D620C58D2C00BCA532 /* PreloginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1561D7D520C58D2C00BCA532 /* PreloginView.swift */; };
 		1561D7D820C596C000BCA532 /* MainAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1561D7D720C596C000BCA532 /* MainAuthView.swift */; };
+		156AD83820CDCB78002672A4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AD83720CDCB78002672A4 /* Coordinator.swift */; };
 		15A1171920C6DBE200CE4263 /* enterprise.json in Resources */ = {isa = PBXBuildFile; fileRef = 15A1171820C6DBE200CE4263 /* enterprise.json */; };
 		15A1171D20C6DC4F00CE4263 /* EnterpriseSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A1171C20C6DC4F00CE4263 /* EnterpriseSettings.swift */; };
 		15A1172020C6DD8E00CE4263 /* Enterprise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A1171F20C6DD8E00CE4263 /* Enterprise.swift */; };
@@ -78,12 +80,14 @@
 		15020BD320C199BA00BBADBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../Boost-iOS/Boost/Supporting files/Assets.xcassets"; sourceTree = "<group>"; };
 		15020BD520C1D71B00BBADBD /* LoginCoordinator+Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginCoordinator+Registration.swift"; sourceTree = "<group>"; };
 		1545C38B20BC682C000449D3 /* LoginCoordinator+Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginCoordinator+Onboarding.swift"; sourceTree = "<group>"; };
+		1546772520CDC5BE00E593B8 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 		1561D7B120C4393700BCA532 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		1561D7B420C43A3900BCA532 /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
 		1561D7BC20C4855200BCA532 /* NavBarTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarTitle.swift; sourceTree = "<group>"; };
 		1561D7C220C4894B00BCA532 /* ConfigurableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableController.swift; sourceTree = "<group>"; };
 		1561D7D520C58D2C00BCA532 /* PreloginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloginView.swift; sourceTree = "<group>"; };
 		1561D7D720C596C000BCA532 /* MainAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAuthView.swift; sourceTree = "<group>"; };
+		156AD83720CDCB78002672A4 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		15A1171820C6DBE200CE4263 /* enterprise.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = enterprise.json; sourceTree = SOURCE_ROOT; };
 		15A1171C20C6DC4F00CE4263 /* EnterpriseSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterpriseSettings.swift; sourceTree = "<group>"; };
 		15A1171F20C6DD8E00CE4263 /* Enterprise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enterprise.swift; sourceTree = "<group>"; };
@@ -173,6 +177,23 @@
 			path = Factories;
 			sourceTree = "<group>";
 		};
+		1546772320CDC59100E593B8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				156AD83620CDCB78002672A4 /* Coordinators */,
+				1546772420CDC59E00E593B8 /* Extensions */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		1546772420CDC59E00E593B8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1546772520CDC5BE00E593B8 /* UIViewController+Navigation.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		1561D7B020C4391D00BCA532 /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +225,14 @@
 				1561D7D720C596C000BCA532 /* MainAuthView.swift */,
 			);
 			path = "Login & registration";
+			sourceTree = "<group>";
+		};
+		156AD83620CDCB78002672A4 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				156AD83720CDCB78002672A4 /* Coordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		15A1171A20C6DC0100CE4263 /* Model */ = {
@@ -255,6 +284,7 @@
 		15A88CE120BB624A00BC6DFA /* Boost */ = {
 			isa = PBXGroup;
 			children = (
+				1546772320CDC59100E593B8 /* Base */,
 				15A1171E20C6DD7500CE4263 /* Libs */,
 				15A1171A20C6DC0100CE4263 /* Model */,
 				15A88D7420BC131000BC6DFA /* Protocols */,
@@ -735,6 +765,7 @@
 				15A88D4C20BB642B00BC6DFA /* AccountsCoordinator.swift in Sources */,
 				15A88D5320BB642B00BC6DFA /* AccountTableViewCell.swift in Sources */,
 				1561D7B220C4393700BCA532 /* RegisterViewController.swift in Sources */,
+				1546772620CDC5BE00E593B8 /* UIViewController+Navigation.swift in Sources */,
 				1561D7D820C596C000BCA532 /* MainAuthView.swift in Sources */,
 				15A88D4A20BB642B00BC6DFA /* AccountCoordinator.swift in Sources */,
 				15A88CE320BB624A00BC6DFA /* AppDelegate.swift in Sources */,
@@ -742,6 +773,7 @@
 				15A88D6520BB663600BC6DFA /* Boost.xcdatamodeld in Sources */,
 				15A1171D20C6DC4F00CE4263 /* EnterpriseSettings.swift in Sources */,
 				15A88D4D20BB642B00BC6DFA /* BaseCoordinator.swift in Sources */,
+				156AD83820CDCB78002672A4 /* Coordinator.swift in Sources */,
 				15A88D5D20BB642B00BC6DFA /* OnlineIcon.swift in Sources */,
 				15A1172220C6E31C00CE4263 /* Group+CoreData.swift in Sources */,
 				1545C38C20BC682C000449D3 /* LoginCoordinator+Onboarding.swift in Sources */,

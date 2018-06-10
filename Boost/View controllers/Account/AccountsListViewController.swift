@@ -8,6 +8,7 @@
 
 import Base
 import Reloaded
+import MarcoPolo
 
 
 final class AccountsListViewController: TableViewController {
@@ -18,7 +19,8 @@ final class AccountsListViewController: TableViewController {
         
         let section = PresentableSection()
         do {
-            section.set(try Account.query.sort(by: "name").all().map({ (account) -> AnyPresentable in
+            let accounts = try Account.query.sort(by: "name").all()
+            section.set(accounts.map({ (account) -> AnyPresentable in
                 Presentable<AccountTableViewCell>.create({ cell in
                     cell.nameLabel.text = account.name
                     cell.hostLabel.text = account.server
@@ -32,6 +34,7 @@ final class AccountsListViewController: TableViewController {
         } catch {
             
         }
+        data.append(section)
     }
     
     // MARK: Elements
@@ -39,9 +42,16 @@ final class AccountsListViewController: TableViewController {
     override func setupElements() {
         super.setupElements()
         
+        navigationViewController?.navigationBar.minHeight = 60
+        navigationViewController?.navigationBar.backgroundColor = .red
+        navigation.content.title = "Boost"
+        navigation.content.subtitle = "server management"
+        
         let v = UIView()
         v.backgroundColor = .red
         navigationItem.titleView = v
+        
+        setupData()
     }
     
     // MARK: View lifecycle
