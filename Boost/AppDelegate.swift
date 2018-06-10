@@ -8,14 +8,50 @@
 
 import UIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
 
+@UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    /// Application window
     var window: UIWindow?
-
-
+    
+    /// Base coordinator
+    var coordinator: BaseCoordinator!
+    
+    // MARK: Push notifications
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let tokenParts = deviceToken.map { data -> String in
+            return String(format: "%02.2hhx", data)
+        }
+        
+        let token = tokenParts.joined()
+        print("Device Token: \(token)")
+        UserDefaults.standard.set(token, forKey: "PUSH_DEVICE_TOKEN")
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register: \(error)")
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+        guard let dict = userInfo["aps"]  as? [String: Any], let msg = dict ["alert"] as? String else {
+            print("Notification Parsing Error")
+            return
+        }
+        print(msg)
+    }
+    
+    // MARK: Application delegate methods
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        coordinator = BaseCoordinator()
+        if let window = window {
+            window.backgroundColor = .white
+            window.rootViewController = coordinator.initialScreen()
+            window.makeKeyAndVisible()
+        }
+        
         return true
     }
 
@@ -40,7 +76,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
 
 }
 

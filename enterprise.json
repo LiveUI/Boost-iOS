@@ -1,0 +1,29 @@
+{
+	"version": 1,
+	"accounts": [
+		{
+			"group": "Ford",
+			"deletable": false,
+			"name": "Ford Labs",
+			"server": "https://appstore.ford.com"
+		},
+		{
+			"group": "Ford",
+			"deletable": false,
+			"name": "Ford GoPark",
+			"server": "https://appstore.gopark.com"
+		},
+		{
+			"group": "manGoweb",
+			"deletable": false,
+			"name": "manGoweb",
+			"server": "https://appstore.mangoweb.cz"
+		},
+		{
+			"group": "manGoweb",
+			"deletable": true,
+			"name": "manGoweb Staging",
+			"server": "https://appstore.mgw.cz"
+		}
+	]
+}

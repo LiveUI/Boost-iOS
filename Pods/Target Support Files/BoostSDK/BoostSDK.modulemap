@@ -1,0 +1,6 @@
+framework module BoostSDK {
+  umbrella header "BoostSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

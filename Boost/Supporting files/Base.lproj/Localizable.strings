@@ -1,0 +1,36 @@
+/* 
+  Localizable.strings
+  Boost
+
+  Created by Ondrej Rafaj on 01/06/2018.
+  Copyright © 2018 LiveUI. All rights reserved.
+*/
+
+// General
+"general.ok" = "Ok";
+"general.cancel" = "Cancel";
+
+// Onboarding
+"onboarding.skip_all" = "Skip";
+
+"onboarding.welcome.title" = "Welcome";
+"onboarding.welcome.message" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque venenatis, nunc a volutpat imperdiet, elit massa egestas orci, rhoncus posuere lorem purus in nisi. Sed rhoncus, elit nec commodo vehicula, velit dui hendrerit neque, at aliquam lectus massa sed nisl. Sed at dolor et massa tincidunt faucibus.";
+"onboarding.welcome.next" = "Next";
+
+"onboarding.push.title" = "Push notifications";
+"onboarding.push.message" = "We would like to notify you when a, to you, relevant build becomes available by sending you a discreet message and to display a number badge above the app icon.";
+"onboarding.push.skip" = "Skip";
+"onboarding.push.enable" = "Enable push notifications";
+"onboarding.push.not_granted.title" = "That's ok ...";
+"onboarding.push.not_granted.message" = "You can always enable push notifications later from the app settings!";
+"onboarding.push.error.title" = "Error";
+"onboarding.push.error.message" = "There was an error while enabling notifications but don't worry, you can always enable push notifications later from the app settings!";
+
+"onboarding.has_push.title" = "Push notifications";
+"onboarding.has_push.message" = "Push notifications have been already enabled for this app. You can edit the notification settings in your apps preferences";
+"onboarding.has_push.done" = "Done";
+
+"onboarding.denied_push.title" = "Push notifications";
+"onboarding.denied_push.message" = "You have previously disabled notifications for this app but don't worry, you can always enable push notifications later from the app settings!";
+"onboarding.denied_push.done" = "Done";
+"onboarding.denied_push.goto_settings" = "Go to Settings";
