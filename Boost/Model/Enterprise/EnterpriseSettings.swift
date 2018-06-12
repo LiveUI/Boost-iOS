@@ -49,10 +49,12 @@ extension EnterpriseSettings.Account {
     }
     
     func guaranteedGroup() throws -> Group {
-        guard let groupName: String = group, let group = try Group.query.filter("name" == groupName).first() else {
-            return try Group.new()
+        guard let groupName: String = group, let oldGroup = try Group.query.filter("name" == groupName).first() else {
+            let newGroup = try Group.new()
+            newGroup.name = group
+            return newGroup
         }
-        return group
+        return oldGroup
     }
     
 }

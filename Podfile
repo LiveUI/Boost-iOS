@@ -18,7 +18,7 @@ target 'Boost' do
     target 'BoostTests' do
         inherit! :search_paths
         pod 'SpecTools'
-    end
+    endr
     
     target 'BoostUITests' do
         inherit! :search_paths

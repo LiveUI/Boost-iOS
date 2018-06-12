@@ -16,7 +16,6 @@ final class AccountViewController: ViewController {
     let account: Account
     
     
-    
     // MARK: Initialization
     
     /// Initializer

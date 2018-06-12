@@ -17,24 +17,41 @@ final class AccountsListViewController: TableViewController {
     override func setupData() {
         super.setupData()
         
-        let section = PresentableSection()
         do {
-            let accounts = try Account.query.sort(by: "name").all()
-            section.set(accounts.map({ (account) -> AnyPresentable in
-                Presentable<AccountTableViewCell>.create({ cell in
-                    cell.nameLabel.text = account.name
-                    cell.hostLabel.text = account.server
-                    cell.lockIcon.isHidden = !(account.token?.isEmpty ?? true)
-                    cell.onlineIcon.state = account.onlineIsValid ? .online : .offline
-                    
-//                    let hidden = !(account == self.baseCoordinator.currentAccount)
-//                    cell.selectedIndicator.isHidden = hidden
-                })
-            }))
+            let otherName = "accounts.group.other"
+            var accountGroups: [String: [Account]] = [:]
+            try Account.query.sort(by: "name").all().forEach({ account in
+                accountGroups[account.group?.name ?? otherName, default: []].append(account)
+            })
+            let accountGroupsKeys = accountGroups.keys.sorted(by: { (s1, s2) -> Bool in
+                if s1 == otherName {
+                    return false
+                } else if s2 == otherName {
+                    return true
+                } else {
+                    return s1 < s2
+                }
+            })
+            for key in accountGroupsKeys {
+                if let group: [Account] = accountGroups[key] {
+                    let section = PresentableSection()
+                    section.header = Presentable<GenerictTableHeaderView>.create({ header in
+                        header.title.text = Lang.get(key).uppercased()
+                    })
+                    section.set(group.map({ (account) -> AnyPresentable in
+                        Presentable<AccountTableViewCell>.create({ cell in
+                            cell.nameLabel.text = account.name
+                            cell.hostLabel.text = account.server
+                            cell.lockIcon.isHidden = !(account.token?.isEmpty ?? true)
+                            cell.onlineIcon.state = account.onlineIsValid ? .online : .offline
+                        })
+                    }))
+                    data.append(section)
+                }
+            }
         } catch {
             
         }
-        data.append(section)
     }
     
     // MARK: Elements
@@ -50,8 +67,6 @@ final class AccountsListViewController: TableViewController {
         let v = UIView()
         v.backgroundColor = .red
         navigationItem.titleView = v
-        
-        setupData()
     }
     
     // MARK: View lifecycle

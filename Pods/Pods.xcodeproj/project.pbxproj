@@ -31,6 +31,7 @@
 		137B0A6D6F857C71E9A5D81CE63672A8 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63117A08943A70A958429DBC2C2074AB /* Entity.swift */; };
 		141FC296D7D34D31A73120709AABE0BA /* SpecTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB479E1F6ED169B15D065A6EE5CA655 /* SpecTools.swift */; };
 		14858CBD9F3D1AEDC029B01228EF1A0C /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D51B14F0B62E427F4EE535F22D5F72 /* Filters.swift */; };
+		156AD84020CEC91E002672A4 /* GridTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AD83F20CEC91E002672A4 /* GridTableViewHeaderFooterView.swift */; };
 		15B60F60C002B893CE9673B0A8A83736 /* Make+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EF6626765A83E5DB879F92BF7AF0D /* Make+Custom.swift */; };
 		1717F99D11E59707793F02C673C3EC60 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88D4826E863277E04EDE199CCE39407 /* BackgroundView.swift */; };
 		18F595BDF8025949420E2C0EC152FAE3 /* NSLayoutConstraint+Modular.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA756D70FE0B615F6F22F77BC3F54E1 /* NSLayoutConstraint+Modular.swift */; };
@@ -418,6 +419,7 @@
 		11E7AB37AF40EF64682929C7E1539D1C /* Typealiases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Typealiases.swift; path = Source/Typealiases.swift; sourceTree = "<group>"; };
 		1302A7175C9273800A66E6829D9813F9 /* Array+NSPredicate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Array+NSPredicate.swift"; sourceTree = "<group>"; };
 		147AD9BAC66B5CCFED205405EC9A10C2 /* QueryDataRepresentable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QueryDataRepresentable.swift; sourceTree = "<group>"; };
+		156AD83F20CEC91E002672A4 /* GridTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		15F2247757F92F9AA303F74C785AC9B2 /* Checks+UICollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Checks+UICollectionView.swift"; path = "SpecTools/Classes/Checks/Checks+UICollectionView.swift"; sourceTree = "<group>"; };
 		16587B7CC455A1ADC0BC31ADDDA91154 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1990AAFF16F23CCF98CA23F9C557AC9F /* Presentables-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Presentables-prefix.pch"; sourceTree = "<group>"; };
@@ -1234,6 +1236,7 @@
 				85241B33073CA839709B376AD0AEF11E /* GridScrollView.swift */,
 				CDEA642D4FCF6D219D2A6B86CABC8628 /* GridTableViewCell.swift */,
 				9417DBA0AAA47B4255A7A26FCFA3CA21 /* GridView.swift */,
+				156AD83F20CEC91E002672A4 /* GridTableViewHeaderFooterView.swift */,
 			);
 			name = Views;
 			path = Classes/Views;
@@ -1269,7 +1272,7 @@
 				00A028785381929B7B97D50259A58745 /* Enums */,
 				217082F680C6C0297333122B8BC420C4 /* Extensions */,
 				DFB6CECB19BB6D00E785A1CEFFF705EA /* Libs */,
-				D28BC491BA4C1959F4F3F4988000A629 /* New Group */,
+				D28BC491BA4C1959F4F3F4988000A629 /* Protocols */,
 				B457413F1BBFFC43B3207F706107DBF2 /* Pod */,
 				4DB3F74F3A44A9712C276E7B41422578 /* Support Files */,
 				75504764F526069C57A32E6FC9B9E527 /* View controllers */,
@@ -1661,14 +1664,14 @@
 			path = "../Boost/Pods/Target Support Files/BoostSDK";
 			sourceTree = "<group>";
 		};
-		D28BC491BA4C1959F4F3F4988000A629 /* New Group */ = {
+		D28BC491BA4C1959F4F3F4988000A629 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				546928BC049F2ADC3AF5C11A11DD99E9 /* GridViewInterface.swift */,
 				A3B1358AABDB39B996DDCAC878D2EA68 /* ScrollViewForwarder.swift */,
 			);
-			name = "New Group";
-			path = "Classes/New Group";
+			name = Protocols;
+			path = Classes/Protocols;
 			sourceTree = "<group>";
 		};
 		D42121B5D73469003681E75D85C09789 /* Error */ = {
@@ -2503,6 +2506,7 @@
 				1189D197103971BA5BD5B24EFB61C904 /* Position.swift in Sources */,
 				20214FE0E644F9078ACB3A6311D5C266 /* Properties.swift in Sources */,
 				0BBC5CC99B02C9836C6193705FA409CB /* ScrollViewForwarder.swift in Sources */,
+				156AD84020CEC91E002672A4 /* GridTableViewHeaderFooterView.swift in Sources */,
 				5B7B82E27A246D06E2759C98B57BB863 /* Subview.swift in Sources */,
 				054144546BE4AFE95A3350D84B567CFF /* UIColor+Tools.swift in Sources */,
 				6BD2E4BD8343CA26713020531107E358 /* Vertical.swift in Sources */,

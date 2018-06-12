@@ -19,6 +19,9 @@
 		1561D7D620C58D2C00BCA532 /* PreloginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1561D7D520C58D2C00BCA532 /* PreloginView.swift */; };
 		1561D7D820C596C000BCA532 /* MainAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1561D7D720C596C000BCA532 /* MainAuthView.swift */; };
 		156AD83820CDCB78002672A4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AD83720CDCB78002672A4 /* Coordinator.swift */; };
+		156AD83B20CEC57A002672A4 /* GenerictTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AD83A20CEC57A002672A4 /* GenerictTableHeaderView.swift */; };
+		156AD83E20CEC5FB002672A4 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AD83D20CEC5FB002672A4 /* GridView.swift */; };
+		156AD84220CECA4B002672A4 /* GridTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AD84120CECA4B002672A4 /* GridTableViewHeaderFooterView.swift */; };
 		15A1171920C6DBE200CE4263 /* enterprise.json in Resources */ = {isa = PBXBuildFile; fileRef = 15A1171820C6DBE200CE4263 /* enterprise.json */; };
 		15A1171D20C6DC4F00CE4263 /* EnterpriseSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A1171C20C6DC4F00CE4263 /* EnterpriseSettings.swift */; };
 		15A1172020C6DD8E00CE4263 /* Enterprise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A1171F20C6DD8E00CE4263 /* Enterprise.swift */; };
@@ -88,6 +91,9 @@
 		1561D7D520C58D2C00BCA532 /* PreloginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloginView.swift; sourceTree = "<group>"; };
 		1561D7D720C596C000BCA532 /* MainAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAuthView.swift; sourceTree = "<group>"; };
 		156AD83720CDCB78002672A4 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		156AD83A20CEC57A002672A4 /* GenerictTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerictTableHeaderView.swift; sourceTree = "<group>"; };
+		156AD83D20CEC5FB002672A4 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		156AD84120CECA4B002672A4 /* GridTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		15A1171820C6DBE200CE4263 /* enterprise.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = enterprise.json; sourceTree = SOURCE_ROOT; };
 		15A1171C20C6DC4F00CE4263 /* EnterpriseSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterpriseSettings.swift; sourceTree = "<group>"; };
 		15A1171F20C6DD8E00CE4263 /* Enterprise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enterprise.swift; sourceTree = "<group>"; };
@@ -235,6 +241,23 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		156AD83920CEC553002672A4 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				156AD83A20CEC57A002672A4 /* GenerictTableHeaderView.swift */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		156AD83C20CEC5ED002672A4 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				156AD83D20CEC5FB002672A4 /* GridView.swift */,
+				156AD84120CECA4B002672A4 /* GridTableViewHeaderFooterView.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		15A1171A20C6DC0100CE4263 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +383,7 @@
 		15A88D2820BB642B00BC6DFA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				156AD83C20CEC5ED002672A4 /* Base */,
 				1561D7D420C58CF500BCA532 /* Login & registration */,
 				15A88D2920BB642B00BC6DFA /* Cells */,
 				15A88D2B20BB642B00BC6DFA /* Elements */,
@@ -378,6 +402,7 @@
 		15A88D2B20BB642B00BC6DFA /* Elements */ = {
 			isa = PBXGroup;
 			children = (
+				156AD83920CEC553002672A4 /* Headers */,
 				1561D7BB20C4855200BCA532 /* NavBar */,
 				15A88D2C20BB642B00BC6DFA /* IconView.swift */,
 				15A88D2D20BB642B00BC6DFA /* Buttons */,
@@ -741,6 +766,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				156AD83B20CEC57A002672A4 /* GenerictTableHeaderView.swift in Sources */,
 				15A88D5420BB642B00BC6DFA /* IconView.swift in Sources */,
 				15A88D6720BBFE5100BC6DFA /* AppDelegate+Tools.swift in Sources */,
 				15A88D5C20BB642B00BC6DFA /* MenuMainLabel.swift in Sources */,
@@ -750,6 +776,7 @@
 				15A88D6420BB648600BC6DFA /* Account+CoreData.swift in Sources */,
 				15A88D4720BB642B00BC6DFA /* NSObject+AppDelegateTools.swift in Sources */,
 				15A88D5820BB642B00BC6DFA /* CellTitleLabel.swift in Sources */,
+				156AD83E20CEC5FB002672A4 /* GridView.swift in Sources */,
 				1561D7BD20C4855200BCA532 /* NavBarTitle.swift in Sources */,
 				15A88D5620BB642B00BC6DFA /* BadgeView.swift in Sources */,
 				15A88D5720BB642B00BC6DFA /* MenuTitleLabel.swift in Sources */,
@@ -775,6 +802,7 @@
 				15A88D4D20BB642B00BC6DFA /* BaseCoordinator.swift in Sources */,
 				156AD83820CDCB78002672A4 /* Coordinator.swift in Sources */,
 				15A88D5D20BB642B00BC6DFA /* OnlineIcon.swift in Sources */,
+				156AD84220CECA4B002672A4 /* GridTableViewHeaderFooterView.swift in Sources */,
 				15A1172220C6E31C00CE4263 /* Group+CoreData.swift in Sources */,
 				1545C38C20BC682C000449D3 /* LoginCoordinator+Onboarding.swift in Sources */,
 				15AD2A0820BC90D600E3A180 /* GradientView+Boost.swift in Sources */,
