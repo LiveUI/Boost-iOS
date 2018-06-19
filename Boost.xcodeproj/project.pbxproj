@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		15020B1E20C15ABA00BBADBD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 15020B2020C15ABA00BBADBD /* Localizable.strings */; };
-		15020BD420C199BA00BBADBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15020BD320C199BA00BBADBD /* Assets.xcassets */; };
 		15020BD620C1D71B00BBADBD /* LoginCoordinator+Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15020BD520C1D71B00BBADBD /* LoginCoordinator+Registration.swift */; };
 		1545C38C20BC682C000449D3 /* LoginCoordinator+Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1545C38B20BC682C000449D3 /* LoginCoordinator+Onboarding.swift */; };
 		1546772620CDC5BE00E593B8 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546772520CDC5BE00E593B8 /* UIViewController+Navigation.swift */; };
@@ -18,10 +17,18 @@
 		1561D7C320C4894B00BCA532 /* ConfigurableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1561D7C220C4894B00BCA532 /* ConfigurableController.swift */; };
 		1561D7D620C58D2C00BCA532 /* PreloginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1561D7D520C58D2C00BCA532 /* PreloginView.swift */; };
 		1561D7D820C596C000BCA532 /* MainAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1561D7D720C596C000BCA532 /* MainAuthView.swift */; };
+		1563175520D0165C007E740C /* GridTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1563175420D0165C007E740C /* GridTableViewCell.swift */; };
+		1563175B20D05F34007E740C /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1563175720D05F34007E740C /* Rubik-Bold.ttf */; };
+		1563175C20D05F34007E740C /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1563175820D05F34007E740C /* Rubik-Light.ttf */; };
+		1563175D20D05F34007E740C /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1563175920D05F34007E740C /* Rubik-Medium.ttf */; };
+		1563175E20D05F34007E740C /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1563175A20D05F34007E740C /* Rubik-Regular.ttf */; };
+		1563176020D064BC007E740C /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1563175F20D064BC007E740C /* NavigationViewController.swift */; };
 		156AD83820CDCB78002672A4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AD83720CDCB78002672A4 /* Coordinator.swift */; };
 		156AD83B20CEC57A002672A4 /* GenerictTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AD83A20CEC57A002672A4 /* GenerictTableHeaderView.swift */; };
 		156AD83E20CEC5FB002672A4 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AD83D20CEC5FB002672A4 /* GridView.swift */; };
 		156AD84220CECA4B002672A4 /* GridTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AD84120CECA4B002672A4 /* GridTableViewHeaderFooterView.swift */; };
+		157D35CA20D9AC17005C01D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 157D35C920D9AC17005C01D1 /* Assets.xcassets */; };
+		157D35CC20D9B0B3005C01D1 /* UIImage+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D35CB20D9B0B3005C01D1 /* UIImage+UIButton.swift */; };
 		15A1171920C6DBE200CE4263 /* enterprise.json in Resources */ = {isa = PBXBuildFile; fileRef = 15A1171820C6DBE200CE4263 /* enterprise.json */; };
 		15A1171D20C6DC4F00CE4263 /* EnterpriseSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A1171C20C6DC4F00CE4263 /* EnterpriseSettings.swift */; };
 		15A1172020C6DD8E00CE4263 /* Enterprise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A1171F20C6DD8E00CE4263 /* Enterprise.swift */; };
@@ -80,7 +87,6 @@
 
 /* Begin PBXFileReference section */
 		15020BD220C17A4500BBADBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		15020BD320C199BA00BBADBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../Boost-iOS/Boost/Supporting files/Assets.xcassets"; sourceTree = "<group>"; };
 		15020BD520C1D71B00BBADBD /* LoginCoordinator+Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginCoordinator+Registration.swift"; sourceTree = "<group>"; };
 		1545C38B20BC682C000449D3 /* LoginCoordinator+Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginCoordinator+Onboarding.swift"; sourceTree = "<group>"; };
 		1546772520CDC5BE00E593B8 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
@@ -90,10 +96,18 @@
 		1561D7C220C4894B00BCA532 /* ConfigurableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableController.swift; sourceTree = "<group>"; };
 		1561D7D520C58D2C00BCA532 /* PreloginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloginView.swift; sourceTree = "<group>"; };
 		1561D7D720C596C000BCA532 /* MainAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAuthView.swift; sourceTree = "<group>"; };
+		1563175420D0165C007E740C /* GridTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTableViewCell.swift; sourceTree = "<group>"; };
+		1563175720D05F34007E740C /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
+		1563175820D05F34007E740C /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
+		1563175920D05F34007E740C /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		1563175A20D05F34007E740C /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		1563175F20D064BC007E740C /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		156AD83720CDCB78002672A4 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		156AD83A20CEC57A002672A4 /* GenerictTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerictTableHeaderView.swift; sourceTree = "<group>"; };
 		156AD83D20CEC5FB002672A4 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		156AD84120CECA4B002672A4 /* GridTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		157D35C920D9AC17005C01D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		157D35CB20D9B0B3005C01D1 /* UIImage+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+UIButton.swift"; sourceTree = "<group>"; };
 		15A1171820C6DBE200CE4263 /* enterprise.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = enterprise.json; sourceTree = SOURCE_ROOT; };
 		15A1171C20C6DC4F00CE4263 /* EnterpriseSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterpriseSettings.swift; sourceTree = "<group>"; };
 		15A1171F20C6DD8E00CE4263 /* Enterprise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enterprise.swift; sourceTree = "<group>"; };
@@ -212,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				1561D7B420C43A3900BCA532 /* GridViewController.swift */,
+				1563175F20D064BC007E740C /* NavigationViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -231,6 +246,25 @@
 				1561D7D720C596C000BCA532 /* MainAuthView.swift */,
 			);
 			path = "Login & registration";
+			sourceTree = "<group>";
+		};
+		1563175320D0164A007E740C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				1563175420D0165C007E740C /* GridTableViewCell.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		1563175620D05F34007E740C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1563175720D05F34007E740C /* Rubik-Bold.ttf */,
+				1563175820D05F34007E740C /* Rubik-Light.ttf */,
+				1563175920D05F34007E740C /* Rubik-Medium.ttf */,
+				1563175A20D05F34007E740C /* Rubik-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		156AD83620CDCB78002672A4 /* Coordinators */ = {
@@ -394,6 +428,7 @@
 		15A88D2920BB642B00BC6DFA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				1563175320D0164A007E740C /* Base */,
 				15A88D2A20BB642B00BC6DFA /* AccountTableViewCell.swift */,
 			);
 			path = Cells;
@@ -446,8 +481,9 @@
 		15A88D3B20BB642B00BC6DFA /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				157D35C920D9AC17005C01D1 /* Assets.xcassets */,
+				1563175620D05F34007E740C /* Fonts */,
 				15A1171820C6DBE200CE4263 /* enterprise.json */,
-				15020BD320C199BA00BBADBD /* Assets.xcassets */,
 				15A88D3D20BB642B00BC6DFA /* LaunchScreen.storyboard */,
 				15A88D3F20BB642B00BC6DFA /* Boost.xcdatamodeld */,
 				15A88D4120BB642B00BC6DFA /* Info.plist */,
@@ -473,6 +509,7 @@
 			children = (
 				15A88D1820BB642B00BC6DFA /* UIImage+Defaults.swift */,
 				15AD2A0720BC90D600E3A180 /* GradientView+Boost.swift */,
+				157D35CB20D9B0B3005C01D1 /* UIImage+UIButton.swift */,
 			);
 			path = "Colors & images";
 			sourceTree = "<group>";
@@ -630,9 +667,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				15A1171920C6DBE200CE4263 /* enterprise.json in Resources */,
+				1563175E20D05F34007E740C /* Rubik-Regular.ttf in Resources */,
+				1563175C20D05F34007E740C /* Rubik-Light.ttf in Resources */,
 				15A88D6120BB642B00BC6DFA /* LaunchScreen.storyboard in Resources */,
-				15020BD420C199BA00BBADBD /* Assets.xcassets in Resources */,
 				15020B1E20C15ABA00BBADBD /* Localizable.strings in Resources */,
+				1563175B20D05F34007E740C /* Rubik-Bold.ttf in Resources */,
+				157D35CA20D9AC17005C01D1 /* Assets.xcassets in Resources */,
+				1563175D20D05F34007E740C /* Rubik-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -769,6 +810,7 @@
 				156AD83B20CEC57A002672A4 /* GenerictTableHeaderView.swift in Sources */,
 				15A88D5420BB642B00BC6DFA /* IconView.swift in Sources */,
 				15A88D6720BBFE5100BC6DFA /* AppDelegate+Tools.swift in Sources */,
+				1563176020D064BC007E740C /* NavigationViewController.swift in Sources */,
 				15A88D5C20BB642B00BC6DFA /* MenuMainLabel.swift in Sources */,
 				15A88D4F20BB642B00BC6DFA /* AccountViewController.swift in Sources */,
 				15A1172020C6DD8E00CE4263 /* Enterprise.swift in Sources */,
@@ -788,6 +830,7 @@
 				15A88D5A20BB642B00BC6DFA /* MainContentLabel.swift in Sources */,
 				15A88D4B20BB642B00BC6DFA /* LoginCoordinator.swift in Sources */,
 				15A88D5920BB642B00BC6DFA /* MenuSecondaryLabel.swift in Sources */,
+				157D35CC20D9B0B3005C01D1 /* UIImage+UIButton.swift in Sources */,
 				15A88D5520BB642B00BC6DFA /* PrimaryButton.swift in Sources */,
 				15A88D4C20BB642B00BC6DFA /* AccountsCoordinator.swift in Sources */,
 				15A88D5320BB642B00BC6DFA /* AccountTableViewCell.swift in Sources */,
@@ -805,6 +848,7 @@
 				156AD84220CECA4B002672A4 /* GridTableViewHeaderFooterView.swift in Sources */,
 				15A1172220C6E31C00CE4263 /* Group+CoreData.swift in Sources */,
 				1545C38C20BC682C000449D3 /* LoginCoordinator+Onboarding.swift in Sources */,
+				1563175520D0165C007E740C /* GridTableViewCell.swift in Sources */,
 				15AD2A0820BC90D600E3A180 /* GradientView+Boost.swift in Sources */,
 				1561D7D620C58D2C00BCA532 /* PreloginView.swift in Sources */,
 				15A1172420C6E43800CE4263 /* Account+Enterprise.swift in Sources */,

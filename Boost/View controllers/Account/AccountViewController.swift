@@ -26,8 +26,8 @@ final class AccountViewController: ViewController {
         
         title = account.name
         
-        setBarButton(imageNamed: "NavBar/menu-icon", target: self, action: #selector(didTapMenu(_:)))
-        setBarButton(imageNamed: "NavBar/search-icon", to: .right, target: self, action: #selector(didTapSearch(_:)))
+        navigation.set(leftItem: UIImage(named: "navbar/menu-icon")?.asButton(self, action: #selector(didTapMenu(_:))))
+        navigation.set(rightItem: UIImage(named: "navbar/menu-search")?.asButton(self, action: #selector(didTapSearch(_:))))
     }
     
     @available(*, unavailable, message: "This method is unavailable")
@@ -54,7 +54,7 @@ final class AccountViewController: ViewController {
     // MARK: Actions
     
     @objc func didTapMenu(_ sender: UIBarButtonItem) {
-        
+        baseCoordinator.requestAccountsList()
     }
     
     @objc func didTapSearch(_ sender: UIBarButtonItem) {

@@ -18,7 +18,7 @@ class CellTitleLabel: UILabel {
         super.init(frame: CGRect.zero)
         
         textColor = .black
-        font = Font.basicBold(size: 15)
+        font = Font.bold(size: 15)
     }
     
     required init?(coder aDecoder: NSCoder) {

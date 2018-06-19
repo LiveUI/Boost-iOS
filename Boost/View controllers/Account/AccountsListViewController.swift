@@ -23,6 +23,7 @@ final class AccountsListViewController: TableViewController {
             try Account.query.sort(by: "name").all().forEach({ account in
                 accountGroups[account.group?.name ?? otherName, default: []].append(account)
             })
+            // Sort keys
             let accountGroupsKeys = accountGroups.keys.sorted(by: { (s1, s2) -> Bool in
                 if s1 == otherName {
                     return false
@@ -35,16 +36,22 @@ final class AccountsListViewController: TableViewController {
             for key in accountGroupsKeys {
                 if let group: [Account] = accountGroups[key] {
                     let section = PresentableSection()
-                    section.header = Presentable<GenerictTableHeaderView>.create({ header in
-                        header.title.text = Lang.get(key).uppercased()
-                    })
+                    // Skip other title if it's the only section in the table
+                    if accountGroupsKeys.count > 1 {
+                        section.header = Presentable<GenerictTableHeaderView>.create({ header in
+                            header.title.text = Lang.get(key).uppercased()
+                        })
+                    }
+                    // Make section cells
                     section.set(group.map({ (account) -> AnyPresentable in
                         Presentable<AccountTableViewCell>.create({ cell in
                             cell.nameLabel.text = account.name
                             cell.hostLabel.text = account.server
                             cell.lockIcon.isHidden = !(account.token?.isEmpty ?? true)
                             cell.onlineIcon.state = account.onlineIsValid ? .online : .offline
-                        })
+                        }).cellSelected {
+                            try? self.baseCoordinator.request(detailFor: account)
+                        }
                     }))
                     data.append(section)
                 }
@@ -59,20 +66,43 @@ final class AccountsListViewController: TableViewController {
     override func setupElements() {
         super.setupElements()
         
-        navigationViewController?.navigationBar.minHeight = 60
-        navigationViewController?.navigationBar.backgroundColor = .red
-        navigation.content.title = "Boost"
-        navigation.content.subtitle = "server management"
+        tableView.separatorStyle = .none
         
-        let v = UIView()
-        v.backgroundColor = .red
-        navigationItem.titleView = v
+        navigationViewController?.navigationBar.minHeight = 60
+        navigation.content.title = Lang.get("accounts.navigation.title")
+        navigation.content.subtitle = Lang.get("accounts.navigation.subtitle")
+        
+        navigation.set(leftItem: UIImage(named: "navbar/menu-settings")?.asButton(self, action: #selector(settingsTapped(_:))))
+        navigation.set(rightItem: UIImage(named: "navbar/menu-add")?.asButton(self, action: #selector(addTapped(_:))))
+    }
+    
+    // MARK: Actions
+    
+    @objc func settingsTapped(_ sender: UIButton) {
+        
+    }
+    
+    @objc func addTapped(_ sender: UIButton) {
+        
     }
     
     // MARK: View lifecycle
     
+    var firstStart: Bool = true
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if firstStart {
+            do {
+                if let account = try Account.lastUsed() {
+                    try baseCoordinator.request(detailFor: account)
+                }
+            } catch {
+                // TODO: Handle error?!
+            }
+            firstStart = false
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

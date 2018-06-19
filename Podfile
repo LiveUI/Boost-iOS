@@ -2,7 +2,6 @@
 platform :ios, '10.3'
 
 target 'Boost' do
-    
     use_frameworks!
     
     pod 'Presentables', '~> 0.6.7'
@@ -18,7 +17,7 @@ target 'Boost' do
     target 'BoostTests' do
         inherit! :search_paths
         pod 'SpecTools'
-    endr
+    end
     
     target 'BoostUITests' do
         inherit! :search_paths

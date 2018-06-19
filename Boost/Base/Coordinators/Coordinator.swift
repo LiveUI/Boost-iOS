@@ -11,11 +11,18 @@
 import Base
 
 
+/// Coordinator take off tuple
+public typealias CoordinatorTakeOffTuple = (viewController: UIViewController, presentation: Presentation)
+
+
 /// Coordinator protocol
 public protocol Coordinator {
     
+    /// Current view controller
+    var currentViewController: UIViewController? { get set }
+    
     /// Launch coordinator on a view controller
-    @discardableResult func takeOff(in: (UIViewController, Presentation)?) -> UIViewController
+    @discardableResult func takeOff(in: CoordinatorTakeOffTuple?) -> UIViewController
     
 }
 

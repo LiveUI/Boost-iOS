@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7C14447A6146785FD3AD3DFBABA9795D"
+               BlueprintIdentifier = "910BE2B785EB019B93DC2769EBE54425"
                BlueprintName = "Hagrid"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "Hagrid.framework">

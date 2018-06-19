@@ -47,7 +47,7 @@ class IconView: UIView {
         layer.cornerRadius = 4
         clipsToBounds = true
         
-        initials.font = Font.basicBold(size: 18)
+        initials.font = Font.bold(size: 18)
         initials.textAlignment = .center
         initials.place.on(andFill: self)
         

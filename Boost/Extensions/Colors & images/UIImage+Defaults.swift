@@ -13,7 +13,7 @@ import UIKit
 extension UIImage {
     
     static var defaultIcon: UIImage {
-        guard let image = UIImage(named: "Defaults/icon-40") else {
+        guard let image = UIImage(named: "default/icon") else {
             fatalError("Default icon is missing!")
         }
         return image

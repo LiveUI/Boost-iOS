@@ -10,6 +10,11 @@
 "general.ok" = "Ok";
 "general.cancel" = "Cancel";
 
+// Accounts
+"accounts.navigation.title" = "Boost";
+"accounts.navigation.subtitle" = "server management";
+"accounts.group.other" = "Other";
+
 // Onboarding
 "onboarding.skip_all" = "Skip";
 

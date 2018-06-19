@@ -18,7 +18,7 @@ class MenuSecondaryLabel: UILabel {
         super.init(frame: CGRect.zero)
         
         text = title
-        textColor = .lightGray
+        textColor = UIColor(hex: "AAAAAA")
         font = Font.basic(size: 12)
         textAlignment = .left
     }

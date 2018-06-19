@@ -79,7 +79,7 @@ class BadgeView: UIView {
         
         clipsToBounds = true
         
-        label.font = Font.basicBold(size: 13)
+        label.font = Font.bold(size: 13)
         label.backgroundColor = .clear
         label.textAlignment = .center
         label.place.on(self, top: 3, bottom: -3).sides(left: 4, right: -4)

@@ -12,6 +12,9 @@ import Base
 /// Login process coordinator
 final class LoginCoordinator: Coordinator {
     
+    /// Current view controller
+    var currentViewController: UIViewController?
+    
     /// Login route
     enum Route {
         
@@ -30,7 +33,7 @@ final class LoginCoordinator: Coordinator {
     let selectedRoute: Route
     
     /// Launch coordinator on a view controller
-    @discardableResult func takeOff(in: (UIViewController, Presentation)? = nil) -> UIViewController {
+    @discardableResult func takeOff(in: CoordinatorTakeOffTuple? = nil) -> UIViewController {
         if selectedRoute == .firstUse {
             let onboarding = self.onboarding()
             configure(onboarding: onboarding) { sender in

@@ -19,7 +19,7 @@ class MenuTitleLabel: UILabel {
         
         text = title
         textColor = .white
-        font = Font.basicBold(size: 18)
+        font = Font.bold(size: 18)
         textAlignment = .center
     }
     

@@ -18,8 +18,8 @@ class MenuMainLabel: UILabel {
         super.init(frame: CGRect.zero)
         
         text = title
-        textColor = .white
-        font = Font.basicBold(size: 15)
+        textColor = .darkText
+        font = Font.bold(size: 14)
         textAlignment = .left
     }
     

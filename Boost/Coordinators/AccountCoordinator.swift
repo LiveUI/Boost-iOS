@@ -12,13 +12,21 @@ import Base
 /// Single account coordinator
 final class AccountCoordinator: Coordinator {
     
+    /// Current view controller
+    var currentViewController: UIViewController?
+    
     /// Account
     let account: Account
     
     /// Launch coordinator on a view controller
-    @discardableResult func takeOff(in: (UIViewController, Presentation)?) -> UIViewController {
+    @discardableResult func takeOff(in vc: CoordinatorTakeOffTuple?) -> UIViewController {
         let c = AccountViewController(account)
-        return c.asNavigationViewController()
+        currentViewController = c
+        let nc = c.asNavigationViewController()
+        if let vc = vc {
+            vc.viewController.present(nc, presentation: vc.presentation)
+        }
+        return nc
     }
     
     /// Initialization
