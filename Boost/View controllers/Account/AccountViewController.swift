@@ -15,6 +15,20 @@ final class AccountViewController: ViewController {
     /// Main account
     let account: Account
     
+    /// Collection view layout
+    var layout: UICollectionViewLayout = {
+        return UICollectionViewLayout()
+    }()
+    
+    /// Collection view controller
+    lazy var collectionView: UICollectionView = {
+        return UICollectionView.init(frame: .zero, collectionViewLayout: layout)
+    }()
+    
+    /// Account data manager
+    lazy var manager: AccountDataManager = {
+        return AccountDataManager(account)
+    }()
     
     // MARK: Initialization
     
@@ -49,6 +63,17 @@ final class AccountViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.place.on(andFill: view)
+        
+        var manager = self.manager as PresentableManager
+        collectionView.bind(withPresentableManager: &manager)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        manager.getApps()
     }
     
     // MARK: Actions

@@ -38,7 +38,7 @@ final class AccountsListViewController: TableViewController {
                     let section = PresentableSection()
                     // Skip other title if it's the only section in the table
                     if accountGroupsKeys.count > 1 {
-                        section.header = Presentable<GenerictTableHeaderView>.create({ header in
+                        section.header = Presentable<GenericTableHeaderView>.create({ header in
                             header.title.text = Lang.get(key).uppercased()
                         })
                     }

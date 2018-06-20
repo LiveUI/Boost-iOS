@@ -11,7 +11,7 @@ import UIKit
 import Base
 
 
-class GenerictTableHeaderView: GridTableViewHeaderFooterView {
+class GenericTableHeaderView: GridTableViewHeaderFooterView {
     
     let title = UILabel()
     

@@ -24,11 +24,18 @@
 		1563175E20D05F34007E740C /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1563175A20D05F34007E740C /* Rubik-Regular.ttf */; };
 		1563176020D064BC007E740C /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1563175F20D064BC007E740C /* NavigationViewController.swift */; };
 		156AD83820CDCB78002672A4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AD83720CDCB78002672A4 /* Coordinator.swift */; };
-		156AD83B20CEC57A002672A4 /* GenerictTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AD83A20CEC57A002672A4 /* GenerictTableHeaderView.swift */; };
+		156AD83B20CEC57A002672A4 /* GenericTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AD83A20CEC57A002672A4 /* GenericTableHeaderView.swift */; };
 		156AD83E20CEC5FB002672A4 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AD83D20CEC5FB002672A4 /* GridView.swift */; };
-		156AD84220CECA4B002672A4 /* GridTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AD84120CECA4B002672A4 /* GridTableViewHeaderFooterView.swift */; };
 		157D35CA20D9AC17005C01D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 157D35C920D9AC17005C01D1 /* Assets.xcassets */; };
 		157D35CC20D9B0B3005C01D1 /* UIImage+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D35CB20D9B0B3005C01D1 /* UIImage+UIButton.swift */; };
+		157D35CF20DA5D00005C01D1 /* AccountDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D35CE20DA5D00005C01D1 /* AccountDataManager.swift */; };
+		157D35D120DA80BE005C01D1 /* PresentableCollectionViewDataManager+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D35D020DA80BE005C01D1 /* PresentableCollectionViewDataManager+Common.swift */; };
+		157D35D520DA83E9005C01D1 /* AppLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D35D420DA83E9005C01D1 /* AppLoadingCell.swift */; };
+		157D35E220DAB06C005C01D1 /* BuildLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D35E120DAB06C005C01D1 /* BuildLoadingCell.swift */; };
+		157D35F020DAB7B0005C01D1 /* GridCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D35EC20DAB7AF005C01D1 /* GridCollectionReusableView.swift */; };
+		157D35F120DAB7B0005C01D1 /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D35ED20DAB7B0005C01D1 /* GridCollectionViewCell.swift */; };
+		157D35F320DAB7B0005C01D1 /* GridScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D35EF20DAB7B0005C01D1 /* GridScrollView.swift */; };
+		157D35F620DABADB005C01D1 /* GridTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AD84120CECA4B002672A4 /* GridTableViewHeaderFooterView.swift */; };
 		15A1171920C6DBE200CE4263 /* enterprise.json in Resources */ = {isa = PBXBuildFile; fileRef = 15A1171820C6DBE200CE4263 /* enterprise.json */; };
 		15A1171D20C6DC4F00CE4263 /* EnterpriseSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A1171C20C6DC4F00CE4263 /* EnterpriseSettings.swift */; };
 		15A1172020C6DD8E00CE4263 /* Enterprise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A1171F20C6DD8E00CE4263 /* Enterprise.swift */; };
@@ -103,11 +110,18 @@
 		1563175A20D05F34007E740C /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		1563175F20D064BC007E740C /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		156AD83720CDCB78002672A4 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		156AD83A20CEC57A002672A4 /* GenerictTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerictTableHeaderView.swift; sourceTree = "<group>"; };
+		156AD83A20CEC57A002672A4 /* GenericTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableHeaderView.swift; sourceTree = "<group>"; };
 		156AD83D20CEC5FB002672A4 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		156AD84120CECA4B002672A4 /* GridTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		157D35C920D9AC17005C01D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		157D35CB20D9B0B3005C01D1 /* UIImage+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+UIButton.swift"; sourceTree = "<group>"; };
+		157D35CE20DA5D00005C01D1 /* AccountDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDataManager.swift; sourceTree = "<group>"; };
+		157D35D020DA80BE005C01D1 /* PresentableCollectionViewDataManager+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PresentableCollectionViewDataManager+Common.swift"; sourceTree = "<group>"; };
+		157D35D420DA83E9005C01D1 /* AppLoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLoadingCell.swift; sourceTree = "<group>"; };
+		157D35E120DAB06C005C01D1 /* BuildLoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildLoadingCell.swift; sourceTree = "<group>"; };
+		157D35EC20DAB7AF005C01D1 /* GridCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCollectionReusableView.swift; sourceTree = "<group>"; };
+		157D35ED20DAB7B0005C01D1 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
+		157D35EF20DAB7B0005C01D1 /* GridScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridScrollView.swift; sourceTree = "<group>"; };
 		15A1171820C6DBE200CE4263 /* enterprise.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = enterprise.json; sourceTree = SOURCE_ROOT; };
 		15A1171C20C6DC4F00CE4263 /* EnterpriseSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterpriseSettings.swift; sourceTree = "<group>"; };
 		15A1171F20C6DD8E00CE4263 /* Enterprise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enterprise.swift; sourceTree = "<group>"; };
@@ -248,12 +262,13 @@
 			path = "Login & registration";
 			sourceTree = "<group>";
 		};
-		1563175320D0164A007E740C /* Base */ = {
+		1563175320D0164A007E740C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				157D35ED20DAB7B0005C01D1 /* GridCollectionViewCell.swift */,
 				1563175420D0165C007E740C /* GridTableViewCell.swift */,
 			);
-			path = Base;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		1563175620D05F34007E740C /* Fonts */ = {
@@ -278,7 +293,7 @@
 		156AD83920CEC553002672A4 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				156AD83A20CEC57A002672A4 /* GenerictTableHeaderView.swift */,
+				156AD83A20CEC57A002672A4 /* GenericTableHeaderView.swift */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -286,10 +301,38 @@
 		156AD83C20CEC5ED002672A4 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				157D35F420DAB847005C01D1 /* Headers */,
+				1563175320D0164A007E740C /* Cells */,
+				157D35EF20DAB7B0005C01D1 /* GridScrollView.swift */,
 				156AD83D20CEC5FB002672A4 /* GridView.swift */,
-				156AD84120CECA4B002672A4 /* GridTableViewHeaderFooterView.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		157D35CD20DA5CD5005C01D1 /* Data managers */ = {
+			isa = PBXGroup;
+			children = (
+				157D35CE20DA5D00005C01D1 /* AccountDataManager.swift */,
+			);
+			path = "Data managers";
+			sourceTree = "<group>";
+		};
+		157D35D220DA83BA005C01D1 /* Preloading */ = {
+			isa = PBXGroup;
+			children = (
+				157D35D420DA83E9005C01D1 /* AppLoadingCell.swift */,
+				157D35E120DAB06C005C01D1 /* BuildLoadingCell.swift */,
+			);
+			path = Preloading;
+			sourceTree = "<group>";
+		};
+		157D35F420DAB847005C01D1 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				157D35EC20DAB7AF005C01D1 /* GridCollectionReusableView.swift */,
+				156AD84120CECA4B002672A4 /* GridTableViewHeaderFooterView.swift */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		15A1171A20C6DC0100CE4263 /* Model */ = {
@@ -311,6 +354,7 @@
 		15A1171E20C6DD7500CE4263 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				157D35CD20DA5CD5005C01D1 /* Data managers */,
 				15A1171F20C6DD8E00CE4263 /* Enterprise.swift */,
 			);
 			path = Libs;
@@ -379,6 +423,7 @@
 				15A88D6C20BC018F00BC6DFA /* AppDelegate */,
 				15A88D6B20BC017D00BC6DFA /* Colors & images */,
 				15A88D6A20BC017400BC6DFA /* CoreData */,
+				157D35D020DA80BE005C01D1 /* PresentableCollectionViewDataManager+Common.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -419,6 +464,7 @@
 			children = (
 				156AD83C20CEC5ED002672A4 /* Base */,
 				1561D7D420C58CF500BCA532 /* Login & registration */,
+				156AD83920CEC553002672A4 /* Headers */,
 				15A88D2920BB642B00BC6DFA /* Cells */,
 				15A88D2B20BB642B00BC6DFA /* Elements */,
 			);
@@ -428,7 +474,7 @@
 		15A88D2920BB642B00BC6DFA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				1563175320D0164A007E740C /* Base */,
+				157D35D220DA83BA005C01D1 /* Preloading */,
 				15A88D2A20BB642B00BC6DFA /* AccountTableViewCell.swift */,
 			);
 			path = Cells;
@@ -437,7 +483,6 @@
 		15A88D2B20BB642B00BC6DFA /* Elements */ = {
 			isa = PBXGroup;
 			children = (
-				156AD83920CEC553002672A4 /* Headers */,
 				1561D7BB20C4855200BCA532 /* NavBar */,
 				15A88D2C20BB642B00BC6DFA /* IconView.swift */,
 				15A88D2D20BB642B00BC6DFA /* Buttons */,
@@ -807,7 +852,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				156AD83B20CEC57A002672A4 /* GenerictTableHeaderView.swift in Sources */,
+				156AD83B20CEC57A002672A4 /* GenericTableHeaderView.swift in Sources */,
 				15A88D5420BB642B00BC6DFA /* IconView.swift in Sources */,
 				15A88D6720BBFE5100BC6DFA /* AppDelegate+Tools.swift in Sources */,
 				1563176020D064BC007E740C /* NavigationViewController.swift in Sources */,
@@ -815,20 +860,26 @@
 				15A88D4F20BB642B00BC6DFA /* AccountViewController.swift in Sources */,
 				15A1172020C6DD8E00CE4263 /* Enterprise.swift in Sources */,
 				15020BD620C1D71B00BBADBD /* LoginCoordinator+Registration.swift in Sources */,
+				157D35F120DAB7B0005C01D1 /* GridCollectionViewCell.swift in Sources */,
+				157D35F620DABADB005C01D1 /* GridTableViewHeaderFooterView.swift in Sources */,
 				15A88D6420BB648600BC6DFA /* Account+CoreData.swift in Sources */,
 				15A88D4720BB642B00BC6DFA /* NSObject+AppDelegateTools.swift in Sources */,
+				157D35D520DA83E9005C01D1 /* AppLoadingCell.swift in Sources */,
 				15A88D5820BB642B00BC6DFA /* CellTitleLabel.swift in Sources */,
+				157D35CF20DA5D00005C01D1 /* AccountDataManager.swift in Sources */,
 				156AD83E20CEC5FB002672A4 /* GridView.swift in Sources */,
 				1561D7BD20C4855200BCA532 /* NavBarTitle.swift in Sources */,
 				15A88D5620BB642B00BC6DFA /* BadgeView.swift in Sources */,
 				15A88D5720BB642B00BC6DFA /* MenuTitleLabel.swift in Sources */,
 				15A88D4E20BB642B00BC6DFA /* AccountsListViewController.swift in Sources */,
+				157D35D120DA80BE005C01D1 /* PresentableCollectionViewDataManager+Common.swift in Sources */,
 				15A88D4820BB642B00BC6DFA /* UIImage+Defaults.swift in Sources */,
 				15A88D6E20BC01BD00BC6DFA /* Account+LastUsed.swift in Sources */,
 				15A88D5B20BB642B00BC6DFA /* SmallTextLabel.swift in Sources */,
 				1561D7C320C4894B00BCA532 /* ConfigurableController.swift in Sources */,
 				15A88D5A20BB642B00BC6DFA /* MainContentLabel.swift in Sources */,
 				15A88D4B20BB642B00BC6DFA /* LoginCoordinator.swift in Sources */,
+				157D35F020DAB7B0005C01D1 /* GridCollectionReusableView.swift in Sources */,
 				15A88D5920BB642B00BC6DFA /* MenuSecondaryLabel.swift in Sources */,
 				157D35CC20D9B0B3005C01D1 /* UIImage+UIButton.swift in Sources */,
 				15A88D5520BB642B00BC6DFA /* PrimaryButton.swift in Sources */,
@@ -845,13 +896,14 @@
 				15A88D4D20BB642B00BC6DFA /* BaseCoordinator.swift in Sources */,
 				156AD83820CDCB78002672A4 /* Coordinator.swift in Sources */,
 				15A88D5D20BB642B00BC6DFA /* OnlineIcon.swift in Sources */,
-				156AD84220CECA4B002672A4 /* GridTableViewHeaderFooterView.swift in Sources */,
+				157D35E220DAB06C005C01D1 /* BuildLoadingCell.swift in Sources */,
 				15A1172220C6E31C00CE4263 /* Group+CoreData.swift in Sources */,
 				1545C38C20BC682C000449D3 /* LoginCoordinator+Onboarding.swift in Sources */,
 				1563175520D0165C007E740C /* GridTableViewCell.swift in Sources */,
 				15AD2A0820BC90D600E3A180 /* GradientView+Boost.swift in Sources */,
 				1561D7D620C58D2C00BCA532 /* PreloginView.swift in Sources */,
 				15A1172420C6E43800CE4263 /* Account+Enterprise.swift in Sources */,
+				157D35F320DAB7B0005C01D1 /* GridScrollView.swift in Sources */,
 				15A88D4320BB642B00BC6DFA /* Account+Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
