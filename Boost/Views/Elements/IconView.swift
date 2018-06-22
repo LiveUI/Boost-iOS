@@ -10,6 +10,7 @@ import Base
 import Modular
 
 
+// TODO: Comment / clean
 class IconView: UIView {
     
     

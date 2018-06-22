@@ -8,8 +8,10 @@
 
 import Foundation
 import AwesomeEnum
+import Base
 
 
+// TODO: Comment / clean
 class TextField: UITextField, UITextFieldDelegate, Validatable {
     
     var validator: Validator? {
@@ -61,6 +63,7 @@ class TextField: UITextField, UITextFieldDelegate, Validatable {
         setup()
     }
     
+    /// Not implemented
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

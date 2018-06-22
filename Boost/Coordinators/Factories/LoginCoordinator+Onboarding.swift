@@ -125,8 +125,10 @@ extension LoginCoordinator {
             switch settings.authorizationStatus {
             case .notDetermined:
                 configurations.append(self.noPushScreen(onboarding, skip))
-            case .authorized, .provisional:
+            case .authorized:
                 configurations.append(self.existingPushScreen(onboarding, skip))
+//            case .provisional:
+//                configurations.append(self.existingPushScreen(onboarding, skip))
             case .denied:
                 configurations.append(self.deniedPushScreen(onboarding, skip))
             }

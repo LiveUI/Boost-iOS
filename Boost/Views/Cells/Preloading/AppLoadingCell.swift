@@ -10,6 +10,14 @@ import Foundation
 import UIKit
     
     
-class AppLoadingCell: UICollectionViewCell {
+class AppLoadingCell: GridCollectionViewCell {
+    
+    override func setupElements() {
+        super.setupElements()
+        
+        gridView.backgroundColor = .purple
+        
+        gridView.config.displayGrid = true
+    }
     
 }

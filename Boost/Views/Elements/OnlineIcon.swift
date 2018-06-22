@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 
+// TODO: Comment / clean
 class OnlineIcon: UIView {
     
     enum State {

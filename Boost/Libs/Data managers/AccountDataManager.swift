@@ -35,7 +35,9 @@ class AccountDataManager: PresentableCollectionViewDataManager {
             try api.apps().then({ apps in
                 self.makePresentables(apps)
             }).error({ error in
-                self.baseCoordinator.requestAccountsList()
+                DispatchQueue.main.async {
+                    self.baseCoordinator.requestAccountsList()
+                }
             })
         } catch {
             
@@ -43,10 +45,21 @@ class AccountDataManager: PresentableCollectionViewDataManager {
     }
     
     // MARK: Private interface
+    
+    /// Load preload data
+    private func loadPreloadData() {
+        let section = PresentableSection()
+        section.append(Presentable<AppLoadingCell>.create())
+        data.append(section)
+    }
         
     /// MAke presentables from apps
     private func makePresentables(_ apps: [App]) {
         print(apps)
+        
+        DispatchQueue.main.async {
+            // TODO: Update data on main thread
+        }
     }
     
 }

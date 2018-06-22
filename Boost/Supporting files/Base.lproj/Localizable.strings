@@ -9,11 +9,17 @@
 // General
 "general.ok" = "Ok";
 "general.cancel" = "Cancel";
+"general.pull-to-refresh" = "Pull to refresh";
 
 // Accounts
 "accounts.navigation.title" = "Boost";
 "accounts.navigation.subtitle" = "server management";
 "accounts.group.other" = "Other";
+
+// Login
+"login.field.email.placeholder" = "Account email";
+"login.field.password.placeholder" = "Password";
+"login.button.login" = "Login";
 
 // Onboarding
 "onboarding.skip_all" = "Skip";

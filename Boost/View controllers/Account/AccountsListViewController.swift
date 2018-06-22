@@ -13,6 +13,8 @@ import MarcoPolo
 
 final class AccountsListViewController: TableViewController {
     
+    var refreshControl = UIRefreshControl()
+    
     /// Setup data
     override func setupData() {
         super.setupData()
@@ -63,20 +65,32 @@ final class AccountsListViewController: TableViewController {
     
     // MARK: Elements
     
+    private func setupPullToRefresh() {
+        refreshControl.attributedTitle = NSAttributedString(string: Lang.get("general.pull-to-refresh"))
+        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: UIControlEvents.valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
     override func setupElements() {
         super.setupElements()
         
         tableView.separatorStyle = .none
         
-        navigationViewController?.navigationBar.minHeight = 60
+        navigation.navigationController?.navigationBar.minHeight = 60
         navigation.content.title = Lang.get("accounts.navigation.title")
         navigation.content.subtitle = Lang.get("accounts.navigation.subtitle")
         
         navigation.set(leftItem: UIImage(named: "navbar/menu-settings")?.asButton(self, action: #selector(settingsTapped(_:))))
         navigation.set(rightItem: UIImage(named: "navbar/menu-add")?.asButton(self, action: #selector(addTapped(_:))))
+        
+        setupPullToRefresh()
     }
     
     // MARK: Actions
+    
+    @objc func refresh(_ sender: AnyObject) {
+        // Code to refresh table view
+    }
     
     @objc func settingsTapped(_ sender: UIButton) {
         
@@ -102,6 +116,11 @@ final class AccountsListViewController: TableViewController {
                 // TODO: Handle error?!
             }
             firstStart = false
+        }
+        
+        // Refresh online status of all accounts
+        try? Account.refreshOnlineStatus { account in
+            self.tableView.reloadData()
         }
     }
     

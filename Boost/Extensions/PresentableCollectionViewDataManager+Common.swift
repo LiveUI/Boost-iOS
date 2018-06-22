@@ -12,9 +12,5 @@ import Presentables
 
 extension PresentableCollectionViewDataManager {
     
-    /// Load preload data
-    func loadPreloadData() {
-        
-    }
 
 }
