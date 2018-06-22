@@ -127,8 +127,8 @@ extension LoginCoordinator {
                 configurations.append(self.noPushScreen(onboarding, skip))
             case .authorized:
                 configurations.append(self.existingPushScreen(onboarding, skip))
-//            case .provisional:
-//                configurations.append(self.existingPushScreen(onboarding, skip))
+            case .provisional:
+                configurations.append(self.existingPushScreen(onboarding, skip))
             case .denied:
                 configurations.append(self.deniedPushScreen(onboarding, skip))
             }

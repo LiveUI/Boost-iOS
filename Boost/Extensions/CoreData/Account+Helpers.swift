@@ -40,21 +40,23 @@ extension Account {
         return false
     }
     
-    static func refreshOnlineStatus(_ finished: @escaping ((Account) -> Void)) throws {
+    static func refreshOnlineStatus(force: Bool = false, _ finished: @escaping ((Account) -> Void)) throws {
         let accounts = try Account.all()
         for account in accounts {
-            try account.api().ping().then { pong in
-                DispatchQueue.main.async {
-                    account.online = true
-                    account.lastSeen = Date()
-                    try? account.save()
-                    finished(account)
-                }}.error { error in
+            if !account.onlineIsValid || force {
+                try account.api().ping().then { pong in
                     DispatchQueue.main.async {
-                        account.online = false
+                        account.online = true
+                        account.lastSeen = Date()
                         try? account.save()
                         finished(account)
-                    }
+                    }}.error { error in
+                        DispatchQueue.main.async {
+                            account.online = false
+                            try? account.save()
+                            finished(account)
+                        }
+                }
             }
         }
     }

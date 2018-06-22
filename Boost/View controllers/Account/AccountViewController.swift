@@ -27,8 +27,26 @@ final class AccountViewController: ViewController {
     
     /// Account data manager
     lazy var manager: AccountDataManager = {
-        return AccountDataManager(account)
+        return AccountDataManager(account) { feedback in
+            switch feedback {
+            case .apiError(let problem):
+                switch problem {
+                case .notAuthorized, .missingAuthToken:
+                    // TODO: Display error message!!!
+                    self.baseCoordinator.authFailed(forAccount: self.account, in: self)
+                default:
+                    self.baseCoordinator.somethingFailed(forAccount: self.account, in: self)
+                }
+            case .error(let error):
+                self.baseCoordinator.somethingFailed(forAccount: self.account, in: self)
+            }
+        }
     }()
+    
+    /// Reload data
+    func reloadData() {
+        manager.getApps()
+    }
     
     // MARK: Initialization
     

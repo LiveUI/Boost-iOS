@@ -88,8 +88,13 @@ final class AccountsListViewController: TableViewController {
     
     // MARK: Actions
     
-    @objc func refresh(_ sender: AnyObject) {
-        // Code to refresh table view
+    @objc func refresh(_ sender: UIRefreshControl) {
+        try? Account.refreshOnlineStatus(force: true) { account in
+            sender.endRefreshing()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     @objc func settingsTapped(_ sender: UIButton) {

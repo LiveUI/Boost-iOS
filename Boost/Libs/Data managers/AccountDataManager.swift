@@ -13,16 +13,35 @@ import BoostSDK
 
 class AccountDataManager: PresentableCollectionViewDataManager {
     
+    /// Feedback
+    enum Feedback {
+        
+        /// API error
+        case apiError(Api.Problem)
+        
+        /// Generic error
+        case error(Error)
+        
+    }
+    
+    /// Feedback closure
+    typealias FeedbackClosure = ((Feedback) -> Void)
+    
     /// Account
     let account: Account
     
     /// Api
     let api: Api
     
+    /// Feedback closure
+    let feedback: FeedbackClosure
+    
     /// Initializer
-    init(_ account: Account) {
+    init(_ account: Account, _ feedback: @escaping FeedbackClosure) {
         self.account = account
         api = account.api()
+        
+        self.feedback = feedback
         
         super.init()
         
@@ -36,7 +55,11 @@ class AccountDataManager: PresentableCollectionViewDataManager {
                 self.makePresentables(apps)
             }).error({ error in
                 DispatchQueue.main.async {
-                    self.baseCoordinator.requestAccountsList()
+                    guard let problem = error as? Api.Problem else {
+                        self.feedback(.error(error))
+                        return
+                    }
+                    self.feedback(.apiError(problem))
                 }
             })
         } catch {

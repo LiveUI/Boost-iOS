@@ -82,6 +82,38 @@ final class BaseCoordinator: NSObject {
         flip(to: coordinator)
     }
     
+    /// Authentication to account failed first time
+    func authFailed(forAccount account: Account, in viewController: AccountViewController) {
+        let login = LoginViewController({ (email, password) in
+            do {
+                try viewController.manager.api.auth(email: email, password: password).then({ login in
+                    account.token = login.token
+                    account.lastSeen = Date()
+                    account.lastUsed = Date()
+                    DispatchQueue.main.async {
+                        try? account.save()
+                        viewController.dismiss(animated: true, completion: {
+                            viewController.reloadData()
+                        })
+                    }
+                }).error({ error in
+                    // TODO: Display error in login!!!!
+                })
+            } catch {
+                self.somethingFailed(forAccount: account, in: viewController)
+            }
+        }, close: {
+            self.somethingFailed(forAccount: account, in: viewController)
+        })
+        viewController.present(login.asNavigationViewController(), presentation: Presentation.presentForm)
+    }
+    
+    /// Authentication to account failed first time
+    func somethingFailed(forAccount account: Account, in viewController: AccountViewController) {
+        // TODO: Display error message!!!
+        requestAccountsList()
+    }
+    
     // MARK: Private interface
     
     func flip(to coordinator: Coordinator) {
