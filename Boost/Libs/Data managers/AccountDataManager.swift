@@ -13,19 +13,8 @@ import BoostSDK
 
 class AccountDataManager: PresentableCollectionViewDataManager {
     
-    /// Feedback
-    enum Feedback {
-        
-        /// API error
-        case apiError(Api.Problem)
-        
-        /// Generic error
-        case error(Error)
-        
-    }
-    
     /// Feedback closure
-    typealias FeedbackClosure = ((Feedback) -> Void)
+    typealias FeedbackClosure = ((Api.Error) -> Void)
     
     /// Account
     let account: Account
@@ -48,22 +37,38 @@ class AccountDataManager: PresentableCollectionViewDataManager {
         loadPreloadData()
     }
     
+    /// Start loading data
+    func startLoadingData() {
+        getOverview()
+    }
+    
     /// Load apps
-    func getApps() {
+    private func getApps() {
         do {
-            try api.apps().then({ apps in
-                self.makePresentables(apps)
+            try api.apps(platform: .ios, identifier: "").then({ apps in
+//                self.makePresentables(apps)
             }).error({ error in
                 DispatchQueue.main.async {
-                    guard let problem = error as? Api.Problem else {
-                        self.feedback(.error(error))
-                        return
-                    }
-                    self.feedback(.apiError(problem))
+                    self.feedback(error)
                 }
             })
         } catch {
             
+        }
+    }
+    
+    /// Load apps
+    private func getOverview() {
+        do {
+            try api.overview(platform: .ios, from: 0, limit: 200).then({ overview in
+                self.makePresentables(overview)
+            }).error({ error in
+                DispatchQueue.main.async {
+                    self.feedback(error)
+                }
+            })
+        } catch {
+
         }
     }
     
@@ -77,11 +82,17 @@ class AccountDataManager: PresentableCollectionViewDataManager {
     }
         
     /// MAke presentables from apps
-    private func makePresentables(_ apps: [App]) {
-        print(apps)
-        
-        DispatchQueue.main.async {
-            // TODO: Update data on main thread
+    private func makePresentables(_ apps: [Overview]) {
+        DispatchQueue.global().async {
+            let section = PresentableSection()
+            section.set(apps.map({ overview -> AnyPresentable in
+                return Presentable<AppCell>.create({ cell in
+                    cell.label.text = overview.latestName
+                })
+            }))
+            DispatchQueue.main.async {
+                self.data = [section]
+            }
         }
     }
     

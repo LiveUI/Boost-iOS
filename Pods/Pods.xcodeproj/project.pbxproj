@@ -217,7 +217,6 @@
 		CE1388994148D8820F997070748E92C0 /* PresentableCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3A6FA85B01C937A1875D5A33560BF0 /* PresentableCollectionElement.swift */; };
 		CFBB3007CC155DA55979567F14AD1169 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54B5930A0028F64916D855E88F99DB7 /* Label.swift */; };
 		D13548D3940C7CAA1D3ABE399C9A9CCA /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9D59508518FC6269FC63742FCAC396 /* Animation.swift */; };
-		D19F43AE3BB13574B917CBB991E88753 /* Boost.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88276274A203D464FAEA1683D146255 /* Boost.swift */; };
 		D2FDD53953866FE3266F0177ACAECAAC /* GridTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAB047EBC35CDB98E3E7DF429378FAB /* GridTableViewCell.swift */; };
 		D44F0B1F37837EB73D60E1C75DF1B137 /* Pods-BoostTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 56EBA431A7D502F9E1F2808A583B8D57 /* Pods-BoostTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D47F855701A1B97E3B4A29CE587B9C39 /* Action+ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E463A6163249811588839D39520C3E98 /* Action+ScrollView.swift */; };
@@ -727,7 +726,6 @@
 		F68CA335A1E798A68322E62CB7EBB0B4 /* ScrollViewForwarder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScrollViewForwarder.swift; sourceTree = "<group>"; };
 		F6A25A8FE736FA4917A1B8D4D8BE8212 /* Api+Boost.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Api+Boost.swift"; sourceTree = "<group>"; };
 		F6BEBD76BDD7B1C43ABC633D1C041BA8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		F88276274A203D464FAEA1683D146255 /* Boost.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Boost.swift; path = Classes/Boost.swift; sourceTree = "<group>"; };
 		F91E7EB1BD2C843945D07AC62DA27DDD /* PrimaryButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		F92F1E24C2869BBA856AEC54FB1FE850 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		FB1D4739DCEE712190A58A05EA1779BE /* GridViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
@@ -1444,7 +1442,6 @@
 		8F4A01698D3962C65B6F150B56297B80 /* BoostSDK */ = {
 			isa = PBXGroup;
 			children = (
-				F88276274A203D464FAEA1683D146255 /* Boost.swift */,
 				344F227C0064DE5D5743991AD35AABF9 /* Extensions */,
 				D3C1B4B59640E77451FE74F6D395B1C0 /* Libs */,
 				851ED51A7FA209C97DF8A4E20134B5AE /* Models */,
@@ -2594,7 +2591,6 @@
 				86B4E999F9024B8BB554D5098CF3E56B /* Api+Users.swift in Sources */,
 				7C5B65470FA7EAFFEB9D5A30842D3B53 /* Api.swift in Sources */,
 				7C161B9B61A4A4AD8B44BB3D7F969977 /* App.swift in Sources */,
-				D19F43AE3BB13574B917CBB991E88753 /* Boost.swift in Sources */,
 				B0112AC905292AAA8E9BF86D09BF9BCF /* BoostSDK-dummy.m in Sources */,
 				31BC5190DD7C4DB9C99BC8A531401236 /* Codable+Tools.swift in Sources */,
 				BA5CD89911469EB7CCA276755319CD47 /* Debug.swift in Sources */,

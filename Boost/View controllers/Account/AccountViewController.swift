@@ -8,6 +8,7 @@
 
 import Base
 import Presentables
+import BoostSDK
 
 
 final class AccountViewController: ViewController {
@@ -17,27 +18,30 @@ final class AccountViewController: ViewController {
     
     /// Collection view layout
     var layout: UICollectionViewLayout = {
-        return UICollectionViewLayout()
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 200, height: 100)
+        return layout
     }()
     
     /// Collection view controller
     lazy var collectionView: UICollectionView = {
-        return UICollectionView.init(frame: .zero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.register(AppLoadingCell.self)
+        collectionView.register(AppCell.self)
+        return collectionView
     }()
     
     /// Account data manager
     lazy var manager: AccountDataManager = {
         return AccountDataManager(account) { feedback in
             switch feedback {
-            case .apiError(let problem):
-                switch problem {
-                case .notAuthorized, .missingAuthToken:
-                    // TODO: Display error message!!!
-                    self.baseCoordinator.authFailed(forAccount: self.account, in: self)
-                default:
-                    self.baseCoordinator.somethingFailed(forAccount: self.account, in: self)
-                }
-            case .error(let error):
+            case .notAuthorized, .missingAuthToken:
+                // Remove an invalid token from the account
+                self.account.token = nil
+                try? self.account.save()
+                // TODO: Display error message!!!
+                self.baseCoordinator.authFailed(forAccount: self.account, in: self)
+            default:
                 self.baseCoordinator.somethingFailed(forAccount: self.account, in: self)
             }
         }
@@ -45,7 +49,7 @@ final class AccountViewController: ViewController {
     
     /// Reload data
     func reloadData() {
-        manager.getApps()
+        manager.startLoadingData()
     }
     
     // MARK: Initialization
@@ -91,7 +95,7 @@ final class AccountViewController: ViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        manager.getApps()
+        manager.startLoadingData()
     }
     
     // MARK: Actions
