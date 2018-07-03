@@ -23,7 +23,10 @@ class AccountTableViewCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         
-        icon.image = UIImage.defaultIcon
+        backgroundColor = .white
+        backgroundView?.backgroundColor = .white
+        contentView.backgroundColor = .white
+        
         icon.layer.cornerRadius = 4
         icon.clipsToBounds = true
         icon.place.on(contentView, top: 16).square(side: 42).left(12).min(bottom: -16)
@@ -33,15 +36,15 @@ class AccountTableViewCell: UITableViewCell {
             make.left.equalTo(nameLabel).priority(.high)
         }
         
-        let iconOffset: CGFloat = 4
-        
-        // Lock icon
-        let size: CGFloat = 12
-        lockIcon.image = Awesome.solid.lock.asImage(size: size, color: .white)
-        lockIcon.place.on(contentView).with.match(top: icon, offset: -iconOffset).match(right: icon, offset: iconOffset).make.square(side: size)
+//        let iconOffset: CGFloat = 4
+//
+//        // Lock icon
+//        let size: CGFloat = 12
+//        lockIcon.image = Awesome.solid.lock.asImage(size: size, color: .white)
+//        lockIcon.place.on(contentView).with.match(top: icon, offset: -iconOffset).match(right: icon, offset: iconOffset).make.square(side: size)
         
         // Online icon
-        onlineIcon.place.on(contentView).right(-12).centerY().make.square(side: 10)
+        onlineIcon.place.on(contentView).right(-12).centerY().make.square(side: 12)
     }
     
     required init?(coder aDecoder: NSCoder) {

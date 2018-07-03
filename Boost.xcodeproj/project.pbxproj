@@ -10,6 +10,7 @@
 		15020B1E20C15ABA00BBADBD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 15020B2020C15ABA00BBADBD /* Localizable.strings */; };
 		15020BD620C1D71B00BBADBD /* LoginCoordinator+Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15020BD520C1D71B00BBADBD /* LoginCoordinator+Registration.swift */; };
 		150E398B20E5295500169638 /* AppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150E398A20E5295500169638 /* AppCell.swift */; };
+		150E398E20E5380D00169638 /* AppLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150E398D20E5380D00169638 /* AppLayout.swift */; };
 		1525681D20DD40B5006EBD12 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A88D3920BB642B00BC6DFA /* TextField.swift */; };
 		1525682520DD4147006EBD12 /* NotEmptyValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1525681F20DD4146006EBD12 /* NotEmptyValidator.swift */; };
 		1525682620DD4147006EBD12 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1525682020DD4146006EBD12 /* EmailValidator.swift */; };
@@ -19,6 +20,9 @@
 		1525682A20DD4147006EBD12 /* UrlValudator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1525682420DD4146006EBD12 /* UrlValudator.swift */; };
 		1545C38C20BC682C000449D3 /* LoginCoordinator+Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1545C38B20BC682C000449D3 /* LoginCoordinator+Onboarding.swift */; };
 		1546772620CDC5BE00E593B8 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546772520CDC5BE00E593B8 /* UIViewController+Navigation.swift */; };
+		155E269220EB8CEA00E65C49 /* HighlightedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155E269120EB8CEA00E65C49 /* HighlightedButton.swift */; };
+		155E269520EBA21700E65C49 /* BuildsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155E269420EBA21700E65C49 /* BuildsViewController.swift */; };
+		155E269720EBA2F800E65C49 /* BuildCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155E269620EBA2F800E65C49 /* BuildCell.swift */; };
 		1561D7B220C4393700BCA532 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1561D7B120C4393700BCA532 /* RegisterViewController.swift */; };
 		1561D7B520C43A3900BCA532 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1561D7B420C43A3900BCA532 /* GridViewController.swift */; };
 		1561D7BD20C4855200BCA532 /* NavBarTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1561D7BC20C4855200BCA532 /* NavBarTitle.swift */; };
@@ -105,6 +109,7 @@
 		15020BD220C17A4500BBADBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		15020BD520C1D71B00BBADBD /* LoginCoordinator+Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginCoordinator+Registration.swift"; sourceTree = "<group>"; };
 		150E398A20E5295500169638 /* AppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCell.swift; sourceTree = "<group>"; };
+		150E398D20E5380D00169638 /* AppLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLayout.swift; sourceTree = "<group>"; };
 		1525681F20DD4146006EBD12 /* NotEmptyValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotEmptyValidator.swift; sourceTree = "<group>"; };
 		1525682020DD4146006EBD12 /* EmailValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		1525682120DD4146006EBD12 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
@@ -113,6 +118,9 @@
 		1525682420DD4146006EBD12 /* UrlValudator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlValudator.swift; sourceTree = "<group>"; };
 		1545C38B20BC682C000449D3 /* LoginCoordinator+Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginCoordinator+Onboarding.swift"; sourceTree = "<group>"; };
 		1546772520CDC5BE00E593B8 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
+		155E269120EB8CEA00E65C49 /* HighlightedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedButton.swift; sourceTree = "<group>"; };
+		155E269420EBA21700E65C49 /* BuildsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildsViewController.swift; sourceTree = "<group>"; };
+		155E269620EBA2F800E65C49 /* BuildCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildCell.swift; sourceTree = "<group>"; };
 		1561D7B120C4393700BCA532 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		1561D7B420C43A3900BCA532 /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
 		1561D7BC20C4855200BCA532 /* NavBarTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarTitle.swift; sourceTree = "<group>"; };
@@ -223,8 +231,17 @@
 			isa = PBXGroup;
 			children = (
 				150E398A20E5295500169638 /* AppCell.swift */,
+				155E269620EBA2F800E65C49 /* BuildCell.swift */,
 			);
 			path = Apps;
+			sourceTree = "<group>";
+		};
+		150E398C20E537EE00169638 /* CollectionView layouts */ = {
+			isa = PBXGroup;
+			children = (
+				150E398D20E5380D00169638 /* AppLayout.swift */,
+			);
+			path = "CollectionView layouts";
 			sourceTree = "<group>";
 		};
 		1525681E20DD4146006EBD12 /* Validators */ = {
@@ -264,6 +281,15 @@
 				1546772520CDC5BE00E593B8 /* UIViewController+Navigation.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		155E269320EBA20200E65C49 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				15A88D2220BB642B00BC6DFA /* AccountViewController.swift */,
+				155E269420EBA21700E65C49 /* BuildsViewController.swift */,
+			);
+			path = Apps;
 			sourceTree = "<group>";
 		};
 		1561D7B020C4391D00BCA532 /* Register */ = {
@@ -343,6 +369,7 @@
 				1563175320D0164A007E740C /* Cells */,
 				157D35EF20DAB7B0005C01D1 /* GridScrollView.swift */,
 				156AD83D20CEC5FB002672A4 /* GridView.swift */,
+				155E269120EB8CEA00E65C49 /* HighlightedButton.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -392,6 +419,7 @@
 		15A1171E20C6DD7500CE4263 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				150E398C20E537EE00169638 /* CollectionView layouts */,
 				1525681E20DD4146006EBD12 /* Validators */,
 				157D35CD20DA5CD5005C01D1 /* Data managers */,
 				15A1171F20C6DD8E00CE4263 /* Enterprise.swift */,
@@ -482,6 +510,7 @@
 		15A88D1F20BB642B00BC6DFA /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
+				155E269320EBA20200E65C49 /* Apps */,
 				15A88D2020BB642B00BC6DFA /* Account */,
 				1561D7B020C4391D00BCA532 /* Register */,
 				1561D7B320C43A2000BCA532 /* Base */,
@@ -493,7 +522,6 @@
 			isa = PBXGroup;
 			children = (
 				15A88D2120BB642B00BC6DFA /* AccountsListViewController.swift */,
-				15A88D2220BB642B00BC6DFA /* AccountViewController.swift */,
 				157D35F720DC3244005C01D1 /* LoginViewController.swift */,
 			);
 			path = Account;
@@ -514,8 +542,8 @@
 		15A88D2920BB642B00BC6DFA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				150E398920E5294300169638 /* Apps */,
 				157D35D220DA83BA005C01D1 /* Preloading */,
+				150E398920E5294300169638 /* Apps */,
 				15A88D2A20BB642B00BC6DFA /* AccountTableViewCell.swift */,
 			);
 			path = Cells;
@@ -841,6 +869,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Boost/Pods-Boost-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AwesomeEnum/AwesomeEnum.framework",
 				"${BUILT_PRODUCTS_DIR}/Base/Base.framework",
 				"${BUILT_PRODUCTS_DIR}/BoostSDK/BoostSDK.framework",
@@ -853,6 +883,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AwesomeEnum.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Base.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BoostSDK.framework",
@@ -908,7 +940,9 @@
 				157D35F620DABADB005C01D1 /* GridTableViewHeaderFooterView.swift in Sources */,
 				15A88D6420BB648600BC6DFA /* Account+CoreData.swift in Sources */,
 				1525682920DD4147006EBD12 /* ServerNameValidator.swift in Sources */,
+				155E269220EB8CEA00E65C49 /* HighlightedButton.swift in Sources */,
 				15A88D4720BB642B00BC6DFA /* NSObject+AppDelegateTools.swift in Sources */,
+				150E398E20E5380D00169638 /* AppLayout.swift in Sources */,
 				157D35D520DA83E9005C01D1 /* AppLoadingCell.swift in Sources */,
 				1525682A20DD4147006EBD12 /* UrlValudator.swift in Sources */,
 				15A88D5820BB642B00BC6DFA /* CellTitleLabel.swift in Sources */,
@@ -921,6 +955,7 @@
 				157D35D120DA80BE005C01D1 /* PresentableCollectionViewDataManager+Common.swift in Sources */,
 				15A88D4820BB642B00BC6DFA /* UIImage+Defaults.swift in Sources */,
 				1525681D20DD40B5006EBD12 /* TextField.swift in Sources */,
+				155E269720EBA2F800E65C49 /* BuildCell.swift in Sources */,
 				15A88D6E20BC01BD00BC6DFA /* Account+LastUsed.swift in Sources */,
 				150E398B20E5295500169638 /* AppCell.swift in Sources */,
 				15A88D5B20BB642B00BC6DFA /* SmallTextLabel.swift in Sources */,
@@ -949,6 +984,7 @@
 				15A1172220C6E31C00CE4263 /* Group+CoreData.swift in Sources */,
 				1545C38C20BC682C000449D3 /* LoginCoordinator+Onboarding.swift in Sources */,
 				1563175520D0165C007E740C /* GridTableViewCell.swift in Sources */,
+				155E269520EBA21700E65C49 /* BuildsViewController.swift in Sources */,
 				15AD2A0820BC90D600E3A180 /* GradientView+Boost.swift in Sources */,
 				1561D7D620C58D2C00BCA532 /* PreloginView.swift in Sources */,
 				1525682620DD4147006EBD12 /* EmailValidator.swift in Sources */,

@@ -143,6 +143,8 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AwesomeEnum/AwesomeEnum.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Base/Base.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BoostSDK/BoostSDK.framework"
@@ -154,6 +156,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AwesomeEnum/AwesomeEnum.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Base/Base.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BoostSDK/BoostSDK.framework"

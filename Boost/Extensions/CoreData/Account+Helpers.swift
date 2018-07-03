@@ -40,6 +40,14 @@ extension Account {
         return false
     }
     
+    /// Is info cache valid
+    var infoCacheIsValid: Bool {
+        if lastUpdated?.timeIntervalSince1970 ?? 0 > Date().addingTimeInterval(-(60 * 60 * 24)).timeIntervalSince1970 {
+            return true
+        }
+        return false
+    }
+    
     static func refreshOnlineStatus(force: Bool = false, _ finished: @escaping ((Account) -> Void)) throws {
         let accounts = try Account.all()
         for account in accounts {

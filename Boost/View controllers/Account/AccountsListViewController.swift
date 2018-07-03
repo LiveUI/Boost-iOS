@@ -9,6 +9,7 @@
 import Base
 import Reloaded
 import MarcoPolo
+import AlamofireImage
 
 
 final class AccountsListViewController: TableViewController {
@@ -51,11 +52,40 @@ final class AccountsListViewController: TableViewController {
                             cell.hostLabel.text = account.server
                             cell.lockIcon.isHidden = !(account.token?.isEmpty ?? true)
                             cell.onlineIcon.state = account.onlineIsValid ? .online : .offline
+                            
+                            if let iconData = account.icon, let icon = UIImage(data: iconData) {
+                                cell.icon.image = icon
+                            } else {
+                                cell.icon.image = UIImage.defaultIcon
+                            }
+                            
+                            if !account.infoCacheIsValid || account.icon == nil {
+                                let api = account.api()
+                                _ = try? api.info().then({ info in
+                                    account.name = info.name
+                                    account.lastUpdated = Date()
+                                    DispatchQueue.main.async {
+                                        try? account.save()
+                                        cell.nameLabel.text = info.name
+                                    }
+                                    
+                                    if let iconUrl = info.icons.url(size: .size256), let url = URL(string: iconUrl) {
+                                        DispatchQueue.main.async {
+                                            cell.icon.af_setImage(withURL: url, placeholderImage: cell.icon.image) { icon in
+                                                guard let iconData = icon.data else { return }
+                                                account.icon = iconData
+                                                try? account.save()
+                                            }
+                                        }
+                                    }
+                                })
+                            }
                         }).cellSelected {
                             try? self.baseCoordinator.request(detailFor: account)
                         }
                     }))
                     data.append(section)
+                    
                 }
             }
         } catch {
@@ -89,6 +119,11 @@ final class AccountsListViewController: TableViewController {
     // MARK: Actions
     
     @objc func refresh(_ sender: UIRefreshControl) {
+        try? Account.all().forEach({ acc in
+            acc.lastUpdated = nil
+        })
+        try? CoreData.saveContext()
+        
         try? Account.refreshOnlineStatus(force: true) { account in
             sender.endRefreshing()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
@@ -108,6 +143,10 @@ final class AccountsListViewController: TableViewController {
     // MARK: View lifecycle
     
     var firstStart: Bool = true
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

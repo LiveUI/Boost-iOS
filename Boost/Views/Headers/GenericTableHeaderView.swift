@@ -21,17 +21,17 @@ class GenericTableHeaderView: GridTableViewHeaderFooterView {
         super.setupElements()
         
         gridView.config.automaticVerticalSizing = true
+        gridView.config.padding = .horizontal(left: 12, right: 12)
         
         title.numberOfLines = 0
         title.font = Font.basic(size: 12)
         title.textColor = .darkText
-        gridView.add(subview: title, .toTop)
+        gridView.add(subview: title, .toTop, from: 0, space: 12)
         
         gridView.snp.remakeConstraints { make in
             make.top.equalTo(6)
-            make.left.equalTo(12)
-            make.right.equalToSuperview()
-            make.bottom.equalTo(-6)
+            make.left.right.equalToSuperview()
+            make.bottom.greaterThanOrEqualTo(-6)
         }
     }
     

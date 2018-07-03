@@ -13,6 +13,12 @@ import BoostSDK
 
 class AccountDataManager: PresentableCollectionViewDataManager {
     
+    /// Collection view layout
+    lazy var layout: AppLayout = {
+        let layout = AppLayout()
+        return layout
+    }()
+    
     /// Feedback closure
     typealias FeedbackClosure = ((Api.Error) -> Void)
     
@@ -60,7 +66,7 @@ class AccountDataManager: PresentableCollectionViewDataManager {
     /// Load apps
     private func getOverview() {
         do {
-            try api.overview(platform: .ios, from: 0, limit: 200).then({ overview in
+            try api.overview(platform: .ios, from: 0, limit: 2000).then({ overview in
                 self.makePresentables(overview)
             }).error({ error in
                 DispatchQueue.main.async {
@@ -87,11 +93,29 @@ class AccountDataManager: PresentableCollectionViewDataManager {
             let section = PresentableSection()
             section.set(apps.map({ overview -> AnyPresentable in
                 return Presentable<AppCell>.create({ cell in
-                    cell.label.text = overview.latestName
+                    cell.titleLabel.text = overview.latestName
+                    cell.versionLabel.text = "\(overview.latestVersion) (\(overview.latestBuild))"
+                    cell.iconImage.image = UIImage.defaultIcon
+                    cell.actionButton.action = { sender in
+                        sender.isEnabled = false
+                        do {
+                            try self.api.auth(app: overview.latestAppId).then({ appAuth in
+                                print(appAuth)
+                                DispatchQueue.main.async {
+                                    sender.isEnabled = true
+                                    guard let url = URL(string: appAuth.plist) else { return }
+                                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                                }
+                            })
+                        } catch {
+                            sender.isEnabled = true
+                        }
+                    }
                 })
             }))
             DispatchQueue.main.async {
                 self.data = [section]
+                self.layout.display = .apps
             }
         }
     }

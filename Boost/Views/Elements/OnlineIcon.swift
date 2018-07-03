@@ -24,9 +24,9 @@ class OnlineIcon: UIView {
         didSet {
             switch state {
             case .online:
-                backgroundColor = .green
+                backgroundColor = UIColor(hex: "479F61")
             case .offline:
-                backgroundColor = .red
+                backgroundColor = UIColor(hex: "BE3636")
             default:
                 backgroundColor = .gray
             }

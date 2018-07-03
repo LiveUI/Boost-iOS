@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ACF62819387CBF55B7A4F2DC09E6181D"
+               BlueprintIdentifier = "62FE631ACBE88F8B0E80D4C77B9DD321"
                BlueprintName = "MarcoPolo"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "MarcoPolo.framework">

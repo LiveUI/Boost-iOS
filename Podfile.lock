@@ -1,4 +1,7 @@
 PODS:
+  - Alamofire (4.7.2)
+  - AlamofireImage (3.3.1):
+    - Alamofire (~> 4.5)
   - AwesomeEnum (1.2.0)
   - Base (0.0.1):
     - AwesomeEnum (~> 1.2.0)
@@ -17,6 +20,7 @@ PODS:
   - SpecTools (1.0.2)
 
 DEPENDENCIES:
+  - AlamofireImage
   - AwesomeEnum (~> 1.2.0)
   - Base (from `../Base`)
   - BoostSDK (from `../BoostSDK`)
@@ -30,6 +34,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
     - AwesomeEnum
     - Modular
     - Presentables
@@ -49,6 +55,8 @@ EXTERNAL SOURCES:
     :path: "../Reloaded"
 
 SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
   AwesomeEnum: fe633a08020f92ab57277956c1df4d52fbfa27e0
   Base: ef173ccca5ccd4f03611bed8ec7eb690ff7ce42a
   BoostSDK: 72f3c200cbf9c74a5a76191db964123547d2f18b
@@ -60,6 +68,6 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SpecTools: 77474921254b23ea50bb80f8763214f41d9d63c5
 
-PODFILE CHECKSUM: b51c9f69fb5217bec1850afa58b42bfa14942426
+PODFILE CHECKSUM: a7f78da94587e339320e9fb05f7838eba1fc307e
 
 COCOAPODS: 1.5.3

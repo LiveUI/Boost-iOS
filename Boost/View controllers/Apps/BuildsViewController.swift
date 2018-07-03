@@ -1,8 +1,8 @@
 //
-//  AccountViewController.swift
+//  BuildsViewController.swift
 //  Boost
 //
-//  Created by Ondrej Rafaj on 27/05/2018.
+//  Created by Ondrej Rafaj on 03/07/2018.
 //  Copyright © 2018 LiveUI. All rights reserved.
 //
 
@@ -11,23 +11,22 @@ import Presentables
 import BoostSDK
 
 
-final class AccountViewController: ViewController {
+final class BuildsViewController: ViewController {
     
     /// Main account
     let account: Account
     
-    /// Collection view layout
-    var layout: UICollectionViewLayout = {
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 200, height: 100)
-        return layout
-    }()
-    
     /// Collection view controller
     lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: manager.layout)
+        collectionView.backgroundColor = .white
         collectionView.register(AppLoadingCell.self)
-        collectionView.register(AppCell.self)
+        collectionView.register(BuildCell.self)
+        if UIScreen.main.bounds.width <= 320 {
+            collectionView.contentInset = UIEdgeInsets(top: 10, left: 4, bottom: 12, right: 4)
+        } else {
+            collectionView.contentInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+        }
         return collectionView
     }()
     
@@ -40,9 +39,10 @@ final class AccountViewController: ViewController {
                 self.account.token = nil
                 try? self.account.save()
                 // TODO: Display error message!!!
-                self.baseCoordinator.authFailed(forAccount: self.account, in: self)
+//                self.baseCoordinator.authFailed(forAccount: self.account, in: self)
             default:
-                self.baseCoordinator.somethingFailed(forAccount: self.account, in: self)
+                break
+//                self.baseCoordinator.somethingFailed(forAccount: self.account, in: self)
             }
         }
     }()
@@ -60,28 +60,16 @@ final class AccountViewController: ViewController {
         
         super.init(nibName: nil, bundle: nil)
         
-        title = account.name
-        
-        navigation.set(leftItem: UIImage(named: "navbar/menu-icon")?.asButton(self, action: #selector(didTapMenu(_:))))
         navigation.set(rightItem: UIImage(named: "navbar/menu-search")?.asButton(self, action: #selector(didTapSearch(_:))))
     }
     
+    /// Not implemented
     @available(*, unavailable, message: "This method is unavailable")
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: View lifecycle
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        if let navigationBar = navigationController?.navigationBar {
-            var r = navigationBar.frame
-            r.size.height = 214
-            navigationBar.frame = r
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,10 +88,7 @@ final class AccountViewController: ViewController {
     
     // MARK: Actions
     
-    @objc func didTapMenu(_ sender: UIBarButtonItem) {
-        baseCoordinator.requestAccountsList()
-    }
-    
+    /// Open search menu action
     @objc func didTapSearch(_ sender: UIBarButtonItem) {
         
     }

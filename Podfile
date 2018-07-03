@@ -13,6 +13,7 @@ target 'Boost' do
     pod 'SnapKit', '~>4.0.0'
     pod 'Modular', '~>1.0.2'
     pod 'AwesomeEnum', '~> 1.2.0'
+    pod 'AlamofireImage'
 
     target 'BoostTests' do
         inherit! :search_paths
