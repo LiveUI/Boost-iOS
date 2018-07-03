@@ -14,7 +14,10 @@ import BoostSDK
 final class BuildsViewController: ViewController {
     
     /// Main account
-    let account: Account
+    let api: Api
+    
+    /// App overview
+    let overview: Overview
     
     /// Collection view controller
     lazy var collectionView: UICollectionView = {
@@ -31,13 +34,14 @@ final class BuildsViewController: ViewController {
     }()
     
     /// Account data manager
-    lazy var manager: AccountDataManager = {
-        return AccountDataManager(account) { feedback in
+    lazy var manager: BuildsDataManager = {
+        return BuildsDataManager(api, overview: overview) { feedback in
             switch feedback {
             case .notAuthorized, .missingAuthToken:
+                break
                 // Remove an invalid token from the account
-                self.account.token = nil
-                try? self.account.save()
+//                self.account.token = nil
+//                try? self.account.save()
                 // TODO: Display error message!!!
 //                self.baseCoordinator.authFailed(forAccount: self.account, in: self)
             default:
@@ -55,8 +59,9 @@ final class BuildsViewController: ViewController {
     // MARK: Initialization
     
     /// Initializer
-    init(_ account: Account) {
-        self.account = account
+    init(_ overview: Overview, api: Api) {
+        self.api = api
+        self.overview = overview
         
         super.init(nibName: nil, bundle: nil)
         

@@ -97,7 +97,7 @@ class LoginViewController: GridViewController {
     // MARK: Actions
     
     @objc func didTapClose(_ sender: ButtonItem) {
-        
+        close()
     }
     
 }

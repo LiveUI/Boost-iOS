@@ -148,8 +148,8 @@ final class AccountsListViewController: TableViewController {
         super.viewWillTransition(to: size, with: coordinator)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         if firstStart {
             do {
@@ -166,10 +166,6 @@ final class AccountsListViewController: TableViewController {
         try? Account.refreshOnlineStatus { account in
             self.tableView.reloadData()
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
         if (try? Account.count()) == 0 {
             baseCoordinator.noAccountPresent(reportedBy: self)
