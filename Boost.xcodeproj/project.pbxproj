@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		15020B1E20C15ABA00BBADBD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 15020B2020C15ABA00BBADBD /* Localizable.strings */; };
 		15020BD620C1D71B00BBADBD /* LoginCoordinator+Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15020BD520C1D71B00BBADBD /* LoginCoordinator+Registration.swift */; };
+		150771D920F8DE8A0066AE09 /* AppHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150771D820F8DE8A0066AE09 /* AppHeaderView.swift */; };
 		150E398B20E5295500169638 /* AppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150E398A20E5295500169638 /* AppCell.swift */; };
 		150E398E20E5380D00169638 /* AppLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150E398D20E5380D00169638 /* AppLayout.swift */; };
 		1525681D20DD40B5006EBD12 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A88D3920BB642B00BC6DFA /* TextField.swift */; };
@@ -111,6 +112,7 @@
 /* Begin PBXFileReference section */
 		15020BD220C17A4500BBADBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		15020BD520C1D71B00BBADBD /* LoginCoordinator+Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginCoordinator+Registration.swift"; sourceTree = "<group>"; };
+		150771D820F8DE8A0066AE09 /* AppHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHeaderView.swift; sourceTree = "<group>"; };
 		150E398A20E5295500169638 /* AppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCell.swift; sourceTree = "<group>"; };
 		150E398D20E5380D00169638 /* AppLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLayout.swift; sourceTree = "<group>"; };
 		1525681F20DD4146006EBD12 /* NotEmptyValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotEmptyValidator.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				156AD83A20CEC57A002672A4 /* GenericTableHeaderView.swift */,
+				150771D820F8DE8A0066AE09 /* AppHeaderView.swift */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -939,6 +942,7 @@
 				1525682820DD4147006EBD12 /* IntValidator.swift in Sources */,
 				157D35F820DC3244005C01D1 /* LoginViewController.swift in Sources */,
 				156AD83B20CEC57A002672A4 /* GenericTableHeaderView.swift in Sources */,
+				150771D920F8DE8A0066AE09 /* AppHeaderView.swift in Sources */,
 				15A88D5420BB642B00BC6DFA /* IconView.swift in Sources */,
 				15A88D6720BBFE5100BC6DFA /* AppDelegate+Tools.swift in Sources */,
 				1563176020D064BC007E740C /* NavigationViewController.swift in Sources */,

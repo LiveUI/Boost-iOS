@@ -19,6 +19,12 @@ import UIKit
     
     // MARK: Push notifications
     
+    private func resetStateIfUITesting() {
+        if ProcessInfo.processInfo.arguments.contains("UI-Testing") {
+            UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+        }
+    }
+    
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let tokenParts = deviceToken.map { data -> String in
             return String(format: "%02.2hhx", data)
@@ -44,6 +50,9 @@ import UIKit
     // MARK: Application delegate methods
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // TODO: Make compile time check instead
+        resetStateIfUITesting()
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         coordinator = BaseCoordinator()
         if let window = window {
