@@ -12,6 +12,8 @@
 		150771D920F8DE8A0066AE09 /* AppHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150771D820F8DE8A0066AE09 /* AppHeaderView.swift */; };
 		150E398B20E5295500169638 /* AppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150E398A20E5295500169638 /* AppCell.swift */; };
 		150E398E20E5380D00169638 /* AppLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150E398D20E5380D00169638 /* AppLayout.swift */; };
+		1513A37C2187BAFC00E3A016 /* AppsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1513A37B2187BAFC00E3A016 /* AppsHeaderView.swift */; };
+		1513A37E2187BB5B00E3A016 /* DisplayModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1513A37D2187BB5B00E3A016 /* DisplayModeView.swift */; };
 		1525681D20DD40B5006EBD12 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A88D3920BB642B00BC6DFA /* TextField.swift */; };
 		1525682520DD4147006EBD12 /* NotEmptyValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1525681F20DD4146006EBD12 /* NotEmptyValidator.swift */; };
 		1525682620DD4147006EBD12 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1525682020DD4146006EBD12 /* EmailValidator.swift */; };
@@ -21,6 +23,7 @@
 		1525682A20DD4147006EBD12 /* UrlValudator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1525682420DD4146006EBD12 /* UrlValudator.swift */; };
 		1545C38C20BC682C000449D3 /* LoginCoordinator+Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1545C38B20BC682C000449D3 /* LoginCoordinator+Onboarding.swift */; };
 		1546772620CDC5BE00E593B8 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546772520CDC5BE00E593B8 /* UIViewController+Navigation.swift */; };
+		15588C75216FFD1700F40C7E /* MyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15588C74216FFD1600F40C7E /* MyCollectionView.swift */; };
 		155E269220EB8CEA00E65C49 /* HighlightedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155E269120EB8CEA00E65C49 /* HighlightedButton.swift */; };
 		155E269520EBA21700E65C49 /* BuildsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155E269420EBA21700E65C49 /* BuildsViewController.swift */; };
 		155E269720EBA2F800E65C49 /* BuildCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155E269620EBA2F800E65C49 /* BuildCell.swift */; };
@@ -115,6 +118,8 @@
 		150771D820F8DE8A0066AE09 /* AppHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHeaderView.swift; sourceTree = "<group>"; };
 		150E398A20E5295500169638 /* AppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCell.swift; sourceTree = "<group>"; };
 		150E398D20E5380D00169638 /* AppLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLayout.swift; sourceTree = "<group>"; };
+		1513A37B2187BAFC00E3A016 /* AppsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderView.swift; sourceTree = "<group>"; };
+		1513A37D2187BB5B00E3A016 /* DisplayModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayModeView.swift; sourceTree = "<group>"; };
 		1525681F20DD4146006EBD12 /* NotEmptyValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotEmptyValidator.swift; sourceTree = "<group>"; };
 		1525682020DD4146006EBD12 /* EmailValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		1525682120DD4146006EBD12 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
@@ -123,6 +128,7 @@
 		1525682420DD4146006EBD12 /* UrlValudator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlValudator.swift; sourceTree = "<group>"; };
 		1545C38B20BC682C000449D3 /* LoginCoordinator+Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginCoordinator+Onboarding.swift"; sourceTree = "<group>"; };
 		1546772520CDC5BE00E593B8 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
+		15588C74216FFD1600F40C7E /* MyCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionView.swift; sourceTree = "<group>"; };
 		155E269120EB8CEA00E65C49 /* HighlightedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedButton.swift; sourceTree = "<group>"; };
 		155E269420EBA21700E65C49 /* BuildsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildsViewController.swift; sourceTree = "<group>"; };
 		155E269620EBA2F800E65C49 /* BuildCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildCell.swift; sourceTree = "<group>"; };
@@ -296,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				15A88D2220BB642B00BC6DFA /* AccountViewController.swift */,
+				15588C74216FFD1600F40C7E /* MyCollectionView.swift */,
 				155E269420EBA21700E65C49 /* BuildsViewController.swift */,
 			);
 			path = Apps;
@@ -571,6 +578,8 @@
 				15A88D3020BB642B00BC6DFA /* Labels */,
 				15A88D3720BB642B00BC6DFA /* OnlineIcon.swift */,
 				15A88D3820BB642B00BC6DFA /* Text inputs */,
+				1513A37B2187BAFC00E3A016 /* AppsHeaderView.swift */,
+				1513A37D2187BB5B00E3A016 /* DisplayModeView.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -892,6 +901,7 @@
 				"${BUILT_PRODUCTS_DIR}/Presentables/Presentables.framework",
 				"${BUILT_PRODUCTS_DIR}/Reloaded/Reloaded.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/collection-view-layouts/collection_view_layouts.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -906,6 +916,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Presentables.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reloaded.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/collection_view_layouts.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1000,10 +1011,13 @@
 				15A1172220C6E31C00CE4263 /* Group+CoreData.swift in Sources */,
 				1545C38C20BC682C000449D3 /* LoginCoordinator+Onboarding.swift in Sources */,
 				1563175520D0165C007E740C /* GridTableViewCell.swift in Sources */,
+				1513A37C2187BAFC00E3A016 /* AppsHeaderView.swift in Sources */,
 				155E269520EBA21700E65C49 /* BuildsViewController.swift in Sources */,
+				1513A37E2187BB5B00E3A016 /* DisplayModeView.swift in Sources */,
 				15AD2A0820BC90D600E3A180 /* GradientView+Boost.swift in Sources */,
 				1561D7D620C58D2C00BCA532 /* PreloginView.swift in Sources */,
 				1525682620DD4147006EBD12 /* EmailValidator.swift in Sources */,
+				15588C75216FFD1700F40C7E /* MyCollectionView.swift in Sources */,
 				15A1172420C6E43800CE4263 /* Account+Enterprise.swift in Sources */,
 				157D35F320DAB7B0005C01D1 /* GridScrollView.swift in Sources */,
 				15A88D4320BB642B00BC6DFA /* Account+Helpers.swift in Sources */,

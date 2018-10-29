@@ -12,6 +12,8 @@ import UIKit
 
 class AppLayout: UICollectionViewFlowLayout {
     
+    var numberOfApps: (() -> Int)?
+    
     enum Display {
         case loading
         case apps
@@ -76,7 +78,8 @@ class AppLayout: UICollectionViewFlowLayout {
         
         switch display {
         case .loading:
-            prepareForLoading()
+//            prepareForLoading()
+            return
         case .apps:
             prepareForApps(collectionView)
         }
@@ -96,7 +99,7 @@ class AppLayout: UICollectionViewFlowLayout {
         var column = 0
         var yOffset = [CGFloat](repeating: 0, count: numberOfColumns)
         
-        for item in 0 ..< collectionView.numberOfItems(inSection: 0) {
+        for item in 0 ..< (numberOfApps?() ?? 0) {
             let indexPath = IndexPath(item: item, section: 0)
             
             let height = cellPadding * 2 + cellHeight

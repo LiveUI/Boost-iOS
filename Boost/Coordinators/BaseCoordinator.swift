@@ -61,28 +61,69 @@ final class BaseCoordinator: NSObject {
     
     /// Authentication to account failed first time
     func authFailed(forAccount account: Account, in viewController: AccountViewController) {
-        let login = LoginViewController({ (email, password) in
-            do {
-                try viewController.manager.api.auth(email: email, password: password).then({ login in
-                    account.token = login.token
-                    account.lastSeen = Date()
-                    account.lastUsed = Date()
-                    DispatchQueue.main.async {
-                        try? account.save()
-                        viewController.dismiss(animated: true, completion: {
-                            viewController.reloadData()
-                        })
-                    }
-                }).error({ error in
-                    // TODO: Display error in login!!!!
-                })
-            } catch {
+        // Inner shared login screen handler method
+        func doLogin() {
+            let login = LoginViewController({ (email, password) in
+                do {
+                    try viewController.manager.api.auth(email: email, password: password).then({ login in
+                        account.token = login.token
+                        account.lastSeen = Date()
+                        account.lastUsed = Date()
+                        DispatchQueue.main.async {
+                            do {
+                                try account.save()
+                            } catch {
+                                print(error)
+                            }
+                            
+                            viewController.dismiss(animated: true, completion: {
+                                viewController.reloadData()
+                            })
+                        }
+                    }).error({ error in
+                        // TODO: Display error in login!!!!
+                    })
+                } catch {
+                    self.somethingFailed(forAccount: account, in: viewController)
+                }
+            }, close: {
                 self.somethingFailed(forAccount: account, in: viewController)
-            }
-        }, close: {
-            self.somethingFailed(forAccount: account, in: viewController)
-        })
-        viewController.present(login.asNavigationViewController(), presentation: Presentation.presentForm)
+            })
+            viewController.present(login.asNavigationViewController(), presentation: Presentation.presentForm)
+        }
+        
+        print(account)
+        
+        // Get login token from CoreData if exists otherwise display login screen
+        guard let token = account.token else {
+            doLogin()
+            return 
+        }
+        
+        // Try to authenticate with stored persistent token
+        do {
+            try viewController.manager.api.auth(token: token).then({ token in
+                account.lastSeen = Date()
+                account.lastUsed = Date()
+                DispatchQueue.main.async {
+                    do {
+                        try account.save()
+                    } catch {
+                        print(error)
+                    }
+                    
+                    viewController.dismiss(animated: true, completion: {
+                        viewController.reloadData()
+                    })
+                }
+            }).error({ error in
+                doLogin()
+            })
+        } catch {
+            print(error)
+            
+            doLogin()
+        }
     }
     
     /// Authentication to account failed first time

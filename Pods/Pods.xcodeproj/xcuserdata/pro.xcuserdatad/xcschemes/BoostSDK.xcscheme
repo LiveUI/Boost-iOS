@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "76C42E84F37CE14EB054BEE2D6D8F888"
+               BlueprintIdentifier = "14600446302312A6F54B316FB365F4F5"
                BlueprintName = "BoostSDK"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "BoostSDK.framework">

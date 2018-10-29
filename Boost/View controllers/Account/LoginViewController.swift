@@ -21,7 +21,7 @@ class LoginViewController: GridViewController {
     lazy var emailField: TextField = {
         let tf = TextField()
         #if DEBUG
-        tf.text = "admin@liveui.io"
+        tf.text = "core@liveui.io"
         #endif
         tf.keyboardType = .emailAddress
         tf.autocorrectionType = .no
@@ -35,7 +35,7 @@ class LoginViewController: GridViewController {
     lazy var passwordField: TextField = {
         let tf = TextField()
         #if DEBUG
-        tf.text = "admin"
+        tf.text = "sup3rS3cr3t"
         #endif
         tf.keyboardType = .asciiCapable
         tf.autocorrectionType = .no
@@ -49,12 +49,13 @@ class LoginViewController: GridViewController {
     }()
     
     lazy var loginButton: Button = {
-        let b = Button.init(title: Lang.get("login.button.login"))
+        let b = Button(title: Lang.get("login.button.login"))
         b.action = { sender in
             if self.emailField.isValid, self.passwordField.isValid, let email = self.emailField.text, let password = self.passwordField.text {
                 self.login(email, password)
             }
         }
+        b.setTitleColor(.lightGray, for: .highlighted)
         return b
     }()
     

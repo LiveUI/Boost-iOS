@@ -1,6 +1,6 @@
 {
   "name": "Presentables",
-  "version": "0.6.6",
+  "version": "0.7.0",
   "summary": "Simple reactive library for managing table views & collection views, written in Swift",
   "description": "Simplify the way you use table views & collection views in your app. This library is not supposed to be competing with RxSwift at all, this is only for developers who want a quick way to simplify their screens.",
   "homepage": "https://github.com/manGoweb/Presentables",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/manGoweb/Presentables.git",
-    "tag": "0.6.6"
+    "tag": "0.7.0"
   },
   "social_media_url": "https://twitter.com/rafiki270",
   "platforms": {

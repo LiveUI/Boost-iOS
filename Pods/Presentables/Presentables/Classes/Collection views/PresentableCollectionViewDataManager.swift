@@ -34,8 +34,8 @@ open class PresentableCollectionViewDataManager: NSObject, PresentableManager, U
     // MARK: Actions
     
     open func reloadData() {
-        collectionView?.collectionViewLayout.invalidateLayout()
         collectionView?.reloadData()
+        collectionView?.collectionViewLayout.invalidateLayout()
     }
     
     open func reload(section: Int) {

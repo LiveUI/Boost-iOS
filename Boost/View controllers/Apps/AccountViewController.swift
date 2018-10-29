@@ -17,8 +17,8 @@ final class AccountViewController: ViewController {
     let account: Account
     
     /// Collection view controller
-    lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: manager.layout)
+    lazy var collectionView: MyCollectionView = {
+        let collectionView = MyCollectionView(frame: .zero, collectionViewLayout: manager.layout)
         collectionView.backgroundColor = .white
         collectionView.register(AppLoadingCell.self)
         collectionView.register(AppCell.self)
@@ -32,13 +32,9 @@ final class AccountViewController: ViewController {
     
     /// Account data manager
     lazy var manager: AccountDataManager = {
-        return AccountDataManager(account) { feedback in
-            switch feedback {
+        return AccountDataManager(account) { errorFeedback in
+            switch errorFeedback {
             case .notAuthorized, .missingAuthToken:
-                // Remove an invalid token from the account
-                self.account.token = nil
-                try? self.account.save()
-                // TODO: Display error message!!!
                 self.baseCoordinator.authFailed(forAccount: self.account, in: self)
             default:
                 self.baseCoordinator.somethingFailed(forAccount: self.account, in: self)
@@ -65,13 +61,13 @@ final class AccountViewController: ViewController {
         navigation.set(rightItem: UIImage(named: "navbar/menu-search")?.asButton(self, action: #selector(didTapSearch(_:))))
     }
     
-    /// Not implemented
-    @available(*, unavailable, message: "This method is unavailable")
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     // MARK: View lifecycle
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        manager.viewSize = size
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,10 +78,17 @@ final class AccountViewController: ViewController {
         collectionView.bind(withPresentableManager: &manager)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         manager.startLoadingData()
+        
+        manager.viewSize = view.bounds.size
     }
     
     // MARK: Actions

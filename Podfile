@@ -14,6 +14,8 @@ target 'Boost' do
     pod 'Modular', '~>1.0.2'
     pod 'AwesomeEnum', '~> 1.2.0'
     pod 'AlamofireImage'
+    pod 'collection-view-layouts/PinterestLayout'
+    pod 'DisplaySwitcher', '~> 1.2'
 
     target 'BoostTests' do
         inherit! :search_paths

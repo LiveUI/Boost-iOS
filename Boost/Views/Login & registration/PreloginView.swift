@@ -36,10 +36,6 @@ class PreloginView: View {
         self.init(elements, server: "")
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     // MARK: Elements
     
     override func setupElements() {

@@ -68,12 +68,6 @@ final class BuildsViewController: ViewController {
         navigation.set(rightItem: UIImage(named: "navbar/menu-search")?.asButton(self, action: #selector(didTapSearch(_:))))
     }
     
-    /// Not implemented
-    @available(*, unavailable, message: "This method is unavailable")
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     // MARK: View lifecycle
     
     override func viewDidLoad() {
