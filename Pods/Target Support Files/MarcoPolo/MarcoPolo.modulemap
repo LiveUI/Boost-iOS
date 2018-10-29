@@ -1,6 +1,0 @@
-framework module MarcoPolo {
-  umbrella header "MarcoPolo-umbrella.h"
-
-  export *
-  module * { export * }
-}

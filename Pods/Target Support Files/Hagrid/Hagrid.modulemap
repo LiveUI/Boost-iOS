@@ -1,6 +1,0 @@
-framework module Hagrid {
-  umbrella header "Hagrid-umbrella.h"
-
-  export *
-  module * { export * }
-}

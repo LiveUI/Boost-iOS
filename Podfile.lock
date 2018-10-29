@@ -12,6 +12,7 @@ PODS:
   - collection-view-layouts/Core (0.1.2)
   - collection-view-layouts/PinterestLayout (0.1.2):
     - collection-view-layouts/Core
+  - DisplaySwitcher (1.2)
   - Hagrid (1.0.2):
     - SnapKit (~> 4.0.0)
   - MarcoPolo (0.0.1)
@@ -28,6 +29,7 @@ DEPENDENCIES:
   - Base (from `../Base`)
   - BoostSDK (from `../BoostSDK`)
   - collection-view-layouts/PinterestLayout
+  - DisplaySwitcher (from `https://github.com/Yalantis/DisplaySwitcher.git`, tag `1.2`)
   - Hagrid (from `../Hagrid`)
   - MarcoPolo (from `../MarcoPolo`)
   - Modular (~> 1.0.2)
@@ -52,12 +54,20 @@ EXTERNAL SOURCES:
     :path: "../Base"
   BoostSDK:
     :path: "../BoostSDK"
+  DisplaySwitcher:
+    :git: https://github.com/Yalantis/DisplaySwitcher.git
+    :tag: '1.2'
   Hagrid:
     :path: "../Hagrid"
   MarcoPolo:
     :path: "../MarcoPolo"
   Reloaded:
     :path: "../Reloaded"
+
+CHECKOUT OPTIONS:
+  DisplaySwitcher:
+    :git: https://github.com/Yalantis/DisplaySwitcher.git
+    :tag: '1.2'
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
@@ -66,6 +76,7 @@ SPEC CHECKSUMS:
   Base: ef173ccca5ccd4f03611bed8ec7eb690ff7ce42a
   BoostSDK: 72f3c200cbf9c74a5a76191db964123547d2f18b
   collection-view-layouts: f3da16bf3211ecb885bb3e45160c2267edf5b65e
+  DisplaySwitcher: a9ee0b5c7821cd8d12e39783ada99399f6d927a0
   Hagrid: 79b2ea059ef93cff46347fc6f6f12ff2329976e9
   MarcoPolo: 0a0dba396400ca11440ac47882f9b31003ff3b1d
   Modular: bae1878d084e9ea31300417b16a3ff4baf6614af
@@ -74,6 +85,6 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SpecTools: 77474921254b23ea50bb80f8763214f41d9d63c5
 
-PODFILE CHECKSUM: 41736e05eafadbdaf591ec3e5fc4c385808de94c
+PODFILE CHECKSUM: 8af637fa437bd9e0e31c19c4f6ff0ba69cf66632
 
 COCOAPODS: 1.5.3
