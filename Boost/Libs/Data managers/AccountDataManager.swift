@@ -133,16 +133,27 @@ class AccountDataManager: PresentableCollectionViewDataManager, ContentDynamicLa
                     }
                     
                     // Load icon
-                    cell.iconImage.image = UIImage.defaultIcon
+                    
                     if overview.latestAppIcon {
-                        _ = try? self.api.image(app: overview.latestAppId).then({ data in
-                            guard let image = UIImage(data: data) else {
-                                return
-                            }
-                            DispatchQueue.main.async {
-                                cell.iconImage.image = image
-                            }
-                        })
+                        if IconCache.hasIcon(appId: overview.latestAppId) {
+                            cell.iconImage.image = IconCache.icon(appId: overview.latestAppId)
+                        } else {
+                            _ = try? self.api.image(app: overview.latestAppId).then({ data in
+                                guard let image = UIImage(data: data) else {
+                                    return
+                                }
+                                do {
+                                    try IconCache.cache(data: data, for: overview.latestAppId)
+                                } catch {
+                                    print(error)
+                                }
+                                DispatchQueue.main.async {
+                                    cell.iconImage.image = image
+                                }
+                            })
+                        }
+                    } else {
+                        cell.iconImage.image = UIImage.defaultIcon
                     }
                 }).cellSelected {
                     self.baseCoordinator.requestBuilds(for: overview, api: self.api)

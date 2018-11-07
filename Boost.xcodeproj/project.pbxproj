@@ -90,6 +90,7 @@
 		15A88D6720BBFE5100BC6DFA /* AppDelegate+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A88D6620BBFE5100BC6DFA /* AppDelegate+Tools.swift */; };
 		15A88D6E20BC01BD00BC6DFA /* Account+LastUsed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A88D6D20BC01BD00BC6DFA /* Account+LastUsed.swift */; };
 		15AD2A0820BC90D600E3A180 /* GradientView+Boost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AD2A0720BC90D600E3A180 /* GradientView+Boost.swift */; };
+		15F6C433219341AA00831DB0 /* IconCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F6C432219341AA00831DB0 /* IconCache.swift */; };
 		97FA9319146F821EDDFFBA4C /* Pods_Boost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25EFAC93C536767D25CF1F9E /* Pods_Boost.framework */; };
 		C7B4CC0A914150ED05B25BC7 /* Pods_BoostTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4807B2873DFA4EABA0244469 /* Pods_BoostTests.framework */; };
 		E58AAFE6D0A27FF1F8BBF479 /* Pods_BoostUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C65A5667F76DD8886B513297 /* Pods_BoostUITests.framework */; };
@@ -202,6 +203,7 @@
 		15A88D6620BBFE5100BC6DFA /* AppDelegate+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Tools.swift"; sourceTree = "<group>"; };
 		15A88D6D20BC01BD00BC6DFA /* Account+LastUsed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+LastUsed.swift"; sourceTree = "<group>"; };
 		15AD2A0720BC90D600E3A180 /* GradientView+Boost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GradientView+Boost.swift"; sourceTree = "<group>"; };
+		15F6C432219341AA00831DB0 /* IconCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCache.swift; sourceTree = "<group>"; };
 		25EFAC93C536767D25CF1F9E /* Pods_Boost.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Boost.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FE73C990C65466820BCC059 /* Pods-Boost.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boost.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Boost/Pods-Boost.debug.xcconfig"; sourceTree = "<group>"; };
 		4807B2873DFA4EABA0244469 /* Pods_BoostTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoostTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -418,6 +420,7 @@
 				1525681E20DD4146006EBD12 /* Validators */,
 				157D35CD20DA5CD5005C01D1 /* Data managers */,
 				15A1171F20C6DD8E00CE4263 /* Enterprise.swift */,
+				15F6C432219341AA00831DB0 /* IconCache.swift */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -987,6 +990,7 @@
 				15A88D5D20BB642B00BC6DFA /* OnlineIcon.swift in Sources */,
 				157D35E220DAB06C005C01D1 /* BuildLoadingCell.swift in Sources */,
 				15A1172220C6E31C00CE4263 /* Group+CoreData.swift in Sources */,
+				15F6C433219341AA00831DB0 /* IconCache.swift in Sources */,
 				1545C38C20BC682C000449D3 /* LoginCoordinator+Onboarding.swift in Sources */,
 				1563175520D0165C007E740C /* GridTableViewCell.swift in Sources */,
 				1513A37C2187BAFC00E3A016 /* AppsHeaderView.swift in Sources */,
