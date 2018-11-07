@@ -281,23 +281,6 @@
 			path = Factories;
 			sourceTree = "<group>";
 		};
-		1546772320CDC59100E593B8 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				156AD83620CDCB78002672A4 /* Coordinators */,
-				1546772420CDC59E00E593B8 /* Extensions */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		1546772420CDC59E00E593B8 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				1546772520CDC5BE00E593B8 /* UIViewController+Navigation.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		155E269320EBA20200E65C49 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,14 +343,6 @@
 				1563175A20D05F34007E740C /* Rubik-Regular.ttf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		156AD83620CDCB78002672A4 /* Coordinators */ = {
-			isa = PBXGroup;
-			children = (
-				156AD83720CDCB78002672A4 /* Coordinator.swift */,
-			);
-			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		156AD83920CEC553002672A4 /* Headers */ = {
@@ -437,6 +412,8 @@
 		15A1171E20C6DD7500CE4263 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				15A1171A20C6DC0100CE4263 /* Model */,
+				15A88D1A20BB642B00BC6DFA /* Coordinators */,
 				150E398C20E537EE00169638 /* CollectionView layouts */,
 				1525681E20DD4146006EBD12 /* Validators */,
 				157D35CD20DA5CD5005C01D1 /* Data managers */,
@@ -470,11 +447,8 @@
 		15A88CE120BB624A00BC6DFA /* Boost */ = {
 			isa = PBXGroup;
 			children = (
-				1546772320CDC59100E593B8 /* Base */,
 				15A1171E20C6DD7500CE4263 /* Libs */,
-				15A1171A20C6DC0100CE4263 /* Model */,
 				15A88D7420BC131000BC6DFA /* Protocols */,
-				15A88D1A20BB642B00BC6DFA /* Coordinators */,
 				15A88D1520BB642B00BC6DFA /* Extensions */,
 				15A88D2820BB642B00BC6DFA /* Views */,
 				15A88D1F20BB642B00BC6DFA /* View controllers */,
@@ -505,6 +479,7 @@
 		15A88D1520BB642B00BC6DFA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1546772520CDC5BE00E593B8 /* UIViewController+Navigation.swift */,
 				15A88D6C20BC018F00BC6DFA /* AppDelegate */,
 				15A88D6B20BC017D00BC6DFA /* Colors & images */,
 				15A88D6A20BC017400BC6DFA /* CoreData */,
@@ -661,6 +636,7 @@
 		15A88D7420BC131000BC6DFA /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				156AD83720CDCB78002672A4 /* Coordinator.swift */,
 				1561D7C220C4894B00BCA532 /* ConfigurableController.swift */,
 			);
 			path = Protocols;
@@ -1199,7 +1175,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R8ZGADY96;
 				INFOPLIST_FILE = "Boost/Supporting files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.liveui.Boost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1215,7 +1194,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R8ZGADY96;
 				INFOPLIST_FILE = "Boost/Supporting files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.liveui.Boost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1230,7 +1212,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BoostTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.liveui.BoostTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1246,7 +1232,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BoostTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.liveui.BoostTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1261,7 +1251,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BoostUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.liveui.BoostUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1276,7 +1270,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BoostUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.liveui.BoostUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

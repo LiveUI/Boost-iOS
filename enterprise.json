@@ -18,13 +18,19 @@
 			"deletable": false,
 			"name": "manGoweb",
 			"server": "https://appstore.mangoweb.cz"
-		},
-		{
-			"group": "manGoweb",
-			"deletable": true,
-			"name": "manGoweb Staging",
-			"server": "https://appstore.mgw.cz"
-		},
+        },
+        {
+            "group": "manGoweb",
+            "deletable": true,
+            "name": "manGoweb Staging",
+            "server": "https://appstore.mgw.cz"
+        },
+        {
+            "group": "manGoweb",
+            "deletable": true,
+            "name": "manGoweb Prod",
+            "server": "https://appstore.mangoweb.cz"
+        },
 		{
 			"deletable": true,
 			"name": "Localhost:8080",

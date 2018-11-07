@@ -10,6 +10,7 @@ import Foundation
 import Presentables
 import BoostSDK
 import collection_view_layouts
+import AlamofireImage
 
 
 class AccountDataManager: PresentableCollectionViewDataManager, ContentDynamicLayoutDelegate {
@@ -120,7 +121,6 @@ class AccountDataManager: PresentableCollectionViewDataManager, ContentDynamicLa
                 return Presentable<AppCell>.create({ cell in
                     cell.titleLabel.text = overview.latestName
                     cell.versionLabel.text = "\(overview.latestVersion) (\(overview.latestBuild))"
-                    cell.iconImage.image = UIImage.defaultIcon
                     cell.actionButton.action = { sender in
                         sender.isEnabled = false
                         do {
@@ -130,6 +130,19 @@ class AccountDataManager: PresentableCollectionViewDataManager, ContentDynamicLa
                         } catch {
                             sender.isEnabled = true
                         }
+                    }
+                    
+                    // Load icon
+                    cell.iconImage.image = UIImage.defaultIcon
+                    if overview.latestAppIcon {
+                        _ = try? self.api.image(app: overview.latestAppId).then({ data in
+                            guard let image = UIImage(data: data) else {
+                                return
+                            }
+                            DispatchQueue.main.async {
+                                cell.iconImage.image = image
+                            }
+                        })
                     }
                 }).cellSelected {
                     self.baseCoordinator.requestBuilds(for: overview, api: self.api)

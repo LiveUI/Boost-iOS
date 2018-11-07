@@ -17,7 +17,7 @@ extension UUID {
             print(appAuth)
             DispatchQueue.main.async {
                 finished()
-                guard let url = URL(string: appAuth.plist) else { return }
+                guard let url = URL(string: appAuth.ios) else { return }
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         })

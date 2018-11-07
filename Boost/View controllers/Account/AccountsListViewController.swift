@@ -85,7 +85,6 @@ final class AccountsListViewController: TableViewController {
                         }
                     }))
                     data.append(section)
-                    
                 }
             }
         } catch {
