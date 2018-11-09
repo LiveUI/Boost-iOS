@@ -23,11 +23,8 @@ class LoginViewController: GridViewController {
         #if DEBUG
         tf.text = "core@liveui.io"
         #endif
-        tf.keyboardType = .emailAddress
-        tf.autocorrectionType = .no
-        tf.autocapitalizationType = .none
         tf.placeholder = Lang.get("login.field.email.placeholder")
-        tf.validator = EmailValidator()
+        tf.style.email()
         tf.nextField = passwordField
         return tf
     }()
@@ -37,13 +34,8 @@ class LoginViewController: GridViewController {
         #if DEBUG
         tf.text = "sup3rS3cr3t"
         #endif
-        tf.keyboardType = .asciiCapable
-        tf.autocorrectionType = .no
-        tf.autocapitalizationType = .none
-        // TODO: Add show password button!
-        tf.isSecureTextEntry = true
         tf.placeholder = Lang.get("login.field.password.placeholder")
-        tf.validator = NotEmptyValidator()
+        tf.style.password()
         tf.goButton = loginButton
         return tf
     }()
@@ -82,9 +74,9 @@ class LoginViewController: GridViewController {
         navigation.set(leftItem: close)
         
         // Content
-        gridView.config.displayGrid = true
+        gridView.config.displayGrid = false
         
-        gridView.add(subview: emailField, 90.0) { make in
+        gridView.add(subview: emailField, 120.0) { make in
             make.height.equalTo(44)
         }
         gridView.add(subview: passwordField, .below(emailField, margin: 20)) { make in

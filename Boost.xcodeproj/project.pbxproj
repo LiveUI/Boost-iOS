@@ -91,6 +91,11 @@
 		15A88D6E20BC01BD00BC6DFA /* Account+LastUsed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A88D6D20BC01BD00BC6DFA /* Account+LastUsed.swift */; };
 		15AD2A0820BC90D600E3A180 /* GradientView+Boost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AD2A0720BC90D600E3A180 /* GradientView+Boost.swift */; };
 		15F6C433219341AA00831DB0 /* IconCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F6C432219341AA00831DB0 /* IconCache.swift */; };
+		15F6C5062194551E00831DB0 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F6C5052194551E00831DB0 /* Style.swift */; };
+		15F6C5082194557500831DB0 /* Style+Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F6C5072194557500831DB0 /* Style+Input.swift */; };
+		15F6C50A2194584A00831DB0 /* FormElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F6C5092194584A00831DB0 /* FormElement.swift */; };
+		15F6C50C2194CEE100831DB0 /* EditAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F6C50B2194CEE100831DB0 /* EditAccountViewController.swift */; };
+		15F6C50E2194D1A000831DB0 /* NavigationItem+Boost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F6C50D2194D1A000831DB0 /* NavigationItem+Boost.swift */; };
 		97FA9319146F821EDDFFBA4C /* Pods_Boost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25EFAC93C536767D25CF1F9E /* Pods_Boost.framework */; };
 		C7B4CC0A914150ED05B25BC7 /* Pods_BoostTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4807B2873DFA4EABA0244469 /* Pods_BoostTests.framework */; };
 		E58AAFE6D0A27FF1F8BBF479 /* Pods_BoostUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C65A5667F76DD8886B513297 /* Pods_BoostUITests.framework */; };
@@ -204,6 +209,11 @@
 		15A88D6D20BC01BD00BC6DFA /* Account+LastUsed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+LastUsed.swift"; sourceTree = "<group>"; };
 		15AD2A0720BC90D600E3A180 /* GradientView+Boost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GradientView+Boost.swift"; sourceTree = "<group>"; };
 		15F6C432219341AA00831DB0 /* IconCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCache.swift; sourceTree = "<group>"; };
+		15F6C5052194551E00831DB0 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		15F6C5072194557500831DB0 /* Style+Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Style+Input.swift"; sourceTree = "<group>"; };
+		15F6C5092194584A00831DB0 /* FormElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormElement.swift; sourceTree = "<group>"; };
+		15F6C50B2194CEE100831DB0 /* EditAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountViewController.swift; sourceTree = "<group>"; };
+		15F6C50D2194D1A000831DB0 /* NavigationItem+Boost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationItem+Boost.swift"; sourceTree = "<group>"; };
 		25EFAC93C536767D25CF1F9E /* Pods_Boost.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Boost.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FE73C990C65466820BCC059 /* Pods-Boost.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boost.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Boost/Pods-Boost.debug.xcconfig"; sourceTree = "<group>"; };
 		4807B2873DFA4EABA0244469 /* Pods_BoostTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoostTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -414,6 +424,7 @@
 		15A1171E20C6DD7500CE4263 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				15F6C5042194551200831DB0 /* Styles */,
 				15A1171A20C6DC0100CE4263 /* Model */,
 				15A88D1A20BB642B00BC6DFA /* Coordinators */,
 				150E398C20E537EE00169638 /* CollectionView layouts */,
@@ -488,6 +499,7 @@
 				15A88D6A20BC017400BC6DFA /* CoreData */,
 				157D35D020DA80BE005C01D1 /* PresentableCollectionViewDataManager+Common.swift */,
 				155E269E20EBD50700E65C49 /* App+Helpers.swift */,
+				15F6C50D2194D1A000831DB0 /* NavigationItem+Boost.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -520,6 +532,7 @@
 			children = (
 				15A88D2120BB642B00BC6DFA /* AccountsListViewController.swift */,
 				157D35F720DC3244005C01D1 /* LoginViewController.swift */,
+				15F6C50B2194CEE100831DB0 /* EditAccountViewController.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -558,6 +571,7 @@
 				15A88D3820BB642B00BC6DFA /* Text inputs */,
 				1513A37B2187BAFC00E3A016 /* AppsHeaderView.swift */,
 				1513A37D2187BB5B00E3A016 /* DisplayModeView.swift */,
+				15F6C5092194584A00831DB0 /* FormElement.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -643,6 +657,23 @@
 				1561D7C220C4894B00BCA532 /* ConfigurableController.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		15F6C434219454AF00831DB0 /* Element extensions */ = {
+			isa = PBXGroup;
+			children = (
+				15F6C5072194557500831DB0 /* Style+Input.swift */,
+			);
+			path = "Element extensions";
+			sourceTree = "<group>";
+		};
+		15F6C5042194551200831DB0 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				15F6C434219454AF00831DB0 /* Element extensions */,
+				15F6C5052194551E00831DB0 /* Style.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 		599E1A9BFCA760499C286AB2 /* Pods */ = {
@@ -880,6 +911,7 @@
 				"${BUILT_PRODUCTS_DIR}/Modular/Modular.framework",
 				"${BUILT_PRODUCTS_DIR}/Presentables/Presentables.framework",
 				"${BUILT_PRODUCTS_DIR}/Reloaded/Reloaded.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/collection-view-layouts/collection_view_layouts.framework",
 			);
@@ -896,6 +928,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Modular.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Presentables.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reloaded.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/collection_view_layouts.framework",
 			);
@@ -933,14 +966,18 @@
 				155E269B20EBC72200E65C49 /* BuildsDataManager.swift in Sources */,
 				1525682820DD4147006EBD12 /* IntValidator.swift in Sources */,
 				157D35F820DC3244005C01D1 /* LoginViewController.swift in Sources */,
+				15F6C5062194551E00831DB0 /* Style.swift in Sources */,
 				156AD83B20CEC57A002672A4 /* GenericTableHeaderView.swift in Sources */,
 				150771D920F8DE8A0066AE09 /* AppHeaderView.swift in Sources */,
+				15F6C50A2194584A00831DB0 /* FormElement.swift in Sources */,
 				15A88D5420BB642B00BC6DFA /* IconView.swift in Sources */,
 				15A88D6720BBFE5100BC6DFA /* AppDelegate+Tools.swift in Sources */,
 				1563176020D064BC007E740C /* NavigationViewController.swift in Sources */,
 				15A88D5C20BB642B00BC6DFA /* MenuMainLabel.swift in Sources */,
+				15F6C50C2194CEE100831DB0 /* EditAccountViewController.swift in Sources */,
 				15A88D4F20BB642B00BC6DFA /* AccountViewController.swift in Sources */,
 				15A1172020C6DD8E00CE4263 /* Enterprise.swift in Sources */,
+				15F6C50E2194D1A000831DB0 /* NavigationItem+Boost.swift in Sources */,
 				15020BD620C1D71B00BBADBD /* LoginCoordinator+Registration.swift in Sources */,
 				157D35F120DAB7B0005C01D1 /* GridCollectionViewCell.swift in Sources */,
 				157D35F620DABADB005C01D1 /* GridTableViewHeaderFooterView.swift in Sources */,
@@ -984,6 +1021,7 @@
 				1561D7B520C43A3900BCA532 /* GridViewController.swift in Sources */,
 				1525682720DD4147006EBD12 /* Validator.swift in Sources */,
 				15A88D6520BB663600BC6DFA /* Boost.xcdatamodeld in Sources */,
+				15F6C5082194557500831DB0 /* Style+Input.swift in Sources */,
 				15A1171D20C6DC4F00CE4263 /* EnterpriseSettings.swift in Sources */,
 				15A88D4D20BB642B00BC6DFA /* BaseCoordinator.swift in Sources */,
 				156AD83820CDCB78002672A4 /* Coordinator.swift in Sources */,
@@ -1179,10 +1217,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R8ZGADY96;
 				INFOPLIST_FILE = "Boost/Supporting files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.liveui.Boost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1198,10 +1233,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R8ZGADY96;
 				INFOPLIST_FILE = "Boost/Supporting files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.liveui.Boost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1216,11 +1248,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BoostTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.liveui.BoostTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1236,11 +1264,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BoostTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.liveui.BoostTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1255,11 +1279,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BoostUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.liveui.BoostUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1274,11 +1294,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BoostUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.liveui.BoostUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

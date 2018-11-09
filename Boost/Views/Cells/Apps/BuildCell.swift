@@ -25,15 +25,22 @@ class BuildCell: GridCollectionViewCell {
     override func setupElements() {
         super.setupElements()
         
+        // Icon
+        iconImage.contentMode = .scaleAspectFit
+        gridView.add(subview: iconImage, 6, from: 0, space: .dynamic) { make in
+            make.height.equalTo(28)
+            make.height.equalTo(self.iconImage.snp.width)
+        }
+        
         // Title
         titleLabel.font = Font.basic(size: 12)
         titleLabel.textColor = UIColor(hex: "888888")
-        gridView.add(subview: titleLabel, 4.0, from: 0, space: .reversed(3))
+        gridView.add(subview: titleLabel, 4.0, from: .relation(iconImage, margin: 12), space: .reversed(3))
         
         // Version
         versionLabel.font = Font.light(size: 10)
         versionLabel.textColor = titleLabel.textColor
-        gridView.add(subview: versionLabel, .below(titleLabel, margin: 6), from: 0, space: .reversed(3))
+        gridView.add(subview: versionLabel, .below(titleLabel, margin: 6), from: .relation(iconImage, margin: 12), space: .reversed(3))
         
         // Action button
         actionButton.layer.cornerRadius = 14

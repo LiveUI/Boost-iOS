@@ -12,5 +12,4 @@ import Presentables
 
 extension PresentableCollectionViewDataManager {
     
-
 }

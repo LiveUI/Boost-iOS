@@ -9,6 +9,7 @@
 import Base
 import Presentables
 import BoostSDK
+import MarcoPolo
 
 
 final class AccountViewController: ViewController {
@@ -58,7 +59,11 @@ final class AccountViewController: ViewController {
         title = account.name
         
         navigation.set(leftItem: UIImage(named: "navbar/menu-icon")?.asButton(self, action: #selector(didTapMenu(_:))))
-        navigation.set(rightItem: UIImage(named: "navbar/menu-search")?.asButton(self, action: #selector(didTapSearch(_:))))
+        
+        navigation.startLoadingData(animated: false)
+        manager.didFinishLoading = {
+            self.navigation.set(rightItem: UIImage(named: "navbar/menu-search")?.asButton(self, action: #selector(self.didTapSearch(_:))))
+        }
     }
     
     // MARK: View lifecycle

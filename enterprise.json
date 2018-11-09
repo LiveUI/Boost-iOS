@@ -9,7 +9,7 @@
 		},
 		{
 			"group": "Ford",
-			"deletable": false,
+			"deletable": true,
 			"name": "Ford GoPark",
 			"server": "https://appstore.gopark.com"
 		},
@@ -17,13 +17,13 @@
 			"group": "manGoweb",
 			"deletable": false,
 			"name": "manGoweb",
-			"server": "https://appstore.mangoweb.cz"
+			"server": "https://appstore.mangoweb.cz/api"
         },
         {
             "group": "manGoweb",
             "deletable": true,
             "name": "manGoweb Staging",
-            "server": "https://appstore.mgw.cz"
+            "server": "https://appstore.mgw.cz/api"
         },
         {
             "group": "manGoweb",

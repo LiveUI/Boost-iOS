@@ -12,7 +12,7 @@ import Base
 
 
 // TODO: Comment / clean
-class TextField: UITextField, UITextFieldDelegate, Validatable {
+class TextField: UITextField, UITextFieldDelegate, Validatable, FormElement {
     
     var validator: Validator? {
         didSet {
@@ -69,12 +69,6 @@ class TextField: UITextField, UITextFieldDelegate, Validatable {
     }
     
     private func setup() {
-//        floatingController = MDCTextInputControllerLegacyDefault(textInput: self)
-////        floatingController?.isFloatingEnabled = true
-//        
-//        underlineController = MDCTextInputControllerUnderline(textInput: self)
-////        underlineController?.isFloatingEnabled = false
-        
         sizeToFit()
     }
     
@@ -82,13 +76,7 @@ class TextField: UITextField, UITextFieldDelegate, Validatable {
     
     var icon: Amazing? {
         didSet {
-//            // TODO: Check if we can fix bug in the material design where placeholder slides underneath the icon
-//            guard let icon = icon else {
-//                leadingView = nil
-//                return
-//            }
-//            leadingView = UIImageView(image: icon.asImage(size: 24, color: .lightGray))
-//            leadingViewMode = .unlessEditing
+            
         }
     }
     

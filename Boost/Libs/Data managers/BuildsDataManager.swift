@@ -74,6 +74,7 @@ class BuildsDataManager: PresentableCollectionViewDataManager {
     
     /// MAke presentables from apps
     private func makePresentables(_ builds: [App]) {
+        sleep(1)
         DispatchQueue.global().async {
             let section = PresentableSection()
             section.set(builds.map({ app -> AnyPresentable in

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class PrimaryButton: UIButton {
+class PrimaryButton: UIButton, FormElement {
     
     override func setTitle(_ title: String?, for state: UIControlState) {
         super.setTitle(title, for: state)

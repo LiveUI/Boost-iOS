@@ -15,6 +15,8 @@ import AlamofireImage
 
 class AccountDataManager: PresentableCollectionViewDataManager, ContentDynamicLayoutDelegate {
     
+    var didFinishLoading: (() -> Void)?
+    
     func cellSize(indexPath: IndexPath) -> CGSize {
         return CGSize(width: 130, height: 178)
     }
@@ -30,9 +32,6 @@ class AccountDataManager: PresentableCollectionViewDataManager, ContentDynamicLa
     lazy var layout: PinterestStyleFlowLayout = {
         let layout = PinterestStyleFlowLayout()
         layout.delegate = self
-//        layout.numberOfApps = {
-//            return self.data[0].count
-//        }
         layout.contentPadding = ItemsPadding(horizontal: 10, vertical: 10)
         layout.cellsPadding = ItemsPadding(horizontal: 8, vertical: 8)
         layout.contentAlign = .left
@@ -60,8 +59,6 @@ class AccountDataManager: PresentableCollectionViewDataManager, ContentDynamicLa
         self.feedback = feedback
         
         super.init()
-        
-        loadPreloadData()
     }
     
     /// Start loading data
@@ -100,16 +97,10 @@ class AccountDataManager: PresentableCollectionViewDataManager, ContentDynamicLa
     }
     
     // MARK: Private interface
-    
-    /// Load preload data
-    private func loadPreloadData() {
-//        let section = PresentableSection()
-//        section.append(Presentable<AppLoadingCell>.create())
-//        data.append(section)
-    }
         
     /// MAke presentables from apps
     private func makePresentables(_ apps: [Overview]) {
+        sleep(1)
         DispatchQueue.global().async {
             let section = PresentableSection()
             
@@ -133,7 +124,6 @@ class AccountDataManager: PresentableCollectionViewDataManager, ContentDynamicLa
                     }
                     
                     // Load icon
-                    
                     if overview.latestAppIcon {
                         if IconCache.hasIcon(appId: overview.latestAppId) {
                             cell.iconImage.image = IconCache.icon(appId: overview.latestAppId)
@@ -160,6 +150,7 @@ class AccountDataManager: PresentableCollectionViewDataManager, ContentDynamicLa
                 }
             }))
             DispatchQueue.main.async {
+                self.didFinishLoading?()
                 self.data = [section]
 //                self.layout.display = .apps
             }
