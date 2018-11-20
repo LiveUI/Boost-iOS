@@ -10,9 +10,13 @@ import Base
 import Presentables
 import BoostSDK
 import MarcoPolo
+import SideMenu
+import UIKit
 
 
 final class AccountViewController: ViewController {
+    
+    let menuViewController = MenuViewController()
     
     /// Main account
     let account: Account
@@ -23,11 +27,11 @@ final class AccountViewController: ViewController {
         collectionView.backgroundColor = .white
         collectionView.register(AppLoadingCell.self)
         collectionView.register(AppCell.self)
-        if UIScreen.main.bounds.width <= 320 {
-            collectionView.contentInset = UIEdgeInsets(top: 10, left: 4, bottom: 12, right: 4)
-        } else {
-            collectionView.contentInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
-        }
+//        if UIScreen.main.bounds.width <= 320 {
+//            collectionView.contentInset = UIEdgeInsets(top: 10, left: 4, bottom: 12, right: 4)
+//        } else {
+//            collectionView.contentInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+//        }
         return collectionView
     }()
     
@@ -81,11 +85,16 @@ final class AccountViewController: ViewController {
         
         var manager = self.manager as PresentableManager
         collectionView.bind(withPresentableManager: &manager)
+        
+        setupMenu()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // TODO: Move or add to will rotate method
+        let screenSize = view.bounds
+        SideMenuManager.default.menuWidth = max(round(min(screenSize.width, screenSize.height) * 0.75), 350)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -96,11 +105,22 @@ final class AccountViewController: ViewController {
         manager.viewSize = view.bounds.size
     }
     
+    // MARK: Setup
+    
+    func setupMenu() {
+        let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: menuViewController)
+        SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
+        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigation.navigationController!.view)
+        SideMenuManager.default.menuFadeStatusBar = false
+        SideMenuManager.default.menuPresentMode = .menuSlideIn
+        SideMenuManager.default.menuShadowRadius = 50
+    }
+    
     // MARK: Actions
     
     /// Open left menu action
     @objc func didTapMenu(_ sender: UIBarButtonItem) {
-        baseCoordinator.requestAccountsList()
+        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
     }
     
     /// Open search menu action

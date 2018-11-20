@@ -20,6 +20,7 @@ PODS:
     - SnapKit
   - Presentables (0.6.7)
   - Reloaded (1.0.1)
+  - SideMenu (5.0.3)
   - SnapKit (4.0.0)
   - SpecTools (1.0.2)
 
@@ -35,6 +36,7 @@ DEPENDENCIES:
   - Modular (~> 1.0.2)
   - Presentables (~> 0.6.7)
   - Reloaded (from `../Reloaded`)
+  - SideMenu
   - SnapKit (~> 4.0.0)
   - SpecTools
 
@@ -46,6 +48,7 @@ SPEC REPOS:
     - collection-view-layouts
     - Modular
     - Presentables
+    - SideMenu
     - SnapKit
     - SpecTools
 
@@ -82,9 +85,10 @@ SPEC CHECKSUMS:
   Modular: bae1878d084e9ea31300417b16a3ff4baf6614af
   Presentables: e20dc46cdb8a83dd8473c584e146c953ac5e9c94
   Reloaded: ae9fdea8818df3d9cd7dc52d2e3525bc20e6b4b3
+  SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SpecTools: 77474921254b23ea50bb80f8763214f41d9d63c5
 
-PODFILE CHECKSUM: 8af637fa437bd9e0e31c19c4f6ff0ba69cf66632
+PODFILE CHECKSUM: 431e933fc573502122b720946f5f0405c396af5e
 
 COCOAPODS: 1.5.3

@@ -96,6 +96,7 @@
 		15F6C50A2194584A00831DB0 /* FormElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F6C5092194584A00831DB0 /* FormElement.swift */; };
 		15F6C50C2194CEE100831DB0 /* EditAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F6C50B2194CEE100831DB0 /* EditAccountViewController.swift */; };
 		15F6C50E2194D1A000831DB0 /* NavigationItem+Boost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F6C50D2194D1A000831DB0 /* NavigationItem+Boost.swift */; };
+		15F6D508219774B900831DB0 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F6D507219774B900831DB0 /* MenuViewController.swift */; };
 		97FA9319146F821EDDFFBA4C /* Pods_Boost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25EFAC93C536767D25CF1F9E /* Pods_Boost.framework */; };
 		C7B4CC0A914150ED05B25BC7 /* Pods_BoostTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4807B2873DFA4EABA0244469 /* Pods_BoostTests.framework */; };
 		E58AAFE6D0A27FF1F8BBF479 /* Pods_BoostUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C65A5667F76DD8886B513297 /* Pods_BoostUITests.framework */; };
@@ -214,6 +215,7 @@
 		15F6C5092194584A00831DB0 /* FormElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormElement.swift; sourceTree = "<group>"; };
 		15F6C50B2194CEE100831DB0 /* EditAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountViewController.swift; sourceTree = "<group>"; };
 		15F6C50D2194D1A000831DB0 /* NavigationItem+Boost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationItem+Boost.swift"; sourceTree = "<group>"; };
+		15F6D507219774B900831DB0 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		25EFAC93C536767D25CF1F9E /* Pods_Boost.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Boost.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FE73C990C65466820BCC059 /* Pods-Boost.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boost.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Boost/Pods-Boost.debug.xcconfig"; sourceTree = "<group>"; };
 		4807B2873DFA4EABA0244469 /* Pods_BoostTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoostTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -316,6 +318,7 @@
 			children = (
 				1561D7B420C43A3900BCA532 /* GridViewController.swift */,
 				1563175F20D064BC007E740C /* NavigationViewController.swift */,
+				15F6D507219774B900831DB0 /* MenuViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1033,6 +1036,7 @@
 				1563175520D0165C007E740C /* GridTableViewCell.swift in Sources */,
 				1513A37C2187BAFC00E3A016 /* AppsHeaderView.swift in Sources */,
 				155E269520EBA21700E65C49 /* BuildsViewController.swift in Sources */,
+				15F6D508219774B900831DB0 /* MenuViewController.swift in Sources */,
 				1513A37E2187BB5B00E3A016 /* DisplayModeView.swift in Sources */,
 				15AD2A0820BC90D600E3A180 /* GradientView+Boost.swift in Sources */,
 				1561D7D620C58D2C00BCA532 /* PreloginView.swift in Sources */,
@@ -1217,7 +1221,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R8ZGADY96;
 				INFOPLIST_FILE = "Boost/Supporting files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.liveui.Boost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1233,7 +1240,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3R8ZGADY96;
 				INFOPLIST_FILE = "Boost/Supporting files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.liveui.Boost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1248,7 +1258,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BoostTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.liveui.BoostTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1264,7 +1278,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BoostTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.liveui.BoostTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1279,7 +1297,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BoostUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.liveui.BoostUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1294,7 +1316,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BoostUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.liveui.BoostUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

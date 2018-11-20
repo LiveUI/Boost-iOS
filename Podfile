@@ -16,6 +16,7 @@ target 'Boost' do
     pod 'AlamofireImage'
     pod 'collection-view-layouts/PinterestLayout'
     pod 'DisplaySwitcher', :git => 'https://github.com/Yalantis/DisplaySwitcher.git', :tag => '1.2'
+    pod 'SideMenu'
 
     target 'BoostTests' do
         inherit! :search_paths
