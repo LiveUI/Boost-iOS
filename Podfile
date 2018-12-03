@@ -12,7 +12,7 @@ target 'Boost' do
     pod 'MarcoPolo', :path => '../MarcoPolo'
     pod 'SnapKit', '~>4.0.0'
     pod 'Modular', '~>1.0.2'
-    pod 'AwesomeEnum', '~> 1.2.0'
+    pod 'AwesomeEnum', '~> 2.0.1'
     pod 'AlamofireImage'
     pod 'collection-view-layouts/PinterestLayout'
     pod 'DisplaySwitcher', :git => 'https://github.com/Yalantis/DisplaySwitcher.git', :tag => '1.2'

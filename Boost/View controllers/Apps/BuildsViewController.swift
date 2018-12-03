@@ -79,6 +79,13 @@ final class BuildsViewController: ViewController {
         collectionView.bind(withPresentableManager: &manager)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigation.content.title = overview.latestName
+        navigation.content.subtitle = "\(overview.count) builds"
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         

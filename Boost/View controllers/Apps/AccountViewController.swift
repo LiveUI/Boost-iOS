@@ -16,7 +16,11 @@ import UIKit
 
 final class AccountViewController: ViewController {
     
-    let menuViewController = MenuViewController()
+    lazy var menuViewController: MenuViewController = {
+        let c = MenuViewController()
+        c.api = manager.api
+        return c
+    }()
     
     /// Main account
     let account: Account

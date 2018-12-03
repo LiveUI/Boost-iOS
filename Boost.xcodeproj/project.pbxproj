@@ -21,8 +21,10 @@
 		1525682820DD4147006EBD12 /* IntValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1525682220DD4146006EBD12 /* IntValidator.swift */; };
 		1525682920DD4147006EBD12 /* ServerNameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1525682320DD4146006EBD12 /* ServerNameValidator.swift */; };
 		1525682A20DD4147006EBD12 /* UrlValudator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1525682420DD4146006EBD12 /* UrlValudator.swift */; };
+		152E9F2921B489E0005C6232 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152E9F2821B489E0005C6232 /* TeamTableViewCell.swift */; };
 		1545C38C20BC682C000449D3 /* LoginCoordinator+Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1545C38B20BC682C000449D3 /* LoginCoordinator+Onboarding.swift */; };
 		1546772620CDC5BE00E593B8 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546772520CDC5BE00E593B8 /* UIViewController+Navigation.swift */; };
+		1556794921B45AB200558B8A /* ServerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1556794821B45AB200558B8A /* ServerHeaderView.swift */; };
 		15588C75216FFD1700F40C7E /* MyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15588C74216FFD1600F40C7E /* MyCollectionView.swift */; };
 		155E269220EB8CEA00E65C49 /* HighlightedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155E269120EB8CEA00E65C49 /* HighlightedButton.swift */; };
 		155E269520EBA21700E65C49 /* BuildsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155E269420EBA21700E65C49 /* BuildsViewController.swift */; };
@@ -133,8 +135,10 @@
 		1525682220DD4146006EBD12 /* IntValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntValidator.swift; sourceTree = "<group>"; };
 		1525682320DD4146006EBD12 /* ServerNameValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerNameValidator.swift; sourceTree = "<group>"; };
 		1525682420DD4146006EBD12 /* UrlValudator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlValudator.swift; sourceTree = "<group>"; };
+		152E9F2821B489E0005C6232 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		1545C38B20BC682C000449D3 /* LoginCoordinator+Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginCoordinator+Onboarding.swift"; sourceTree = "<group>"; };
 		1546772520CDC5BE00E593B8 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
+		1556794821B45AB200558B8A /* ServerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerHeaderView.swift; sourceTree = "<group>"; };
 		15588C74216FFD1600F40C7E /* MyCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionView.swift; sourceTree = "<group>"; };
 		155E269120EB8CEA00E65C49 /* HighlightedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedButton.swift; sourceTree = "<group>"; };
 		155E269420EBA21700E65C49 /* BuildsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildsViewController.swift; sourceTree = "<group>"; };
@@ -286,6 +290,14 @@
 			path = Validators;
 			sourceTree = "<group>";
 		};
+		152E9F2721B489B4005C6232 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				152E9F2821B489E0005C6232 /* TeamTableViewCell.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		1545C38A20BC6814000449D3 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,6 +377,7 @@
 			children = (
 				156AD83A20CEC57A002672A4 /* GenericTableHeaderView.swift */,
 				150771D820F8DE8A0066AE09 /* AppHeaderView.swift */,
+				1556794821B45AB200558B8A /* ServerHeaderView.swift */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -555,6 +568,7 @@
 		15A88D2920BB642B00BC6DFA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				152E9F2721B489B4005C6232 /* Menu */,
 				157D35D220DA83BA005C01D1 /* Preloading */,
 				150E398920E5294300169638 /* Apps */,
 				15A88D2A20BB642B00BC6DFA /* AccountTableViewCell.swift */,
@@ -902,7 +916,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Boost/Pods-Boost-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Boost/Pods-Boost-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AwesomeEnum/AwesomeEnum.framework",
@@ -937,7 +951,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Boost/Pods-Boost-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Boost/Pods-Boost-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FEFE60F0CFA00761109379A3 /* [CP] Embed Pods Frameworks */ = {
@@ -946,7 +960,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BoostTests/Pods-BoostTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-BoostTests/Pods-BoostTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SpecTools/SpecTools.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -955,7 +969,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BoostTests/Pods-BoostTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BoostTests/Pods-BoostTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -965,6 +979,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1556794921B45AB200558B8A /* ServerHeaderView.swift in Sources */,
 				1525682520DD4147006EBD12 /* NotEmptyValidator.swift in Sources */,
 				155E269B20EBC72200E65C49 /* BuildsDataManager.swift in Sources */,
 				1525682820DD4147006EBD12 /* IntValidator.swift in Sources */,
@@ -1016,6 +1031,7 @@
 				155E269D20EBD16F00E65C49 /* BuildLayout.swift in Sources */,
 				15A88D4C20BB642B00BC6DFA /* AccountsCoordinator.swift in Sources */,
 				15A88D5320BB642B00BC6DFA /* AccountTableViewCell.swift in Sources */,
+				152E9F2921B489E0005C6232 /* TeamTableViewCell.swift in Sources */,
 				1561D7B220C4393700BCA532 /* RegisterViewController.swift in Sources */,
 				1546772620CDC5BE00E593B8 /* UIViewController+Navigation.swift in Sources */,
 				1561D7D820C596C000BCA532 /* MainAuthView.swift in Sources */,

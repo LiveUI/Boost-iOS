@@ -14,6 +14,8 @@ import BoostSDK
 /// This coordinator should be only starting new coordinators and shouldn't push any screens directly
 final class BaseCoordinator: NSObject {
     
+    var currentAccount: Account?
+    
     var accountsViewController: UIViewController!
     
     /// Current coordinator
@@ -43,6 +45,8 @@ final class BaseCoordinator: NSObject {
         account.lastUsed = Date()
         try account.save()
         
+        currentAccount = account
+        
         let coordinator = AccountCoordinator(account)
         flip(to: coordinator)
     }
@@ -51,6 +55,8 @@ final class BaseCoordinator: NSObject {
     func requestAccountsList() {
         let coordinator = AccountsCoordinator()
         flip(to: coordinator)
+        
+        currentAccount = nil
     }
     
     /// Request builds list for app

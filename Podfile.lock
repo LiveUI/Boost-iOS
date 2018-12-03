@@ -1,10 +1,10 @@
 PODS:
-  - Alamofire (4.7.2)
-  - AlamofireImage (3.3.1):
-    - Alamofire (~> 4.5)
-  - AwesomeEnum (1.2.0)
+  - Alamofire (4.8.0)
+  - AlamofireImage (3.5.0):
+    - Alamofire (~> 4.8)
+  - AwesomeEnum (2.0.1)
   - Base (0.0.1):
-    - AwesomeEnum (~> 1.2.0)
+    - AwesomeEnum (~> 2.0.1)
     - Modular (~> 1.0.0)
     - Presentables (~> 0.6.6)
     - SnapKit (~> 4.0.0)
@@ -21,12 +21,12 @@ PODS:
   - Presentables (0.6.7)
   - Reloaded (1.0.1)
   - SideMenu (5.0.3)
-  - SnapKit (4.0.0)
+  - SnapKit (4.0.1)
   - SpecTools (1.0.2)
 
 DEPENDENCIES:
   - AlamofireImage
-  - AwesomeEnum (~> 1.2.0)
+  - AwesomeEnum (~> 2.0.1)
   - Base (from `../Base`)
   - BoostSDK (from `../BoostSDK`)
   - collection-view-layouts/PinterestLayout
@@ -73,22 +73,22 @@ CHECKOUT OPTIONS:
     :tag: '1.2'
 
 SPEC CHECKSUMS:
-  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
-  AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
-  AwesomeEnum: fe633a08020f92ab57277956c1df4d52fbfa27e0
-  Base: ef173ccca5ccd4f03611bed8ec7eb690ff7ce42a
-  BoostSDK: 72f3c200cbf9c74a5a76191db964123547d2f18b
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
+  AwesomeEnum: c31d6791dd6d0cbf8b24cba1f8187d7ff4939923
+  Base: 857d79341532c90b50202093f5bcd7c3a26397d6
+  BoostSDK: 87bf102b1119a885a83c9faa73530ea8b6c14b66
   collection-view-layouts: f3da16bf3211ecb885bb3e45160c2267edf5b65e
   DisplaySwitcher: a9ee0b5c7821cd8d12e39783ada99399f6d927a0
-  Hagrid: 79b2ea059ef93cff46347fc6f6f12ff2329976e9
-  MarcoPolo: 0a0dba396400ca11440ac47882f9b31003ff3b1d
+  Hagrid: 0977c796c795a796f342fd1856c21daa65268bd0
+  MarcoPolo: b4b56c26c4d939be107c275d6e89b55233938a22
   Modular: bae1878d084e9ea31300417b16a3ff4baf6614af
   Presentables: e20dc46cdb8a83dd8473c584e146c953ac5e9c94
-  Reloaded: ae9fdea8818df3d9cd7dc52d2e3525bc20e6b4b3
+  Reloaded: 3a34dd5a685527bee0abeee67d79e7b54a2604f1
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
-  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SpecTools: 77474921254b23ea50bb80f8763214f41d9d63c5
 
-PODFILE CHECKSUM: 431e933fc573502122b720946f5f0405c396af5e
+PODFILE CHECKSUM: 79184a75545203a66f2248eea178368e9b735b85
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.2

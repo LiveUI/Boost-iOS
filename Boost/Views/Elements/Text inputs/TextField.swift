@@ -72,14 +72,6 @@ class TextField: UITextField, UITextFieldDelegate, Validatable, FormElement {
         sizeToFit()
     }
     
-    // MARK: Leading icon
-    
-    var icon: Amazing? {
-        didSet {
-            
-        }
-    }
-    
     // MARK: Validation
     
     var isValid: Bool {

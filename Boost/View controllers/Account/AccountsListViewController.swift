@@ -49,7 +49,7 @@ final class AccountsListViewController: TableViewController {
                     section.set(group.map({ (account) -> AnyPresentable in
                         Presentable<AccountTableViewCell>.create({ cell in
                             cell.nameLabel.text = account.name
-                            cell.hostLabel.text = account.server
+                            cell.hostLabel.text = account.subtitle ?? account.server ?? "n/a"
                             cell.lockIcon.isHidden = !(account.token?.isEmpty ?? true)
                             cell.onlineIcon.state = account.onlineIsValid ? .online : .offline
                             
@@ -63,10 +63,12 @@ final class AccountsListViewController: TableViewController {
                                 let api = account.api()
                                 _ = try? api.info().then({ info in
                                     account.name = info.name
+                                    account.subtitle = info.subtitle
                                     account.lastUpdated = Date()
                                     DispatchQueue.main.async {
                                         try? account.save()
                                         cell.nameLabel.text = info.name
+                                        cell.hostLabel.text = info.subtitle ?? account.server ?? "n/a"
                                     }
                                     
                                     if let iconUrl = info.icons.url(size: .size256), let url = URL(string: iconUrl) {
