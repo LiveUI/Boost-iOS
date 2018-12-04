@@ -100,7 +100,6 @@ class AccountDataManager: PresentableCollectionViewDataManager, ContentDynamicLa
         
     /// MAke presentables from apps
     private func makePresentables(_ apps: [Overview]) {
-        sleep(1)
         DispatchQueue.global().async {
             let section = PresentableSection()
             

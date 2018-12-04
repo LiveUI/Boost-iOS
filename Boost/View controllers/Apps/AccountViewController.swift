@@ -39,6 +39,8 @@ final class AccountViewController: ViewController {
         return collectionView
     }()
     
+    var refresh = UIRefreshControl()
+    
     /// Account data manager
     lazy var manager: AccountDataManager = {
         return AccountDataManager(account) { errorFeedback in
@@ -91,6 +93,11 @@ final class AccountViewController: ViewController {
         collectionView.bind(withPresentableManager: &manager)
         
         setupMenu()
+        
+        collectionView.alwaysBounceVertical = true
+        refresh.tintColor = .gray
+        refresh.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        collectionView.addSubview(refresh)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,9 +111,17 @@ final class AccountViewController: ViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        // TODO: Only load data when needed!!!!!!
         manager.startLoadingData()
         
         manager.viewSize = view.bounds.size
+    }
+    
+    // MARK: Actions
+    
+    @objc func refreshData() {
+        reloadData()
+        refresh.endRefreshing()
     }
     
     // MARK: Setup

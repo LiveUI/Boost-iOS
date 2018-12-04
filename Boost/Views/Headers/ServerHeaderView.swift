@@ -41,6 +41,7 @@ class ServerHeaderView: GridTableViewHeaderFooterView {
         gridView.config.padding = .full(top: 13, left: 14, right: 14, bottom: 13)
         
         iconMenuButton.layer.cornerRadius = 6
+        iconMenuButton.clipsToBounds = true
         iconMenuButton.contentMode = .scaleAspectFit
         iconMenuButton.backgroundColor = .red
         iconMenuButton.layer.borderWidth = 0

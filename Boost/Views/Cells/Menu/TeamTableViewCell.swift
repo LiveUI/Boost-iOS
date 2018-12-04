@@ -27,6 +27,15 @@ class TeamTableViewCell: TableViewCell {
         }
     }
     
+    var info: TeamAppInfo? {
+        didSet {
+            guard let info = info else {
+                return
+            }
+            subtitleLabel.text = "\(info.apps) apps, \(info.builds) builds"
+        }
+    }
+    
     let nameLabel = MenuMainLabel()
     let subtitleLabel = MenuSecondaryLabel()
     let icon = UIImageView()
@@ -42,10 +51,10 @@ class TeamTableViewCell: TableViewCell {
         
         icon.layer.cornerRadius = 4
         icon.clipsToBounds = true
-        icon.place.on(contentView, top: 16).square(side: 42).left(12).min(bottom: -16)
+        icon.place.on(contentView, top: 16).square(side: 42).left(14).min(bottom: -16)
         
         nameLabel.textColor = .white
-        nameLabel.place.next(to: icon, top: 20, left: 24).right(-12)
+        nameLabel.place.next(to: icon, top: 20, left: 24).right(-14)
         
         subtitleLabel.place.below(nameLabel, top:2).match(right: nameLabel).custom { make in
             make.left.equalTo(nameLabel).priority(.high)

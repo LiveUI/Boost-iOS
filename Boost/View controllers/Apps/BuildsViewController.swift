@@ -89,6 +89,7 @@ final class BuildsViewController: ViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        // TODO: Only load data when needed!!!!
         manager.startLoadingData()
     }
     

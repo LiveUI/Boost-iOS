@@ -15,7 +15,10 @@ import AwesomeEnum
 
 class MenuViewController: TableViewController {
     
+    var account: Account!
     var api: Api!
+    
+    var refresh = UIRefreshControl()
     
     override func setupElements() {
         super.setupElements()
@@ -32,6 +35,11 @@ class MenuViewController: TableViewController {
         tableView.backgroundColor = UIColor(hex: "404654")
         tableView.separatorStyle = .none
         
+        tableView.alwaysBounceVertical = true
+        refresh.tintColor = .lightGray
+        refresh.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        tableView.addSubview(refresh)
+        
         navigationController?.setNavigationBarHidden(true, animated: false)
         
         navigationController?.navigationBar.backgroundColor = .red
@@ -44,18 +52,27 @@ class MenuViewController: TableViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupData()
+    }
+    
     // MARK: Data
     
-    override func setupData() {
-        super.setupData()
-        
-        let section = PresentableSection()
-        section.header = Presentable<ServerHeaderView>.create({ header in
+    lazy var mainHeader: Presentable<ServerHeaderView> = {
+        Presentable<ServerHeaderView>.create({ header in
             guard let account = self.baseCoordinator.currentAccount else {
                 return
             }
             header.titleLabel.text = account.name
             header.subtitleLabel.text = account.subtitle ?? account.server ?? "n/a"
+            
+            if let iconData = account.icon, let icon = UIImage(data: iconData) {
+                header.iconMenuButton.setImage(icon, for: .normal)
+            } else {
+                header.iconMenuButton.setImage(UIImage.defaultIcon, for: .normal)
+            }
             
             header.didTapAccountsButton = {
                 self.dismiss(animated: true, completion: {
@@ -63,29 +80,66 @@ class MenuViewController: TableViewController {
                 })
             }
         })
+    }()
+    
+    var totalLoaded = false
+    var totalAppsCount = 0
+    var totalBuildsCount = 0
+    
+    override func setupData() {
+        super.setupData()
+        
+        totalLoaded = false
+        totalAppsCount = 0
+        totalBuildsCount = 0
+        
+        let section = PresentableSection()
+        section.header = mainHeader
         
         do {
             try api.teams().then({ teams in
                 let allCell = Presentable<TeamTableViewCell>.create({ cell in
-                    cell.icon.backgroundColor = .blue
-                    cell.icon.image = Awesome.Solid.objectGroup.asImage(size: 26, color: .white)
+                    cell.icon.backgroundColor = .orange
+                    cell.icon.image = Awesome.Solid.layerGroup.asImage(size: 26, color: .white)
+                    cell.icon.contentMode = .center
+                    
                     cell.nameLabel.text = "All teams"
-                    cell.subtitleLabel.text = "Loading ..."
+                    cell.subtitleLabel.text = self.totalLoaded ? "Loading ..." : "\(self.totalAppsCount) apps, \(self.totalBuildsCount) builds"
                 })
                 section.append(allCell)
                 
                 for team in teams {
-                    let p = Presentable<TeamTableViewCell>.create({ cell in
-                        cell.team = team
+                    guard let teamId = team.id else {
+                        // QUESTION: Do we want to display team anyway with some default data?
+                        return
+                    }
+                    try self.api.info(team: teamId).then({ info in
+                        self.totalLoaded = true
+                        self.totalAppsCount += info.apps
+                        self.totalBuildsCount += info.builds
+                        
+                        let p = Presentable<TeamTableViewCell>.create({ cell in
+                            cell.icon.backgroundColor = .clear
+                            cell.icon.contentMode = .scaleAspectFit
+                            cell.team = team
+                            cell.info = info
+                        })
+                        section.append(p)
                     })
-                    section.append(p)
                 }
             })
         } catch {
             
         }
         
-        data.append(section)
+        data = [section]
+    }
+    
+    // MARK: Actions
+    
+    @objc func refreshData() {
+        reloadData()
+        refresh.endRefreshing()
     }
     
 }
