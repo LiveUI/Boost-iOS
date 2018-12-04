@@ -132,7 +132,7 @@ class AccountDataManager: PresentableCollectionViewDataManager, ContentDynamicLa
                                     return
                                 }
                                 do {
-                                    try IconCache.cache(data: data, for: overview.latestAppId)
+                                    try IconCache.cache(data: data, appId: overview.latestAppId)
                                 } catch {
                                     print(error)
                                 }

@@ -59,14 +59,7 @@ class TeamTableViewCell: TableViewCell {
         subtitleLabel.place.below(nameLabel, top:2).match(right: nameLabel).custom { make in
             make.left.equalTo(nameLabel).priority(.high)
         }
-        
-        //        let iconOffset: CGFloat = 4
-        //
-        //        // Lock icon
-        //        let size: CGFloat = 12
-        //        lockIcon.image = Awesome.solid.lock.asImage(size: size, color: .white)
-        //        lockIcon.place.on(contentView).with.match(top: icon, offset: -iconOffset).match(right: icon, offset: iconOffset).make.square(side: size)
-        
+                
         // Online icon
         onlineIcon.place.on(contentView).right(-12).centerY().make.square(side: 12)
     }

@@ -108,7 +108,7 @@ class MenuViewController: TableViewController {
                     cell.icon.contentMode = .center
                     
                     cell.nameLabel.text = "All teams"
-                    cell.subtitleLabel.text = !self.totalLoaded ? "Loading ..." : "\(self.totalAppsCount) apps, \(self.totalBuildsCount) builds"
+                    cell.subtitleLabel.text = self.totalLoaded ?  "\(self.totalAppsCount) apps, \(self.totalBuildsCount) builds" : "Loading ..."
                 })
                 section.append(allCell)
                 
