@@ -89,6 +89,10 @@ class MenuViewController: TableViewController {
     override func setupData() {
         super.setupData()
         
+        guard data.count == 0 else {
+            return
+        }
+        
         totalLoaded = false
         totalAppsCount = 0
         totalBuildsCount = 0
@@ -104,7 +108,7 @@ class MenuViewController: TableViewController {
                     cell.icon.contentMode = .center
                     
                     cell.nameLabel.text = "All teams"
-                    cell.subtitleLabel.text = self.totalLoaded ? "Loading ..." : "\(self.totalAppsCount) apps, \(self.totalBuildsCount) builds"
+                    cell.subtitleLabel.text = !self.totalLoaded ? "Loading ..." : "\(self.totalAppsCount) apps, \(self.totalBuildsCount) builds"
                 })
                 section.append(allCell)
                 
@@ -138,7 +142,9 @@ class MenuViewController: TableViewController {
     // MARK: Actions
     
     @objc func refreshData() {
-        reloadData()
+        data = [] // Reset the data so it loads again
+        
+        setupData()
         refresh.endRefreshing()
     }
     
